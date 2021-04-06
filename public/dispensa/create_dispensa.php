@@ -17,12 +17,7 @@ include("../../data/connection.php");
     <div class="form">
         <form action="insertDispensa.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Dispensa</h3>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">CRM</span>
-                </div>
-                <input type="text" name="txtCRM" class="form-control" id="txtCRM" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
+            
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
