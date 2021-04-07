@@ -2,13 +2,13 @@
 
     $servername = "localhost";
     $username= "root";
-    $password = "admindb";
-    $dbname = "norteconsultoria";
+    $password = "";
+    $dbname = "db_norte";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $connection = new mysqli($servername, $username, $password, $dbname);
 
 
-    if ($conn -> connect_error) {
-        die ("Erro ao conectar com o banco" . $conn -> connect_error);
+    if ($connection -> connect_error) {
+        die ("Erro ao conectar com o banco" . $connection -> connect_error);
     }
 ?>
