@@ -20,7 +20,7 @@
                <div class="form-group">
 
                   <label>Usuário</label>
-                  <input name="user" type="text" class="form-control" placeholder="Username">
+                  <input name="login" type="text" class="form-control" placeholder="Username">
                </div>
                <div class="form-group">
                   <label>Senha</label>
