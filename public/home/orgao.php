@@ -7,12 +7,14 @@ include("../../data/connection.php");
 ?>
 <br>
 <br>
-<div class="input-group mb-3">
+<div class="input-group mb-3" >
+
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Órgão</span>
     </div>
+    <form class="form-signin" method="POST" action="login.php">
     <select class="form-select" name="orgao" id="orgao">
-        <option value="-1" selected>Selecione o órgão desejado</option>
+        <option value="-1" selected>Todos</option>
         <?php
         
             $sqlQuery = "SELECT * FROM orgao";
@@ -35,4 +37,7 @@ include("../../data/connection.php");
         }
         ?>
     </select>
+    </form>
+    &nbsp;
+    <input onclick="window.location.href='home.php'" type="submit" class="btn btn-success" value="OK" >
 </div>
