@@ -6,7 +6,7 @@ include("../../data/connection.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dispensa</title>
+    <title>Inexigibilidade</title>
 </head>
 
 <body>
@@ -16,8 +16,37 @@ include("../../data/connection.php");
     
     <div class="form">
         <form action="insertDispensa.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
-            <h3>Dispensa</h3>
+            <h3>Inexigibilidade</h3>
             
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
+                </div>
+                <select class="form-select" name="paciente_cpf" id="paciente_cpf">
+                    <option value="-1" selected>Selecione um paciente</option>
+                    <?php
+
+                    $sqlQuery = "SELECT * FROM paciente ORDER BY nome";
+
+                    $pacientes = $connection->query($sqlQuery);
+
+                    if ($pacientes->num_rows > 0) {
+
+                        while ($row = $pacientes->fetch_assoc()) {
+                    ?>
+
+                            <option value="<?php echo $row["CPF"] ?>">
+                                <?php echo $row["nome"] . " - CPF: " . $row["CPF"] ?>
+                            </option>
+
+                    <?php
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
@@ -29,23 +58,16 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nº Processo</span>
                 </div>
-                <input type="text" name="txtNProcesso" class="form-control" id="txtNProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nº Modalidade</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nº Inexigibilidade</span>
                 </div>
-                <input type="text" name="txtNModalidade" class="form-control" id="txtNModalidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="number" name="numInexigibilidade" class="form-control" id="numInexigibilidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Inciso</span>
-                </div>
-                <input type="text" name="txtInciso" class="form-control" id="txtInciso" aria-label="Default" placeholder="Qual inciso do ART. 24, da lei 8.666/93 fundamenta a dispensa?
-                "  aria-describedby="inputGroup-sizing-default">
-            </div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -93,19 +115,12 @@ include("../../data/connection.php");
                 </div>
                 <input type="datetime-local" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data de Ratificação</span>
-                </div>
-                <input type="datetime-local" name="dater" class="form-control" id="dater" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data da portaria nomeando a comissão</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Portaria nomeando a comissão</span>
                 </div>
-                <input type="datetime-local" name="datep" class="form-control" id="datep" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="text" name="txtp" class="form-control" id="txtp" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
             <div class="input-group mb-3">
@@ -159,6 +174,13 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data aprovação da minuta</span>
+                </div>
+                <input type="datetime-local" name="dateAprov" class="form-control" id="dateAprov" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data proposta do favorecido</span>
                 </div>
                 <input type="datetime-local" name="dateProp" class="form-control" id="dateProp" aria-label="Default" aria-describedby="inputGroup-sizing-default">
@@ -173,7 +195,7 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data ata de dispensa</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data ata de inexigibilidade</span>
                 </div>
                 <input type="datetime-local" name="dateAta" class="form-control" id="dateAta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
@@ -208,7 +230,7 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data publicação da dispensa</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data publicação da inexigibilidade</span>
                 </div>
                 <input type="datetime-local" name="datePublicacao" class="form-control" id="datePublicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
@@ -222,10 +244,19 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Código de registro</span>
+                </div>
+                <input type="text" name="txtCodReg" class="form-control" id="txtCodReg" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
                 </div>
                 <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
+
+            
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
