@@ -19,7 +19,7 @@ if ((isset($_POST['login'])) && (isset($_POST['senha']))) {
             $_SESSION['logado']=$id;
 ?>
             <script>
-               window.location = "../home/home.php";
+               window.location = "../home/orgao.php";
             </script>
         <?php
 
