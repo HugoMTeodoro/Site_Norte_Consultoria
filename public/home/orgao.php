@@ -2,17 +2,19 @@
 include("../Template/header.php");
 include("../login/valida.php");
 include("../../data/connection.php");
-
+global $orgao;
 
 ?>
+
 <br>
 <br>
+<div class="form">
+<form action="home.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
 <div class="input-group mb-3" >
 
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Órgão</span>
     </div>
-    <form class="form-signin" method="POST" action="login.php">
     <select class="form-select" name="orgao" id="orgao">
         <option value="-1" selected>Todos</option>
         <?php
@@ -37,7 +39,10 @@ include("../../data/connection.php");
         }
         ?>
     </select>
+    
+
+    &nbsp;  
+    <input type="submit" class="btn btn-success" value="OK" >
     </form>
-    &nbsp;
-    <input onclick="window.location.href='home.php'" type="submit" class="btn btn-success" value="OK" >
+</div>
 </div>
