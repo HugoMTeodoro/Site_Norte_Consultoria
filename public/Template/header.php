@@ -17,11 +17,12 @@ include("../../data/connection.php");
 
   <link rel="stylesheet" href="../styles/main.css" />
 </head>
-
+<?php $orgao = $_POST["orgao"]; ?>
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Norte Consultoria </a>
+      <a class="navbar-brand" href="#">Norte Consultoria - <?php echo $orgao?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

@@ -2,7 +2,7 @@
 include("../Template/header.php");
 include("../login/valida.php");
 include("../../data/connection.php");
-global $orgao;
+
 
 ?>
 
@@ -16,7 +16,7 @@ global $orgao;
         <span class="input-group-text" id="inputGroup-sizing-default">Órgão</span>
     </div>
     <select class="form-select" name="orgao" id="orgao">
-        <option value="-1" selected>Todos</option>
+        <option selected>Todos</option>
         <?php
         
             $sqlQuery = "SELECT * FROM orgao";
