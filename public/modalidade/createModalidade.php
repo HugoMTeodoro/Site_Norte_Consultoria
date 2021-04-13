@@ -196,23 +196,46 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data edital e seus anexos</span>
+                </div>
+                <input type="date" name="dateEditalEAnexos" class="form-control" id="dateEditalEAnexos" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato/ata reg. preços</span>
                 </div>
                 <input type="text" name="txtMinuta" class="form-control" id="txtMinuta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data aprovação da minuta</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data aprovação da minutas e seus anexos</span>
                 </div>
-                <input type="datetime-local" name="dateAprov" class="form-control" id="dateAprov" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateAprovMin" class="form-control" id="dateAprovMin" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data publicação do edital</span>
+                </div>
+                <input type="date" name="datePubEd" class="form-control" id="datePubEd" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Especificação correta do objeto</span>
+                </div>
+                <input type="text" name="txtEspecificacaoObjeto" class="form-control" id="txtEspecificacaoObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data proposta do favorecido</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data recibo de entrega do convite</span>
                 </div>
-                <input type="datetime-local" name="dateProp" class="form-control" id="dateProp" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateRecibo" class="form-control" id="dateRecibo" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
@@ -224,10 +247,54 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data ata de inexigibilidade</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data ata de abertura</span>
                 </div>
-                <input type="datetime-local" name="dateAta" class="form-control" id="dateAta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="datetime-local" name="dateAtaAbertura" class="form-control" id="dateAtaAbertura" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data confirmação de autenticidade</span>
+                </div>
+                <input type="date" name="dateAutenticidade" class="form-control" id="dateAutenticidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Prazo recursal da habilitação</span>
+                </div>
+                <input type="date" name="datePrazoRecursal" class="form-control" id="datePrazoRecursal" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data ata de julgamento</span>
+                </div>
+                <input type="date" name="dateAtaJulgamento" class="form-control" id="dateAtaJulgamento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Classificados das propostas</span>
+                </div>
+                <input type="text" name="txtClassificados" class="form-control" id="txtClassificados" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data publicação do resultado do julgamento</span>
+                </div>
+                <input type="date" name="dateResultadoJulgamento" class="form-control" id="dateResultadoJulgamento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Prazo recursal da proposta</span>
+                </div>
+                <input type="date" name="datePrazoRecursal" class="form-control" id="datePrazoRecursal" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -236,18 +303,20 @@ include("../../data/connection.php");
                 <input type="datetime-local" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
+            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data ata de dispensa</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data adjudicação</span>
                 </div>
-                <input type="datetime-local" name="dateAta" class="form-control" id="dateAta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateAdjudicacao" class="form-control" id="dateAdjudicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data ratificação</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data homologação</span>
                 </div>
-                <input type="datetime-local" name="dateRetificacao" class="form-control" id="dateRetificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateHomologacao" class="form-control" id="dateHomologacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
@@ -259,7 +328,7 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data publicação da inexigibilidade</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data publicação do contrato</span>
                 </div>
                 <input type="datetime-local" name="datePublicacao" class="form-control" id="datePublicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
