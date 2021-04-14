@@ -1,5 +1,6 @@
 <?php
 include("../../data/connection.php");
+session_start();
 ?>
 <!DOCTYPE html>
 
@@ -17,7 +18,7 @@ include("../../data/connection.php");
 
   <link rel="stylesheet" href="../styles/main.css" />
 </head>
-<?php $orgao = $_POST["orgao"]; ?>
+
 
 <body>
 
@@ -54,7 +55,7 @@ include("../../data/connection.php");
 
   <br>
   <br>
-
+  
 </body>
 
 </html>
