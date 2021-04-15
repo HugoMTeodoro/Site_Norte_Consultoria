@@ -30,7 +30,6 @@
 
             </form>
             <br>
-            <button class="btn btn-warning" onclick="window.location.href='../analista/createAnalista.php'">Registrar</button>
 
          </div>
       </div>

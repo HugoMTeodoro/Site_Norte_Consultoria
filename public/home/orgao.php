@@ -9,14 +9,13 @@ include("../../data/connection.php");
 <br>
 <br>
 <div class="form">
-<form action="home.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+<form action="alteraorgao.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
 <div class="input-group mb-3" >
 
     <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Órgão</span>
     </div>
     <select class="form-select" name="orgao" id="orgao">
-        <option selected>Todos</option>
         <?php
         
             $sqlQuery = "SELECT * FROM orgao";
@@ -41,8 +40,10 @@ include("../../data/connection.php");
     </select>
     
 
-    &nbsp;  
+    &nbsp;
     <input type="submit" class="btn btn-success" value="OK" >
+    &nbsp;&nbsp;&nbsp;
+    <a href="../orgao/listorgao.php" class="btn btn-primary">Gerenciar órgãos</a>
     </form>
 </div>
 </div>
