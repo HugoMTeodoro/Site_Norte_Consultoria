@@ -32,21 +32,21 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nº Processo</span>
                 </div>
-                <input type="text" name="txtNProcesso" class="form-control" id="txtNProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
+                <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>  
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nº Modalidade</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nº Dispensa</span>
                 </div>
-                <input type="text" name="txtNModalidade" class="form-control" id="txtNModalidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="number" name="numDispensa" class="form-control" id="numDispensa" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Inciso</span>
                 </div>
-                <select class="form-select" name="nome_orgao" id="nome_orgao">
+                <select class="form-select" name="inciso" id="inciso">
                     <option value="-1" selected>Qual inciso do ART. 24, da lei 8.666/93 fundamenta a dispensa?</option>
                     <?php
 
@@ -117,7 +117,13 @@ include("../../data/connection.php");
                 </div>
                 <input type="date" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data de Ratificação</span>
+                </div>
+                <input type="date" name="dater" class="form-control" id="dater" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
             
             
             <div class="input-group mb-3">
@@ -204,13 +210,6 @@ include("../../data/connection.php");
                 <input type="date" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data de Ratificação</span>
-                </div>
-                <input type="date" name="dater" class="form-control" id="dater" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -237,7 +236,7 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
                 </div>
-                <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" step="0.01" aria-describedby="inputGroup-sizing-default">
             </div>
             
 
