@@ -3,16 +3,15 @@ include("../Template/header.php");
 include_once("../../data/connection.php");
 
 
-if (isset($_GET["id_dispensa"])) {
-    $id = $_GET["id_dispensa"];
-
-    $sql = "SELECT * FROM dispensa WHERE id_dispensa = '" . $id . "'";
-    //echo $sql;
+if (isset ($_GET["id"])) {
+    $id = $_GET["id"];
+    
+    $sql = "SELECT * FROM dispensa WHERE id_dispensa = '". $id . "'";
     $resultado = $connection->query($sql);
     $dispensa = $resultado->fetch_assoc();
 
-    //$exercicio = trim($dispensa["num_dispensa"]);
-    //$num_processo = trim($dispensa["num_processo"]);
+    
+
 ?>
 
 
@@ -21,9 +20,17 @@ if (isset($_GET["id_dispensa"])) {
             <h3>Editar</h3>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Id da dispensa</span>
+                </div>
+
+                <input type="number" name="dispensaId" class="form-control input-sm" id="dispensaId" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["id_dispensa"]?>" readonly>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
                 </div>
-                <input type="text" name="txtExercicio" class="form-control" id="txtExercicio" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="text" name="txtExercicio" class="form-control" id="txtExercicio" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $dispensa["exercicio"]?>">
             </div>
 
             <div class="input-group mb-3">

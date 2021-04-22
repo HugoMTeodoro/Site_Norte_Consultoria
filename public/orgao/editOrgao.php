@@ -13,6 +13,8 @@ if (isset ($_GET["id"])) {
     $resultado = $connection->query($sql);
     $orgao = $resultado->fetch_assoc();
 
+    echo $sql;
+
 ?>
 
 

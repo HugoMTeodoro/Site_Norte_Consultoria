@@ -1,7 +1,9 @@
     <?php
 
     include_once("../../data/connection.php");
-     
+    
+    if (isset($_POST)) {
+    $id = $_POST["dispensaId"];
     $exercicio = $_POST["txtExercicio"];
     $nProcesso = $_POST["numProcesso"];
     $nDispensa = $_POST["numDispensa"];
@@ -27,38 +29,37 @@
     $copiaNotas = $_POST["txtCopias"];
     $valorTotal = $_POST["numTotal"];
     $observacoes = $_POST["txtObservacoes"];
-    $analistaResponsavel = $_POST["txtAnalista"];
     $dLancamento = $_POST["dateLancamento"];
 
 
     $sql = "UPDATE dispensa
         SET exercicio = '".$exercicio. "', " . 
         "num_processo= '".$nProcesso. "', " . 
-         "num_dispensa= '".$nDispensa."' ,  " .
-         "inciso= '".$inciso. "', " . 
-          "objeto= '".$objeto."' ,  " .
-          "categoria= '".$categoria."' ,  " .
-          "data_inicio= '".$dInicio."' ,  " .
-          "data_ratificacao= '".$dRatificacao. "', " . 
-          " data_portaria_comissao= '".$dPortariaComissao. "', " . 
-           " data_solicitacao_compras_servicos= '".$dSolicitacaoCompras. "', " . 
-            " data_preco_estimativo= '".$dOrcamento. "', " . 
-             " data_autorizacao_abertura= '".$dAutorizacao. "', " . 
-              " data_autuacao= '".$dAutuacao. "', " . 
-               " especificacao_objeto= '".$especificacao. "', " . 
-                 "enquadramento= '".$enquadramento. "', " . 
-                  "minuta_contrato= '".$enquadramento. "', " . 
-                   "data_proposta_favorecido= '".$dPropostaFavorecido. "', " . 
-                    "documento_habilitacao= '".$habilitacao. "', " . 
-                     "data_ata= '".$dAtaDispensa. "', " . 
-                      "data_parecer_juridico= '".$dParecerJuridico. "', " .
-                       "data_contrato_firmado= '".$dContratoFirmado. "', " . 
-                        "data_publicacao= '".$dPublicacaoDispensa. "', " . 
-                         "copia_empenho_compras_legais= '".$copiaNotas. "', " . 
-                          "valor_total= '".$valorTotal. "', " . 
-                           "observacoes= '".$observacoes."' ,  " .
-                           "data_lancamento= '".$dLancamento."', " .
-                            "WHERE num_dispensa = " . $nDispensa;
+        "num_dispensa= '".$nDispensa."' ,  " .
+        "inciso= '".$inciso. "', " . 
+        "objeto= '".$objeto."' ,  " .
+        "categoria= '".$categoria."' ,  " .
+        "data_inicio= '".$dInicio."' ,  " .
+        "data_ratificacao= '".$dRatificacao. "', " . 
+        " data_portaria_comissao= '".$dPortariaComissao. "', " . 
+        " data_solicitacao_compras_servicos= '".$dSolicitacaoCompras. "', " . 
+        " data_preco_estimativo= '".$dOrcamento. "', " . 
+        " data_autorizacao_abertura= '".$dAutorizacao. "', " . 
+        " data_autuacao= '".$dAutuacao. "', " . 
+        " especificacao_objeto= '".$especificacao. "', " . 
+        "enquadramento= '".$enquadramento. "', " . 
+        "minuta_contrato= '".$enquadramento. "', " . 
+        "data_proposta_favorecido= '".$dPropostaFavorecido. "', " . 
+        "documento_habilitacao= '".$habilitacao. "', " . 
+        "data_ata= '".$dAtaDispensa. "', " . 
+        "data_parecer_juridico= '".$dParecerJuridico. "', " .
+        "data_contrato_firmado= '".$dContratoFirmado. "', " . 
+        "data_publicacao= '".$dPublicacaoDispensa. "', " . 
+        "copia_empenho_compras_legais= '".$copiaNotas. "', " . 
+        "valor_total= '".$valorTotal. "', " . 
+        "observacoes= '".$observacoes."' ,  " .
+        "data_lancamento= '".$dLancamento."', " .
+        "WHERE id_dispensa = " . $id;
         
 
 
@@ -70,7 +71,9 @@
             window.location = 'listDispensa.php';
         </script>
     <?php
-    } else { ?>
+    } else {
+        echo $sql ?>
+        
         <script>
             alert("Ocorreu um erro ao cadastrar a dispensa");
            
@@ -79,5 +82,6 @@
         
     <?php
     }
+}
 
     ?>

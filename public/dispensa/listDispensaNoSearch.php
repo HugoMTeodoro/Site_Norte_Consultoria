@@ -53,7 +53,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
                                     
                                 </button>
                                 <button type="submit" class="btn btn-success" formmethod="post">
-                                    <a href="editDispensa.php?id=" style="text-decoration: none; color: white"> Editar </a> 
+                                <a href="editDispensa.php?id=<?php echo $exibir["id_dispensa"] ?>" style="text-decoration: none; color: white">Editar</a>
                                 </button> 
                             </td>
                         </tr>
