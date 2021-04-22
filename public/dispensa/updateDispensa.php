@@ -1,7 +1,7 @@
     <?php
 
     include_once("../../data/connection.php");
-    
+     
     $exercicio = $_POST["txtExercicio"];
     $nProcesso = $_POST["numProcesso"];
     $nDispensa = $_POST["numDispensa"];
