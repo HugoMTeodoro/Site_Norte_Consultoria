@@ -1,73 +1,67 @@
+
 <?php include("../Template/header.php") ?>
 
-<?php
-$usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
-?>
+<?php include("../../data/connection.php") ?>
 
+<br>
+<br>
+<br>
 
-<?php
-
-
-
-    include("../../data/connection.php");
-
-    $sql = "SELECT * FROM dispensa";
-
-
-   
-
-
-    $dadosDispensa = $connection -> query($sql);
-
-    if($dadosDispensa -> num_rows > 0)
-    {
-    ?>
-    <div class="form">
-
+<body>
     
-
-    
-        <div style="margin-left: 100px; margin-right: 100px;">
-        <br>
+    <div style="margin-left: 100px; margin-right: 100px;">
         <h2>Dispensa</h2>
-            <br>
-            <table class="table" style="text-align: center;">
-                <tr>
-                    <th>Exercício</th>
-                    <th>Número do processo</th>
-                    <th>Número da dispensa</th>
-                </tr>
 
-                <?php
-                    while($exibir = $dadosDispensa -> fetch_assoc())
-                    {
-                    ?>
-                        <tr>
-                        <td><?php echo $exibir["exercicio"] ?></td>
-                        <td><?php echo $exibir["num_processo"] ?></td>
-                        <td><?php echo $exibir["num_dispensa"] ?></td>
-                            
-
-                            <td>
-                                <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
-                                    <a href="deleteDispensa.php?id=<?php echo $exibir ["id_dispensa"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
-                                    
-                                </button>
-                                <!-- <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
-                                    <a href="editMedicalConsult.php?id=" style="text-decoration: none; color: white"> Editar </a> 
-                                </button> -->
-                            </td>
-                        </tr>
-                    <?php
-                        }
-                    ?>
-            </table>
+        <br>
+        
+    <div class="buttons">
+                <a href="../dispensa/createDispensa.php" class="btn btn-primary">Cadastro de dispensa</a>
         </div>
+    
+    <br>
+    <form method="POST" id="form-pesquisa" action="">
+	<div class="input-group mb-3">
+	<div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Pesquisa</span>
+                </div>
+				<input type="text" name="pesquisa" class="form-control" id="pesquisa" aria-label="Default" placeholder="Procure a dispensa" aria-describedby="inputGroup-sizing-default">
+	</div>
     </div>
+		
+    </form>
+    <ul class="resultado">
+
+	<?php include("listDispensaNoSearch.php") ?>
+
+	</ul>
+</body>
+<script>
+	$(function() {
+
+		$("#pesquisa").keyup(function() {
+			//Recuperar o valor do campo
+			var pesquisa = $(this).val();
+
+			//Verificar se há algo digitado
+			if (pesquisa != '') {
+				var dados = {
+					palavra: pesquisa
+				}
+
+				$.post('listDispensaSearching.php', dados, function(retorna) {
+					//Mostra dentro da ul os resultado obtidos 
+					$(".resultado").html(retorna);
+				});
+			} else {
+				$.post('listDispensaSearching.php', dados, function(retorna) {
+					//Mostra dentro da ul os resultado obtidos 
+					$(".resultado").html(retorna);
+				});
+			}
+		});
+	});
+</script>
+
 <?php
-    }
-    else
-    {
-        echo "Nenhum registro encontrado.";
-    }
+error_reporting(0);
 ?>
