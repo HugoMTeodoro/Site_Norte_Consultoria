@@ -1,34 +1,22 @@
-
-
-
-
-
 <?php
-    include("../Template/header.php");
-    include_once("../../data/connection.php");
+include("../Template/header.php");
+include_once("../../data/connection.php");
 
 
-    if (isset ($_GET["id"])) 
-    {
-        $id = $_GET["id"];
-        
-        $sql = "SELECT * FROM dispensa WHERE id_dispensa = '". $id . "'";
-        //echo $sql;
-        $resultado = $connection->query($sql);
-        $dispensa = $resultado->fetch_assoc();
+if (isset($_GET["id_dispensa"])) {
+    $id = $_GET["id_dispensa"];
 
-        $exercicio = trim($dispensa["num_dispensa"]);
-        $num_processo = trim($dispensa["num_processo"]);
-       
-        
-        
+    $sql = "SELECT * FROM dispensa WHERE id_dispensa = '" . $id . "'";
+    //echo $sql;
+    $resultado = $connection->query($sql);
+    $dispensa = $resultado->fetch_assoc();
+
+    //$exercicio = trim($dispensa["num_dispensa"]);
+    //$num_processo = trim($dispensa["num_processo"]);
 ?>
 
 
-    
-
-
-<div class="form">
+    <div class="form">
         <form action="updateDispensa.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Editar</h3>
             <div class="input-group mb-3">
@@ -43,7 +31,7 @@
                     <span class="input-group-text" id="inputGroup-sizing-default">Nº Processo</span>
                 </div>
                 <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>  
+            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -80,8 +68,8 @@
                 </select>
             </div>
 
-            
-            
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
@@ -89,7 +77,7 @@
                 <input type="text" name="txtObjeto" class="form-control" id="txtObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
@@ -117,9 +105,9 @@
                     ?>
                 </select>
             </div>
-            
-            
-           
+
+
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -127,22 +115,22 @@
                 </div>
                 <input type="date" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de Ratificação</span>
                 </div>
                 <input type="date" name="dater" class="form-control" id="dater" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
-            
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da portaria nomeando a comissão</span>
                 </div>
                 <input type="date" name="datep" class="form-control" id="datep" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da solicitação de compras/serviços</span>
@@ -163,14 +151,14 @@
                 </div>
                 <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autuação</span>
                 </div>
                 <input type="date" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Especificação do projeto</span>
@@ -248,7 +236,7 @@
                 </div>
                 <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" step="0.01" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -271,18 +259,18 @@
                 <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <br>    
+            <br>
             <div class="buttons">
-                
+
 
                 <input type="submit" class="btn btn-success" value="Atualizar">
                 <input type="reset" class="btn btn-danger" value="Cancelar">
-           
+
             </div>
 
         </form>
     </div>
 
 <?php
-    }
+}
 ?>
