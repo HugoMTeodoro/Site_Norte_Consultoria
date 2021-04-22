@@ -3,7 +3,7 @@ include("../../data/connection.php");
 $orgao = $_POST["orgao"]; 
 $sqlQuery = "UPDATE orgao_atual
 SET nome_orgao_atual = '$orgao'
-WHERE id_orgao_atual = 0;";
+WHERE id_orgao_atual = 1;";
         
 
 

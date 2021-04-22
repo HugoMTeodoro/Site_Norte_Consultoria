@@ -16,7 +16,7 @@ if ((isset($_POST['login'])) && (isset($_POST['senha']))) {
 
         $sqlQuery = "UPDATE orgao_atual
     SET nome_orgao_atual = ''
-    WHERE id_orgao_atual = 0;";
+    WHERE id_orgao_atual = 1;";
 
 
 

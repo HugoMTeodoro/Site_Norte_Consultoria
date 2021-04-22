@@ -1,6 +1,9 @@
 <?php
 include("../../data/connection.php");
-session_start();
+
+if ( session_status() !== PHP_SESSION_ACTIVE ){
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 
@@ -23,7 +26,7 @@ session_start();
 $orgao = '';
 if (isset($_SESSION['logado'])) {
 
-  $sqlQuery = "SELECT nome_orgao_atual FROM orgao_atual where id_orgao_atual=0";
+  $sqlQuery = "SELECT nome_orgao_atual FROM orgao_atual where id_orgao_atual=1";
 
   $orgaoatual = $connection->query($sqlQuery);
 
