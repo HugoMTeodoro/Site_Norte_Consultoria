@@ -27,15 +27,16 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
     
 
     
-        <div style="margin-left: 100px; margin-right: 100px;">
+        <div style="margin-left: 100px; margin-right: 100px;" style="text-align: center;">
         <br>
-        <h2>Dispensa</h2>
+       
             <br>
             <table class="table" style="text-align: center;">
                 <tr>
                     <th>Exercício</th>
                     <th>Número do processo</th>
                     <th>Número da dispensa</th>
+                    <th></th>
                 </tr>
 
                 <?php

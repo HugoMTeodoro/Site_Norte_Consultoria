@@ -6,10 +6,26 @@
 <?php
     include("../Template/header.php");
     include_once("../../data/connection.php");
+
+
+    if (isset ($_GET["id"])) 
+    {
+        $id = $_GET["id"];
+        
+        $sql = "SELECT * FROM dispensa WHERE id_dispensa = '". $id . "'";
+        //echo $sql;
+        $resultado = $connection->query($sql);
+        $dispensa = $resultado->fetch_assoc();
+
+        $exercicio = trim($dispensa["num_dispensa"]);
+        $num_processo = trim($dispensa["num_processo"]);
+       
+        
+        
 ?>
 
 
-
+    
 
 
 <div class="form">
@@ -267,3 +283,6 @@
         </form>
     </div>
 
+<?php
+    }
+?>

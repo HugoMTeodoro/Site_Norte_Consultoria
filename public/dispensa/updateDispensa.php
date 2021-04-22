@@ -1,7 +1,7 @@
     <?php
 
     include_once("../../data/connection.php");
-
+    
     $exercicio = $_POST["txtExercicio"];
     $nProcesso = $_POST["numProcesso"];
     $nDispensa = $_POST["numDispensa"];
@@ -32,39 +32,39 @@
 
 
     $sql = "UPDATE dispensa
-        SET exercicio = '" . $exercicio . "', " .
-        "num_processo= '" . $nProcesso . "', " .
-        "num_dispensa= '" . $nDispensa . "' ,  " .
-        "inciso= '" . $inciso . "', " .
-        "objeto= '" . $objeto . "' ,  " .
-        "categoria= '" . $categoria . "' ,  " .
-        "data_inicio= '" . $dInicio . "' ,  " .
-        "data_ratificacao= '" . $dRatificacao . "', " .
-        " data_portaria_comissao= '" . $dPortariaComissao . "', " .
-        " data_solicitacao_compras_servicos= '" . $dSolicitacaoCompras . "', " .
-        " data_preco_estimativo= '" . $dOrcamento . "', " .
-        " data_autorizacao_abertura= '" . $dAutorizacao . "', " .
-        " data_autuacao= '" . $dAutuacao . "', " .
-        " especificacao_objeto= '" . $especificacao . "', " .
-        "enquadramento= '" . $enquadramento . "', " .
-        "minuta_contrato= '" . $enquadramento . "', " .
-        "data_proposta_favorecido= '" . $dPropostaFavorecido . "', " .
-        "documento_habilitacao= '" . $habilitacao . "', " .
-        "data_ata= '" . $dAtaDispensa . "', " .
-        "data_parecer_juridico= '" . $dParecerJuridico . "', " .
-        "data_contrato_firmado= '" . $dContratoFirmado . "', " .
-        "data_publicacao= '" . $dPublicacaoDispensa . "', " .
-        "copia_empenho_compras_legais= '" . $copiaNotas . "', " .
-        "valor_total= '" . $valorTotal . "', " .
-        "observacoes= '" . $observacoes . "' ,  " .
-        "data_lancamento= '" . $dLancamento . "', " .
-        "WHERE num_dispensa = " . $nDispensa;
+        SET exercicio = '".$exercicio. "', " . 
+        "num_processo= '".$nProcesso. "', " . 
+         "num_dispensa= '".$nDispensa."' ,  " .
+         "inciso= '".$inciso. "', " . 
+          "objeto= '".$objeto."' ,  " .
+          "categoria= '".$categoria."' ,  " .
+          "data_inicio= '".$dInicio."' ,  " .
+          "data_ratificacao= '".$dRatificacao. "', " . 
+          " data_portaria_comissao= '".$dPortariaComissao. "', " . 
+           " data_solicitacao_compras_servicos= '".$dSolicitacaoCompras. "', " . 
+            " data_preco_estimativo= '".$dOrcamento. "', " . 
+             " data_autorizacao_abertura= '".$dAutorizacao. "', " . 
+              " data_autuacao= '".$dAutuacao. "', " . 
+               " especificacao_objeto= '".$especificacao. "', " . 
+                 "enquadramento= '".$enquadramento. "', " . 
+                  "minuta_contrato= '".$enquadramento. "', " . 
+                   "data_proposta_favorecido= '".$dPropostaFavorecido. "', " . 
+                    "documento_habilitacao= '".$habilitacao. "', " . 
+                     "data_ata= '".$dAtaDispensa. "', " . 
+                      "data_parecer_juridico= '".$dParecerJuridico. "', " .
+                       "data_contrato_firmado= '".$dContratoFirmado. "', " . 
+                        "data_publicacao= '".$dPublicacaoDispensa. "', " . 
+                         "copia_empenho_compras_legais= '".$copiaNotas. "', " . 
+                          "valor_total= '".$valorTotal. "', " . 
+                           "observacoes= '".$observacoes."' ,  " .
+                           "data_lancamento= '".$dLancamento."', " .
+                            "WHERE num_dispensa = " . $nDispensa;
+        
 
-    echo $sql;
 
-    $resultado = $connection->query($sql);
+    $resultado = $connection -> query($sql);
 
-    if ($resultado) { ?>
+    if ($resultado){ ?>
         <script>
             alert("Dispensa editada com sucesso");
             window.location = 'listDispensa.php';
@@ -73,8 +73,10 @@
     } else { ?>
         <script>
             alert("Ocorreu um erro ao cadastrar a dispensa");
+           
+        
         </script>
-
+        
     <?php
     }
 
