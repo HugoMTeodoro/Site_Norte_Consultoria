@@ -31,7 +31,7 @@ include("../../data/connection.php");
             <div class="buttons">
                 
                 <input type="submit" class="btn btn-success" value="Cadastrar">
-                <input type="reset" class="btn btn-danger"  onclick="window.location.href='../home/home.php'" value="Cancelar">
+                <input type="reset" class="btn btn-danger"  onclick="window.location.href='../orgao/listOrgao.php'" value="Cancelar">
 
             </div>
             

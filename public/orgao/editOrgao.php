@@ -23,9 +23,19 @@ if (isset ($_GET["id"])) {
 
     
     <div class="form">
-        <form action="UpdateOrgao.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <form action="updateOrgao.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Órgão</h3>
-            
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Id do órgão</span>
+                </div>
+
+                <input type="number" name="orgaoId" class="form-control input-sm" id="orgaoId" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $orgao["id_orgao"]?>" readonly>
+            </div>
+           
+    
+           
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
@@ -33,6 +43,8 @@ if (isset ($_GET["id"])) {
                 <input type="text" name="txtNome" class="form-control" id="txtNome" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php  echo $orgao["nome_orgao"]?>" >
             </div>
 
+
+            
            
             
             <div class="buttons">
