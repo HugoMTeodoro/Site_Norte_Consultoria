@@ -58,7 +58,7 @@ if (isset($_SESSION['logado'])) {
               <a class="nav-link" href="../analista/createAnalista.php">Analistas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../home/orgao.php">Selecionar órgão</a>
+              <a class="nav-link" href="../home/orgao.php">Órgãos</a>
 
             </li>
             <li class="nav-item">
