@@ -1,5 +1,6 @@
 <?php
 include("../../data/connection.php");
+session_start();
 ?>
 <!DOCTYPE html>
 
@@ -17,31 +18,59 @@ include("../../data/connection.php");
 
   <link rel="stylesheet" href="../styles/main.css" />
 </head>
-<?php $orgao = $_POST["orgao"]; ?>
+
+<?php
+$orgao = '';
+if (isset($_SESSION['logado'])) {
+
+  $sqlQuery = "SELECT nome_orgao_atual FROM orgao_atual where id_orgao_atual=0";
+
+  $orgaoatual = $connection->query($sqlQuery);
+
+  if ($orgaoatual->num_rows > 0) {
+
+    while ($row = $orgaoatual->fetch_assoc()) {
+
+      $orgao = '- ' . $row['nome_orgao_atual'];
+?>
+
+<?php
+    }
+  }
+}
+?>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Norte Consultoria - <?php echo $orgao ?></a>
+      <a class="navbar-brand" href="../home/home.php">Norte Consultoria <?php echo $orgao ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+
           <?php
           if (isset($_SESSION['logado'])) {
           ?>
-            <a class="nav-link" href="../login/sair.php">Sair</a>
+            <li class="nav-item">
+              <a class="nav-link" href="../analista/createAnalista.php">Analistas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../home/orgao.php">Selecionar órgão</a>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../login/sair.php">Sair</a>
+            </li>
           <?php
           }
           ?>
           <?php
           if (isset($_SESSION['logado'])) {
           ?>
-            <li class="nav-item">
-              <a class="nav-link" href="../analista/crateAnalista.php">Registrar</a>
-            </li>
+
           <?php
           }
           ?>
@@ -58,3 +87,4 @@ include("../../data/connection.php");
 </body>
 
 </html>
+
