@@ -58,7 +58,7 @@
         "copia_empenho_compras_legais= '".$copiaNotas. "', " . 
         "valor_total= '".$valorTotal. "', " . 
         "observacoes= '".$observacoes."' ,  " .
-        "data_lancamento= '".$dLancamento."', " .
+        "data_lancamento= '".$dLancamento."'" .
         "WHERE id_dispensa = " . $id;
         
 
