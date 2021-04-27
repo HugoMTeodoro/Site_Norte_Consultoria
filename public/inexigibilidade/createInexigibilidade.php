@@ -15,36 +15,8 @@ include("../../data/connection.php");
 
     
     <div class="form">
-        <form action="insertDispensa.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <form action="insertInexigibilidade.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Inexigibilidade</h3>
-            
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
-                </div>
-                <select class="form-select" name="paciente_cpf" id="paciente_cpf">
-                    <option value="-1" selected>Selecione um paciente</option>
-                    <?php
-
-                    $sqlQuery = "SELECT * FROM paciente ORDER BY nome";
-
-                    $pacientes = $connection->query($sqlQuery);
-
-                    if ($pacientes->num_rows > 0) {
-
-                        while ($row = $pacientes->fetch_assoc()) {
-                    ?>
-
-                            <option value="<?php echo $row["CPF"] ?>">
-                                <?php echo $row["nome"] . " - CPF: " . $row["CPF"] ?>
-                            </option>
-
-                    <?php
-                        }
-                    }
-                    ?>
-                </select>
-            </div>
 
 
             <div class="input-group mb-3">
@@ -78,23 +50,23 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
                 </div>
-                <select class="form-select" name="paciente_cpf" id="paciente_cpf">
-                    <option value="-1" selected>Selecione um paciente</option>
+                <select class="form-select" name="txtCategoria" id="txtCategoria">
+                    <option value="-1" selected>Selecione a categoria</option>
                     <?php
 
-                    $sqlQuery = "SELECT * FROM paciente ORDER BY nome";
+                    $sqlQuery = "SELECT * FROM categoria ORDER BY categoria";
 
-                    $pacientes = $connection->query($sqlQuery);
+                    $categoria = $connection->query($sqlQuery);
 
-                    if ($pacientes->num_rows > 0) {
+                    if ($categoria->num_rows > 0) {
 
-                        while ($row = $pacientes->fetch_assoc()) {
+                        while ($row = $categoria->fetch_assoc()) {
                     ?>
 
-                            <option value="<?php echo $row["CPF"] ?>">
-                                <?php echo $row["nome"] . " - CPF: " . $row["CPF"] ?>
+                            <option value="<?php echo $row["categoria"] ?>">
+                                <?php echo $row["categoria"]  ?>
                             </option>
 
                     <?php
@@ -113,7 +85,7 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de início</span>
                 </div>
-                <input type="datetime-local" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
             <div class="input-group mb-3">
@@ -127,28 +99,28 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da solicitação de compras/serviços</span>
                 </div>
-                <input type="datetime-local" name="dates" class="form-control" id="dates" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dates" class="form-control" id="dates" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de preço estimativo (Orçamento)</span>
                 </div>
-                <input type="datetime-local" name="datepe" class="form-control" id="datepe" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="datepe" class="form-control" id="datepe" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da autorização para a abertura do processo</span>
                 </div>
-                <input type="datetime-local" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autuação</span>
                 </div>
-                <input type="datetime-local" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
             <div class="input-group mb-3">
@@ -176,14 +148,14 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data aprovação da minuta</span>
                 </div>
-                <input type="datetime-local" name="dateAprov" class="form-control" id="dateAprov" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateAprov" class="form-control" id="dateAprov" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data proposta do favorecido</span>
                 </div>
-                <input type="datetime-local" name="dateProp" class="form-control" id="dateProp" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateProp" class="form-control" id="dateProp" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
@@ -197,42 +169,35 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data ata de inexigibilidade</span>
                 </div>
-                <input type="datetime-local" name="dateAta" class="form-control" id="dateAta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateAta" class="form-control" id="dateAta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data parecer jurídico</span>
                 </div>
-                <input type="datetime-local" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data ata de dispensa</span>
-                </div>
-                <input type="datetime-local" name="dateAta" class="form-control" id="dateAta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data ratificação</span>
                 </div>
-                <input type="datetime-local" name="dateRetificacao" class="form-control" id="dateRetificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateRatificacao" class="form-control" id="dateRatificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data contrato firmado</span>
                 </div>
-                <input type="datetime-local" name="dateCF" class="form-control" id="dateCF" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateCF" class="form-control" id="dateCF" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data publicação da inexigibilidade</span>
                 </div>
-                <input type="datetime-local" name="datePublicacao" class="form-control" id="datePublicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="datePublicacao" class="form-control" id="datePublicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
@@ -260,30 +225,9 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Termo aditivo?</span>
-                </div>
-                <input type="checkbox" name="checkAditivo" class="form-control" id="checkAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-            
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento?</span>
-                </div>
-                <input type="checkbox" name="checkApostilamento" class="form-control" id="checkApostilamento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
                 </div>
                 <input type="text" name="txtObservacoes" class="form-control" id="txtObservacoes" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Analista responsável</span>
-                </div>
-                <input type="text" name="txtAnalista" class="form-control" id="txtAnalista" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
