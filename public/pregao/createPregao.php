@@ -18,33 +18,7 @@ include("../../data/connection.php");
         <form action="insertDispensa.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Pregão</h3>
             
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
-                </div>
-                <select class="form-select" name="paciente_cpf" id="paciente_cpf">
-                    <option value="-1" selected>Selecione um paciente</option>
-                    <?php
-
-                    $sqlQuery = "SELECT * FROM paciente ORDER BY nome";
-
-                    $pacientes = $connection->query($sqlQuery);
-
-                    if ($pacientes->num_rows > 0) {
-
-                        while ($row = $pacientes->fetch_assoc()) {
-                    ?>
-
-                            <option value="<?php echo $row["CPF"] ?>">
-                                <?php echo $row["nome"] . " - CPF: " . $row["CPF"] ?>
-                            </option>
-
-                    <?php
-                        }
-                    }
-                    ?>
-                </select>
-            </div>
+            
 
 
             <div class="input-group mb-3">

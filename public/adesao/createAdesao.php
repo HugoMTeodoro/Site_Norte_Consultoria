@@ -20,35 +20,6 @@ include("../../data/connection.php");
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
-                </div>
-                <select class="form-select" name="paciente_cpf" id="paciente_cpf">
-                    <option value="-1" selected>Selecione um paciente</option>
-                    <?php
-
-                    $sqlQuery = "SELECT * FROM paciente ORDER BY nome";
-
-                    $pacientes = $connection->query($sqlQuery);
-
-                    if ($pacientes->num_rows > 0) {
-
-                        while ($row = $pacientes->fetch_assoc()) {
-                    ?>
-
-                            <option value="<?php echo $row["CPF"] ?>">
-                                <?php echo $row["nome"] . " - CPF: " . $row["CPF"] ?>
-                            </option>
-
-                    <?php
-                        }
-                    }
-                    ?>
-                </select>
-            </div>
-
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
                 </div>
                 <input type="text" name="txtExercicio" class="form-control" id="txtExercicio" aria-label="Default" aria-describedby="inputGroup-sizing-default">
@@ -78,23 +49,23 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
                 </div>
-                <select class="form-select" name="paciente_cpf" id="paciente_cpf">
-                    <option value="-1" selected>Selecione um paciente</option>
+                <select class="form-select" name="txtCategoria" id="txtCategoria">
+                    <option value="-1" selected>Selecione a categoria</option>
                     <?php
 
-                    $sqlQuery = "SELECT * FROM paciente ORDER BY nome";
+                    $sqlQuery = "SELECT * FROM categoria ORDER BY categoria";
 
-                    $pacientes = $connection->query($sqlQuery);
+                    $categoria = $connection->query($sqlQuery);
 
-                    if ($pacientes->num_rows > 0) {
+                    if ($categoria->num_rows > 0) {
 
-                        while ($row = $pacientes->fetch_assoc()) {
+                        while ($row = $categoria->fetch_assoc()) {
                     ?>
 
-                            <option value="<?php echo $row["CPF"] ?>">
-                                <?php echo $row["nome"] . " - CPF: " . $row["CPF"] ?>
+                            <option value="<?php echo $row["categoria"] ?>">
+                                <?php echo $row["categoria"]  ?>
                             </option>
 
                     <?php
@@ -114,6 +85,13 @@ include("../../data/connection.php");
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de início inexigibilidade</span>
                 </div>
                 <input type="datetime-local" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data ratificação</span>
+                </div>
+                <input type="datetime-local" name="dateRatificacao" class="form-control" id="dateRetificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
             <div class="input-group mb-3">
@@ -158,12 +136,6 @@ include("../../data/connection.php");
                 <input type="date" name="dateSolicitacaoAdjudicataria" class="form-control" id="dateSolicitacaoAdjudicataria" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data autorização da empresa adjudicatária</span>
-                </div>
-                <input type="date" name="dateAutorizacaoAdjudicataria" class="form-control" id="dateAutorizacaoAdjudicataria" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -188,6 +160,20 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data ata resolução do carona</span>
+                </div>
+                <input type="date" name="dateAtaC" class="form-control" id="dateAtaC" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data autorização</span>
+                </div>
+                <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autuação</span>
                 </div>
                 <input type="datetime-local" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default">
@@ -208,12 +194,7 @@ include("../../data/connection.php");
                 <input type="datetime-local" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data ratificação</span>
-                </div>
-                <input type="datetime-local" name="dateRetificacao" class="form-control" id="dateRetificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
+            
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -257,21 +238,6 @@ include("../../data/connection.php");
                 <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Termo aditivo?</span>
-                </div>
-                <input type="checkbox" name="checkAditivo" class="form-control" id="checkAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-            
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento?</span>
-                </div>
-                <input type="checkbox" name="checkApostilamento" class="form-control" id="checkApostilamento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
