@@ -33,7 +33,6 @@ if (isset ($_GET["id"])) {
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Id da inexigibilidade</span>
                 </div>
-
                 <input type="number" name="inexigibilidadeId" class="form-control input-sm" id="inexgibilidadeId" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["id_inexigibilidade"]?>" readonly>
             </div>
 
