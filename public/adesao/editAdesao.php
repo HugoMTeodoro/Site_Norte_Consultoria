@@ -1,8 +1,18 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
-?>
 
-<html lang="en">
+if (isset ($_GET["id"])) {
+    $id = $_GET["id"];
+    
+    $sql = "SELECT * FROM adesao WHERE id_adesao = '". $id . "'";
+    $resultado = $connection->query($sql);
+    $adesao = $resultado->fetch_assoc();
+
+    
+
+
+?>
+    <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +24,18 @@ include("../../data/connection.php");
     <br>
 
     
+  
     <div class="form">
-        <form action="insertAdesao.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <form action="updateAdesao.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Adesão</h3>
+
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Id da adesão</span>
+                </div>
+                <input type="number" name="adesaoId" class="form-control input-sm" id="adesaoId" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["id_adesao"]?>" readonly>
+            </div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -280,3 +299,6 @@ include("../../data/connection.php");
 
 </body>
 </html>
+
+<?php
+}

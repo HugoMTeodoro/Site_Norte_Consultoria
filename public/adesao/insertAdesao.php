@@ -16,7 +16,7 @@ include_once("../../data/connection.php");
  $dt_solicitacaoo = $_POST["dateSolicitacaoRP"];
  $dt_autorizacao = $_POST["dateAutorizacaoRP"];
  $dt_solicitacao_empresa = $_POST["dateSolicitacaoAdjudicataria"];
- $verificacao = $_POST["txtVerificaco"];
+ $verificacao = $_POST["txtVerificacao"];
  $documento = $_POST["txtDocAdjudicataria"];
  $dt_confirmacao = $_POST["dateConfirmacaoAutenticidade"];
  $dt_ata = $_POST["dateAtaC"];
@@ -30,23 +30,24 @@ include_once("../../data/connection.php");
  $copia_notas = $_POST["txtCopias"];
  $codigo = $_POST["txtCodReg"];
  $valor = $_POST["numTotal"];
- $observacoes = $_POST["txtObservacao"];
+ $observacoes = $_POST["txtObservacoes"];
  $dt_lancamento = $_POST["dateLancamento"];
 
 
  $sql = "INSERT INTO 
-    adesao (exercicio, num_adesao, num_inexigibilidade, objeto, categoria, dt_inicio, dt_ratificacao, dt_portaria, dt_solicitacao, dt_orcamento, dt_solicitacaoo, dt_autorizacao, dt_solicitacao_empresa, verificacao, documento, dt_confirmacao, dt_ata, dt_autorizacao_abertura, dt_autuacao, dt_ata_inexigibilidade, dt_parecer, dt_publicacao, dt_contrato_firmado, dt_publicacao_contrato, copia_notas, codigo, valor, observacoes, dt_lancamento)
-    values ('$exercicio', '$num_adesao', '$num_inexigibilidade', '$objeto', '$categoria', '$dt_inicio', '$dt_ratificacao', '$dt_portaria', '$dt_solicitacao', '$dt_orcamento', '$dt_solicitacaoo', '$dt_autorizacao', '$dt_solicitacao_empresa', '$verificacao', '$documento', '$dt_confirmacao', '$dt_ata', '$dt_autorizacao_abertura', '$dt_autuacao', '$dt_ata_inexigibilidade', '$dt_parecer', '$dt_publicacao', '$dt_contrato_firmado', '$dt_publicacao_contrato', '$copia_notas', '$codigo', '$valor', '$observacoes', '$dt_lancamento')";
+    adesao (exercicio, num_adesao, num_inexigibilidade, objeto, categoria, dt_inicio, dt_ratificacao, portaria, dt_solicitacao, dt_orcamento, dt_solicitacaoo, dt_autorizacao, dt_solicitacao_empresa, verificacao, documento, dt_confirmacao, dt_ata, dt_autorizacao_abertura, dt_autuacao, dt_ata_inexigibilidade, dt_parecer, dt_publicacao, dt_contrato_firmado, dt_publicacao_contrato, copia_notas, codigo, valor, observacoes, dt_lancamento)
+    values ('$exercicio', '$num_adesao', '$num_inexigibilidade', '$objeto', '$categoria', '$dt_inicio', '$dt_ratificacao', '$portaria', '$dt_solicitacao', '$dt_orcamento', '$dt_solicitacaoo', '$dt_autorizacao', '$dt_solicitacao_empresa', '$verificacao', '$documento', '$dt_confirmacao', '$dt_ata', '$dt_autorizacao_abertura', '$dt_autuacao', '$dt_ata_inexigibilidade', '$dt_parecer', '$dt_publicacao', '$dt_contrato_firmado', '$dt_publicacao_contrato', '$copia_notas', '$codigo', '$valor', '$observacoes', '$dt_lancamento')";
 
  $resultado = $connection -> query($sql);
 
 if ($resultado){ ?>
     <script>
         alert("Adesão cadastrada com sucesso");
-        window.location = 'createAdesão.php';
+        window.location = 'listAdesao.php';
     </script>
 <?php
-} else { ?>
+} else {
+    echo $sql; ?>
     <script>
         alert("Ocorreu um erro ao cadastrar a adesão");
         window.location = 'createAdesão.php';

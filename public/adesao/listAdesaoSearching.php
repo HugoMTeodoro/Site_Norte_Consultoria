@@ -11,7 +11,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM adesao";
+    $sql = "SELECT * FROM adesao WHERE num_adesao LIKE '%$usuarios%' ";
 
 
    
