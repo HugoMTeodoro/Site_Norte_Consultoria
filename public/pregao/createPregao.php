@@ -15,7 +15,7 @@ include("../../data/connection.php");
 
     
     <div class="form">
-        <form action="insertDispensa.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <form action="insertPregao.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Pregão</h3>
             
             
