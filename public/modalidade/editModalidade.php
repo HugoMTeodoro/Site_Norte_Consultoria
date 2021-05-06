@@ -1,6 +1,17 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
+
+if (isset ($_GET["id"])) {
+    $id = $_GET["id"];
+    
+    $sql = "SELECT * FROM modalidade WHERE id_modalidade = '". $id . "'";
+    $resultado = $connection->query($sql);
+    $modalidade = $resultado->fetch_assoc();
+
+    
+
 ?>
+
 
 <html lang="en">
 <head>
@@ -15,10 +26,16 @@ include("../../data/connection.php");
 
     
     <div class="form">
-        <form action="insertModalidade.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <form action="updateModalidade.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Modalidade</h3>
             
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Id da modalidade</span>
+                </div>
 
+                <input type="number" name="modalidadeId" class="form-control input-sm" id="modalidadeId" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["id_modalidade"]?>" readonly>
+            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -395,3 +412,9 @@ include("../../data/connection.php");
 
 </body>
 </html>
+
+<?php
+
+                }
+
+?>

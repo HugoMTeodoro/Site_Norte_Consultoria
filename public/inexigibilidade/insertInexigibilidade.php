@@ -46,12 +46,14 @@ if ($resultado){ ?>
 } else { 
     echo $sql;?>
     <script>
-        alert("Ocorreu um erro ao cadastrar inexigibilidade");
+        alert("Ocorreu um erro ao cadastrar a inexigibilidade");
        
        
     </script>
     
 <?php
 }
+
+
 
 ?>
