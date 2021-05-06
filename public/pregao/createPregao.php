@@ -52,7 +52,7 @@ include("../../data/connection.php");
                         while ($row = $pregao->fetch_assoc()) {
                     ?>
 
-                            <option value="<?php echo $row["pregap"] ?>">
+                            <option value="<?php echo $row["pregao"] ?>">
                                 <?php echo $row["pregao"]  ?>
                             </option>
 
