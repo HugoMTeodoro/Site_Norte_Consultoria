@@ -6,7 +6,7 @@ include("../../data/connection.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dispensa</title>
+    <title>Pregão</title>
 </head>
 
 <body>
@@ -37,14 +37,30 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Termo aditivo?</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Tipo Pregão</span>
                 </div>
-              
-                
-                     Eletrônico <input type="checkbox" name="checkAditivo" class="form-control" id="checkAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default"> </p>
-                     Presencial <input type="checkbox" name="checkAditivo" class="form-control" id="checkAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default"> </p>
+                <select class="form-select" name="txtPregao" id="txtPregao">
+                    <option value="-1" selected>Selecione um tipo de pregão</option>
+                    <?php
 
-                
+                    $sqlQuery = "SELECT * FROM tipo_pregao ORDER BY pregao";
+
+                    $pregao = $connection->query($sqlQuery);
+
+                    if ($pregao->num_rows > 0) {
+
+                        while ($row = $pregao->fetch_assoc()) {
+                    ?>
+
+                            <option value="<?php echo $row["pregap"] ?>">
+                                <?php echo $row["pregao"]  ?>
+                            </option>
+
+                    <?php
+                        }
+                    }
+                    ?>
+                </select>
             </div>
 
             <div class="input-group mb-3">
@@ -65,32 +81,55 @@ include("../../data/connection.php");
                 <input type="text" name="txtObjeto" class="form-control" id="txtObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Registro de preço?</span>
-                </div>
-                <input type="checkbox" name="checkRegistro" class="form-control" id="checkRegistro" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
                 </div>
-                <select class="form-select" name="paciente_cpf" id="paciente_cpf">
-                    <option value="-1" selected>Selecione um paciente</option>
+                <select class="form-select" name="registro" id="registro">
+                    <option value="-1" selected>Registro de preço?</option>
                     <?php
 
-                    $sqlQuery = "SELECT * FROM paciente ORDER BY nome";
+                    $sqlQuery = "SELECT * FROM registro ORDER BY registro";
 
-                    $pacientes = $connection->query($sqlQuery);
+                    $registro = $connection->query($sqlQuery);
 
-                    if ($pacientes->num_rows > 0) {
+                    if ($registro->num_rows > 0) {
 
-                        while ($row = $pacientes->fetch_assoc()) {
+                        while ($row = $registro->fetch_assoc()) {
                     ?>
 
-                            <option value="<?php echo $row["CPF"] ?>">
-                                <?php echo $row["nome"] . " - CPF: " . $row["CPF"] ?>
+                            <option value="<?php echo $row["registro"] ?>">
+                                <?php echo $row["registro"]  ?>
+                            </option>
+
+                    <?php
+                        }
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
+                </div>
+                <select class="form-select" name="txtCategoria" id="txtCategoria">
+                    <option value="-1" selected>Selecione a categoria</option>
+                    <?php
+
+                    $sqlQuery = "SELECT * FROM categoria ORDER BY categoria";
+
+                    $categoria = $connection->query($sqlQuery);
+
+                    if ($categoria->num_rows > 0) {
+
+                        while ($row = $categoria->fetch_assoc()) {
+                    ?>
+
+                            <option value="<?php echo $row["categoria"] ?>">
+                                <?php echo $row["categoria"]  ?>
                             </option>
 
                     <?php
@@ -222,7 +261,7 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
                 </div>
-                <input type="number" name="numDoc" class="form-control" id="numDoc" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="text" name="documentos" class="form-control" id="documentos" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
@@ -296,19 +335,6 @@ include("../../data/connection.php");
                 <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Termo aditivo?</span>
-                </div>
-                <input type="checkbox" name="checkAditivo" class="form-control" id="checkAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-            
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento?</span>
-                </div>
-                <input type="checkbox" name="checkApostilamento" class="form-control" id="checkApostilamento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -317,12 +343,7 @@ include("../../data/connection.php");
                 <input type="text" name="txtObservacoes" class="form-control" id="txtObservacoes" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Analista responsável</span>
-                </div>
-                <input type="text" name="txtAnalista" class="form-control" id="txtAnalista" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
+            
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
