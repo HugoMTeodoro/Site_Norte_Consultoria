@@ -47,7 +47,7 @@ include("../../data/connection.php");
                     <span class="input-group-text" id="inputGroup-sizing-default">Inciso</span>
                 </div>
                 <select class="form-select" name="inciso" id="inciso">
-                    <option value="-1" selected>Qual inciso do ART. 24, da lei 8.666/93 fundamenta a dispensa?</option>
+                    <option value="-1" selected>Nenhum</option>
                     <?php
 
                     $sqlQuery = "SELECT * FROM inciso ORDER BY inciso";
@@ -76,7 +76,7 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
                 </div>
-                <input type="text" name="txtObjeto" class="form-control" id="txtObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtObjeto" id="txtObjeto" cols = "200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             
@@ -85,7 +85,7 @@ include("../../data/connection.php");
                     <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
                 </div>
                 <select class="form-select" name="txtCategoria" id="txtCategoria">
-                    <option value="-1" selected>Selecione a categoria</option>
+                    <!--<option value="-1" selected>Selecione a categoria</option>-->
                     <?php
 
                     $sqlQuery = "SELECT * FROM categoria ORDER BY categoria";
@@ -165,21 +165,21 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Especificação do projeto</span>
                 </div>
-                <input type="text" name="txtEspecificacao" class="form-control" id="txtEspecificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtEspecificacao" id="txtEspecificacao" cols = "200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Enquadramento na modalidade pertinente</span>
                 </div>
-                <input type="text" name="txtEnquadramento" class="form-control" id="txtEnquadramento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtEnquadramento" id="txtEnquadramento" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato</span>
                 </div>
-                <input type="text" name="txtMinuta" class="form-control" id="txtMinuta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtMinuta" id="txtMinuta" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -193,7 +193,7 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
                 </div>
-                <input type="text" name="txtHabilitacao" class="form-control" id="txtHabilitacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtHabilitacao" id="txtHabilitacao" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -229,22 +229,16 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
                 </div>
-                <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtCopias" id="txtCopias" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
-                </div>
-                <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" step="0.01" aria-describedby="inputGroup-sizing-default">
-            </div>
             
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
                 </div>
-                <input type="text" name="txtObservacoes" class="form-control" id="txtObservacoes" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtObservacoes" id="txtObservacoes" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
