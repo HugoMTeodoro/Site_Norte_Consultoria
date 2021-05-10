@@ -47,7 +47,7 @@ include("../../data/connection.php");
                     <span class="input-group-text" id="inputGroup-sizing-default">Inciso</span>
                 </div>
                 <select class="form-select" name="inciso" id="inciso">
-                    <option value="-1" selected>Nenhum</option>
+                    <option selected>Nenhum</option>
                     <?php
 
                     $sqlQuery = "SELECT * FROM inciso ORDER BY inciso";
@@ -59,7 +59,7 @@ include("../../data/connection.php");
                         while ($row = $inciso->fetch_assoc()) {
                     ?>
 
-                            <option value="<?php echo $row["inciso"] ?>">
+                            <option value="<?php echo $row["inciso"] ?>"selected>
                                 <?php echo $row["inciso"]  ?>
                             </option>
 
@@ -97,7 +97,7 @@ include("../../data/connection.php");
                         while ($row = $categoria->fetch_assoc()) {
                     ?>
 
-                            <option value="<?php echo $row["categoria"] ?>">
+                            <option value="<?php echo $row["categoria"] ?> ">
                                 <?php echo $row["categoria"]  ?>
                             </option>
 
@@ -248,17 +248,25 @@ include("../../data/connection.php");
                 <input type="text" name="txtAnalista" class="form-control" id="txtAnalista" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
+            <?php     
+            date_default_timezone_set('America/Sao_Paulo');   
+            $agora = date('d/m/Y H:i');
+            $dc = trim($agora);
+            $data = date("Y-d-m", strtotime($dc));
+            $hora = date("H:i",strtotime($dc));
+            $datac = $data."T".$hora;
+            ?>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>
                 </div>
-                <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $datac?>">
             </div>
 
             <br>    
             <div class="buttons">
                 
-                <input type="submit" class="btn btn-success" value="Cadastrar">
+                <input type="submit" class="btn btn-success" value="Proximo">
                 <input type="reset" class="btn btn-danger"  onclick="window.location.href='../home/home.php'" value="Cancelar">
 
             </div>
