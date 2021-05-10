@@ -24,7 +24,25 @@ if ( session_status() !== PHP_SESSION_ACTIVE ){
 
 <?php
 $orgao = '';
+
 if (isset($_SESSION['logado'])) {
+  $id=$_SESSION['logado'];
+  $sqlQuery2="SELECT nome FROM usuario where id_usuario=$id";
+  $usuarioatual = $connection->query($sqlQuery2);
+  if ($usuarioatual->num_rows > 0) {
+    while ($row = $usuarioatual->fetch_assoc()) {
+      $user = $row['nome'];
+      $pieces = explode(" ", $user);
+      $firstname=$pieces[0];
+
+?>
+
+<?php
+    }
+  }
+
+
+
 
   $sqlQuery = "SELECT nome_orgao_atual FROM orgao_atual where id_orgao_atual=1";
 
@@ -33,8 +51,9 @@ if (isset($_SESSION['logado'])) {
   if ($orgaoatual->num_rows > 0) {
 
     while ($row = $orgaoatual->fetch_assoc()) {
-
+      $orgaocrud = $row['nome_orgao_atual'];
       $orgao = '- ' . $row['nome_orgao_atual'];
+
 ?>
 
 <?php
@@ -47,7 +66,7 @@ if (isset($_SESSION['logado'])) {
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="../home/home.php">Norte Consultoria <?php echo $orgao ?></a>
+      <a class="navbar-brand" href="../home/home.php">Norte Consultoria <?php echo $orgao.", ".$firstname ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -68,6 +87,7 @@ if (isset($_SESSION['logado'])) {
               <a class="nav-link" href="../login/sair.php">Sair</a>
             </li>
           <?php
+          
           }
           ?>
           <?php

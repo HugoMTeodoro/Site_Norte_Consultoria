@@ -1,9 +1,10 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
-
+include("../Login/valida.php");
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +15,13 @@ include("../../data/connection.php");
     <br>
     <br>
 
-    
+
     <div class="form">
         <form action="insertDispensa.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Dispensa</h3>
 
-            
-            
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
@@ -33,7 +34,7 @@ include("../../data/connection.php");
                     <span class="input-group-text" id="inputGroup-sizing-default">Nº Processo</span>
                 </div>
                 <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>  
+            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -59,7 +60,7 @@ include("../../data/connection.php");
                         while ($row = $inciso->fetch_assoc()) {
                     ?>
 
-                            <option value="<?php echo $row["inciso"] ?>"selected>
+                            <option value="<?php echo $row["inciso"] ?>" selected>
                                 <?php echo $row["inciso"]  ?>
                             </option>
 
@@ -70,16 +71,16 @@ include("../../data/connection.php");
                 </select>
             </div>
 
-            
-            
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
                 </div>
-                <textarea name="txtObjeto" id="txtObjeto" cols = "200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+                <textarea name="txtObjeto" id="txtObjeto" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
@@ -107,9 +108,9 @@ include("../../data/connection.php");
                     ?>
                 </select>
             </div>
-            
-            
-           
+
+
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -117,22 +118,22 @@ include("../../data/connection.php");
                 </div>
                 <input type="date" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de Ratificação</span>
                 </div>
                 <input type="date" name="dater" class="form-control" id="dater" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
-            
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da portaria nomeando a comissão</span>
                 </div>
                 <input type="date" name="datep" class="form-control" id="datep" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da solicitação de compras/serviços</span>
@@ -153,33 +154,33 @@ include("../../data/connection.php");
                 </div>
                 <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autuação</span>
                 </div>
                 <input type="date" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Especificação do projeto</span>
                 </div>
-                <textarea name="txtEspecificacao" id="txtEspecificacao" cols = "200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+                <textarea name="txtEspecificacao" id="txtEspecificacao" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Enquadramento na modalidade pertinente</span>
                 </div>
-                <textarea name="txtEnquadramento" id="txtEnquadramento" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+                <textarea name="txtEnquadramento" id="txtEnquadramento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato</span>
                 </div>
-                <textarea name="txtMinuta" id="txtMinuta" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+                <textarea name="txtMinuta" id="txtMinuta" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -193,7 +194,7 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
                 </div>
-                <textarea name="txtHabilitacao" id="txtHabilitacao" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+                <textarea name="txtHabilitacao" id="txtHabilitacao" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -229,57 +230,115 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
                 </div>
-                <textarea name="txtCopias" id="txtCopias" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+                <textarea name="txtCopias" id="txtCopias" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
-            
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
                 </div>
-                <textarea name="txtObservacoes" id="txtObservacoes" cols = "190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+                <textarea name="txtObservacoes" id="txtObservacoes" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
+
+            <?php
+
+            $sqlQuery = "SELECT nome FROM usuario where id_usuario='$id_usuario'";
+
+            $usuario = $connection->query($sqlQuery);
+
+            if ($usuario->num_rows > 0) {
+
+                while ($row = $usuario->fetch_assoc()) {
+                    $nome = $row["nome"];
+            ?>
+            <?php
+                }
+            }
+            ?>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Analista responsável</span>
                 </div>
-                <input type="text" name="txtAnalista" class="form-control" id="txtAnalista" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="text" name="txtAnalista" class="form-control" id="txtAnalista" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $nome ?>" readonly>
             </div>
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Órgão</span>
+                </div>
+                <select class="form-select" name="txtOrgao" id="txtOrgao">
+                
+                    <?php
 
-            <?php     
-            date_default_timezone_set('America/Sao_Paulo');   
+                        $sqlQuery = "SELECT * FROM orgao";
+
+                        $orgaos = $connection -> query($sqlQuery);
+
+                        if($orgaos -> num_rows > 0)
+                        {
+
+                            while($row = $orgaos -> fetch_assoc())
+                            {
+                                if($orgaocrud == $row["nome_orgao"])
+                                {
+                    ?>
+                                    <option value="<?php echo $row["nome_orgao"]?>" selected>
+                                        <?php echo $row["nome_orgao"] ?>
+                                    </option>
+                    <?php
+                                }
+                                else
+                                {
+                    ?>                    
+                                    <option value="<?php echo $row["nome_orgao"]?>">
+                                        <?php echo $row["nome_orgao"]?>
+                                    </option>
+                    
+                    <?php
+                                }
+                            }
+                        }
+                    ?>
+                </select>
+            </div>
+        
+
+            <?php
+            date_default_timezone_set('America/Sao_Paulo');
             $agora = date('d/m/Y H:i');
             $dc = trim($agora);
             $data = date("Y-d-m", strtotime($dc));
-            $hora = date("H:i",strtotime($dc));
-            $datac = $data."T".$hora;
+            $hora = date("H:i", strtotime($dc));
+            $datac = $data . "T" . $hora;
             ?>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>
                 </div>
-                <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $datac?>">
+                <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $datac ?>">
             </div>
 
-            <br>    
+            <br>
             <div class="buttons">
-                
+
                 <input type="submit" class="btn btn-success" value="Proximo">
-                <input type="reset" class="btn btn-danger"  onclick="window.location.href='../home/home.php'" value="Cancelar">
+                <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
 
             </div>
 
-            
-
-            
 
 
-            
+
+
+
+
         </form>
     </div>
 
 
 </body>
+
 </html>
