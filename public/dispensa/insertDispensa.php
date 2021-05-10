@@ -40,7 +40,7 @@ $resultado = $connection -> query($sql);
 if ($resultado){ ?>
     <script>
         alert("Dispensa cadastrada com sucesso");
-        window.location = 'createDispensa.php';
+        window.location = '../vencedor/createVencedor.php';
     </script>
 <?php
 } else { ?>
