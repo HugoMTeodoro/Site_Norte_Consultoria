@@ -3,8 +3,11 @@ include("../Template/header.php");
 include_once("../../data/connection.php");
 
 
+
 if (isset ($_GET["id"])) {
     $idedit = $_GET["id"];
+ 
+    
     
     $sql = "SELECT * FROM aditivo WHERE id_aditivo = '". $idedit . "'";
     $resultado = $connection->query($sql);
@@ -16,6 +19,7 @@ if (isset ($_GET["id"])) {
 
     <div class="form">
         <form action="updateAditivo.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <br>
             <h3>Editar</h3>
 
             <div class="input-group mb-3">
@@ -123,8 +127,9 @@ if (isset ($_GET["id"])) {
                 </div>
                 <select class="form-select" name="Empresa" id="Empresa">
                     <?php
-
-                    $sqlQuery = "SELECT nome_empresa FROM vencedor where codigo_processo = '$codigo'";
+                    
+                    $sqlQuery = "SELECT nome_empresa FROM vencedor where codigo_processo = '$cod'";
+                    echo $sqlQuery;
 
                     $empresas = $connection->query($sqlQuery);
 

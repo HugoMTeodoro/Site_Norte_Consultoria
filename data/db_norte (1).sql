@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2021 at 09:48 PM
+-- Generation Time: May 11, 2021 at 09:53 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -71,8 +71,21 @@ CREATE TABLE `aditivo` (
   `numero_aditivo` int(11) DEFAULT NULL,
   `prazo_aditivo` date DEFAULT NULL,
   `data_aditivo` date DEFAULT NULL,
-  `valor_aditivo` float DEFAULT NULL
+  `valor_aditivo` float DEFAULT NULL,
+  `tipo_aditivo` varchar(200) NOT NULL,
+  `nome_empresa` varchar(1000) NOT NULL,
+  `codigo_processo` varchar(1000) NOT NULL,
+  `id_processo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `aditivo`
+--
+
+INSERT INTO `aditivo` (`id_aditivo`, `numero_aditivo`, `prazo_aditivo`, `data_aditivo`, `valor_aditivo`, `tipo_aditivo`, `nome_empresa`, `codigo_processo`, `id_processo`) VALUES
+(1, 1, '2000-09-21', '2000-09-21', 500, 'Prazo', 'Ferragens', 'dispPMOB_5_6_2021', 20),
+(2, 0, '0000-00-00', '0000-00-00', 500, 'Valor', 'Ferragens', 'dispPMOB_5_6_2021', 20),
+(3, 1, '2000-02-09', '2000-10-21', 50, 'Prazo', 'industrial ferragens teste teste ltda norte consultoria linha grande testando linha enormmemente grande pra ver como vai ficar', 'dispPMOB_5_6_2021', 20);
 
 -- --------------------------------------------------------
 
@@ -146,25 +159,18 @@ CREATE TABLE `dispensa` (
   `valor_total` float DEFAULT NULL,
   `observacoes` varchar(3000) DEFAULT NULL,
   `data_lancamento` datetime DEFAULT NULL,
-  `orgao` varchar(200) DEFAULT NULL
+  `orgao` varchar(200) DEFAULT NULL,
+  `codigo_disp` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `dispensa`
 --
 
-INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`) VALUES
-(1, 12345, 0, 0, '-1', '', '-1', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 0, '', '0000-00-00 00:00:00', NULL),
-(2, 2020, 1, 1, 'bila3', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', '0', '2021-05-09', '2021-05-09', '2021-05-09', '2021-06-09', '2021-05-09', '2021-05-09', '2021-02-09', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', '2000-09-21', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', '2000-09-21', '2000-09-21', '2000-09-21', '2000-09-21', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', NULL, 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', '2018-09-21 03:06:00', NULL),
-(3, 0, 0, 0, '-1', '', '0', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:07:00', NULL),
-(4, 0, 0, 0, '-1', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:18:00', NULL),
-(5, 0, 0, 0, '-1', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:19:00', NULL),
-(6, 0, 0, 0, 'Nenhum', '', 'Vinicius ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:19:00', NULL),
-(7, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:20:00', NULL),
-(8, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 15:34:00', 'maximo'),
-(9, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 16:41:00', 'Varginha'),
-(10, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 16:41:00', 'Varginha'),
-(11, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 16:42:00', 'Varginha');
+INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_disp`) VALUES
+(18, 2020, 1, 2, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-11 10:46:00', 'PMOB', 'dispPMOB_1_2_2020'),
+(19, 2020, 2, 2, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-11 10:47:00', 'PMOB', 'dispPMOB_2_2_2020'),
+(20, 2021, 5, 6, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-11 13:47:00', 'PMOB', 'dispPMOB_5_6_2021');
 
 -- --------------------------------------------------------
 
@@ -302,7 +308,7 @@ CREATE TABLE `orgao_atual` (
 --
 
 INSERT INTO `orgao_atual` (`nome_orgao_atual`, `id_orgao_atual`) VALUES
-('Varginha', 1);
+('PMOB', 1);
 
 -- --------------------------------------------------------
 
@@ -357,7 +363,12 @@ CREATE TABLE `pregao` (
 
 CREATE TABLE `tipo_aditivo` (
   `id_tipo_aditivo` int(11) NOT NULL,
-  `nome_tipo_aditivo` varchar(100) DEFAULT NULL
+  `prazo` date NOT NULL,
+  `valor` float NOT NULL,
+  `tipo_aditivo` varchar(100) NOT NULL,
+  `data_aditivo` date NOT NULL,
+  `codigo_processo` varchar(500) NOT NULL,
+  `numero_aditivo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -403,8 +414,21 @@ CREATE TABLE `vencedor` (
   `nome_empresa` varchar(250) DEFAULT NULL,
   `valor` float DEFAULT NULL,
   `id_processo` int(11) NOT NULL,
-  `tipo_processo` varchar(100) NOT NULL
+  `codigo_processo` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `vencedor`
+--
+
+INSERT INTO `vencedor` (`id_vencedor`, `nome_empresa`, `valor`, `id_processo`, `codigo_processo`) VALUES
+(2, 'Industriauuuu', 10, 17, 'dispP.M. SAO JOAO NEPOMUCENO_2_3_2020'),
+(3, 'Industriau ferragens', 15000, 17, 'dispP.M. SAO JOAO NEPOMUCENO_2_3_2020'),
+(9, 'Industrial ferragens', 2000.55, 18, 'dispPMOB_1_2_2020'),
+(10, 'Teste', 100, 19, 'dispPMOB_2_2_2020'),
+(11, 'Industrial', 25000, 19, 'dispPMOB_2_2_2020'),
+(13, 'Industrial', 2000, 20, 'dispPMOB_5_6_2021'),
+(14, 'Ferragens', 1000, 20, 'dispPMOB_5_6_2021');
 
 --
 -- Indexes for dumped tables
@@ -516,7 +540,7 @@ ALTER TABLE `adesao`
 -- AUTO_INCREMENT for table `aditivo`
 --
 ALTER TABLE `aditivo`
-  MODIFY `id_aditivo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_aditivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `analista`
@@ -534,7 +558,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `dispensa`
 --
 ALTER TABLE `dispensa`
-  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `inexigibilidade`
@@ -588,7 +612,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `vencedor`
 --
 ALTER TABLE `vencedor`
-  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
