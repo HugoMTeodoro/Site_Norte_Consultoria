@@ -32,7 +32,7 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nº Processo</span>
                 </div>
-                <input type="text" name="txtNProcesso" class="form-control" id="txtNProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
@@ -85,7 +85,7 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Paciente</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Registro</span>
                 </div>
                 <select class="form-select" name="registro" id="registro">
                     <option value="-1" selected>Registro de preço?</option>
@@ -98,7 +98,7 @@ include("../../data/connection.php");
                     if ($registro->num_rows > 0) {
 
                         while ($row = $registro->fetch_assoc()) {
-                    ?>
+                    ?>  
 
                             <option value="<?php echo $row["registro"] ?>">
                                 <?php echo $row["registro"]  ?>
