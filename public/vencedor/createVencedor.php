@@ -78,8 +78,11 @@ include_once("../../data/connection.php");
         </form>
     </div>
     <?php
-    include ("listVencedor.php");        
+    include ("listVencedor.php");   
+    include("../aditivo/createAditivo.php");
+    include("../aditivo/listAditivo.php")  ;   
     ?>
+    
 </body>
 
 </html>
