@@ -29,10 +29,11 @@ $observacoes = $_POST["txtObservacoes"];
 $analistaResponsavel = $_POST["txtAnalista"];
 $dLancamento = $_POST["dateLancamento"];
 $orgao1 = $_POST["txtOrgao"];
+$codigo_disp= "disp".$orgao1."_".$nProcesso."_".$nDispensa."_".$exercicio;
 
 $sql = "INSERT INTO 
-    dispensa (exercicio, num_processo, num_dispensa, inciso, objeto, categoria, data_inicio, data_ratificacao, data_portaria_comissao, data_solicitacao_compras_servicos, data_preco_estimativo, data_autorizacao_abertura, data_autuacao, especificacao_objeto, enquadramento, minuta_contrato, data_proposta_favorecido, documento_habilitacao, data_ata, data_parecer_juridico, data_contrato_firmado, data_publicacao, copia_empenho_compras_legais, observacoes, data_lancamento, orgao)
-    VALUES('$exercicio', '$nProcesso', '$nDispensa', '$inciso', '$objeto', '$categoria', '$dInicio', '$dRatificacao' ,'$dPortariaComissao' ,'$dSolicitacaoCompras', '$dOrcamento' ,'$dAutorizacao','$dAutuacao','$especificacao', '$enquadramento', '$minuta', '$dPropostaFavorecido', '$habilitacao', '$dAtaDispensa', '$dParecerJuridico', '$dContratoFormado', '$dPublicacaoDispensa', '$copiaNotas', '$observacoes', '$dLancamento','$orgao1')";
+    dispensa (exercicio, num_processo, num_dispensa, inciso, objeto, categoria, data_inicio, data_ratificacao, data_portaria_comissao, data_solicitacao_compras_servicos, data_preco_estimativo, data_autorizacao_abertura, data_autuacao, especificacao_objeto, enquadramento, minuta_contrato, data_proposta_favorecido, documento_habilitacao, data_ata, data_parecer_juridico, data_contrato_firmado, data_publicacao, copia_empenho_compras_legais, observacoes, data_lancamento, orgao,codigo_disp)
+    VALUES('$exercicio', '$nProcesso', '$nDispensa', '$inciso', '$objeto', '$categoria', '$dInicio', '$dRatificacao' ,'$dPortariaComissao' ,'$dSolicitacaoCompras', '$dOrcamento' ,'$dAutorizacao','$dAutuacao','$especificacao', '$enquadramento', '$minuta', '$dPropostaFavorecido', '$habilitacao', '$dAtaDispensa', '$dParecerJuridico', '$dContratoFormado', '$dPublicacaoDispensa', '$copiaNotas', '$observacoes', '$dLancamento','$orgao1','$codigo_disp')";
 
 
 $resultado = $connection -> query($sql);

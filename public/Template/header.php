@@ -24,7 +24,7 @@ if ( session_status() !== PHP_SESSION_ACTIVE ){
 
 <?php
 $orgao = '';
-
+$firstname='';
 if (isset($_SESSION['logado'])) {
   $id=$_SESSION['logado'];
   $sqlQuery2="SELECT nome FROM usuario where id_usuario=$id";
@@ -33,7 +33,7 @@ if (isset($_SESSION['logado'])) {
     while ($row = $usuarioatual->fetch_assoc()) {
       $user = $row['nome'];
       $pieces = explode(" ", $user);
-      $firstname=$pieces[0];
+      $firstname=", ".$pieces[0];
 
 ?>
 
@@ -66,7 +66,7 @@ if (isset($_SESSION['logado'])) {
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="../home/home.php">Norte Consultoria <?php echo $orgao.", ".$firstname ?></a>
+      <a class="navbar-brand" href="../home/home.php">Norte Consultoria <?php echo $orgao.$firstname ?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
