@@ -17,12 +17,12 @@ include_once("../../data/connection.php");
     <br>
 
     <div class="form">
-        <form action="insertModalidade.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <form action="insertVencedor.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Cadastro de Vencedor</h3>
             <br>
             <?php
 
-            $sqlQuery = "SELECT codigo_disp FROM dispensa ORDER BY id_dispensa DESC LIMIT 1";
+            $sqlQuery = "SELECT codigo_disp,id_dispensa FROM dispensa ORDER BY id_dispensa DESC LIMIT 1";
 
             $codigo_disp = $connection->query($sqlQuery);
 
@@ -30,6 +30,7 @@ include_once("../../data/connection.php");
 
                 while ($row = $codigo_disp->fetch_assoc()) {
                     $codigo = $row["codigo_disp"];
+                    $idproc=$row["id_dispensa"];
             ?>
             <?php
                 }
@@ -38,9 +39,16 @@ include_once("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Codigo da Dispensa</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Codigo do Processo</span>
                 </div>
                 <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $codigo ?>" readonly>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">ID do Processo</span>
+                </div>
+                <input type="text" name="txtID" class="form-control" id="txtID" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $idproc ?>" readonly>
             </div>
 
             <div class="input-group mb-3">
@@ -55,7 +63,7 @@ include_once("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
                 </div>
-                <input type="number" name="txtValor" class="form-control" id="txtValor" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="number" step=0.01 name="txtValor" class="form-control" id="txtValor" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <br>
@@ -63,14 +71,15 @@ include_once("../../data/connection.php");
 
                 <input type="submit" class="btn btn-success" value="Cadastrar">
                 <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
-
+                
             </div>
 
 
         </form>
     </div>
-
-
+    <?php
+    include ("listVencedor.php");        
+    ?>
 </body>
 
 </html>
