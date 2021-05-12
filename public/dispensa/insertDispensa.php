@@ -37,17 +37,19 @@ $sql = "INSERT INTO
 
 
 $resultado = $connection->query($sql);
+?>
+<form name="myform" action="../vencedor/createVencedor.php" method="POST">
+        <input type="hidden" name="teste" value="<?php echo $codigo_disp ?>">
+    </form>
+<?php
 
 if ($resultado) {
 
 ?>
-    <form name="myform" action="../vencedor/createVencedor.php" method="POST">
-        <input type="hidden" name="teste" value="<?php echo $codigo_disp ?>">
-    </form>
-    <script>
-        function enviar_formulario() {
-            document.formulario1.submit()
-        }
+    
+    <script type="text/javascript"> 
+    alert("Dispensa Cadastrada com sucesso");    
+            document.myform.submit();
     </script>
     
 <?php
