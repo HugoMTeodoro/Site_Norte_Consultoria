@@ -39,7 +39,8 @@ $sql = "INSERT INTO
 $resultado = $connection->query($sql);
 ?>
 <form name="myform" action="../vencedor/createVencedor.php" method="POST">
-        <input type="hidden" name="teste" value="<?php echo $codigo_disp ?>">
+        <input type="hidden" name="codigo" value="<?php echo $codigo_disp ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
     </form>
 <?php
 

@@ -1,9 +1,8 @@
 <?php
 include("../template/header.php");
 include_once("../../data/connection.php");
-
-
-
+$codpro=$_POST["codigo"];
+$tipopro=$_POST["tipo"];
 ?>
 
 <html lang="en">
