@@ -323,7 +323,11 @@ include("../Login/valida.php");
 
             <br>
             <div class="buttons">
-
+            <input type="hidden" name="teste" value="dispensa" >
+            <input type="hidden" name="teste" value="dispensa" >
+            <input type="hidden" name="teste" value="dispensa" >
+            
+        
                 <input type="submit" class="btn btn-success" value="Proximo" >
                 <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
 

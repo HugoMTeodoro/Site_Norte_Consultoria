@@ -1,5 +1,4 @@
 <?php
-
 include_once("../../data/connection.php");
 
 $exercicio = $_POST["txtExercicio"];
@@ -29,28 +28,38 @@ $observacoes = $_POST["txtObservacoes"];
 $analistaResponsavel = $_POST["txtAnalista"];
 $dLancamento = $_POST["dateLancamento"];
 $orgao1 = $_POST["txtOrgao"];
-$codigo_disp= "disp".$orgao1."_".$nProcesso."_".$nDispensa."_".$exercicio;
+$codigo_disp = "disp" . $orgao1 . "_" . $nProcesso . "_" . $nDispensa . "_" . $exercicio;
+$tipo = "dispensa";
 
 $sql = "INSERT INTO 
-    dispensa (exercicio, num_processo, num_dispensa, inciso, objeto, categoria, data_inicio, data_ratificacao, data_portaria_comissao, data_solicitacao_compras_servicos, data_preco_estimativo, data_autorizacao_abertura, data_autuacao, especificacao_objeto, enquadramento, minuta_contrato, data_proposta_favorecido, documento_habilitacao, data_ata, data_parecer_juridico, data_contrato_firmado, data_publicacao, copia_empenho_compras_legais, observacoes, data_lancamento, orgao,codigo_disp)
-    VALUES('$exercicio', '$nProcesso', '$nDispensa', '$inciso', '$objeto', '$categoria', '$dInicio', '$dRatificacao' ,'$dPortariaComissao' ,'$dSolicitacaoCompras', '$dOrcamento' ,'$dAutorizacao','$dAutuacao','$especificacao', '$enquadramento', '$minuta', '$dPropostaFavorecido', '$habilitacao', '$dAtaDispensa', '$dParecerJuridico', '$dContratoFormado', '$dPublicacaoDispensa', '$copiaNotas', '$observacoes', '$dLancamento','$orgao1','$codigo_disp')";
+    dispensa (exercicio, num_processo, num_dispensa, inciso, objeto, categoria, data_inicio, data_ratificacao, data_portaria_comissao, data_solicitacao_compras_servicos, data_preco_estimativo, data_autorizacao_abertura, data_autuacao, especificacao_objeto, enquadramento, minuta_contrato, data_proposta_favorecido, documento_habilitacao, data_ata, data_parecer_juridico, data_contrato_firmado, data_publicacao, copia_empenho_compras_legais, observacoes, data_lancamento, orgao,codigo_disp,tipo_processo)
+    VALUES('$exercicio', '$nProcesso', '$nDispensa', '$inciso', '$objeto', '$categoria', '$dInicio', '$dRatificacao' ,'$dPortariaComissao' ,'$dSolicitacaoCompras', '$dOrcamento' ,'$dAutorizacao','$dAutuacao','$especificacao', '$enquadramento', '$minuta', '$dPropostaFavorecido', '$habilitacao', '$dAtaDispensa', '$dParecerJuridico', '$dContratoFormado', '$dPublicacaoDispensa', '$copiaNotas', '$observacoes', '$dLancamento','$orgao1','$codigo_disp','$tipo')";
 
 
-$resultado = $connection -> query($sql);
+$resultado = $connection->query($sql);
+?>
+<form name="myform" action="../vencedor/createVencedor.php" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo_disp ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+    </form>
+<?php
 
-if ($resultado){ ?>
-    <script>
-        alert("Dispensa cadastrada com sucesso");
-        window.location = '../vencedor/createVencedor.php';
+if ($resultado) {
+
+?>
+    
+    <script type="text/javascript"> 
+    alert("Dispensa Cadastrada com sucesso");    
+            document.myform.submit();
     </script>
+    
 <?php
 } else { ?>
     <script>
         alert("Ocorreu um erro ao cadastrar a dispensa");
         window.location = 'createDispensa.php';
-       
     </script>
-    
+
 <?php
 }
 

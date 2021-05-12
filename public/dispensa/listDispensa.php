@@ -1,4 +1,3 @@
-
 <?php include("../Template/header.php") ?>
 
 <?php include("../../data/connection.php") ?>
@@ -8,30 +7,37 @@
 <br>
 
 <body>
-    
-    <div style="margin-left: 100px; margin-right: 100px;">
-        <h2>Dispensa</h2>
 
-        <br>
-        
-    <div class="buttons">
-                <a href="../dispensa/createDispensa.php" class="btn btn-primary">Cadastro de dispensa</a>
-        </div>
-    
-    <br>
-    <form method="POST" id="form-pesquisa" action="">
-	<div class="input-group mb-3">
-	<div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Pesquisa</span>
-                </div>
-				<input type="text" name="pesquisa" class="form-control" id="pesquisa" aria-label="Default" placeholder="Procure a dispensa" aria-describedby="inputGroup-sizing-default">
-	</div>
-    </div>
+	<div style="margin-left: 100px; margin-right: 100px;">
+		<h2>Dispensa</h2>
+
+		<br>
+
+		<div class="buttons">
+
+		<form action="createDispensa.php" method="post">
 		
-    </form>
-    <ul class="resultado">
+			<input type="hidden" name="teste" value="dispensa" > 
+			<input type="submit" class="btn btn-primary" value="Cadastro de Dispensa" >
+				
+	
+		</div>
+		</form>
 
-	<?php include("listDispensaNoSearch.php") ?>
+		<br>
+		<form method="POST" id="form-pesquisa" action="">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Pesquisa</span>
+				</div>
+				<input type="text" name="pesquisa" class="form-control" id="pesquisa" aria-label="Default" placeholder="Procure a dispensa" aria-describedby="inputGroup-sizing-default">
+			</div>
+	</div>
+
+	</form>
+	<ul class="resultado">
+
+		<?php include("listDispensaNoSearch.php") ?>
 
 	</ul>
 </body>

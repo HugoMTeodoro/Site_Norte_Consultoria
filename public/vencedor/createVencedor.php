@@ -1,6 +1,8 @@
 <?php
 include("../template/header.php");
 include_once("../../data/connection.php");
+$codpro=$_POST["codigo"];
+$tipopro=$_POST["tipo"];
 ?>
 
 <html lang="en">
@@ -21,7 +23,7 @@ include_once("../../data/connection.php");
             <h3>Cadastro de Vencedor</h3>
             <br>
             <?php
-
+            
             $sqlQuery = "SELECT codigo_disp,id_dispensa FROM dispensa ORDER BY id_dispensa DESC LIMIT 1";
 
             $codigo_disp = $connection->query($sqlQuery);
@@ -76,13 +78,17 @@ include_once("../../data/connection.php");
 
 
         </form>
+        
     </div>
     <?php
     include ("listVencedor.php");   
     include("../aditivo/createAditivo.php");
-    include("../aditivo/listAditivo.php")  ;   
+    include("../aditivo/listAditivo.php")  ;
+       
     ?>
-    
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="../dispensa/listDispensa.php" class="btn btn-primary">Proximo</a>
 </body>
 
 </html>
