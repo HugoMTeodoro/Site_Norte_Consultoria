@@ -52,7 +52,7 @@ if (isset ($_GET["id"])) {
                     <span class="input-group-text" id="inputGroup-sizing-default">Inciso</span>
                 </div>
                 <select class="form-select" name="inciso" id="inciso">
-                    <option value="-1" selected>Qual inciso do ART. 24, da lei 8.666/93 fundamenta a dispensa?</option>
+                    <option value="-1" selected>Nenhum</option>
                     <?php
 
                     $sqlQuery = "SELECT * FROM inciso ORDER BY inciso";
@@ -104,7 +104,7 @@ if (isset ($_GET["id"])) {
                     <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
                 </div>
                 <select class="form-select" name="txtCategoria" id="txtCategoria" >
-                    <option value=-1 selected>Selecione a categoria</option>
+                
                     <?php
 
                     $sqlQuery = "SELECT * FROM categoria ORDER BY categoria";
