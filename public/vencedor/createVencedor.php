@@ -1,8 +1,7 @@
 <?php
 include("../template/header.php");
 include_once("../../data/connection.php");
-$codpro=$_POST["codigo"];
-$tipopro=$_POST["tipo"];
+$codigo=$_POST["codigo"];
 ?>
 
 <html lang="en">
@@ -22,22 +21,6 @@ $tipopro=$_POST["tipo"];
         <form action="insertVencedor.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Cadastro de Vencedor</h3>
             <br>
-            <?php
-            
-            $sqlQuery = "SELECT codigo_disp,id_dispensa FROM dispensa ORDER BY id_dispensa DESC LIMIT 1";
-
-            $codigo_disp = $connection->query($sqlQuery);
-
-            if ($codigo_disp->num_rows > 0) {
-
-                while ($row = $codigo_disp->fetch_assoc()) {
-                    $codigo = $row["codigo_disp"];
-                    $idproc=$row["id_dispensa"];
-            ?>
-            <?php
-                }
-            }
-            ?>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -46,12 +29,6 @@ $tipopro=$_POST["tipo"];
                 <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $codigo ?>" readonly>
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">ID do Processo</span>
-                </div>
-                <input type="text" name="txtID" class="form-control" id="txtID" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $idproc ?>" readonly>
-            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

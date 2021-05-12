@@ -56,7 +56,7 @@ if ($resultado) {
 <?php
 } else { ?>
     <script>
-        alert("Ocorreu um erro ao cadastrar a dispensa");
+        alert("Dispensa já existente");
         window.location = 'createDispensa.php';
     </script>
 

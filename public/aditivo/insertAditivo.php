@@ -20,9 +20,13 @@ $sql = "INSERT INTO
 $resultado = $connection -> query($sql);
 
 if ($resultado){ ?>
-    <script>
-        alert("Aditivo cadastrado com sucesso");
-        window.location = '../vencedor/createVencedor.php';
+    <form name="myform" action="../vencedor/createVencedor.php" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo_proc ?>">
+    </form>
+
+    <script type="text/javascript"> 
+    alert("Aditivo Cadastrado com sucesso");    
+            document.myform.submit();
     </script>
 <?php
 } else { ?>

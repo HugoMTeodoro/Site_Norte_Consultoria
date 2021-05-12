@@ -4,7 +4,7 @@
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM aditivo where codigo_processo='$codigo' and id_processo=$idproc";
+    $sql = "SELECT * FROM aditivo where codigo_processo='$codigo'";
 
     $dadosAditivo = $connection -> query($sql);
 

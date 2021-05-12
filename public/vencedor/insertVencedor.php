@@ -15,10 +15,17 @@ $sql = "INSERT INTO
 
 $resultado = $connection -> query($sql);
 
-if ($resultado){ ?>
-    <script>
-        alert("Vencedor cadastrado com sucesso");
-        window.location = 'createVencedor.php';
+if ($resultado){
+    
+    
+    ?>
+    <form name="myform" action="../vencedor/createVencedor.php" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo_proc ?>">
+    </form>
+
+    <script type="text/javascript"> 
+    alert("Vencedor Cadastrado com sucesso");    
+            document.myform.submit();
     </script>
 <?php
 } else { ?>
