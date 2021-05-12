@@ -65,7 +65,11 @@ $codigo=$_POST["codigo"];
     ?>
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="../dispensa/listDispensa.php" class="btn btn-primary">Proximo</a>
+    
+    <form name="myform" action="../consideracoes/createConsideracoes.php" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+        <input type="submit" class="btn btn-primary" value="Proximo">
+    </form>
 </body>
 
 </html>
