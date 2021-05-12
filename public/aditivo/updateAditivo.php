@@ -17,7 +17,7 @@
     if ($resultado){ ?>
         <script>
             alert("Vencedor editado com sucesso");
-            window.location = 'createVencedor.php';
+            window.location = '../vencedor/createVencedor.php';
         </script>
     <?php
     } else {
@@ -25,7 +25,7 @@
         
         <script>
             alert("Ocorreu um erro ao editar o vencedor");
-            window.location = 'createVencedor.php';
+            window.location = '../vencedor/createVencedor.php';
         
         </script>
         

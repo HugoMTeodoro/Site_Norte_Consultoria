@@ -50,7 +50,6 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
                             <td>
                                 <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                                     <a href="deleteDispensa.php?id=<?php echo $exibir ["id_dispensa"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
-                                    
                                 </button>
                                 <button type="submit" class="btn btn-success" formmethod="post">
                                 <a href="editDispensa.php?id=<?php echo $exibir["id_dispensa"] ?>" style="text-decoration: none; color: white">Editar</a>

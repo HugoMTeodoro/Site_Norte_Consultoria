@@ -12,6 +12,7 @@ if (isset ($_GET["id"])) {
     $sql = "SELECT * FROM aditivo WHERE id_aditivo = '". $idedit . "'";
     $resultado = $connection->query($sql);
     $aditivos = $resultado->fetch_assoc();
+    $cod=$aditivos["codigo_processo"];
     
 
 ?>
@@ -26,7 +27,7 @@ if (isset ($_GET["id"])) {
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Codigo do Processo</span>
                 </div>
-                <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $aditivos["codigo_processo"] ?>" readonly>
+                <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php     $cod=$aditivos["codigo_processo"];echo $cod ?>" readonly>
             </div>
 
             <div class="input-group mb-3">
@@ -109,39 +110,26 @@ if (isset ($_GET["id"])) {
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Prazo aditivado</span>
-                </div>
-                <input type="date" name="datePrazo" class="form-control" id="datePrazo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $aditivos["prazo_aditivo"] ?>">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Valor aditivo</span>
-                </div>
-                 <input type="number" name="numValorAditivo" step="0.01" min="0.01" class="form-control" id="numValorAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $aditivos["valor_aditivo"] ?>">
-            </div>
-            
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Empresa</span>
                 </div>
                 <select class="form-select" name="Empresa" id="Empresa">
+    
                     <?php
-                    
-                    $sqlQuery = "SELECT nome_empresa FROM vencedor where codigo_processo = '$cod'";
-                    echo $sqlQuery;
 
-                    $empresas = $connection->query($sqlQuery);
+                        $sqlQuery = "SELECT * FROM vencedor where codigo_processo='$cod'";
 
-                    if ($empresas->num_rows > 0) {
+                        $empresas = $connection -> query($sqlQuery);
 
-                        while($row = $empresas -> fetch_assoc())
+                        if($empresas -> num_rows > 0)
+                        {
+
+                            while($row = $empresas -> fetch_assoc())
                             {
-                                if($empresas["nome_empresa"] == $aditivos["nome_empresa"])
+                                if($aditivos["nome_empresa"] == $row["nome_empresa"])
                                 {
                     ?>
                                     <option value="<?php echo $row["nome_empresa"]?>" selected>
-                                        <?php echo $row["nome_empresa"] ?>
+                                        <?php echo $row["nome_empresa"]?>
                                     </option>
                     <?php
                                 }
@@ -155,11 +143,26 @@ if (isset ($_GET["id"])) {
                     <?php
                                 }
                             }
-                    }
+                        }
                     ?>
                 </select>
             </div>
 
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Prazo aditivado</span>
+                </div>
+                <input type="date" name="datePrazo" class="form-control" id="datePrazo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $aditivos["prazo_aditivo"] ?>">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Valor aditivo</span>
+                </div>
+                 <input type="number" name="numValorAditivo" step="0.01" class="form-control" id="numValorAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $aditivos["valor_aditivo"] ?>">
+            </div>
+            
+            
 
             <br>
             <div class="buttons">

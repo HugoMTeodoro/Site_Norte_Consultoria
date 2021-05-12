@@ -45,15 +45,15 @@
                         <td><?php echo $exibir["nome_empresa"] ?></td>
                         <td><?php echo $exibir["codigo_processo"] ?></td>
                             <td>
-                                <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
-                                    <a href="deleteAditivo.php?id=<?php echo $exibir ["id_aditivo"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
-                                    
-                                </button>
+                                
 
                                 <button type="submit" class="btn btn-success" formmethod="post">
                                 <a href="../aditivo/editAditivo.php?id=<?php echo $exibir["id_aditivo"] ?>" style="text-decoration: none; color: white">Editar</a>
                                 </button> 
-
+                                <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
+                                    <a href="../aditivo/deleteAditivo.php?id=<?php echo $exibir ["id_aditivo"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
+                                    
+                                </button>
 
                             </td>
                         </tr>
