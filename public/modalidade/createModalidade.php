@@ -65,7 +65,7 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Número/span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Número </span>
                 </div>
                 <input type="number" name="numero" class="form-control" id="numero" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
