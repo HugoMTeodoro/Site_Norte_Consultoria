@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2021 at 09:53 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+-- Tempo de geração: 13-Maio-2021 às 03:12
+-- Versão do servidor: 10.4.18-MariaDB
+-- versão do PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_norte`
+-- Banco de dados: `db_norte`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adesao`
+-- Estrutura da tabela `adesao`
 --
 
 CREATE TABLE `adesao` (
@@ -63,7 +63,7 @@ CREATE TABLE `adesao` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aditivo`
+-- Estrutura da tabela `aditivo`
 --
 
 CREATE TABLE `aditivo` (
@@ -71,26 +71,13 @@ CREATE TABLE `aditivo` (
   `numero_aditivo` int(11) DEFAULT NULL,
   `prazo_aditivo` date DEFAULT NULL,
   `data_aditivo` date DEFAULT NULL,
-  `valor_aditivo` float DEFAULT NULL,
-  `tipo_aditivo` varchar(200) NOT NULL,
-  `nome_empresa` varchar(1000) NOT NULL,
-  `codigo_processo` varchar(1000) NOT NULL,
-  `id_processo` int(11) NOT NULL
+  `valor_aditivo` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `aditivo`
---
-
-INSERT INTO `aditivo` (`id_aditivo`, `numero_aditivo`, `prazo_aditivo`, `data_aditivo`, `valor_aditivo`, `tipo_aditivo`, `nome_empresa`, `codigo_processo`, `id_processo`) VALUES
-(1, 1, '2000-09-21', '2000-09-21', 500, 'Prazo', 'Ferragens', 'dispPMOB_5_6_2021', 20),
-(2, 0, '0000-00-00', '0000-00-00', 500, 'Valor', 'Ferragens', 'dispPMOB_5_6_2021', 20),
-(3, 1, '2000-02-09', '2000-10-21', 50, 'Prazo', 'industrial ferragens teste teste ltda norte consultoria linha grande testando linha enormmemente grande pra ver como vai ficar', 'dispPMOB_5_6_2021', 20);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `analista`
+-- Estrutura da tabela `analista`
 --
 
 CREATE TABLE `analista` (
@@ -100,7 +87,7 @@ CREATE TABLE `analista` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `analista`
+-- Extraindo dados da tabela `analista`
 --
 
 INSERT INTO `analista` (`id_analista`, `nome_analista`, `id_usuario`) VALUES
@@ -109,7 +96,7 @@ INSERT INTO `analista` (`id_analista`, `nome_analista`, `id_usuario`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categoria`
+-- Estrutura da tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -118,7 +105,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `categoria`
+-- Extraindo dados da tabela `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
@@ -128,7 +115,7 @@ INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dispensa`
+-- Estrutura da tabela `dispensa`
 --
 
 CREATE TABLE `dispensa` (
@@ -159,23 +146,30 @@ CREATE TABLE `dispensa` (
   `valor_total` float DEFAULT NULL,
   `observacoes` varchar(3000) DEFAULT NULL,
   `data_lancamento` datetime DEFAULT NULL,
-  `orgao` varchar(200) DEFAULT NULL,
-  `codigo_disp` varchar(100) NOT NULL
+  `orgao` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dispensa`
+-- Extraindo dados da tabela `dispensa`
 --
 
-INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_disp`) VALUES
-(18, 2020, 1, 2, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-11 10:46:00', 'PMOB', 'dispPMOB_1_2_2020'),
-(19, 2020, 2, 2, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-11 10:47:00', 'PMOB', 'dispPMOB_2_2_2020'),
-(20, 2021, 5, 6, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-11 13:47:00', 'PMOB', 'dispPMOB_5_6_2021');
+INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`) VALUES
+(1, 12345, 0, 0, 'bila3', '', 'Manutenção', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 0, '', '0000-00-00 00:00:00', NULL),
+(2, 2020, 1, 1, 'bila3', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', '0', '2021-05-09', '2021-05-09', '2021-05-09', '2021-06-09', '2021-05-09', '2021-05-09', '2021-02-09', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', '2000-09-21', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', '2000-09-21', '2000-09-21', '2000-09-21', '2000-09-21', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', NULL, 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', '2018-09-21 03:06:00', NULL),
+(3, 0, 0, 0, '-1', '', '0', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:07:00', NULL),
+(4, 0, 0, 0, '-1', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:18:00', NULL),
+(5, 0, 0, 0, '-1', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:19:00', NULL),
+(6, 0, 0, 0, 'Nenhum', '', 'Vinicius ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:19:00', NULL),
+(7, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 11:20:00', NULL),
+(8, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 15:34:00', 'maximo'),
+(9, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 16:41:00', 'Varginha'),
+(10, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 16:41:00', 'Varginha'),
+(11, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '2021-05-10 16:42:00', 'Varginha');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inciso`
+-- Estrutura da tabela `inciso`
 --
 
 CREATE TABLE `inciso` (
@@ -184,7 +178,7 @@ CREATE TABLE `inciso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `inciso`
+-- Extraindo dados da tabela `inciso`
 --
 
 INSERT INTO `inciso` (`id_inciso`, `inciso`) VALUES
@@ -193,7 +187,7 @@ INSERT INTO `inciso` (`id_inciso`, `inciso`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inexigibilidade`
+-- Estrutura da tabela `inexigibilidade`
 --
 
 CREATE TABLE `inexigibilidade` (
@@ -208,6 +202,7 @@ CREATE TABLE `inexigibilidade` (
   `portaria_nomeando` varchar(200) DEFAULT NULL,
   `dt_solicitacao` date DEFAULT NULL,
   `dt_orcamento` date DEFAULT NULL,
+  `dt_autorizacao` date NOT NULL,
   `dt_autuacao` date DEFAULT NULL,
   `especificacao` varchar(300) DEFAULT NULL,
   `enquadramento` varchar(300) DEFAULT NULL,
@@ -226,10 +221,18 @@ CREATE TABLE `inexigibilidade` (
   `dt_lancamento` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `inexigibilidade`
+--
+
+INSERT INTO `inexigibilidade` (`id_inexigibilidade`, `exercicio`, `num_processo`, `num_inexigibilidade`, `objeto`, `categoria`, `dt_inicio`, `dt_ratificacao`, `portaria_nomeando`, `dt_solicitacao`, `dt_orcamento`, `dt_autorizacao`, `dt_autuacao`, `especificacao`, `enquadramento`, `minuta`, `dt_aprovacao`, `dt_proposta`, `documentos`, `dt_ata`, `dt_parecer_juridico`, `dt_contrato_firmado`, `dt_publicacao`, `copia_notas`, `codigo`, `valor_total`, `observacoes`, `dt_lancamento`) VALUES
+(1, '123123', 123123, 123, '123', 'Manutenção', '2021-12-12', '2021-12-31', '123', '2021-12-31', '2021-12-31', '2021-12-31', '2021-12-31', '123', '123', '123', '2021-12-31', '2021-12-01', '123', '2021-12-31', '2021-12-31', '2021-12-31', '2021-12-31', '123', '123', 123, '123', '2021-12-31 23:59:00'),
+(2, '1', 1, 1, '1', 'Manutenção', '2021-12-31', '2021-12-31', '1', '2021-12-31', '2021-12-31', '2021-12-31', '2021-12-31', '1', '1', '1', '2021-12-31', '2021-12-31', '1', '2021-12-31', '2021-12-31', '2021-12-31', '2021-12-31', '1', '1', 1, '1', '2021-12-31 23:59:00');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `modalidade`
+-- Estrutura da tabela `modalidade`
 --
 
 CREATE TABLE `modalidade` (
@@ -239,7 +242,7 @@ CREATE TABLE `modalidade` (
   `modalidade` varchar(100) NOT NULL,
   `numero` int(11) NOT NULL,
   `objeto` varchar(3000) NOT NULL,
-  `registro` int(11) NOT NULL,
+  `registro` varchar(50) NOT NULL,
   `categoria` varchar(100) NOT NULL,
   `dt_edital` date NOT NULL,
   `dt_entrega` date NOT NULL,
@@ -260,6 +263,9 @@ CREATE TABLE `modalidade` (
   `dt_ata` date DEFAULT NULL,
   `dt_confirmacao` date DEFAULT NULL,
   `prazo` varchar(50) DEFAULT NULL,
+  `dt_ata_julgamento` date NOT NULL,
+  `classificados` varchar(100) NOT NULL,
+  `dt_pub_resultado` date NOT NULL,
   `dt_parecer_juridico` date DEFAULT NULL,
   `dt_adjudicacao` date DEFAULT NULL,
   `dt_homologacao` date DEFAULT NULL,
@@ -272,10 +278,17 @@ CREATE TABLE `modalidade` (
   `dt_lancamento` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `modalidade`
+--
+
+INSERT INTO `modalidade` (`id_modalidade`, `exercicio`, `num_processo`, `modalidade`, `numero`, `objeto`, `registro`, `categoria`, `dt_edital`, `dt_entrega`, `dt_abertura`, `dt_portaria`, `dt_solicitacao`, `dt_orcamento`, `dt_autorizacao`, `dt_autuacao`, `enquadramento`, `dt_anexos`, `dt_aprovacao`, `minuta`, `dt_publicacao`, `especificacao`, `dt_recibo`, `documentos`, `dt_ata`, `dt_confirmacao`, `prazo`, `dt_ata_julgamento`, `classificados`, `dt_pub_resultado`, `dt_parecer_juridico`, `dt_adjudicacao`, `dt_homologacao`, `dt_contrato_firmado`, `dt_publicacao_contrato`, `copia`, `codigo`, `valor_total`, `observacoes`, `dt_lancamento`) VALUES
+(1, '1', 0, 'Vinas', 1, '1', 'Erick', '', '2021-12-31', '2021-12-31', '0000-00-00 00:00:00', '2021-12-31', '2021-12-31', '2021-12-31', '0000-00-00', '0000-00-00', '1', '2021-12-31', '2021-12-31', '2021-12-31', '2021-12-31', '1', '2021-12-31', '1', '0000-00-00', '2021-12-31', '2021-12-31', '2021-12-31', '1', '2021-12-31', '0000-00-00', '2021-12-31', '2021-12-31', '0000-00-00', '0000-00-00', '1', '1', 1, '1', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orgao`
+-- Estrutura da tabela `orgao`
 --
 
 CREATE TABLE `orgao` (
@@ -284,7 +297,7 @@ CREATE TABLE `orgao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `orgao`
+-- Extraindo dados da tabela `orgao`
 --
 
 INSERT INTO `orgao` (`id_orgao`, `nome_orgao`) VALUES
@@ -295,7 +308,7 @@ INSERT INTO `orgao` (`id_orgao`, `nome_orgao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orgao_atual`
+-- Estrutura da tabela `orgao_atual`
 --
 
 CREATE TABLE `orgao_atual` (
@@ -304,16 +317,16 @@ CREATE TABLE `orgao_atual` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `orgao_atual`
+-- Extraindo dados da tabela `orgao_atual`
 --
 
 INSERT INTO `orgao_atual` (`nome_orgao_atual`, `id_orgao_atual`) VALUES
-('PMOB', 1);
+('P.M. SAO JOAO NEPOMUCENO', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pregao`
+-- Estrutura da tabela `pregao`
 --
 
 CREATE TABLE `pregao` (
@@ -345,6 +358,7 @@ CREATE TABLE `pregao` (
   `dt_confirmacao` date DEFAULT NULL,
   `prazo` varchar(300) DEFAULT NULL,
   `dt_adjudicacao` date DEFAULT NULL,
+  `dt_parecer` date NOT NULL,
   `dt_homologacao` date DEFAULT NULL,
   `dt_contrato_firmado` date DEFAULT NULL,
   `dt_publicacao_ata` date DEFAULT NULL,
@@ -355,26 +369,48 @@ CREATE TABLE `pregao` (
   `dt_lancamento` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `pregao`
+--
+
+INSERT INTO `pregao` (`id_pregao`, `exercicio`, `num_processo`, `tipo`, `numero`, `objeto`, `registro`, `categoria`, `dt_edital`, `dt_abertura`, `dt_nomeacao`, `dt_solicitacao`, `dt_orcamento`, `dt_autorizacao`, `dt_autuacao`, `enquadramento`, `edital`, `dt_aprovacao`, `minuta`, `dt_publicacao`, `especificacao`, `dt_credenciamento`, `proposta_precos`, `dt_ata_abertura`, `documento`, `dt_confirmacao`, `prazo`, `dt_adjudicacao`, `dt_parecer`, `dt_homologacao`, `dt_contrato_firmado`, `dt_publicacao_ata`, `copia_notas`, `codigo`, `valor_total`, `observacoes`, `dt_lancamento`) VALUES
+(1, '2222', 2222, 'Vina', 2222, '2222', 0, 'Vinicius', '2021-12-31', '0000-00-00 00:00:00', '2021-12-31', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', 0, '', '0000-00-00 00:00:00'),
+(2, '123', 123, 'Vina', 2134, '234', 0, 'Manutenção', '2021-12-31', '0000-00-00 00:00:00', '2021-12-31', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', 0, '', '0000-00-00 00:00:00'),
+(3, '123', 123, 'Vina', 2134, '234', 0, 'Manutenção', '2021-12-31', '0000-00-00 00:00:00', '2021-12-31', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', 0, '', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo_aditivo`
+-- Estrutura da tabela `registro`
+--
+
+CREATE TABLE `registro` (
+  `id_registro` int(11) NOT NULL,
+  `registro` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `registro`
+--
+
+INSERT INTO `registro` (`id_registro`, `registro`) VALUES
+(1, 'Erick');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo_aditivo`
 --
 
 CREATE TABLE `tipo_aditivo` (
   `id_tipo_aditivo` int(11) NOT NULL,
-  `prazo` date NOT NULL,
-  `valor` float NOT NULL,
-  `tipo_aditivo` varchar(100) NOT NULL,
-  `data_aditivo` date NOT NULL,
-  `codigo_processo` varchar(500) NOT NULL,
-  `numero_aditivo` int(11) NOT NULL
+  `nome_tipo_aditivo` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo_modalidade`
+-- Estrutura da tabela `tipo_modalidade`
 --
 
 CREATE TABLE `tipo_modalidade` (
@@ -382,10 +418,35 @@ CREATE TABLE `tipo_modalidade` (
   `modalidade` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `tipo_modalidade`
+--
+
+INSERT INTO `tipo_modalidade` (`id_modalidade`, `modalidade`) VALUES
+(1, 'Vinas');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura da tabela `tipo_pregao`
+--
+
+CREATE TABLE `tipo_pregao` (
+  `id_tipo` int(11) NOT NULL,
+  `pregao` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tipo_pregao`
+--
+
+INSERT INTO `tipo_pregao` (`id_tipo`, `pregao`) VALUES
+(1, 'Vina');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -396,7 +457,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `login`, `senha`, `nome`) VALUES
@@ -406,7 +467,7 @@ INSERT INTO `usuario` (`id_usuario`, `login`, `senha`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vencedor`
+-- Estrutura da tabela `vencedor`
 --
 
 CREATE TABLE `vencedor` (
@@ -414,205 +475,216 @@ CREATE TABLE `vencedor` (
   `nome_empresa` varchar(250) DEFAULT NULL,
   `valor` float DEFAULT NULL,
   `id_processo` int(11) NOT NULL,
-  `codigo_processo` varchar(500) NOT NULL
+  `tipo_processo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `vencedor`
---
-
-INSERT INTO `vencedor` (`id_vencedor`, `nome_empresa`, `valor`, `id_processo`, `codigo_processo`) VALUES
-(2, 'Industriauuuu', 10, 17, 'dispP.M. SAO JOAO NEPOMUCENO_2_3_2020'),
-(3, 'Industriau ferragens', 15000, 17, 'dispP.M. SAO JOAO NEPOMUCENO_2_3_2020'),
-(9, 'Industrial ferragens', 2000.55, 18, 'dispPMOB_1_2_2020'),
-(10, 'Teste', 100, 19, 'dispPMOB_2_2_2020'),
-(11, 'Industrial', 25000, 19, 'dispPMOB_2_2_2020'),
-(13, 'Industrial', 2000, 20, 'dispPMOB_5_6_2021'),
-(14, 'Ferragens', 1000, 20, 'dispPMOB_5_6_2021');
-
---
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `adesao`
+-- Índices para tabela `adesao`
 --
 ALTER TABLE `adesao`
   ADD PRIMARY KEY (`id_adesao`);
 
 --
--- Indexes for table `aditivo`
+-- Índices para tabela `aditivo`
 --
 ALTER TABLE `aditivo`
   ADD PRIMARY KEY (`id_aditivo`);
 
 --
--- Indexes for table `analista`
+-- Índices para tabela `analista`
 --
 ALTER TABLE `analista`
   ADD PRIMARY KEY (`id_analista`);
 
 --
--- Indexes for table `categoria`
+-- Índices para tabela `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`),
   ADD UNIQUE KEY `categoria` (`categoria`);
 
 --
--- Indexes for table `dispensa`
+-- Índices para tabela `dispensa`
 --
 ALTER TABLE `dispensa`
   ADD PRIMARY KEY (`id_dispensa`);
 
 --
--- Indexes for table `inciso`
+-- Índices para tabela `inciso`
 --
 ALTER TABLE `inciso`
   ADD PRIMARY KEY (`id_inciso`);
 
 --
--- Indexes for table `inexigibilidade`
+-- Índices para tabela `inexigibilidade`
 --
 ALTER TABLE `inexigibilidade`
   ADD PRIMARY KEY (`id_inexigibilidade`);
 
 --
--- Indexes for table `modalidade`
+-- Índices para tabela `modalidade`
 --
 ALTER TABLE `modalidade`
   ADD PRIMARY KEY (`id_modalidade`);
 
 --
--- Indexes for table `orgao`
+-- Índices para tabela `orgao`
 --
 ALTER TABLE `orgao`
   ADD PRIMARY KEY (`id_orgao`);
 
 --
--- Indexes for table `orgao_atual`
+-- Índices para tabela `orgao_atual`
 --
 ALTER TABLE `orgao_atual`
   ADD PRIMARY KEY (`id_orgao_atual`);
 
 --
--- Indexes for table `pregao`
+-- Índices para tabela `pregao`
 --
 ALTER TABLE `pregao`
   ADD PRIMARY KEY (`id_pregao`);
 
 --
--- Indexes for table `tipo_aditivo`
+-- Índices para tabela `registro`
+--
+ALTER TABLE `registro`
+  ADD PRIMARY KEY (`id_registro`);
+
+--
+-- Índices para tabela `tipo_aditivo`
 --
 ALTER TABLE `tipo_aditivo`
   ADD PRIMARY KEY (`id_tipo_aditivo`);
 
 --
--- Indexes for table `tipo_modalidade`
+-- Índices para tabela `tipo_modalidade`
 --
 ALTER TABLE `tipo_modalidade`
   ADD PRIMARY KEY (`id_modalidade`);
 
 --
--- Indexes for table `usuario`
+-- Índices para tabela `tipo_pregao`
+--
+ALTER TABLE `tipo_pregao`
+  ADD PRIMARY KEY (`id_tipo`);
+
+--
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`),
   ADD UNIQUE KEY `login` (`login`);
 
 --
--- Indexes for table `vencedor`
+-- Índices para tabela `vencedor`
 --
 ALTER TABLE `vencedor`
   ADD PRIMARY KEY (`id_vencedor`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `adesao`
+-- AUTO_INCREMENT de tabela `adesao`
 --
 ALTER TABLE `adesao`
   MODIFY `id_adesao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `aditivo`
+-- AUTO_INCREMENT de tabela `aditivo`
 --
 ALTER TABLE `aditivo`
-  MODIFY `id_aditivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_aditivo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `analista`
+-- AUTO_INCREMENT de tabela `analista`
 --
 ALTER TABLE `analista`
   MODIFY `id_analista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `categoria`
+-- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `dispensa`
+-- AUTO_INCREMENT de tabela `dispensa`
 --
 ALTER TABLE `dispensa`
-  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `inexigibilidade`
+-- AUTO_INCREMENT de tabela `inexigibilidade`
 --
 ALTER TABLE `inexigibilidade`
-  MODIFY `id_inexigibilidade` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_inexigibilidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `modalidade`
+-- AUTO_INCREMENT de tabela `modalidade`
 --
 ALTER TABLE `modalidade`
-  MODIFY `id_modalidade` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_modalidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `orgao`
+-- AUTO_INCREMENT de tabela `orgao`
 --
 ALTER TABLE `orgao`
   MODIFY `id_orgao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `orgao_atual`
+-- AUTO_INCREMENT de tabela `orgao_atual`
 --
 ALTER TABLE `orgao_atual`
   MODIFY `id_orgao_atual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `pregao`
+-- AUTO_INCREMENT de tabela `pregao`
 --
 ALTER TABLE `pregao`
-  MODIFY `id_pregao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pregao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tipo_aditivo`
+-- AUTO_INCREMENT de tabela `registro`
+--
+ALTER TABLE `registro`
+  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `tipo_aditivo`
 --
 ALTER TABLE `tipo_aditivo`
   MODIFY `id_tipo_aditivo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tipo_modalidade`
+-- AUTO_INCREMENT de tabela `tipo_modalidade`
 --
 ALTER TABLE `tipo_modalidade`
-  MODIFY `id_modalidade` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_modalidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `tipo_pregao`
+--
+ALTER TABLE `tipo_pregao`
+  MODIFY `id_tipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `vencedor`
+-- AUTO_INCREMENT de tabela `vencedor`
 --
 ALTER TABLE `vencedor`
-  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
