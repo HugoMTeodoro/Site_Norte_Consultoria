@@ -1,19 +1,8 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
 
-if (isset ($_GET["id"])) {
-    $idedit = $_GET["id"];
- 
-    
-    
-    $sql = "SELECT * FROM aditivo WHERE id_aditivo = '". $idedit . "'";
-    $resultado = $connection->query($sql);
-    $aditivos = $resultado->fetch_assoc();
-    $cod=$aditivos["codigo_processo"];
 
-
-}
-
+$codigo=$_POST["codigo"];
 ?>
 
 <html lang="en">
@@ -34,9 +23,9 @@ if (isset ($_GET["id"])) {
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Considerações</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Codigo do Processo</span>
                 </div>
-                <input type="text" name="txtCategoria" class="form-control" id="txtCategoria" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $codigo ?>" readonly>
             </div>
 
            
