@@ -2,7 +2,9 @@
 include("../../data/connection.php");
 
 
-$codigo=$_POST["codigo"];
+$sql="select * from '$tipo' where codigo_processo='$codigo'";
+echo $sql;
+
 ?>
 
 <html lang="en">

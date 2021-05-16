@@ -26,8 +26,8 @@ if ( session_status() !== PHP_SESSION_ACTIVE ){
 $orgao = '';
 $firstname='';
 if (isset($_SESSION['logado'])) {
-  $id=$_SESSION['logado'];
-  $sqlQuery2="SELECT nome FROM usuario where id_usuario=$id";
+  $idu=$_SESSION['logado'];
+  $sqlQuery2="SELECT nome FROM usuario where id_usuario=$idu";
   $usuarioatual = $connection->query($sqlQuery2);
   if ($usuarioatual->num_rows > 0) {
     while ($row = $usuarioatual->fetch_assoc()) {

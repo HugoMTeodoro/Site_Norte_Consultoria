@@ -14,7 +14,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
     $sql = "SELECT * FROM dispensa WHERE num_dispensa LIKE '%$usuarios%' ";
 
     $dadosDispensa = $connection -> query($sql);
-
+    
 
    
 

@@ -1,7 +1,8 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
 include("../Login/valida.php");
-?>
+$action=$_POST["action"];
+;?>
 
 <html lang="en">
 
@@ -323,9 +324,8 @@ include("../Login/valida.php");
 
             <br>
             <div class="buttons">
-            <input type="hidden" name="teste" value="dispensa" >
-            <input type="hidden" name="teste" value="dispensa" >
-            <input type="hidden" name="teste" value="dispensa" >
+            <input type="hidden" name="tipo" id="tipo" value="dispensa" >
+            <input type="hidden" name="action" id="action" value="<?php echo $action ?>" >
             
         
                 <input type="submit" class="btn btn-success" value="Proximo" >

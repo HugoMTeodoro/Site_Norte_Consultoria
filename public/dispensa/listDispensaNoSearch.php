@@ -51,9 +51,17 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
                                 <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                                     <a href="deleteDispensa.php?id=<?php echo $exibir ["id_dispensa"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
                                 </button>
-                                <button type="submit" class="btn btn-success" formmethod="post">
-                                <a href="editDispensa.php?id=<?php echo $exibir["id_dispensa"] ?>" style="text-decoration: none; color: white">Editar</a>
-                                </button> 
+                                
+                                <form name="editbutton" action="editDispensa.php" method="POST">
+                                <input type="hidden" name="codigo" value="<?php echo $exibir["codigo_processo"] ?>">
+                                <input type="hidden" name="action" value="../dispensa/editDispensa.php">
+                                
+                                <br>
+                                <input type="hidden" name="tipo" value="dispensa">
+                                <input type="hidden" name="id" value="<?php echo $exibir["id_dispensa"] ?>">
+                                
+                                <input type="submit" class="btn btn-success btn-sm" value="Editar">
+                            </form>
                             </td>
                         </tr>
                     <?php

@@ -1,39 +1,41 @@
-<?php 
-        include_once("../../data/connection.php");
-        if (isset ($_GET["id"])) {
-            $sql = "select codigo_processo FROM aditivo WHERE id_aditivo = " . $_GET["id"];
-            $resultado = $connection->query($sql);
-            while ($percorrer = $resultado->fetch_assoc()) {
-        
-                $codigo_proc = $percorrer['codigo_processo'];
-            }
+<?php
+include_once("../../data/connection.php");
+    $action = $_POST["action"];
+    $tipo=$_POST["tipo"];
+    $sql = "select codigo_processo FROM aditivo WHERE id_aditivo = " . $_POST["id"];
+    $resultado = $connection->query($sql);
+    while ($percorrer = $resultado->fetch_assoc()) {
 
-            $sql = "DELETE FROM aditivo WHERE id_aditivo = " . $_GET["id"];
+        $codigo_proc = $percorrer['codigo_processo'];
+    }
 
-            if ($connection -> query($sql) === TRUE) {
- ?>
-                <form name="myform" action="../vencedor/createVencedor.php" method="POST">
-        <input type="hidden" name="codigo" value="<?php echo $codigo_proc ?>">
-    </form>
+    $sql = "DELETE FROM aditivo WHERE id_aditivo = " . $_POST["id"];
 
-    <script type="text/javascript"> 
-    alert("Aditivo excluido com sucesso");    
+    if ($connection->query($sql) === TRUE) {
+?>
+        <form name="myform" action="<?php echo $action?>" method="POST">
+            <input type="hidden" name="codigo" value="<?php echo $codigo_proc ?>">
+            <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+            <input type="hidden" name="action" value="<?php echo $action ?>">
+        </form>
+
+        <script type="text/javascript">
+            alert("Aditivo excluido com sucesso");
             document.myform.submit();
-    </script>
+        </script>
 
-                <?php
-            
+    <?php
 
-            }
-        else {
-               ?>
-            <script>
+
+    } else {
+    ?>
+        <script>
             alert("Erro ao excluir o aditivo");
             window.location = "../vencedor/createVencedor.php";
-            </script> 
+        </script>
 <?php
 
     }
-}
+
 
 ?>

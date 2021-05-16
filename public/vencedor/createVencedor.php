@@ -1,7 +1,11 @@
-<?php
+<?php 
 include("../template/header.php");
 include_once("../../data/connection.php");
 $codigo=$_POST["codigo"];
+$tipo=$_POST["tipo"];
+$action=$_POST["action"];
+echo $tipo;
+echo $action;
 ?>
 
 <html lang="en">
@@ -18,7 +22,7 @@ $codigo=$_POST["codigo"];
     <br>
 
     <div class="form">
-        <form action="insertVencedor.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <form action="../vencedor/insertVencedor.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Cadastro de Vencedor</h3>
             <br>
 
@@ -47,7 +51,8 @@ $codigo=$_POST["codigo"];
 
             <br>
             <div class="buttons">
-
+                <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+                <input type="hidden" name="action" value="<?php echo $action ?>">
                 <input type="submit" class="btn btn-success" value="Cadastrar">
                 <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
                 
@@ -58,18 +63,16 @@ $codigo=$_POST["codigo"];
         
     </div>
     <?php
-    include ("listVencedor.php");   
+    echo $action;
+    include("../vencedor/listVencedor.php");   
     include("../aditivo/createAditivo.php");
     include("../aditivo/listAditivo.php")  ;
        
-    ?>
+    ?> 
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
-    <form name="myform" action="../consideracoes/createConsideracoes.php" method="POST">
-        <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
-        <input type="submit" class="btn btn-primary" value="Proximo">
-    </form>
+    
 </body>
 
 </html>

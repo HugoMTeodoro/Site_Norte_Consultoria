@@ -1,4 +1,6 @@
-<?php include("../Template/header.php") ?>
+<?php include("../Template/header.php") ;
+//$codigo=$_POST["codigo"]; 
+?>
 
 <?php
 
@@ -45,15 +47,22 @@
                         <td><?php echo $exibir["nome_empresa"] ?></td>
                         <td><?php echo $exibir["codigo_processo"] ?></td>
                             <td>
-                                
+                            <form name="editbutton" action="../aditivo/editAditivo.php" method="POST">
+                                <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+                                <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+                                <input type="hidden" name="id" value="<?php echo $exibir["id_aditivo"] ?>">
+                                <input type="hidden" name="action" value="<?php echo $action ?>">
+                                <input type="submit" class="btn btn-success btn-sm" value="Editar">
+                            </form>
+                                <br>
+                                <form name="deletebutton" action="../aditivo/deleteAditivo.php" method="POST">
+                                <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+                                <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+                                <input type="hidden" name="id" value="<?php echo $exibir["id_aditivo"] ?>">
+                                <input type="hidden" name="action" value="<?php echo $action ?>">
+                                <input type="submit" class="btn btn-danger btn-sm" value="Excluir">
+                            </form>
 
-                                <button type="submit" class="btn btn-success" formmethod="post">
-                                <a href="../aditivo/editAditivo.php?id=<?php echo $exibir["id_aditivo"] ?>" style="text-decoration: none; color: white">Editar</a>
-                                </button> 
-                                <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
-                                    <a href="../aditivo/deleteAditivo.php?id=<?php echo $exibir ["id_aditivo"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
-                                    
-                                </button>
 
                             </td>
                         </tr>

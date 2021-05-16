@@ -15,11 +15,11 @@
 
 		<div class="buttons">
 
-		<form action="createDispensa.php" method="post">
+		<form action="createDispensa.php" method="POST">
 		
-			<input type="hidden" name="teste" value="dispensa" > 
+			<input type="hidden" name="tipo" id="tipo" value="dispensa" > 
 			<input type="submit" class="btn btn-primary" value="Cadastro de Dispensa" >
-				
+			<input type="hidden" name="action" value="../vencedor/createVencedor.php">
 	
 		</div>
 		</form>

@@ -1,12 +1,10 @@
 <?php
 include("../Template/header.php");
 include_once("../../data/connection.php");
-
-
-
-if (isset ($_GET["id"])) {
-    $idedit = $_GET["id"];
- 
+$tipo=$_POST["tipo"];
+$codigo=$_POST["codigo"];
+$idedit = $_POST["id"];
+$action =$_POST["action"];
     
     
     $sql = "SELECT * FROM aditivo WHERE id_aditivo = '". $idedit . "'";
@@ -167,7 +165,10 @@ if (isset ($_GET["id"])) {
             <br>
             <div class="buttons">
 
-
+            <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+            <input type="hidden" name="id" value="<?php echo $aditivos["id_aditivo"] ?>">
+            <input type="hidden" name="codigo" value="<?php echo $cod ?>">
+            <input type="hidden" name="action" value="<?php echo $action ?>">
                 <input type="submit" class="btn btn-success" value="Atualizar">
                 <input type="reset" class="btn btn-danger" value="Cancelar">
 
@@ -175,7 +176,3 @@ if (isset ($_GET["id"])) {
 
         </form>
     </div>
-
-<?php
-}
-?>

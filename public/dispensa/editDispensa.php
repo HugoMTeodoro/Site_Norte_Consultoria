@@ -3,10 +3,13 @@ include("../Template/header.php");
 include_once("../../data/connection.php");
 
 
-if (isset ($_GET["id"])) {
-    $id = $_GET["id"];
+
+    //$id = $_POST["id"];
+    $codigo=$_POST["codigo"];
+    $tipo=$_POST["tipo"];
+
     
-    $sql = "SELECT * FROM dispensa WHERE id_dispensa = '". $id . "'";
+    $sql = "SELECT * FROM dispensa WHERE codigo_processo = '". $codigo . "'";
     $resultado = $connection->query($sql);
     $dispensa = $resultado->fetch_assoc();
 
@@ -295,8 +298,9 @@ if (isset ($_GET["id"])) {
             </div>
 
         </form>
+        
     </div>
 
 <?php
-}
+include("../vencedor/createVencedor.php");
 ?>
