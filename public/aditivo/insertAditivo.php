@@ -21,7 +21,11 @@ $sql = "INSERT INTO
 $resultado = $connection->query($sql);
 
 if ($resultado) { ?>
-
+<form name="myform" action="<?php echo $action ?>" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo_proc ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+        <input type="hidden" name="action" value="<?php echo $action ?>">
+    </form>
 
     <script type="text/javascript">
         alert("Aditivo Cadastrado com sucesso");
