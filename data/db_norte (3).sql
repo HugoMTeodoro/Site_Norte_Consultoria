@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2021 at 02:08 AM
+-- Generation Time: May 18, 2021 at 08:48 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -165,16 +165,22 @@ CREATE TABLE `dispensa` (
   `observacoes` varchar(3000) DEFAULT NULL,
   `data_lancamento` datetime DEFAULT NULL,
   `orgao` varchar(200) DEFAULT NULL,
-  `codigo_processo` varchar(100) DEFAULT NULL,
-  `tipo_processo` varchar(100) NOT NULL
+  `codigo_processo` varchar(150) DEFAULT NULL,
+  `conSolic` text DEFAULT NULL,
+  `conPreco` text DEFAULT NULL,
+  `conAut` text DEFAULT NULL,
+  `conAtuacao` text DEFAULT NULL,
+  `conRat` text DEFAULT NULL,
+  `conPub` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `dispensa`
 --
 
-INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `tipo_processo`) VALUES
-(80, 0, 0, 0, 'bila3', '', 'Manutenção', '2021-05-12', '2021-05-16', '2021-05-17', '2021-05-16', '2021-05-17', '2021-05-15', '2021-05-14', '', '', '', '2021-03-31', '', '2021-05-17', '2021-05-17', '2021-05-17', '2021-05-31', '', 2, '', '0000-00-00 00:00:00', 'P.M. SAO JOAO NEPOMUCENO', 'dispP.M. SAO JOAO NEPOMUCENO___', '');
+INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`) VALUES
+(80, 0, 0, 0, 'bila3', '', 'Manutenção', '2021-05-12', '2021-05-18', '2021-05-17', '2021-05-16', '2021-05-17', '2021-05-15', '2021-05-14', '', '', '', '2021-03-31', '', '2021-05-17', '2021-05-17', '2021-05-17', '2021-05-31', '', 2, '', '0000-00-00 00:00:00', 'P.M. SAO JOAO NEPOMUCENO', 'dispP.M. SAO JOAO NEPOMUCENO___', 'data errada', '', '', '', '', ''),
+(81, 2020, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '2021-05-15', '0000-00-00', '2021-05-13', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'P.M. SAO JOAO NEPOMUCENO', 'dispP.M. SAO JOAO NEPOMUCENO___2020', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -574,7 +580,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `dispensa`
 --
 ALTER TABLE `dispensa`
-  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `inexigibilidade`

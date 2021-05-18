@@ -67,7 +67,7 @@ echo $action;
     include("../vencedor/listVencedor.php");   
     include("../aditivo/createAditivo.php");
     include("../aditivo/listAditivo.php")  ;
-    include("../consideracoes/createConsideracoesDisp.php");
+    include("../consideracoes/editConsideracoesDisp.php");
        
     ?> 
     <br>
