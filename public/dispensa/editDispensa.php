@@ -16,7 +16,7 @@ $dispensa = $resultado->fetch_assoc();
 
 
 ?>
-
+<br>
 
 <div class="form">
     <form action="updateDispensa.php" method="POST" style="margin-left: 100px; margin-right: 100px;">

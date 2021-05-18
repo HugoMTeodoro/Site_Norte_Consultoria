@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2021 at 08:48 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+-- Tempo de geração: 19-Maio-2021 às 01:23
+-- Versão do servidor: 10.4.18-MariaDB
+-- versão do PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_norte`
+-- Banco de dados: `db_norte`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adesao`
+-- Estrutura da tabela `adesao`
 --
 
 CREATE TABLE `adesao` (
@@ -54,16 +54,25 @@ CREATE TABLE `adesao` (
   `dt_contrato_firmado` date DEFAULT NULL,
   `dt_publicacao_contrato` date DEFAULT NULL,
   `copia_notas` varchar(3000) DEFAULT NULL,
-  `codigo` varchar(50) DEFAULT NULL,
   `valor` float DEFAULT NULL,
   `observacoes` varchar(3000) DEFAULT NULL,
-  `dt_lancamento` datetime DEFAULT NULL
+  `dt_lancamento` datetime DEFAULT NULL,
+  `orgao` varchar(200) NOT NULL,
+  `codigo_processo` varchar(200) DEFAULT NULL,
+  `conSolic` text NOT NULL,
+  `conPreco` text NOT NULL,
+  `conAut` text NOT NULL,
+  `conAutuacao` text NOT NULL,
+  `conRat` text NOT NULL,
+  `conPub` text NOT NULL,
+  `dt_pesquisa` date DEFAULT NULL,
+  `dt_abertura` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aditivo`
+-- Estrutura da tabela `aditivo`
 --
 
 CREATE TABLE `aditivo` (
@@ -79,7 +88,7 @@ CREATE TABLE `aditivo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `aditivo`
+-- Extraindo dados da tabela `aditivo`
 --
 
 INSERT INTO `aditivo` (`id_aditivo`, `numero_aditivo`, `prazo_aditivo`, `data_aditivo`, `valor_aditivo`, `tipo_aditivo`, `nome_empresa`, `codigo_processo`, `id_processo`) VALUES
@@ -90,12 +99,13 @@ INSERT INTO `aditivo` (`id_aditivo`, `numero_aditivo`, `prazo_aditivo`, `data_ad
 (19, 0, '0000-00-00', '0000-00-00', 0, 'Prazo', 'Industrial', 'dispP.M. SAO JOAO NEPOMUCENO_1_1_2020', 0),
 (20, 1, '0000-00-00', '0000-00-00', 1, 'Prazo', 'Industrial', 'dispP.M. SAO JOAO NEPOMUCENO_1_1_2020', 0),
 (22, 0, '0000-00-00', '2000-09-21', 1, 'Prazo', '', 'dispP.M. SAO JOAO NEPOMUCENO___', 0),
-(23, 0, '0000-00-00', '0000-00-00', 0, 'Prazo', '', 'dispP.M. SAO JOAO NEPOMUCENO___', 0);
+(23, 0, '0000-00-00', '0000-00-00', 0, 'Prazo', '', 'dispP.M. SAO JOAO NEPOMUCENO___', 0),
+(24, 2323, '2021-12-31', '2021-12-31', 2.78, 'Valor', 'Vinicera', 'dispP.M. SAO JOAO NEPOMUCENO___2020', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `analista`
+-- Estrutura da tabela `analista`
 --
 
 CREATE TABLE `analista` (
@@ -105,7 +115,7 @@ CREATE TABLE `analista` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `analista`
+-- Extraindo dados da tabela `analista`
 --
 
 INSERT INTO `analista` (`id_analista`, `nome_analista`, `id_usuario`) VALUES
@@ -114,7 +124,7 @@ INSERT INTO `analista` (`id_analista`, `nome_analista`, `id_usuario`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categoria`
+-- Estrutura da tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -123,7 +133,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `categoria`
+-- Extraindo dados da tabela `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
@@ -133,7 +143,7 @@ INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dispensa`
+-- Estrutura da tabela `dispensa`
 --
 
 CREATE TABLE `dispensa` (
@@ -166,26 +176,28 @@ CREATE TABLE `dispensa` (
   `data_lancamento` datetime DEFAULT NULL,
   `orgao` varchar(200) DEFAULT NULL,
   `codigo_processo` varchar(150) DEFAULT NULL,
-  `conSolic` text DEFAULT NULL,
+  `conSolic` text NOT NULL,
   `conPreco` text DEFAULT NULL,
   `conAut` text DEFAULT NULL,
   `conAtuacao` text DEFAULT NULL,
   `conRat` text DEFAULT NULL,
-  `conPub` text DEFAULT NULL
+  `conPub` text DEFAULT NULL,
+  `dt_pesquisa` date DEFAULT NULL,
+  `dt_abertura` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dispensa`
+-- Extraindo dados da tabela `dispensa`
 --
 
-INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`) VALUES
-(80, 0, 0, 0, 'bila3', '', 'Manutenção', '2021-05-12', '2021-05-18', '2021-05-17', '2021-05-16', '2021-05-17', '2021-05-15', '2021-05-14', '', '', '', '2021-03-31', '', '2021-05-17', '2021-05-17', '2021-05-17', '2021-05-31', '', 2, '', '0000-00-00 00:00:00', 'P.M. SAO JOAO NEPOMUCENO', 'dispP.M. SAO JOAO NEPOMUCENO___', 'data errada', '', '', '', '', ''),
-(81, 2020, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '2021-05-15', '0000-00-00', '2021-05-13', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'P.M. SAO JOAO NEPOMUCENO', 'dispP.M. SAO JOAO NEPOMUCENO___2020', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_abertura`) VALUES
+(80, 0, 0, 0, 'bila3', '', 'Manutenção', '2021-05-12', '2021-05-18', '2021-05-17', '2021-05-16', '2021-05-17', '2021-05-15', '2021-05-14', '', '', '', '2021-03-31', '', '2021-05-17', '2021-05-17', '2021-05-17', '2021-05-31', '', 2, '', '0000-00-00 00:00:00', 'P.M. SAO JOAO NEPOMUCENO', 'dispP.M. SAO JOAO NEPOMUCENO___', '', '', '', '', '', '', NULL, NULL),
+(81, 2020, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '2021-05-15', '0000-00-00', '2021-05-13', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'P.M. SAO JOAO NEPOMUCENO', 'dispP.M. SAO JOAO NEPOMUCENO___2020', '', '', '', '', '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inciso`
+-- Estrutura da tabela `inciso`
 --
 
 CREATE TABLE `inciso` (
@@ -194,7 +206,7 @@ CREATE TABLE `inciso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `inciso`
+-- Extraindo dados da tabela `inciso`
 --
 
 INSERT INTO `inciso` (`id_inciso`, `inciso`) VALUES
@@ -203,7 +215,7 @@ INSERT INTO `inciso` (`id_inciso`, `inciso`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inexigibilidade`
+-- Estrutura da tabela `inexigibilidade`
 --
 
 CREATE TABLE `inexigibilidade` (
@@ -217,6 +229,7 @@ CREATE TABLE `inexigibilidade` (
   `dt_ratificacao` date DEFAULT NULL,
   `portaria_nomeando` varchar(200) DEFAULT NULL,
   `dt_solicitacao` date DEFAULT NULL,
+  `dt_autorizacao` date NOT NULL,
   `dt_orcamento` date DEFAULT NULL,
   `dt_autuacao` date DEFAULT NULL,
   `especificacao` varchar(300) DEFAULT NULL,
@@ -230,30 +243,47 @@ CREATE TABLE `inexigibilidade` (
   `dt_contrato_firmado` date DEFAULT NULL,
   `dt_publicacao` date DEFAULT NULL,
   `copia_notas` varchar(300) DEFAULT NULL,
-  `codigo` varchar(50) DEFAULT NULL,
   `valor_total` float DEFAULT NULL,
   `observacoes` varchar(300) DEFAULT NULL,
-  `dt_lancamento` datetime DEFAULT NULL
+  `dt_lancamento` datetime DEFAULT NULL,
+  `orgao` varchar(200) NOT NULL,
+  `codigo_processo` varchar(200) DEFAULT NULL,
+  `conSolic` text NOT NULL,
+  `conPreco` text NOT NULL,
+  `conAut` text NOT NULL,
+  `conAutuacao` text NOT NULL,
+  `conRab` text NOT NULL,
+  `conPub` text NOT NULL,
+  `dt_pesquisa` date DEFAULT NULL,
+  `dt_abertura` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `inexigibilidade`
+--
+
+INSERT INTO `inexigibilidade` (`id_inexigibilidade`, `exercicio`, `num_processo`, `num_inexigibilidade`, `objeto`, `categoria`, `dt_inicio`, `dt_ratificacao`, `portaria_nomeando`, `dt_solicitacao`, `dt_autorizacao`, `dt_orcamento`, `dt_autuacao`, `especificacao`, `enquadramento`, `minuta`, `dt_aprovacao`, `dt_proposta`, `documentos`, `dt_ata`, `dt_parecer_juridico`, `dt_contrato_firmado`, `dt_publicacao`, `copia_notas`, `valor_total`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAutuacao`, `conRab`, `conPub`, `dt_pesquisa`, `dt_abertura`) VALUES
+(1, '1', 1, 1, '1', '-1', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 0, '', '0000-00-00 00:00:00', '', NULL, '', '', '', '', '', '', NULL, NULL),
+(2, '1', 1, 1, '1', 'Manutenção', '2021-12-31', '2021-12-31', '1', '2021-12-31', '2021-12-31', '2021-12-31', '2021-12-31', '1', '1', '1', '2021-12-31', '2021-12-31', '1', '2021-12-31', '2021-12-31', '2021-12-31', '2021-12-31', '1', 1, '1', '2021-12-31 23:59:00', '', NULL, '', '', '', '', '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `modalidade`
+-- Estrutura da tabela `modalidade`
 --
 
 CREATE TABLE `modalidade` (
   `id_modalidade` int(11) NOT NULL,
-  `exercicio` varchar(3000) NOT NULL,
-  `num_processo` int(11) NOT NULL,
-  `modalidade` varchar(100) NOT NULL,
-  `numero` int(11) NOT NULL,
-  `objeto` varchar(3000) NOT NULL,
-  `registro` int(11) NOT NULL,
-  `categoria` varchar(100) NOT NULL,
-  `dt_edital` date NOT NULL,
-  `dt_entrega` date NOT NULL,
-  `dt_abertura` datetime NOT NULL,
+  `exercicio` varchar(3000) DEFAULT NULL,
+  `num_processo` int(11) DEFAULT NULL,
+  `modalidade` varchar(100) DEFAULT NULL,
+  `numero` int(11) DEFAULT NULL,
+  `objeto` varchar(3000) DEFAULT NULL,
+  `registro` int(11) DEFAULT NULL,
+  `categoria` varchar(100) DEFAULT NULL,
+  `dt_edital` date DEFAULT NULL,
+  `dt_entrega` date DEFAULT NULL,
+  `dt_abertura` date DEFAULT NULL,
   `dt_portaria` date DEFAULT NULL,
   `dt_solicitacao` date DEFAULT NULL,
   `dt_orcamento` date DEFAULT NULL,
@@ -279,13 +309,22 @@ CREATE TABLE `modalidade` (
   `codigo` varchar(50) DEFAULT NULL,
   `valor_total` float DEFAULT NULL,
   `observacoes` varchar(300) DEFAULT NULL,
-  `dt_lancamento` datetime DEFAULT NULL
+  `dt_lancamento` datetime DEFAULT NULL,
+  `orgao` varchar(200) NOT NULL,
+  `codigo_processo` varchar(200) DEFAULT NULL,
+  `conSolic` text DEFAULT NULL,
+  `conPreco` text DEFAULT NULL,
+  `conAut` text DEFAULT NULL,
+  `conAutuacao` text DEFAULT NULL,
+  `conRat` text DEFAULT NULL,
+  `conPub` text DEFAULT NULL,
+  `dt_pesquisa` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orgao`
+-- Estrutura da tabela `orgao`
 --
 
 CREATE TABLE `orgao` (
@@ -294,7 +333,7 @@ CREATE TABLE `orgao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `orgao`
+-- Extraindo dados da tabela `orgao`
 --
 
 INSERT INTO `orgao` (`id_orgao`, `nome_orgao`) VALUES
@@ -305,7 +344,7 @@ INSERT INTO `orgao` (`id_orgao`, `nome_orgao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orgao_atual`
+-- Estrutura da tabela `orgao_atual`
 --
 
 CREATE TABLE `orgao_atual` (
@@ -314,7 +353,7 @@ CREATE TABLE `orgao_atual` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `orgao_atual`
+-- Extraindo dados da tabela `orgao_atual`
 --
 
 INSERT INTO `orgao_atual` (`nome_orgao_atual`, `id_orgao_atual`) VALUES
@@ -323,7 +362,7 @@ INSERT INTO `orgao_atual` (`nome_orgao_atual`, `id_orgao_atual`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pregao`
+-- Estrutura da tabela `pregao`
 --
 
 CREATE TABLE `pregao` (
@@ -336,7 +375,7 @@ CREATE TABLE `pregao` (
   `registro` tinyint(1) NOT NULL,
   `categoria` varchar(100) NOT NULL,
   `dt_edital` date NOT NULL,
-  `dt_abertura` datetime DEFAULT NULL,
+  `dt_abertura` date DEFAULT NULL,
   `dt_nomeacao` date DEFAULT NULL,
   `dt_solicitacao` date DEFAULT NULL,
   `dt_orcamento` date DEFAULT NULL,
@@ -362,13 +401,22 @@ CREATE TABLE `pregao` (
   `codigo` varchar(100) DEFAULT NULL,
   `valor_total` float DEFAULT NULL,
   `observacoes` varchar(3000) DEFAULT NULL,
-  `dt_lancamento` datetime DEFAULT NULL
+  `dt_lancamento` datetime DEFAULT NULL,
+  `orgao` varchar(200) NOT NULL,
+  `codigo_processo` varchar(200) DEFAULT NULL,
+  `conSolic` text NOT NULL,
+  `conPreco` text NOT NULL,
+  `conAut` text NOT NULL,
+  `conAutuacao` text NOT NULL,
+  `conRat` text NOT NULL,
+  `conPub` text NOT NULL,
+  `dt_pesquisa` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo_aditivo`
+-- Estrutura da tabela `tipo_aditivo`
 --
 
 CREATE TABLE `tipo_aditivo` (
@@ -384,7 +432,7 @@ CREATE TABLE `tipo_aditivo` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo_modalidade`
+-- Estrutura da tabela `tipo_modalidade`
 --
 
 CREATE TABLE `tipo_modalidade` (
@@ -395,7 +443,7 @@ CREATE TABLE `tipo_modalidade` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -406,7 +454,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `login`, `senha`, `nome`) VALUES
@@ -416,7 +464,7 @@ INSERT INTO `usuario` (`id_usuario`, `login`, `senha`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vencedor`
+-- Estrutura da tabela `vencedor`
 --
 
 CREATE TABLE `vencedor` (
@@ -428,7 +476,7 @@ CREATE TABLE `vencedor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `vencedor`
+-- Extraindo dados da tabela `vencedor`
 --
 
 INSERT INTO `vencedor` (`id_vencedor`, `nome_empresa`, `valor`, `id_processo`, `codigo_processo`) VALUES
@@ -448,39 +496,41 @@ INSERT INTO `vencedor` (`id_vencedor`, `nome_empresa`, `valor`, `id_processo`, `
 (48, 'Industrial', 1, 0, 'dispP.M. SAO JOAO NEPOMUCENO_1_1_2020'),
 (57, 'Industrial', 1, 0, 'dispP.M. SAO JOAO NEPOMUCENO___'),
 (58, '', 0, 0, 'dispP.M. SAO JOAO NEPOMUCENO___'),
-(59, '', 0, 0, 'dispP.M. SAO JOAO NEPOMUCENO___');
+(59, '', 0, 0, 'dispP.M. SAO JOAO NEPOMUCENO___'),
+(60, 'Vinicera', 1200000, 0, 'dispP.M. SAO JOAO NEPOMUCENO___2020');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `adesao`
+-- Índices para tabela `adesao`
 --
 ALTER TABLE `adesao`
-  ADD PRIMARY KEY (`id_adesao`);
+  ADD PRIMARY KEY (`id_adesao`),
+  ADD UNIQUE KEY `codigo_processo` (`codigo_processo`);
 
 --
--- Indexes for table `aditivo`
+-- Índices para tabela `aditivo`
 --
 ALTER TABLE `aditivo`
   ADD PRIMARY KEY (`id_aditivo`);
 
 --
--- Indexes for table `analista`
+-- Índices para tabela `analista`
 --
 ALTER TABLE `analista`
   ADD PRIMARY KEY (`id_analista`);
 
 --
--- Indexes for table `categoria`
+-- Índices para tabela `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`),
   ADD UNIQUE KEY `categoria` (`categoria`);
 
 --
--- Indexes for table `dispensa`
+-- Índices para tabela `dispensa`
 --
 ALTER TABLE `dispensa`
   ADD PRIMARY KEY (`id_dispensa`),
@@ -488,153 +538,155 @@ ALTER TABLE `dispensa`
   ADD KEY `codigo_processo` (`codigo_processo`);
 
 --
--- Indexes for table `inciso`
+-- Índices para tabela `inciso`
 --
 ALTER TABLE `inciso`
   ADD PRIMARY KEY (`id_inciso`);
 
 --
--- Indexes for table `inexigibilidade`
+-- Índices para tabela `inexigibilidade`
 --
 ALTER TABLE `inexigibilidade`
-  ADD PRIMARY KEY (`id_inexigibilidade`);
+  ADD PRIMARY KEY (`id_inexigibilidade`),
+  ADD UNIQUE KEY `codigo_processo` (`codigo_processo`);
 
 --
--- Indexes for table `modalidade`
+-- Índices para tabela `modalidade`
 --
 ALTER TABLE `modalidade`
   ADD PRIMARY KEY (`id_modalidade`);
 
 --
--- Indexes for table `orgao`
+-- Índices para tabela `orgao`
 --
 ALTER TABLE `orgao`
   ADD PRIMARY KEY (`id_orgao`);
 
 --
--- Indexes for table `orgao_atual`
+-- Índices para tabela `orgao_atual`
 --
 ALTER TABLE `orgao_atual`
   ADD PRIMARY KEY (`id_orgao_atual`);
 
 --
--- Indexes for table `pregao`
+-- Índices para tabela `pregao`
 --
 ALTER TABLE `pregao`
-  ADD PRIMARY KEY (`id_pregao`);
+  ADD PRIMARY KEY (`id_pregao`),
+  ADD UNIQUE KEY `codigo_processo` (`codigo_processo`);
 
 --
--- Indexes for table `tipo_aditivo`
+-- Índices para tabela `tipo_aditivo`
 --
 ALTER TABLE `tipo_aditivo`
   ADD PRIMARY KEY (`id_tipo_aditivo`);
 
 --
--- Indexes for table `tipo_modalidade`
+-- Índices para tabela `tipo_modalidade`
 --
 ALTER TABLE `tipo_modalidade`
   ADD PRIMARY KEY (`id_modalidade`);
 
 --
--- Indexes for table `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`),
   ADD UNIQUE KEY `login` (`login`);
 
 --
--- Indexes for table `vencedor`
+-- Índices para tabela `vencedor`
 --
 ALTER TABLE `vencedor`
   ADD PRIMARY KEY (`id_vencedor`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `adesao`
+-- AUTO_INCREMENT de tabela `adesao`
 --
 ALTER TABLE `adesao`
   MODIFY `id_adesao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `aditivo`
+-- AUTO_INCREMENT de tabela `aditivo`
 --
 ALTER TABLE `aditivo`
-  MODIFY `id_aditivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_aditivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `analista`
+-- AUTO_INCREMENT de tabela `analista`
 --
 ALTER TABLE `analista`
   MODIFY `id_analista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `categoria`
+-- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `dispensa`
+-- AUTO_INCREMENT de tabela `dispensa`
 --
 ALTER TABLE `dispensa`
   MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
--- AUTO_INCREMENT for table `inexigibilidade`
+-- AUTO_INCREMENT de tabela `inexigibilidade`
 --
 ALTER TABLE `inexigibilidade`
-  MODIFY `id_inexigibilidade` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_inexigibilidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `modalidade`
+-- AUTO_INCREMENT de tabela `modalidade`
 --
 ALTER TABLE `modalidade`
   MODIFY `id_modalidade` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `orgao`
+-- AUTO_INCREMENT de tabela `orgao`
 --
 ALTER TABLE `orgao`
   MODIFY `id_orgao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `orgao_atual`
+-- AUTO_INCREMENT de tabela `orgao_atual`
 --
 ALTER TABLE `orgao_atual`
   MODIFY `id_orgao_atual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `pregao`
+-- AUTO_INCREMENT de tabela `pregao`
 --
 ALTER TABLE `pregao`
   MODIFY `id_pregao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tipo_aditivo`
+-- AUTO_INCREMENT de tabela `tipo_aditivo`
 --
 ALTER TABLE `tipo_aditivo`
   MODIFY `id_tipo_aditivo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tipo_modalidade`
+-- AUTO_INCREMENT de tabela `tipo_modalidade`
 --
 ALTER TABLE `tipo_modalidade`
   MODIFY `id_modalidade` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `vencedor`
+-- AUTO_INCREMENT de tabela `vencedor`
 --
 ALTER TABLE `vencedor`
-  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
