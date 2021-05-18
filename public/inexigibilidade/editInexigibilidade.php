@@ -1,8 +1,9 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
 
-if (isset ($_GET["id"])) {
-    $id = $_GET["id"];
+    $codigo = $_POST["codigo"];
+    $tipo = $_POST["tipo"];
+    $action = $_POST["action"];
 
     
     $sql = "SELECT * FROM inexigibilidade WHERE id_inexigibilidade = '". $id . "'";
@@ -276,7 +277,16 @@ if (isset ($_GET["id"])) {
 
             </div>
 
-            
+            <br>
+            <div class="buttons">
+            <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+            <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+            <input type="hidden" name="action" value="<?php echo $action ?>">
+
+            <input type="submit" class="btn btn-success" value="Atualizar">
+            <input type="reset" class="btn btn-danger" value="Cancelar">
+
+            </div>
 
             
 
@@ -288,8 +298,3 @@ if (isset ($_GET["id"])) {
 
 </body>
 </html>
-
-<?php
-}
-
-?>
