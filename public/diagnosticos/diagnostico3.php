@@ -1,4 +1,4 @@
-<?php include("../Template/header.php");
+<?php
 include("../../data/connection.php");
 
 $mediadisp=0;
@@ -7,7 +7,7 @@ $mediainex=0;
 $mediamodal=0;
 $mediapregao=0;
 
-$sql="select SUM(datediff(data_ratificacao, data_solicitacao_compras_servicos)) as mediadispensa, count(*) as quantdisp from dispensa";
+$sql="select SUM(datediff(data_parecer_juridico, data_autorizacao_abertura)) as mediadispensa, count(*) as quantdisp from dispensa";
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     
@@ -20,7 +20,7 @@ if ($dados->num_rows > 0) {
 }
 echo $mediadisp;
 
-$sql="select SUM(datediff(dt_ratificacao, dt_solicitacao)) as mediaadesao, count(*) as quantadesao from adesao";
+$sql="select SUM(datediff(dt_parecer, dt_autorizacao_abertura)) as mediaadesao, count(*) as quantadesao from adesao";
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
@@ -32,7 +32,7 @@ if ($dados->num_rows > 0) {
 echo $mediaadesao;
 
 
-$sql="select SUM(datediff(dt_ratificacao, dt_solicitacao)) as mediainex, count(*) as quantinex from inexigibilidade";
+$sql="select SUM(datediff(dt_parecer, dt_autorizacao_abertura)) as mediainex, count(*) as quantinex from inexigibilidade";
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
@@ -43,7 +43,7 @@ if ($dados->num_rows > 0) {
 }
 echo $mediainex;
 
-$sql="select SUM(datediff(dt_homologacao, dt_solicitacao)) as mediamodal, count(*) as quantmod from modalidade";
+$sql="select SUM(datediff(dt_parecer, dt_autorizacao_abertura)) as mediamodal, count(*) as quantmod from modalidade";
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
@@ -54,7 +54,7 @@ if ($dados->num_rows > 0) {
 }
 echo $mediamodal;
 
-$sql="select SUM(datediff(dt_homologacao, dt_solicitacao)) as mediapregao, count(*) as quantpregao from pregao";
+$sql="select SUM(datediff(dt_parecer, dt_autorizacao_abertura)) as mediapregao, count(*) as quantpregao from pregao";
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
