@@ -27,10 +27,10 @@ $dateRatificacao = $_POST["dateRatificacao"];
 $dateCF = $_POST["dateCF"];
 $datePublicacao = $_POST["datePublicacao"];
 $txtCopias = $_POST["txtCopias"];
-$txtCodReg = $_POST["txtCodReg"];
-$numTotal = $_POST["numTotal"];
-$txtObservacoes = $_POST["txtObservacoes"];
-$dateLancamento = $_POST["dateLancamento"];
+$observacoes = $_POST["txtObservacoes"];
+$dLancamento = $_POST["dateLancamento"];
+$tipo = "inexigibilidade";
+$action = $_POST["action"];
 
 $sql = "UPDATE inexigibilidade
  SET exercicio = '".$exercicio."' ,  " .
@@ -55,11 +55,10 @@ $sql = "UPDATE inexigibilidade
 "dt_parecer_juridico= '".$dateParecer."' ,  " .
 "dt_contrato_firmado= '".$dateCF."' ,  " .
 "dt_publicacao= '".$datePublicacao."' ,  " .
-"copia_notas = '".$txtCopias."' ,  " .
-"codigo= '".$txtCodReg."' ,  " .
-"valor_total= '".$numTotal."' ,  " .
-"observacoes= '".$txtObservacoes."' ,  " .
-"dt_lancamento= '".$dateLancamento."'" .
+"copia_notas= '".$txtCopias."' ," .
+"observacoes= '".$observacoes."' ," .
+"dt_lancamento= '".$dLancamento."' " .
+
 "WHERE id_inexigibilidade = " . $id;
 
 

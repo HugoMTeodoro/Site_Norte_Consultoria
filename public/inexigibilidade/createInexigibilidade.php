@@ -1,6 +1,8 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
-?>
+include("../Login/valida.php");
+$action=$_POST["action"];
+;?>
 
 <html lang="en">
 <head>
@@ -45,7 +47,7 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
                 </div>
-                <input type="text" name="txtObjeto" class="form-control" id="txtObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtObjeto" id="txtObjeto" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -204,45 +206,109 @@ include("../../data/connection.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
                 </div>
-                <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtCopias" id="txtCopias" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Código de registro</span>
-                </div>
-                <input type="text" name="txtCodReg" class="form-control" id="txtCodReg" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
-                </div>
-                <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
                 </div>
-                <input type="text" name="txtObservacoes" class="form-control" id="txtObservacoes" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtObservacoes" id="txtObservacoes" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
+            <?php
+
+            $sqlQuery = "SELECT nome FROM usuario where id_usuario='$id_usuario'";
+
+            $usuario = $connection->query($sqlQuery);
+
+            if ($usuario->num_rows > 0) {
+
+                while ($row = $usuario->fetch_assoc()) {
+                    $nome = $row["nome"];
+            ?>
+            <?php
+                }
+            }
+            ?>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Analista responsável</span>
+                </div>
+                <input type="text" name="txtAnalista" class="form-control" id="txtAnalista" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $nome ?>" readonly>
+            </div>
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Órgão</span>
+                </div>
+                <select class="form-select" name="txtOrgao" id="txtOrgao">
+                
+                    <?php
+
+                        $sqlQuery = "SELECT * FROM orgao";
+
+                        $orgaos = $connection -> query($sqlQuery);
+
+                        if($orgaos -> num_rows > 0)
+                        {
+
+                            while($row = $orgaos -> fetch_assoc())
+                            {
+                                if($orgaocrud == $row["nome_orgao"])
+                                {
+                    ?>
+                                    <option value="<?php echo $row["nome_orgao"]?>" selected>
+                                        <?php echo $row["nome_orgao"] ?>
+                                    </option>
+                    <?php
+                                }
+                                else
+                                {
+                    ?>                    
+                                    <option value="<?php echo $row["nome_orgao"]?>">
+                                        <?php echo $row["nome_orgao"]?>
+                                    </option>
+                    
+                    <?php
+                                }
+                            }
+                        }
+                    ?>
+                </select>
+            </div>
+        
+
+            <?php
+            date_default_timezone_set('America/Sao_Paulo');
+            $agora = date('d/m/Y H:i');
+            $dc = trim($agora);
+            $data = date("Y-d-m", strtotime($dc));
+            $hora = date("H:i", strtotime($dc));
+            $datac = $data . "T" . $hora;
+            ?>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>
                 </div>
-                <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $datac ?>">
             </div>
 
             <br>    
-            <div class="buttons">
-                
-                <input type="submit" class="btn btn-success" value="Cadastrar">
-                <input type="reset" class="btn btn-danger"  onclick="window.location.href='../login/index.php'" value="Cancelar">
+            
 
+            <div class="buttons">
+            <input type="hidden" name="tipo" id="tipo" value="inexigibilidade" >
+            <input type="hidden" name="action" id="action" value="<?php echo $action ?>" >
+            
+        
+                <input type="submit" class="btn btn-success" value="Proximo" >
+                <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
+
+            </div>
             </div>
 
             
