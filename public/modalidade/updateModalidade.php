@@ -42,7 +42,6 @@ if (isset($_POST)) {
     $txtCopias = $_POST["txtCopias"];
     $observacoes = $_POST["txtObservacoes"];
     $dLancamento = $_POST["dateLancamento"];
-    
     $tipo = "modalidade";
     $action = $_POST["action"];
 
