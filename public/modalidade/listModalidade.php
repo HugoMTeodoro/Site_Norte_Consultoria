@@ -14,9 +14,14 @@
 
         <br>
         
-    <div class="buttons">
-                <a href="../modalidade/createModalidade.php" class="btn btn-primary">Cadastro de modalidade</a>
-        </div>
+		<form action="createModalidade.php" method="POST">
+		
+		<input type="hidden" name="tipo" id="tipo" value="modalidade" > 
+		<input type="submit" class="btn btn-primary" value="Cadastro de modalidade" >
+		<input type="hidden" name="action" value="../vencedor/createVencedor.php">
+
+	
+		</form>
     
     <br>
     <form method="POST" id="form-pesquisa" action="">
