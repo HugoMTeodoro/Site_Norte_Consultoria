@@ -1,16 +1,18 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
 
+   
+
     $codigo = $_POST["codigo"];
     $tipo = $_POST["tipo"];
     $action = $_POST["action"];
 
     
-    $sql = "SELECT * FROM inexigibilidade WHERE id_inexigibilidade = '". $id . "'";
+    $sql = "SELECT * FROM inexigibilidade WHERE codigo_processo = '". $codigo . "'";
     
     $resultado = $connection->query($sql);
     $inexigibilidade = $resultado->fetch_assoc();
-    $sqlc = "SELECT id_categoria FROM categoria WHERE categoria = '".$inexigibilidade["categoria"]."'";
+    
 
     
 
@@ -239,21 +241,7 @@ include("../../data/connection.php");
                 <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["copia_notas"]?>">
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Código de registro</span>
-                </div>
-                <input type="text" name="txtCodReg" class="form-control" id="txtCodReg" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["codigo"]?>">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
-                </div>
-                <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["valor_total"]?>">
-            </div>
-
-            
+    
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -270,12 +258,7 @@ include("../../data/connection.php");
             </div>
 
             <br>    
-            <div class="buttons">
-                
-                <input type="submit" class="btn btn-success" value="Cadastrar">
-                <input type="reset" class="btn btn-danger"  onclick="window.location.href='../login/index.php'" value="Cancelar">
-
-            </div>
+            
 
             <br>
             <div class="buttons">

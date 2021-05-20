@@ -12,9 +12,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
     include("../../data/connection.php");
 
     $sql = "SELECT * FROM modalidade WHERE num_processo LIKE '%$usuarios%' ";
-
-
-   
+ 
 
 
     $dadosModalidade = $connection -> query($sql);
@@ -47,14 +45,21 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
                         <td><?php echo $exibir["exercicio"] ?></td>
                         <td><?php echo $exibir["num_processo"] ?></td>
                         <td><?php echo $exibir["modalidade"] ?></td>
-                            <td>
+                        <td>
                                 <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                                     <a href="deleteModalidade.php?id=<?php echo $exibir ["id_modalidade"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
-                                    
                                 </button>
-                                <button type="submit" class="btn btn-success" formmethod="post">
-                                <a href="editModalidade.php?id=<?php echo $exibir["id_modalidade"] ?>" style="text-decoration: none; color: white">Editar</a>
-                                </button> 
+                                
+                                <form name="editbutton" action="editModalidade.php" method="POST">
+                                <input type="hidden" name="codigo" value="<?php echo $exibir["codigo_processo"] ?>">
+                                <input type="hidden" name="action" value="../modalidade/editModalidade.php">
+                                
+                                <br>
+                                <input type="hidden" name="tipo" value="modalidade">
+                                <input type="hidden" name="id" value="<?php echo $exibir["id_modalidade"] ?>">
+                                
+                                <input type="submit" class="btn btn-success btn-sm" value="Editar">
+                            </form>
                             </td>
                         </tr>
                     <?php

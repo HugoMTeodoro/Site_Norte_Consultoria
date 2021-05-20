@@ -25,14 +25,16 @@ $dateRatificacao = $_POST["dateRatificacao"];
 $dateCF = $_POST["dateCF"];
 $datePublicacao = $_POST["datePublicacao"];
 $txtCopias = $_POST["txtCopias"];
-$txtCodReg = $_POST["txtCodReg"];
-$numTotal = $_POST["numTotal"];
-$txtObservacoes = $_POST["txtObservacoes"];
-$dateLancamento = $_POST["dateLancamento"];
+$observacoes = $_POST["txtObservacoes"];
+$analistaResponsavel = $_POST["txtAnalista"];
+$dLancamento = $_POST["dateLancamento"];
+$orgao1 = $_POST["txtOrgao"];
+$codigo = "inex" . $orgao1 . "_" . $numProcesso . "_" . $numInexigibilidade . "_" . $exercicio;
+$tipo = "inexigibilidade";
+$action = $_POST["action"];
 
-$sql = "INSERT INTO inexigibilidade  (exercicio ,  num_processo ,  num_inexigibilidade ,  objeto ,  categoria ,  dt_inicio ,  dt_ratificacao ,  portaria_nomeando ,  dt_solicitacao ,  dt_orcamento , dt_autorizacao,  dt_autuacao ,  especificacao ,  enquadramento ,  minuta ,  dt_aprovacao ,  dt_proposta ,  documentos ,  dt_ata ,  dt_parecer_juridico ,  dt_contrato_firmado ,  dt_publicacao ,  copia_notas ,  codigo ,  valor_total ,  observacoes ,  dt_lancamento )
-    VALUES('$exercicio','$numProcesso','$numInexigibilidade','$txtObjeto','$txtCategoria','$datei','$dateRatificacao','$txtp','$dates','$datepe','$datea','$dateau','$txtEspecificacao','$txtEnquadramento','$txtMinuta','$dateAprov','$dateProp','$txtHabilitacao','$dateAta','$dateParecer','$dateCF','$datePublicacao','$txtCopias','$txtCodReg','$numTotal',
-'$txtObservacoes','$dateLancamento')";
+$sql = "INSERT INTO inexigibilidade  (exercicio ,  num_processo ,  num_inexigibilidade ,  objeto ,  categoria ,  dt_inicio ,  dt_ratificacao ,  portaria_nomeando ,  dt_solicitacao ,  dt_orcamento , dt_autorizacao,  dt_autuacao ,  especificacao ,  enquadramento ,  minuta ,  dt_aprovacao ,  dt_proposta ,  documentos ,  dt_ata ,  dt_parecer_juridico ,  dt_contrato_firmado ,  dt_publicacao ,  copia_notas , observacoes, dt_lancamento, orgao,codigo_processo)
+    VALUES('$exercicio','$numProcesso','$numInexigibilidade','$txtObjeto','$txtCategoria','$datei','$dateRatificacao','$txtp','$dates','$datepe','$datea','$dateau','$txtEspecificacao','$txtEnquadramento','$txtMinuta','$dateAprov','$dateProp','$txtHabilitacao','$dateAta','$dateParecer','$dateCF','$datePublicacao','$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo')";
 
 
 $resultado = $connection -> query($sql);
@@ -40,7 +42,7 @@ $resultado = $connection -> query($sql);
 if ($resultado){ ?>
     <script>
         alert("Inexigibilidade cadastrada com sucesso");
-        window.location = 'createInexigibilidade.php';
+        window.location = 'listInexigibilidade.php';
     </script>
 <?php
 } else { 

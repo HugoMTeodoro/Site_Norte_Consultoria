@@ -14,10 +14,16 @@
 
         <br>
         
-    <div class="buttons">
-                <a href="../inexigibilidade/createInexigibilidade.php" class="btn btn-primary">Cadastro de inexigibilidade</a>
-        </div>
-    
+		<form action="createInexigibilidade.php" method="POST">
+		
+		<input type="hidden" name="tipo" id="tipo" value="inexigiblidade" > 
+		<input type="submit" class="btn btn-primary" value="Cadastro de Inexigibilidade" >
+		<input type="hidden" name="action" value="../vencedor/createVencedor.php">
+
+	
+		</form>
+
+
     <br>
     <form method="POST" id="form-pesquisa" action="">
 	<div class="input-group mb-3">
@@ -26,6 +32,7 @@
                 </div>
 				<input type="text" name="pesquisa" class="form-control" id="pesquisa" aria-label="Default" placeholder="Procure a inexigibilidade" aria-describedby="inputGroup-sizing-default">
 	</div>
+	
     </div>
 		
     </form>
@@ -34,34 +41,34 @@
 	<?php include("listInexigibilidadeNoSearch.php") ?>
 
 	</ul>
-</body>
-<script>
-	$(function() {
+	</body>
+	<script>
+		$(function() {
 
-		$("#pesquisa").keyup(function() {
-			//Recuperar o valor do campo
-			var pesquisa = $(this).val();
+			$("#pesquisa").keyup(function() {
+				//Recuperar o valor do campo
+				var pesquisa = $(this).val();
 
-			//Verificar se há algo digitado
-			if (pesquisa != '') {
-				var dados = {
-					palavra: pesquisa
+				//Verificar se há algo digitado
+				if (pesquisa != '') {
+					var dados = {
+						palavra: pesquisa
+					}
+
+					$.post('listInexigibilidadeSearching.php', dados, function(retorna) {
+						//Mostra dentro da ul os resultado obtidos 
+						$(".resultado").html(retorna);
+					});
+				} else {
+					$.post('listInexigibilidadeSearching.php', dados, function(retorna) {
+						//Mostra dentro da ul os resultado obtidos 
+						$(".resultado").html(retorna);
+					});
 				}
-
-				$.post('listInexigibilidadeSearching.php', dados, function(retorna) {
-					//Mostra dentro da ul os resultado obtidos 
-					$(".resultado").html(retorna);
-				});
-			} else {
-				$.post('listInexigibilidadeSearching.php', dados, function(retorna) {
-					//Mostra dentro da ul os resultado obtidos 
-					$(".resultado").html(retorna);
-				});
-			}
+			});
 		});
-	});
-</script>
-
-<?php
-error_reporting(0);
-?>
+	</script>
+	
+	<?php
+	error_reporting(0);
+	?>
