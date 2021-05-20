@@ -12,9 +12,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
     include("../../data/connection.php");
 
     $sql = "SELECT * FROM pregao WHERE numero LIKE '%$usuarios%' ";
-
-
-   
+ 
 
 
     $dadosPregao = $connection -> query($sql);
@@ -48,13 +46,21 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
                         <td><?php echo $exibir["num_processo"] ?></td>
                         <td><?php echo $exibir["numero"] ?></td>
                             <td>
-                                <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
+                            <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                                     <a href="deletePregao.php?id=<?php echo $exibir ["id_pregao"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
-                                    
                                 </button>
-                                <button type="submit" class="btn btn-success" formmethod="post">
-                                <a href="editPregao.php?id=<?php echo $exibir["id_pregao"] ?>" style="text-decoration: none; color: white">Editar</a>
-                                </button> 
+                                
+                                <form name="editbutton" action="editPregao.php" method="POST">
+                                <input type="hidden" name="codigo" value="<?php echo $exibir["codigo_processo"] ?>">
+                                <input type="hidden" name="action" value="../pregao/editPregao.php">
+                                
+                                <br>
+                                <input type="hidden" name="tipo" value="pregao">
+                                <input type="hidden" name="id" value="<?php echo $exibir["id_pregao"] ?>">
+                                
+                                <input type="submit" class="btn btn-success btn-sm" value="Editar">
+                            </form>
+                            </td>
                             </td>
                         </tr>
                     <?php

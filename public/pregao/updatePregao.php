@@ -35,11 +35,11 @@ $dt_parecer  = $_POST["dateParecer"];
 $dt_homologacao  = $_POST["dateHomologacao"];
 $dt_contrato_firmado  = $_POST["dateContratoFirmado"];
 $dt_publicacao_ata  = $_POST["datePublicacaoAta"];
-$copia_notas  = $_POST["txtCopias"];
-$codigo  = $_POST["txtCodReg"];
-$valor_total  = $_POST["numTotal"];
-$observacoes  = $_POST["txtObservacoes"];
-$dt_lancamento  = $_POST["dateLancamento"];
+$txtCopias = $_POST["txtCopias"];
+$observacoes = $_POST["txtObservacoes"];
+$dLancamento = $_POST["dateLancamento"];
+$tipo = "pregao";
+$action = $_POST["action"];
 
 
 $sql = "UPDATE pregao
@@ -74,11 +74,9 @@ $sql = "UPDATE pregao
 "dt_homologacao = '".$dt_homologacao."',".
 "dt_contrato_firmado = '".$dt_contrato_firmado."',".
 "dt_publicacao_ata = '".$dt_publicacao_ata."',".
-"copia_notas = '".$copia_notas."',".
-"codigo = '".$codigo."',".
-"valor_total = '".$valor_total."',".
-"observacoes = '".$observacoes."',".
-"dt_lancamento = '".$dt_lancamento."'".
+"copia= '".$txtCopias."' ," .
+"observacoes= '".$observacoes."' ," .
+"dt_lancamento= '".$dLancamento."' " .
 "WHERE id_pregao = " . $id;
 $resultado = $connection -> query($sql);
 

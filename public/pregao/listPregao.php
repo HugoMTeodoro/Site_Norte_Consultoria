@@ -14,10 +14,16 @@
 
         <br>
         
-    <div class="buttons">
-                <a href="../pregao/createPregao.php" class="btn btn-primary">Cadastro de pregão</a>
-        </div>
-    
+		<br>
+        
+		<form action="createPregao.php" method="POST">
+		
+		<input type="hidden" name="tipo" id="tipo" value="pregao" > 
+		<input type="submit" class="btn btn-primary" value="Cadastro de pregão" >
+		<input type="hidden" name="action" value="../vencedor/createVencedor.php">
+
+	
+		</form>
     <br>
     <form method="POST" id="form-pesquisa" action="">
 	<div class="input-group mb-3">

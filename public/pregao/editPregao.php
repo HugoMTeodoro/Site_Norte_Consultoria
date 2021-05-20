@@ -1,17 +1,19 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
 
-if (isset ($_GET["id"])) {
-    $id = $_GET["id"];
-    
-    $sql = "SELECT * FROM pregao WHERE id_pregao = '". $id . "'";
+   
+
+    $codigo = $_POST["codigo"];
+    $tipo = $_POST["tipo"];
+    $action = $_POST["action"];
+  
+    $sql = "SELECT * FROM pregao WHERE codigo_processo = '". $codigo . "'";
     $resultado = $connection->query($sql);
     $pregao = $resultado->fetch_assoc();
 
     
 
 
-?>
 ?>
 
 <html lang="en">
@@ -62,12 +64,12 @@ if (isset ($_GET["id"])) {
 
                     $sqlQuery = "SELECT * FROM tipo ORDER BY pregao";
 
-                    $pregao = $connection->query($sqlQuery);
+                    $pregao1 = $connection->query($sqlQuery);
 
-                    if ($pregao->num_rows > 0) {
+                    if ($pregao1->num_rows > 0) {
 
-                        while ($row = $pregao->fetch_assoc()) {
-                            if ($pregao["tipo"] === $row["tipo"]) {
+                        while ($row = $pregao1->fetch_assoc()) {
+                            if ($pregao1["tipo"] === $row["tipo"]) {
                                 ?>
                                 <option value="<?php echo $row["tipo"] ?>" selected>
                                     <?php echo $row["tipo"]  ?>
@@ -104,10 +106,8 @@ if (isset ($_GET["id"])) {
                 <div class="input-group-prepend">
                     
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
-                    
+
                 </div>
-                
-         
                 <input type="text" name="txtObjeto" class="form-control" id="txtObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["objeto"]?>">
             </div>
             
@@ -371,31 +371,15 @@ if (isset ($_GET["id"])) {
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
                 </div>
-                <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["copia_notas"]?>">
+                <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Código de registro</span>
-                </div>
-                <input type="text" name="txtCodReg" class="form-control" id="txtCodReg" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["codigo"]?>">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
-                </div>
-                <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["valor_total"]?>">
-            </div>
-
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
                 </div>
-                <input type="text" name="txtObservacoes" class="form-control" id="txtObservacoes" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["observacoes"]?>">
+                <textarea name="txtObservacoes" id="txtObservacoes" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
-
             
 
             <div class="input-group mb-3">
@@ -404,12 +388,17 @@ if (isset ($_GET["id"])) {
                 </div>
                 <input type="datetime" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["dt_lancamento"]?>">
             </div>
-            <div class="buttons">
-                
-                <input type="submit" class="btn btn-success" value="Confirmar">
-                <input type="reset" class="btn btn-danger"  onclick="window.location.href='../login/index.php'" value="Cancelar">
 
-            </div>
+
+            <div class="buttons">
+            <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+            <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+            <input type="hidden" name="action" value="<?php echo $action ?>">
+
+            <input type="submit" class="btn btn-success" value="Atualizar">
+            <input type="reset" class="btn btn-danger" value="Cancelar">
+
+        </div>
 
             
 
@@ -425,6 +414,5 @@ if (isset ($_GET["id"])) {
 </html>
 
 <?php
-
-                }
+include("../vencedor/createVencedor.php");
 ?>

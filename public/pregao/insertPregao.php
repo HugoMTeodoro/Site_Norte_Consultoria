@@ -34,15 +34,19 @@
     $dt_homologacao  = $_POST["dateHomologacao"];
     $dt_contrato_firmado  = $_POST["dateContratoFirmado"];
     $dt_publicacao_ata  = $_POST["datePublicacaoAta"];
-    $copia_notas  = $_POST["txtCopias"];
-    $codigo  = $_POST["txtCodReg"];
-    $valor_total  = $_POST["numTotal"];
-    $observacoes  = $_POST["txtObservacoes"];
-    $dt_lancamento  = $_POST["dateLancamento"];
+    $txtCopias = $_POST["txtCopias"];
+    $observacoes = $_POST["txtObservacoes"];
+    $analistaResponsavel = $_POST["txtAnalista"];
+    $dLancamento = $_POST["dateLancamento"];
+    $orgao1 = $_POST["txtOrgao"];
+    $codigo = "pr" . $orgao1 . "_" . $num_processo . "_" . $numero . "_" . $exercicio;
+    $tipo = "pregao";
+    $action = $_POST["action"];
+
 
     $sql = "INSERT INTO 
-    pregao (exercicio, num_processo, tipo, numero, objeto, registro, categoria, dt_edital, dt_abertura, dt_nomeacao, dt_solicitacao, dt_orcamento, dt_autorizacao, dt_autuacao, enquadramento, edital, dt_aprovacao, minuta, dt_publicacao, especificacao, dt_credenciamento, proposta_precos, dt_ata_abertura, documento, dt_confirmacao, prazo, dt_adjudicacao, dt_parecer, dt_homologacao, dt_contrato_firmado, dt_publicacao_ata, copia_notas, codigo, valor_total, observacoes, dt_lancamento)
-    values ('$exercicio', '$num_processo', '$tipo', '$numero', '$objeto', '$registro', '$categoria', '$dt_edital', '$dt_abertura', '$dt_nomeacao', '$dt_solicitacao', '$dt_orcamento', '$dt_autorizacao', '$dt_autuacao', '$enquadramento', '$edital', '$dt_aprovacao', '$minuta', '$dt_publicacao', '$especificacao', '$dt_credenciamento', '$proposta_precos', '$dt_ata_abertura', '$documento', '$dt_confirmacao', '$prazo', '$dt_adjudicacao', '$dt_parecer', '$dt_homologacao', '$dt_contrato_firmado', '$dt_publicacao_ata', '$copia_notas', '$codigo', '$valor_total', '$observacoes', '$dt_lancamento')";
+    pregao (exercicio, num_processo, tipo, numero, objeto, registro, categoria, dt_edital, dt_abertura, dt_nomeacao, dt_solicitacao, dt_orcamento, dt_autorizacao, dt_autuacao, enquadramento, edital, dt_aprovacao, minuta, dt_publicacao, especificacao, dt_credenciamento, proposta_precos, dt_ata_abertura, documento, dt_confirmacao, prazo, dt_adjudicacao, dt_parecer, dt_homologacao, dt_contrato_firmado, dt_publicacao_ata, copia_notas, observacoes, dt_lancamento, orgao, codigo_processo)
+    values ('$exercicio', '$num_processo', '$tipo', '$numero', '$objeto', '$registro', '$categoria', '$dt_edital', '$dt_abertura', '$dt_nomeacao', '$dt_solicitacao', '$dt_orcamento', '$dt_autorizacao', '$dt_autuacao', '$enquadramento', '$edital', '$dt_aprovacao', '$minuta', '$dt_publicacao', '$especificacao', '$dt_credenciamento', '$proposta_precos', '$dt_ata_abertura', '$documento', '$dt_confirmacao', '$prazo', '$dt_adjudicacao', '$dt_parecer', '$dt_homologacao', '$dt_contrato_firmado', '$dt_publicacao_ata', '$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo')";
 
 
 
@@ -52,14 +56,14 @@
          ?>
         <script>
             alert("Pregão cadastrada com sucesso");
-            
+            window.location = 'listPregao.php';
         </script>
     <?php
     } else {
         echo $sql; ?>
         <script>
             alert("Ocorreu um erro ao cadastrar a pregão");
-            window.location = 'createAdesão.php';
+            //window.location = 'listPregao.php';
         
         </script>
         
