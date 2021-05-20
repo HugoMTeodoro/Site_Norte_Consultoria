@@ -1,4 +1,12 @@
-<?php include("../template/header.php") ?>
+<?php include("../template/header.php");
+if(isset($_SESSION['logado'])){
+   ?>
+   <script>   
+   window.location = "../home/orgao.php";
+</script>
+<?php
+}
+?>
 
 <html>
 
@@ -10,7 +18,6 @@
    <div class="sidenav">
       <div class="login-main-text">
          <h2>Norte Consultoria <br> Manipulação de Processos Licitatórios<br></h2>
-
       </div>
    </div>
    <div class="main">

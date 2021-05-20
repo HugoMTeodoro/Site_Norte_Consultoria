@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2021 at 10:00 PM
+-- Generation Time: May 21, 2021 at 12:34 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -122,7 +122,7 @@ CREATE TABLE `analista` (
 --
 
 INSERT INTO `analista` (`id_analista`, `nome_analista`, `id_usuario`) VALUES
-(4, 'Leonardo Dias', 19);
+(6, 'ADM', 24);
 
 -- --------------------------------------------------------
 
@@ -187,16 +187,16 @@ CREATE TABLE `dispensa` (
   `conPub` text DEFAULT NULL,
   `dt_pesquisa` date DEFAULT NULL,
   `dt_abertura` date DEFAULT NULL,
-  `emergencia` varchar(3) DEFAULT NULL
+  `emergencia` varchar(3) DEFAULT NULL,
+  `pesquisa` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `dispensa`
 --
 
-INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_abertura`, `emergencia`) VALUES
-(80, 0, 0, 0, 'bila3', '', 'Manutenção', '2021-05-12', '2021-05-18', '2021-05-17', '2021-05-16', '2021-05-17', '2021-05-15', '2021-05-14', '', '', '', '2021-03-31', '', '2021-05-17', '2021-05-17', '2021-05-17', '2021-05-31', '', 2, '', '0000-00-00 00:00:00', 'P.M. SAO JOAO NEPOMUCENO', 'dispP.M. SAO JOAO NEPOMUCENO___', '', '', '', '', '', '', NULL, NULL, NULL),
-(81, 2020, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '2021-05-15', '0000-00-00', '2021-05-13', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'P.M. SAO JOAO NEPOMUCENO', 'dispP.M. SAO JOAO NEPOMUCENO___2020', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_abertura`, `emergencia`, `pesquisa`) VALUES
+(83, 2020, 0, 1, 'bila3', 'A licitação tem por objeto aquilo sobre o que se deseja contratar. Uma licitação pode ter por objetos: serviços, obras, compras, alimentações, concessões, permissões e locações. A definição precisa de um objeto de um processo licitatório é indispensável para a prestação de serviço da forma que o cliente espera.', 'Manutenção', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 0, '', '0000-00-00 00:00:00', 'PMOB', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa/1/2020');
 
 -- --------------------------------------------------------
 
@@ -364,7 +364,7 @@ CREATE TABLE `orgao_atual` (
 --
 
 INSERT INTO `orgao_atual` (`nome_orgao_atual`, `id_orgao_atual`) VALUES
-('', 1);
+('PMOB', 1);
 
 -- --------------------------------------------------------
 
@@ -469,8 +469,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `login`, `senha`, `nome`) VALUES
-(19, 'leo', '202cb962ac59075b964b07152d234b70', 'Leonardo'),
-(21, 'Vinicius', '202cb962ac59075b964b07152d234b70', 'Vinicius');
+(24, 'adm', 'b09c600fddc573f117449b3723f23d64', 'ADM');
 
 -- --------------------------------------------------------
 
@@ -631,7 +630,7 @@ ALTER TABLE `aditivo`
 -- AUTO_INCREMENT for table `analista`
 --
 ALTER TABLE `analista`
-  MODIFY `id_analista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_analista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `categoria`
@@ -643,7 +642,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `dispensa`
 --
 ALTER TABLE `dispensa`
-  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `inexigibilidade`
@@ -661,7 +660,7 @@ ALTER TABLE `modalidade`
 -- AUTO_INCREMENT for table `orgao`
 --
 ALTER TABLE `orgao`
-  MODIFY `id_orgao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_orgao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `orgao_atual`
@@ -691,7 +690,7 @@ ALTER TABLE `tipo_modalidade`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `vencedor`

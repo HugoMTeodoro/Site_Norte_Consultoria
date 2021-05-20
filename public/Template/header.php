@@ -24,6 +24,7 @@ if ( session_status() !== PHP_SESSION_ACTIVE ){
 
 <?php
 $orgao = '';
+$orgaoa;
 $firstname='';
 if (isset($_SESSION['logado'])) {
   $idu=$_SESSION['logado'];
@@ -53,6 +54,7 @@ if (isset($_SESSION['logado'])) {
     while ($row = $orgaoatual->fetch_assoc()) {
       $orgaocrud = $row['nome_orgao_atual'];
       $orgao = '- ' . $row['nome_orgao_atual'];
+      $orgaoa=$row['nome_orgao_atual'];
 
 ?>
 

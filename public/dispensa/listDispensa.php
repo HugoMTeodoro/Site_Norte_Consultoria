@@ -1,6 +1,8 @@
 <?php include("../Template/header.php") ?>
+<?php include("../../data/connection.php") ;
+include("../Login/valida.php");
+?>
 
-<?php include("../../data/connection.php") ?>
 
 <br>
 <br>
