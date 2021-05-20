@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2021 at 02:23 AM
+-- Generation Time: May 20, 2021 at 10:00 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -66,7 +66,9 @@ CREATE TABLE `adesao` (
   `conRat` text NOT NULL,
   `conPub` text NOT NULL,
   `dt_pesquisa` date DEFAULT NULL,
-  `dt_abertura` date DEFAULT NULL
+  `dt_abertura` date DEFAULT NULL,
+  `dt_autorizacao_empresa` date DEFAULT NULL,
+  `dt_homologacao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -320,7 +322,10 @@ CREATE TABLE `modalidade` (
   `conAutuacao` text DEFAULT NULL,
   `conRat` text DEFAULT NULL,
   `conPub` text DEFAULT NULL,
-  `dt_pesquisa` date NOT NULL
+  `dt_pesquisa` date NOT NULL,
+  `dt_emissao` date DEFAULT NULL,
+  `dt_ata_julgamento` date DEFAULT NULL,
+  `dt_sessao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -359,7 +364,7 @@ CREATE TABLE `orgao_atual` (
 --
 
 INSERT INTO `orgao_atual` (`nome_orgao_atual`, `id_orgao_atual`) VALUES
-('P.M. SAO JOAO NEPOMUCENO', 1);
+('', 1);
 
 -- --------------------------------------------------------
 
@@ -412,7 +417,11 @@ CREATE TABLE `pregao` (
   `conAutuacao` text NOT NULL,
   `conRat` text NOT NULL,
   `conPub` text NOT NULL,
-  `dt_pesquisa` date DEFAULT NULL
+  `dt_pesquisa` date DEFAULT NULL,
+  `dt_emissao` date DEFAULT NULL,
+  `dt_aprov_minuta` date DEFAULT NULL,
+  `dt_sessao` date DEFAULT NULL,
+  `dt_parecer` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
