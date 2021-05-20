@@ -10,7 +10,7 @@ include_once("../../data/connection.php");
  $categoria = $_POST["txtCategoria"];
  $dt_inicio = $_POST["datei"];
  $dt_ratificacao = $_POST["dateRatificacao"];
- $portaria = $_POST["txtp"];
+ $portaria = $_POST["datepo"];
  $dt_solicitacao = $_POST["dates"];
  $dt_orcamento = $_POST["datepe"];
  $dt_solicitacaoo = $_POST["dateSolicitacaoRP"];
@@ -27,16 +27,19 @@ include_once("../../data/connection.php");
  $dt_publicacao = $_POST["datePublicacaoInexigibilidade"];
  $dt_contrato_firmado = $_POST["dateCF"];
  $dt_publicacao_contrato = $_POST["datePublicacaoContrato"];
- $copia_notas = $_POST["txtCopias"];
- $codigo = $_POST["txtCodReg"];
- $valor = $_POST["numTotal"];
+ $txtCopias = $_POST["txtCopias"];
  $observacoes = $_POST["txtObservacoes"];
- $dt_lancamento = $_POST["dateLancamento"];
+ $analistaResponsavel = $_POST["txtAnalista"];
+ $dLancamento = $_POST["dateLancamento"];
+ $orgao1 = $_POST["txtOrgao"];
+ $codigo = "ades" . $orgao1 . "_" . $num_adesao . "_" . $num_inexigibilidade . "_" . $exercicio;
+ $tipo = "adesao";
+ $action = $_POST["action"];
 
 
  $sql = "INSERT INTO 
-    adesao (exercicio, num_adesao, num_inexigibilidade, objeto, categoria, dt_inicio, dt_ratificacao, portaria, dt_solicitacao, dt_orcamento, dt_solicitacaoo, dt_autorizacao, dt_solicitacao_empresa, verificacao, documento, dt_confirmacao, dt_ata, dt_autorizacao_abertura, dt_autuacao, dt_ata_inexigibilidade, dt_parecer, dt_publicacao, dt_contrato_firmado, dt_publicacao_contrato, copia_notas, codigo, valor, observacoes, dt_lancamento)
-    values ('$exercicio', '$num_adesao', '$num_inexigibilidade', '$objeto', '$categoria', '$dt_inicio', '$dt_ratificacao', '$portaria', '$dt_solicitacao', '$dt_orcamento', '$dt_solicitacaoo', '$dt_autorizacao', '$dt_solicitacao_empresa', '$verificacao', '$documento', '$dt_confirmacao', '$dt_ata', '$dt_autorizacao_abertura', '$dt_autuacao', '$dt_ata_inexigibilidade', '$dt_parecer', '$dt_publicacao', '$dt_contrato_firmado', '$dt_publicacao_contrato', '$copia_notas', '$codigo', '$valor', '$observacoes', '$dt_lancamento')";
+    adesao (exercicio, num_adesao, num_inexigibilidade, objeto, categoria, dt_inicio, dt_ratificacao, dt_portaria, dt_solicitacao, dt_orcamento, dt_solicitacaoo, dt_autorizacao, dt_solicitacao_empresa, verificacao, documento, dt_confirmacao, dt_ata, dt_autorizacao_abertura, dt_autuacao, dt_ata_inexigibilidade, dt_parecer, dt_publicacao, dt_contrato_firmado, dt_publicacao_contrato, copia_notas, observacoes, dt_lancamento, orgao, codigo_processo)
+    values ('$exercicio', '$num_adesao', '$num_inexigibilidade', '$objeto', '$categoria', '$dt_inicio', '$dt_ratificacao', '$portaria', '$dt_solicitacao', '$dt_orcamento', '$dt_solicitacaoo', '$dt_autorizacao', '$dt_solicitacao_empresa', '$verificacao', '$documento', '$dt_confirmacao', '$dt_ata', '$dt_autorizacao_abertura', '$dt_autuacao', '$dt_ata_inexigibilidade', '$dt_parecer', '$dt_publicacao', '$dt_contrato_firmado', '$dt_publicacao_contrato', '$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo')";
 
  $resultado = $connection -> query($sql);
 
@@ -50,7 +53,7 @@ if ($resultado){ ?>
     echo $sql; ?>
     <script>
         alert("Ocorreu um erro ao cadastrar a adesão");
-        window.location = 'createAdesão.php';
+       
        
     </script>
     

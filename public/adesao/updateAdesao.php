@@ -11,7 +11,7 @@ if (isset($_POST)) {
     $categoria = $_POST["txtCategoria"];
     $dt_inicio = $_POST["datei"];
     $dt_ratificacao = $_POST["dateRatificacao"];
-    $portaria = $_POST["txtp"];
+    $portaria = $_POST["datepo"];
     $dt_solicitacao = $_POST["dates"];
     $dt_orcamento = $_POST["datepe"];
     $dt_solicitacaoo = $_POST["dateSolicitacaoRP"];
@@ -28,11 +28,11 @@ if (isset($_POST)) {
     $dt_publicacao = $_POST["datePublicacaoInexigibilidade"];
     $dt_contrato_firmado = $_POST["dateCF"];
     $dt_publicacao_contrato = $_POST["datePublicacaoContrato"];
-    $copia_notas = $_POST["txtCopias"];
-    $codigo = $_POST["txtCodReg"];
-    $valor = $_POST["numTotal"];
+    $txtCopias = $_POST["txtCopias"];
     $observacoes = $_POST["txtObservacoes"];
-    $dt_lancamento = $_POST["dateLancamento"];
+    $dLancamento = $_POST["dateLancamento"];
+    $tipo = "inexigibilidade";
+    $action = $_POST["action"];
 
 $sql = "UPDATE adesao
  SET exercicio = '".$exercicio."',".
@@ -59,11 +59,9 @@ $sql = "UPDATE adesao
   "dt_publicacao = '".$dt_publicacao."',".
   "dt_contrato_firmado = '".$dt_contrato_firmado."',".
   "dt_publicacao_contrato = '".$dt_contrato_firmado."',".
-  "copia_notas = '".$copia_notas."',".
-  "codigo = '".$codigo."',".
-  "valor = '".$valor."',".
-  "observacoes = '".$observacoes."',".
-  "dt_lancamento = '".$dt_lancamento."'".
+  "copia_notas= '".$txtCopias."' ," .
+  "observacoes= '".$observacoes."' ," .
+  "dt_lancamento= '".$dLancamento."' " .
 "WHERE id_adesao = " . $id;
 
 

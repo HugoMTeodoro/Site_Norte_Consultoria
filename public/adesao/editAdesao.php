@@ -1,10 +1,15 @@
-<?php include("../Template/header.php");
-include("../../data/connection.php");
+<?php
+include("../Template/header.php");
+include_once("../../data/connection.php");
 
-if (isset ($_GET["id"])) {
-    $id = $_GET["id"];
-    
-    $sql = "SELECT * FROM adesao WHERE id_adesao = '". $id . "'";
+
+
+//$id = $_POST["id"];
+$codigo = $_POST["codigo"];
+$tipo = $_POST["tipo"];
+$action = $_POST["action"];
+
+    $sql = "SELECT * FROM adesao WHERE codigo_processo = '". $codigo . "'";
     $resultado = $connection->query($sql);
     $adesao = $resultado->fetch_assoc();
 
@@ -125,9 +130,9 @@ if (isset ($_GET["id"])) {
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Portaria nomeando a comissão</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data portaria nomeando a comissão</span>
                 </div>
-                <input type="text" name="txtp" class="form-control" id="txtp" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["dt_portaria"]?>" >
+                <input type="date" name="datepo" class="form-control" id="datepo" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
             <div class="input-group mb-3">
@@ -247,62 +252,52 @@ if (isset ($_GET["id"])) {
             </div>
 
             <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
-                </div>
-                <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["copia_notas"]?>" >
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
             </div>
+            <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["copia_notas"] ?>">
+        </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Código de registro</span>
-                </div>
-                <input type="text" name="txtCodReg" class="form-control" id="txtCodReg" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["codigo"]?>" >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
             </div>
+            <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" step="0.01" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["valor"] ?>">
+        </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
-                </div>
-                <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["valor"]?>" >
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
             </div>
+            <input type="text" name="txtObservacoes" class="form-control" id="txtObservacoes" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["observacoes"] ?>">
+        </div>
 
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
-                </div>
-                <input type="text" name="txtObservacoes" class="form-control" id="txtObservacoes" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["observacoes"]?>" >
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>  
             </div>
+            <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["dt_lancamento"] ?>">
+        </div>
 
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>
-                </div>
-                <input type="datetime" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["dt_lancamento"]?>" >
-            </div>
 
-            <br>    
-            <div class="buttons">
-                
-                <input type="submit" class="btn btn-success"  value="Cadastrar">
-                <input type="reset" class="btn btn-danger"  onclick="window.location.href='../login/index.php'" value="Cancelar">
+        <br>
+        <div class="buttons">
+            <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+            <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+            <input type="hidden" name="action" value="<?php echo $action ?>">
 
-            </div>
+            <input type="submit" class="btn btn-success" value="Atualizar">
+            <input type="reset" class="btn btn-danger" value="Cancelar">
 
-            
+        </div>
 
-            
+    </form>
 
-
-            
-        </form>
-    </div>
-
-
-</body>
-</html>
+</div>
 
 <?php
-}
+include("../vencedor/createVencedor.php");
+?>

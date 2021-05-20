@@ -11,23 +11,29 @@
     
     <div style="margin-left: 100px; margin-right: 100px;">
         <h2>Adesao</h2>
+		<br>
 
-        <br>
-        
-    <div class="buttons">
-                <a href="../adesao/createAdesao.php" class="btn btn-primary">Cadastro de adesao</a>
-        </div>
-    
-    <br>
-    <form method="POST" id="form-pesquisa" action="">
-	<div class="input-group mb-3">
-	<div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Pesquisa</span>
-                </div>
+		<div class="buttons">
+
+		<form action="createAdesao.php" method="POST">
+
+			<input type="hidden" name="tipo" id="tipo" value="adesao" > 
+			<input type="submit" class="btn btn-primary" value="Cadastro de adesao" >
+			<input type="hidden" name="action" value="../vencedor/createVencedor.php">
+
+		</div>
+		</form>
+
+		<br>
+		<form method="POST" id="form-pesquisa" action="">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Pesquisa</span>
+				</div>
 				<input type="text" name="pesquisa" class="form-control" id="pesquisa" aria-label="Default" placeholder="Procure a dispensa" aria-describedby="inputGroup-sizing-default">
-	</div>
-    </div>
-		
+			</div>
+		</div>
+
     </form>
     <ul class="resultado">
 
