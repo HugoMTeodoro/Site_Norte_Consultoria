@@ -14,7 +14,7 @@ $resultado = $connection -> query($sql);
 if ($resultado){ ?>
     <script>
         alert("Órgão cadastrado com sucesso");
-        window.location = 'createOrgao.php';
+        window.location = 'listOrgao.php';
     </script>
 <?php
 } else { ?>

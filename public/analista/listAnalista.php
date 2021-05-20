@@ -31,8 +31,6 @@ if ($dadosOrgao->num_rows > 0) {
                 <tr></tr>
                 <tr>
                     <td><?php echo $exibir["nome_analista"] ?></td>
-
-
                     <td>
                         <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                             <a href="deleteAnalista.php?id=<?php echo $exibir["id_analista"] ?>" style="text-decoration: none; color: white"> Excluir </a>

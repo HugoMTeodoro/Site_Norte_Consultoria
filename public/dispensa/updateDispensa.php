@@ -33,7 +33,7 @@
         $tipo = "dispensa";
         $action = $_POST["action"];
         $codigo_disp=$_POST["codigo"];
-
+        $pesquisa ="Dispensa"."/".$nDispensa."/"."$exercicio";
         $sql = "UPDATE dispensa
         SET exercicio = '" . $exercicio . "', " .
             "num_processo= '" . $nProcesso . "', " .
@@ -60,7 +60,8 @@
             "copia_empenho_compras_legais= '" . $copiaNotas . "', " .
             "valor_total= '" . $valorTotal . "', " .
             "observacoes= '" . $observacoes . "' ,  " .
-            "data_lancamento= '" . $dLancamento . "'" .
+            "data_lancamento= '" . $dLancamento . "'" .",".
+            "pesquisa='$pesquisa'".
             "WHERE id_dispensa = " . $id;
 
 

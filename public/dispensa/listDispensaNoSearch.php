@@ -1,5 +1,6 @@
-<?php include("../Template/header.php") ?>
-
+<?php include("../Template/header.php");
+include("../Login/valida.php");
+?>
 <?php
 $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 ?>
@@ -11,7 +12,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM dispensa";
+    $sql = "SELECT * FROM dispensa where orgao='$orgaoa'";
 
 
    
@@ -33,9 +34,8 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
             <br>
             <table class="table" style="text-align: center;">
                 <tr>
-                    <th>Exercício</th>
-                    <th>Número do processo</th>
-                    <th>Número da dispensa</th>
+                    <th>Dispensa</th>
+                    <th>Objeto</th>
                     <th></th>
                 </tr>
 
@@ -44,9 +44,9 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
                     {
                     ?>
                         <tr>
-                        <td><?php echo $exibir["exercicio"] ?></td>
-                        <td><?php echo $exibir["num_processo"] ?></td>
-                        <td><?php echo $exibir["num_dispensa"] ?></td>
+                        <td><?php echo $exibir["pesquisa"] ?></td>
+                        <td><?php echo $exibir["objeto"] ?></td>
+                        
                             <td>
                                 <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                                     <a href="deleteDispensa.php?id=<?php echo $exibir ["id_dispensa"] ?>" style="text-decoration: none; color: white"> Excluir </a> 

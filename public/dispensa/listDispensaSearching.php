@@ -1,4 +1,6 @@
-<?php include("../Template/header.php") ?>
+<?php include("../Template/header.php");
+include("../Login/valida.php");
+?>
 
 <?php
 $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
