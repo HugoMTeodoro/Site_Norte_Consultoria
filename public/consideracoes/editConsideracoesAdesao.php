@@ -16,7 +16,8 @@ $diag8 = '';
 $diag9 = '';
 $diag10 = '';
 $diag11 = '';
-
+$diag12 = '';
+$diag13 = '';
 
 $booldiag1 = false;
 $booldiag2 = false;
@@ -29,7 +30,8 @@ $booldiag8 = false;
 $booldiag9 = false;
 $booldiag10 = false;
 $booldiag11 = false;
-
+$booldiag12 = false;
+$booldiag13 = false;
 
 $sql = "SELECT *,
 DATE_FORMAT(dt_orcamento,'%d/%m/%Y') as dataorc,
@@ -37,16 +39,17 @@ DATE_FORMAT(dt_solicitacaoo,'%d/%m/%Y') as datasol,
 DATE_FORMAT(dt_autorizacao,'%d/%m/%Y') as dataaut,
 
 
-DATEDIFF(dt_orcamento, dt_abertura) as difdiag2,
-DATEDIFF(dt_autorizacao, dt_solicitacao) as difdiag3,
-DATEDIFF(dt_autuacao, dt_autorizacao) as difdiag4,
-DATEDIFF(dt_aprov_minuta, dt_publicacao) as difdiag6,
-DATEDIFF(dt_publicacao, dt_emissao) as difdiag7,
-DATEDIFF(dt_adjudicacao, dt_sessao) as difdiag8,
-DATEDIFF(dt_parecer, dt_sessao) as difdiag9,
-DATEDIFF(dt_homologacao, dt_parecer) as difdiag10,
-DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag11
-
+DATEDIFF(dt_solicitacaoo, dt_orcamento) as difdiag2,
+DATEDIFF(dt_solicitacaoo, dt_solicitacao) as difdiag3,
+DATEDIFF(dt_autorizacao, dt_solicitacaoo) as difdiag4,
+DATEDIFF(dt_solicitacao_empresa, dt_autorizacao) as difdiag6,
+DATEDIFF(dt_autorizacao_empresa, dt_solicitacao_empresa) as difdiag7,
+DATEDIFF(dt_autorizacao_abertura, dt_autorizacao_empresa) as difdiag8,
+DATEDIFF(dt_autuacao, dt_autorizacao_abertura) as difdiag9,
+DATEDIFF(dt_parecer, dt_ata) as difdiag10,
+DATEDIFF(dt_ratificacao, dt_parecer) as difdiag11,
+DATEDIFF(dt_publicacao, dt_ratificacao) as difdiag12,
+DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag13
 
 from adesao where codigo_processo='$codigo';";
 
