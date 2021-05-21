@@ -1,8 +1,14 @@
 <?php include("../Template/header.php") ?>
-<?php include("../../data/connection.php") ;
+<?php include("../../data/connection.php");
 include("../Login/valida.php");
+echo $exercicio."teste";
 ?>
-
+<script>
+	function redirectPage(v) {
+		$exercicio = v;
+		document.location.reload(true);
+	}
+</script>
 
 <br>
 <br>
@@ -12,17 +18,47 @@ include("../Login/valida.php");
 
 	<div style="margin-left: 100px; margin-right: 100px;">
 		<h2>Dispensa</h2>
+		<br>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
+			</div>
+			<select class="form-select" name="txtOrgao" id="txtOrgao" onChange="redirectPage(this.value)">
+
+				<?php
+
+				$sqlQuery = "SELECT DISTINCT exercicio FROM dispensa order by exercicio";
+
+				$orgaos = $connection->query($sqlQuery);
+
+				if ($orgaos->num_rows > 0) {
+
+					while ($row = $orgaos->fetch_assoc()) { {
+				?>
+							<option value="<?php echo $row["exercicio"] ?>">
+								<?php echo $row["exercicio"] ?>
+							</option>
+
+				<?php
+						}
+					}
+				}
+
+				?>
+			</select>
+		</div>
 
 		<br>
 
 		<div class="buttons">
 
-		<form action="createDispensa.php" method="POST">
-		
-			<input type="hidden" name="tipo" id="tipo" value="dispensa" > 
-			<input type="submit" class="btn btn-primary" value="Cadastro de Dispensa" >
-			<input type="hidden" name="action" value="../vencedor/createVencedor.php">
-	
+			<form action="createDispensa.php" method="POST">
+
+				<input type="hidden" name="tipo" id="tipo" value="dispensa">
+				<input type="submit" class="btn btn-primary" value="Cadastro de Dispensa">
+				<input type="hidden" name="action" value="../vencedor/createVencedor.php">
+
 		</div>
 		</form>
 
@@ -39,7 +75,8 @@ include("../Login/valida.php");
 	</form>
 	<ul class="resultado">
 
-		<?php include("listDispensaNoSearch.php") ?>
+				<?php include("listDispensaNoSearch.php");?>
+
 
 	</ul>
 </body>

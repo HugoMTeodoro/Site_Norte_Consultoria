@@ -13,7 +13,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM dispensa WHERE num_dispensa LIKE '%$usuarios%' ";
+    $sql = "SELECT * FROM dispensa WHERE pesquisa LIKE '%$usuarios%' and exercicio = '$exercicio' ";
 
     $dadosDispensa = $connection -> query($sql);
     
@@ -36,9 +36,8 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
             <br>
             <table class="table" style="text-align: center;">
                 <tr>
-                    <th>Exercício</th>
-                    <th>Número do processo</th>
-                    <th>Número da dispensa</th>
+                    <th>Dispensa</th>
+                    <th>Objeto</th>
                 </tr>
 
                 <?php
@@ -46,9 +45,8 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
                     {
                     ?>
                         <tr>
-                        <td><?php echo $exibir["exercicio"] ?></td>
-                        <td><?php echo $exibir["num_processo"] ?></td>
-                        <td><?php echo $exibir["num_dispensa"] ?></td>
+                        <td><?php echo $exibir["pesquisa"] ?></td>
+                        <td><?php echo $exibir["objeto"] ?></td>
                             <td>
                                 <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                                     <a href="deleteDispensa.php?id=<?php echo $exibir ["id_dispensa"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
