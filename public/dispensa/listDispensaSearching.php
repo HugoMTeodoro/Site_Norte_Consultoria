@@ -13,7 +13,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM dispensa WHERE pesquisa LIKE '%$usuarios%' and exercicio = '$exercicio' ";
+    $sql = "SELECT * FROM dispensa WHERE exercicio = $exer and orgao ='$orgaoa' and (pesquisa LIKE '%$usuarios%' or objeto LIKE '%$usuarios%') ";
 
     $dadosDispensa = $connection -> query($sql);
     
