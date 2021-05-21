@@ -25,6 +25,7 @@ if ( session_status() !== PHP_SESSION_ACTIVE ){
 $orgao = '';
 $orgaoa;
 $firstname='';
+
 if (isset($_SESSION['logado'])) {
   $idu=$_SESSION['logado'];
   $sqlQuery2="SELECT nome FROM usuario where id_usuario=$idu";
@@ -44,7 +45,7 @@ if (isset($_SESSION['logado'])) {
 
 
 
-  $sqlQuery = "SELECT nome_orgao_atual FROM orgao_atual where id_orgao_atual=1";
+  $sqlQuery = "SELECT nome_orgao_atual,exercicio_atual FROM orgao_atual where id_orgao_atual=1";
 
   $orgaoatual = $connection->query($sqlQuery);
 
@@ -54,7 +55,7 @@ if (isset($_SESSION['logado'])) {
       $orgaocrud = $row['nome_orgao_atual'];
       $orgao = '- ' . $row['nome_orgao_atual'];
       $orgaoa=$row['nome_orgao_atual'];
-
+      $exer=$row['exercicio_atual'];
 ?>
 
 <?php

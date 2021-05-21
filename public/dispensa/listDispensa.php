@@ -1,12 +1,12 @@
 <?php include("../Template/header.php") ?>
 <?php include("../../data/connection.php");
 include("../Login/valida.php");
-echo $exercicio."teste";
+
 ?>
 <script>
 	function redirectPage(v) {
-		$exercicio = v;
-		document.location.reload(true);
+		document.location.href = '../orgao/exercicioAtual.php?param='+v+"-../dispensa/listDispensa.php";  
+		
 	}
 </script>
 
@@ -25,7 +25,9 @@ echo $exercicio."teste";
 				<span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
 			</div>
 			<select class="form-select" name="txtOrgao" id="txtOrgao" onChange="redirectPage(this.value)">
-
+				<option value="<?php echo "Selecione" ?>" selected>
+					<?php echo "Selecione" ?>
+				</option>
 				<?php
 
 				$sqlQuery = "SELECT DISTINCT exercicio FROM dispensa order by exercicio";
@@ -36,6 +38,7 @@ echo $exercicio."teste";
 
 					while ($row = $orgaos->fetch_assoc()) { {
 				?>
+
 							<option value="<?php echo $row["exercicio"] ?>">
 								<?php echo $row["exercicio"] ?>
 							</option>
@@ -75,7 +78,7 @@ echo $exercicio."teste";
 	</form>
 	<ul class="resultado">
 
-				<?php include("listDispensaNoSearch.php");?>
+		<?php include("listDispensaNoSearch.php"); ?>
 
 
 	</ul>
