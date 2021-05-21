@@ -1,7 +1,7 @@
 <?php include("../Template/header.php") ?>
 
 <?php
-echo $action;
+
 include("../../data/connection.php");
 
 $sql = "SELECT * FROM vencedor where codigo_processo='$codigo'";
@@ -16,6 +16,7 @@ if ($dadosVencedor->num_rows > 0) {
 
 
         <div style="margin-left: 100px; margin-right: 100px;" style="text-align: center;">
+        <h3>Lista de vencedores</h3>
             <br>
 
             <br>

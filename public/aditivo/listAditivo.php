@@ -6,7 +6,10 @@
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM aditivo where codigo_processo='$codigo'";
+    $sql = "SELECT *, DATE_FORMAT(data_solicitacao_compras_servicos,'%d/%m/%Y') as datasol,
+    DATE_FORMAT(data_aditivo,'%d/%m/%Y') as datasol,
+    DATE_FORMAT(prazo_aditivo,'%d/%m/%Y') as datasol2
+     FROM aditivo where codigo_processo='$codigo'";
 
     $dadosAditivo = $connection -> query($sql);
 
@@ -19,6 +22,8 @@
 
     
         <div style="margin-left: 100px; margin-right: 100px;" style="text-align: center;">
+        
+        <h3>Lista de aditivos</h3>
         <br>
        
             <br>
@@ -40,9 +45,9 @@
                     ?>
                         <tr>
                         <td><?php echo $exibir["numero_aditivo"] ?></td>
-                        <td><?php echo $exibir["data_aditivo"] ?></td>
+                        <td><?php echo $exibir["datasol"] ?></td>
                         <td><?php echo $exibir["valor_aditivo"] ?></td>
-                        <td><?php echo $exibir["prazo_aditivo"] ?></td>
+                        <td><?php echo $exibir["datasol2"] ?></td>
                         <td><?php echo $exibir["tipo_aditivo"] ?></td>
                         <td><?php echo $exibir["nome_empresa"] ?></td>
                         <td><?php echo $exibir["codigo_processo"] ?></td>
