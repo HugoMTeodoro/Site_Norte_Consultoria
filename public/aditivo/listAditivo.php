@@ -79,11 +79,14 @@
     </div>
     <?php
     }
-    else
-    {
-        echo "Nenhum registro encontrado.";
-    }
+     {
     ?>
+    <div style="margin-left: 100px; margin-right: 100px;" style="text-align: center;">
+    <?php
+    echo "Nenhum registro encontrado.";
+}
+?>
+    </div>
 
 <?php
 error_reporting(0);
