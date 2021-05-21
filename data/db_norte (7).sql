@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2021 at 12:34 AM
+-- Generation Time: May 21, 2021 at 11:02 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -196,7 +196,11 @@ CREATE TABLE `dispensa` (
 --
 
 INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_abertura`, `emergencia`, `pesquisa`) VALUES
-(83, 2020, 0, 1, 'bila3', 'A licitação tem por objeto aquilo sobre o que se deseja contratar. Uma licitação pode ter por objetos: serviços, obras, compras, alimentações, concessões, permissões e locações. A definição precisa de um objeto de um processo licitatório é indispensável para a prestação de serviço da forma que o cliente espera.', 'Manutenção', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 0, '', '0000-00-00 00:00:00', 'PMOB', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa/1/2020');
+(83, 2020, 0, 1, 'bila3', 'A licitação tem por objeto aquilo sobre o que se deseja contratar. Uma licitação pode ter por objetos: serviços, obras, compras, alimentações, concessões, permissões e locações. A definição precisa de um objeto de um processo licitatório é indispensável para a prestação de serviço da forma que o cliente espera.', 'Manutenção', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 0, '', '0000-00-00 00:00:00', 'PMOB', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa/1/2020'),
+(88, 2020, 0, 2, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB__2_2020', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa/2/2020'),
+(89, 2020, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB___2020', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2020'),
+(92, 2, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB___2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2'),
+(93, 2, 2, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_2__2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2');
 
 -- --------------------------------------------------------
 
@@ -356,15 +360,16 @@ INSERT INTO `orgao` (`id_orgao`, `nome_orgao`) VALUES
 
 CREATE TABLE `orgao_atual` (
   `nome_orgao_atual` varchar(50) NOT NULL,
-  `id_orgao_atual` int(11) NOT NULL
+  `id_orgao_atual` int(11) NOT NULL,
+  `exercicio_atual` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orgao_atual`
 --
 
-INSERT INTO `orgao_atual` (`nome_orgao_atual`, `id_orgao_atual`) VALUES
-('PMOB', 1);
+INSERT INTO `orgao_atual` (`nome_orgao_atual`, `id_orgao_atual`, `exercicio_atual`) VALUES
+('PMOB', 1, 2020);
 
 -- --------------------------------------------------------
 
@@ -507,7 +512,8 @@ INSERT INTO `vencedor` (`id_vencedor`, `nome_empresa`, `valor`, `id_processo`, `
 (57, 'Industrial', 1, 0, 'dispP.M. SAO JOAO NEPOMUCENO___'),
 (58, '', 0, 0, 'dispP.M. SAO JOAO NEPOMUCENO___'),
 (59, '', 0, 0, 'dispP.M. SAO JOAO NEPOMUCENO___'),
-(60, 'Vinicera', 1200000, 0, 'dispP.M. SAO JOAO NEPOMUCENO___2020');
+(60, 'Vinicera', 1200000, 0, 'dispP.M. SAO JOAO NEPOMUCENO___2020'),
+(61, '', 0, 0, '');
 
 --
 -- Indexes for dumped tables
@@ -642,7 +648,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `dispensa`
 --
 ALTER TABLE `dispensa`
-  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `inexigibilidade`
@@ -696,7 +702,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `vencedor`
 --
 ALTER TABLE `vencedor`
-  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
