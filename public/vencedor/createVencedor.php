@@ -4,8 +4,7 @@ include_once("../../data/connection.php");
 $codigo=$_POST["codigo"];
 $tipo=$_POST["tipo"];
 $action=$_POST["action"];
-echo $tipo;
-echo $action;
+
 ?>
 
 <html lang="en">
@@ -63,11 +62,8 @@ echo $action;
         
     </div>
     <?php
-    echo $action;
-    include("../vencedor/listVencedor.php");   
-    include("../aditivo/createAditivo.php");
-    include("../aditivo/listAditivo.php")  ;
-    include("../consideracoes/editConsideracoesDisp.php");
+    
+   
        
     ?> 
     <br>
