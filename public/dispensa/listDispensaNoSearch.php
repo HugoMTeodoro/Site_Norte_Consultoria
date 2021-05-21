@@ -12,9 +12,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM dispensa where orgao='$orgaoa'";
-
-
+    $sql = "SELECT * FROM dispensa where orgao='$orgaoa' and exercicio =$exer order by num_dispensa";
    
 
 

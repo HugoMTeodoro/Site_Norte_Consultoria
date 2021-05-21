@@ -29,7 +29,7 @@ $analistaResponsavel = $_POST["txtAnalista"];
 $dLancamento = $_POST["dateLancamento"];
 $orgao1 = $_POST["txtOrgao"];
 $tipo="dispensa";
-$codigo_disp = "disp" . $orgao1 . "_" . $nProcesso . "_" . $nDispensa . "_" . $exercicio;
+$codigo = "disp" . $orgao1 . "_" . $nProcesso . "_" . $nDispensa . "_" . $exercicio;
 $action = $_POST["action"];
 $pesquisa ="Dispensa"."/".$nDispensa."/"."$exercicio";
 
@@ -41,7 +41,7 @@ $sql = "INSERT INTO
 $resultado = $connection->query($sql);
 ?>
 <form name="myform" action="<?php echo $action?>" method="POST">
-        <input type="hidden" name="codigo" value="<?php echo $codigo_disp ?>">
+        <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
         <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
         <input type="hidden" name="action" value="<?php echo $action ?>">
     </form>

@@ -2,7 +2,7 @@
 include("../../data/connection.php");
 include("../Login/valida.php");
 $action=$_POST["action"];
-;?>
+?>
 
 <html lang="en">
 <head>
