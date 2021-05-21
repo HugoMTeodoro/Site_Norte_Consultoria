@@ -307,26 +307,13 @@ $adesao = $resultado->fetch_assoc();
             </div>
 
         </form>
-        <HR WIDTH=50%>
+        <HR WIDTH=85%>
     </div>
     <section id="vencedores"></section>
     <?php
-    include("../vencedor/createVencedor.php");
+    include("../vencedor/createVencedor.php");  
     ?>
-    <section id="lvencedores"></section>
-    <?php
-    include("../vencedor/listVencedor.php");  
-    ?>
-    <section id="aditivo"></section>
-    <?php
-    include("../aditivo/createAditivo.php");
-    ?>
-    <section id="laditivo"></section>
-    <?php
-    include("../aditivo/listAditivo.php")  ;
-    ?>
-    <section id="consideracoes">    </section>
-    <?php
-    include("../consideracoes/editConsideracoesDisp.php");
-    ?>
+   
+   
+   
      

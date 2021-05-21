@@ -28,7 +28,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
     
         <div style="margin-left: 100px; margin-right: 100px;" style="text-align: center;">
-        <h3>Lista de aditivos</h3>
+        
         <br>
        
             <br>

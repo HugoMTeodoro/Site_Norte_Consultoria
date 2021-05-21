@@ -73,3 +73,23 @@ $action=$_POST["action"];
 </body>
 
 </html>
+
+<HR WIDTH=85%>
+<section id="lvencedores"></section>
+    <?php
+    include("../vencedor/listVencedor.php");  
+    ?>
+    <section id="aditivo"></section>
+    <?php
+    include("../aditivo/createAditivo.php");
+    ?>
+    <HR WIDTH=85%>
+    <section id="laditivo"></section>
+    <?php
+    include("../aditivo/listAditivo.php")  ;
+    ?>
+    <HR WIDTH=85%>
+    <section id="consideracoes">    </section>
+    <?php
+    include("../consideracoes/editConsideracoesDisp.php");
+    ?>
