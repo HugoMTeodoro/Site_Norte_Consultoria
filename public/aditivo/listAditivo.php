@@ -6,8 +6,7 @@
 
     include("../../data/connection.php");
 
-    $sql = "SELECT *, DATE_FORMAT(data_solicitacao_compras_servicos,'%d/%m/%Y') as datasol,
-    DATE_FORMAT(data_aditivo,'%d/%m/%Y') as datasol,
+    $sql = "SELECT *, DATE_FORMAT(data_aditivo,'%d/%m/%Y') as datasol,
     DATE_FORMAT(prazo_aditivo,'%d/%m/%Y') as datasol2
      FROM aditivo where codigo_processo='$codigo'";
 
@@ -78,7 +77,7 @@
         </div>
     </div>
     <?php
-    }
+    }else
      {
     ?>
     <div style="margin-left: 100px; margin-right: 100px;" style="text-align: center;">
