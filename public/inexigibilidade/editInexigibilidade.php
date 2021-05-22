@@ -36,6 +36,17 @@ include("../../data/connection.php");
         <form action="updateInexigibilidade.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Edit Inexigibilidade</h3>
 
+            <div class="buttons">
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#vencedores" class="btn btn-primary">Vencedores</a>
+            <a href="#aditivo" class="btn btn-primary">Aditivo</a>
+            
+            <a href="#consideracoes" class="btn btn-primary">Considerações</a>
+            </div>
+
+            <br>
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Id da inexigibilidade</span>
@@ -284,22 +295,6 @@ include("../../data/connection.php");
 </html>
 
 <section id="vencedores"></section>
-    <section id="lvencedores"></section>
     <?php
-    include("../vencedor/listVencedor.php");  
-    ?>
-    <HR WIDTH=85%>
-    <section id="aditivo"></section>
-    <?php
-    include("../aditivo/createAditivo.php");
-    ?>
-    <HR WIDTH=85%>
-    <section id="laditivo"></section>
-    <?php
-    include("../aditivo/listAditivo.php")  ;
-    ?>
-    <HR WIDTH=85%>
-    <section id="consideracoes">    </section>
-    <?php
-    include("../consideracoes/editConsideracoesDisp.php");
-    ?>
+    include("../vencedor/createVencedor.php");  
+   
