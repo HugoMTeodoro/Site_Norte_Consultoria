@@ -59,6 +59,29 @@ DATE_FORMAT(dt_parecer,'%d/%m/%Y') as dataparec,
 DATE_FORMAT(dt_sessao,'%d/%m/%Y') as datasess,
 
 
+DATEDIFF(dt_edital, dt_solicitacao) as difed,
+DATEDIFF(dt_abertura, dt_solicitacao) as difab,
+DATEDIFF(dt_nomeacao, dt_solicitacao) as difnom,
+DATEDIFF(dt_solicitacao, dt_solicitacao) as difsol,
+DATEDIFF(dt_orcamento, dt_solicitacao) as diforc,
+DATEDIFF(dt_autorizacao, dt_solicitacao) as difauto,
+DATEDIFF(dt_autuacao, dt_solicitacao) as difautu,
+DATEDIFF(dt_aprovacao, dt_solicitacao) as difapro,
+DATEDIFF(dt_publicacao, dt_solicitacao) as difpub,
+DATEDIFF(dt_credenciamento, dt_solicitacao) as difcred,
+DATEDIFF(dt_ata_abertura, dt_solicitacao) as difata,
+DATEDIFF(dt_confirmacao, dt_solicitacao) as difconf,
+DATEDIFF(dt_adjudicacao, dt_solicitacao) as difadju,
+DATEDIFF(dt_homologacao, dt_solicitacao) as difhomo,
+DATEDIFF(dt_contrato_firmado, dt_solicitacao) as difcont,
+DATEDIFF(dt_publicacao_ata, dt_solicitacao) as difpubata,
+DATEDIFF(dt_lancamento, dt_solicitacao) as diflanc,
+DATEDIFF(dt_emissao, dt_solicitacao) as difemi,
+DATEDIFF(dt_aprov_minuta, dt_solicitacao) as difaprov,
+DATEDIFF(dt_sessao, dt_solicitacao) as difses,
+DATEDIFF(dt_parecer, dt_solicitacao) as difpar,
+
+
 
 
 DATEDIFF(dt_orcamento, dt_abertura) as difdiag2,
@@ -78,6 +101,107 @@ from pregao where codigo_processo='$codigo';";
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
+
+        if ($exibir["difab"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difab"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difnom"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difnom"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difsol"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difsol"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["diforc"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difinicio"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difauto"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difauto"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difautu"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difautu"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difapro"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difapro"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difpub"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpub"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difcred"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difcred"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difata"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difata"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difconf"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difconf"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difadju"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difadju"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difhomo"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difhomo"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difcont"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difcont"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difpubata"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpubata"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["diflanc"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["diflanc"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difemi"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difemi"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difaprov"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difaprov"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difses"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difses"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difpar"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpar"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+        
        
         if ($exibir["difdiag2"] > 0) {
             $diag2 = $diag2 . "Excedeu o dia da abertura em " . $exibir["difdiag2"] . " dias";
@@ -151,7 +275,7 @@ if ($dados->num_rows > 0) {
 
                             <div class="input-group-prepend">
 
-                                <span class="input-group-text" id="inputGroup-sizing-default">Ato de nomeação do pregoeiro/comissão <br> <?php echo $exibir["datasol"] ?></span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Solicitacao de compras e servicos <br> <?php echo $exibir["datasol"] ?></span>
                             </div>
                             <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conSolic" class="form-control" id="conSolic" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conSolic"] ?></textarea>
 
@@ -161,6 +285,7 @@ if ($dados->num_rows > 0) {
 
                     <?php
 
+                    
                     }
                     if ($booldiag2) {
                     ?>

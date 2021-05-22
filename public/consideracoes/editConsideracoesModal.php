@@ -37,6 +37,8 @@ DATE_FORMAT(dt_contrato_firmado,'%d/%m/%Y') as datacont,
 DATE_FORMAT(dt_homologacao,'%d/%m/%Y') as datahomol,
 DATE_FORMAT(dt_adjudicacao,'%d/%m/%Y') as dataadj,
 
+
+SS
 DATEDIFF(dt_abertura, dt_orcamento) as difdiag2,
 DATEDIFF(dt_autorizacao, dt_solicitacao) as difdiag3,
 DATEDIFF(dt_autuacao, dt_autorizacao) as difdiag4,
