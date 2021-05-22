@@ -34,6 +34,8 @@ DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapub,
 DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as dataata,
 DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapar,
 DATE_FORMAT(dt_contrato_firmado,'%d/%m/%Y') as datacont,
+DATE_FORMAT(dt_homologacao,'%d/%m/%Y') as datahomol,
+DATE_FORMAT(dt_adjudicacao,'%d/%m/%Y') as dataadj,
 
 DATEDIFF(dt_abertura, dt_orcamento) as difdiag2,
 DATEDIFF(dt_autorizacao, dt_solicitacao) as difdiag3,
@@ -42,8 +44,8 @@ DATEDIFF(dt_publicacao, dt_emissao) as difdiag5,
 DATEDIFF(dt_publicacao, dt_aprovacao) as difdiag6,
 DATEDIFF(dt_ata_julgamento, dt_abertura) as difdiag7,
 DATEDIFF(dt_parecer_juridico, dt_sessao) as difdiag8,
-DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag9,
-DATEDIFF(dt_homologacao, dt_parecer_juridico) as difdiag10
+DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag9
+
 
 from modalidade where codigo_processo='$codigo';";
 
@@ -87,7 +89,6 @@ if ($dados->num_rows > 0) {
             $booldiag9 = true;
         }
         
-
  
  
  ?>
@@ -239,63 +240,7 @@ if ($dados->num_rows > 0) {
                         </div>
                         <p class="formato"><?php echo $diag9 . "." ?></p>
                     <?php
-                    }
-                    if ($booldiag10) {
-                        ?>
-                            <div class="input-group mb-3">
-    
-                                <div class="input-group-prepend">
-    
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Homologação <br> <?php echo $exibir["datapar"] ?></span>
-                                </div>
-                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
-    
-                            </div>
-                            <p class="formato"><?php echo $diag10 . "." ?></p>
-                        <?php
-                        }
-                        if ($booldiag11) {
-                            ?>
-                                <div class="input-group mb-3">
-        
-                                    <div class="input-group-prepend">
-        
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Ratificação <br> <?php echo $exibir["datarat"] ?></span>
-                                    </div>
-                                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
-        
-                                </div>
-                                <p class="formato"><?php echo $diag11 . "." ?></p>
-                            <?php
-                            }
-                            if ($booldiag12) {
-                                ?>
-                                    <div class="input-group mb-3">
-            
-                                        <div class="input-group-prepend">
-            
-                                            <span class="input-group-text" id="inputGroup-sizing-default">Publicação <br> <?php echo $exibir["datapub"] ?></span>
-                                        </div>
-                                        <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
-            
-                                    </div>
-                                    <p class="formato"><?php echo $diag12 . "." ?></p>
-                                <?php
-                                }
-                                if ($booldiag13) {
-                                    ?>
-                                        <div class="input-group mb-3">
-                
-                                            <div class="input-group-prepend">
-                
-                                                <span class="input-group-text" id="inputGroup-sizing-default">Contrato firmado <br> <?php echo $exibir["datacont"] ?></span>
-                                            </div>
-                                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
-                
-                                        </div>
-                                        <p class="formato"><?php echo $diag13 . "." ?></p>
-                                    <?php
-                                    }
+                    }                        
             ?>
 
             <div class="buttons">
