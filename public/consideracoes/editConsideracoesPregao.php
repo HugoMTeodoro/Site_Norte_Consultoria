@@ -32,9 +32,32 @@ $booldiag11 = false;
 
 
 $sql = "SELECT *,
+
+
+DATE_FORMAT(dt_edital,'%d/%m/%Y') as dataed,
+DATE_FORMAT(dt_abertura,'%d/%m/%Y') as dataabe,
+DATE_FORMAT(dt_nomeacao,'%d/%m/%Y') as datanom,
+DATE_FORMAT(dt_solicitacao,'%d/%m/%Y') as datasol,
 DATE_FORMAT(dt_orcamento,'%d/%m/%Y') as dataorc,
-DATE_FORMAT(dt_solicitacaoo,'%d/%m/%Y') as datasol,
-DATE_FORMAT(dt_autorizacao,'%d/%m/%Y') as dataaut,
+DATE_FORMAT(dt_autorizacao,'%d/%m/%Y') as dataauto,
+DATE_FORMAT(dt_autuacao,'%d/%m/%Y') as dataautu,
+DATE_FORMAT(dt_aprovacao,'%d/%m/%Y') as dataaprov,
+DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapub,
+DATE_FORMAT(dt_credenciamento,'%d/%m/%Y') as datacred,
+DATE_FORMAT(dt_ata_abertura,'%d/%m/%Y') as dataata,
+DATE_FORMAT(dt_confirmacao,'%d/%m/%Y') as dataconf,
+DATE_FORMAT(dt_adjudicacao,'%d/%m/%Y') as dataadju,
+DATE_FORMAT(dt_homologacao,'%d/%m/%Y') as datahomo,
+DATE_FORMAT(dt_contrato_firmado,'%d/%m/%Y') as datacf,
+DATE_FORMAT(dt_publicacao_ata,'%d/%m/%Y') as datapubata,
+DATE_FORMAT(dt_lancamento,'%d/%m/%Y') as datalanc,
+DATE_FORMAT(dt_pesquisa,'%d/%m/%Y') as datapes,
+DATE_FORMAT(dt_emissao,'%d/%m/%Y') as dataemi,
+DATE_FORMAT(dt_aprov_minuta,'%d/%m/%Y') as dataaprovmin,
+DATE_FORMAT(dt_sessao,'%d/%m/%Y') as datasess,
+DATE_FORMAT(dt_parecer,'%d/%m/%Y') as dataparec
+
+
 
 
 DATEDIFF(dt_orcamento, dt_abertura) as difdiag2,
@@ -54,8 +77,8 @@ $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
        
-        if ($exibir["difdiag2"] > 0) {
-            $diag2 = $diag2 . "Excedeu a data de solicitacao ao orgao realizador em " . $exibir["difdiag2"] . " dias";
+        if ($exibir["difdiag2"] < 0) {
+            $diag2 = $diag2 . "Excedeu o dia da abertura em" . $exibir["difdiag2"] . " dias";
             $booldiag2 = true;
         }
         if ($exibir["difdiag3"] < 0) {
@@ -126,7 +149,7 @@ if ($dados->num_rows > 0) {
 
                             <div class="input-group-prepend">
 
-                                <span class="input-group-text" id="inputGroup-sizing-default">Solicitacao de compras e servicos <br> <?php echo $exibir["datasol"] ?></span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Ato de nomeação do pregoeiro/comissão <br> <?php echo $exibir["datasol"] ?></span>
                             </div>
                             <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conSolic" class="form-control" id="conSolic" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conSolic"] ?></textarea>
 
@@ -143,7 +166,7 @@ if ($dados->num_rows > 0) {
 
                             <div class="input-group-prepend">
 
-                                <span class="input-group-text" id="inputGroup-sizing-default">Data do preco estimado <br> <?php echo $exibir["datapreco"] ?></span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Data do preço estimado <br> <?php echo $exibir["dataorc"] ?></span>
                             </div>
                             <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPreco" class="form-control" id="conPreco" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPreco"] ?></textarea>
 

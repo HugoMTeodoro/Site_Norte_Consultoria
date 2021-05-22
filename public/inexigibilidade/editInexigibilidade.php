@@ -11,11 +11,12 @@ include("../../data/connection.php");
     $sql = "SELECT * FROM inexigibilidade WHERE codigo_processo = '". $codigo . "'";
     
     $resultado = $connection->query($sql);
+
     $inexigibilidade = $resultado->fetch_assoc();
     
 
     
-
+    
 
 ?>
 

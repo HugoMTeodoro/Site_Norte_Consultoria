@@ -87,20 +87,29 @@ $action = $_POST["action"];
 
 <HR WIDTH=85%>
 <section id="lvencedores"></section>
+
+
 <?php
 include("../vencedor/listVencedor.php");
 ?>
 <section id="aditivo"></section>
+
+
 <?php
 include("../aditivo/createAditivo.php");
 ?>
 <HR WIDTH=85%>
 <section id="laditivo"></section>
+
+
 <?php
 include("../aditivo/listAditivo.php");
 ?>
 <?php if ($tipo == "dispensa") {
 ?>
+
+
+
     <HR WIDTH=85%>
     <section id="consideracoes"> </section>
 <?php
@@ -115,5 +124,35 @@ include("../aditivo/listAditivo.php");
     <section id="consideracoes"> </section>
 <?php
     include("../consideracoes/editConsideracoesAdesao.php");
+}
+
+?>
+
+<?php if ($tipo == "adesao") {
+?>
+    <HR WIDTH=85%>
+    <section id="consideracoes"> </section>
+<?php
+    include("../consideracoes/editConsideracoesAdesao.php");
+}
+?>
+
+<?php 
+echo $tipo."teste";
+if ($tipo == "pregao") {
+?>
+    <HR WIDTH=85%>
+    <section id="consideracoes"> </section>
+<?php
+    include("../consideracoes/editConsideracoesPregao.php");
+}
+?>
+
+<?php if ($tipo == "modalidade") {
+?>
+    <HR WIDTH=85%>
+    <section id="consideracoes"> </section>
+<?php
+    include("../consideracoes/editConsideracoesModal.php");
 }
 ?>
