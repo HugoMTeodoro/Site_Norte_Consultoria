@@ -29,6 +29,7 @@ if (isset($_POST)) {
     $dt_contrato_firmado = $_POST["dateCF"];
     $dt_publicacao_contrato = $_POST["datePublicacaoContrato"];
     $txtCopias = $_POST["txtCopias"];
+    $valorTotal = $_POST["numTotal"];
     $observacoes = $_POST["txtObservacoes"];
     $dLancamento = $_POST["dateLancamento"];
     $tipo = "inexigibilidade";
@@ -61,6 +62,7 @@ $sql = "UPDATE adesao
   "dt_contrato_firmado = '".$dt_contrato_firmado."',".
   "dt_publicacao_contrato = '".$dt_contrato_firmado."',".
   "copia_notas= '".$txtCopias."' ," .
+  "valor= '" . $valorTotal . "', " .
   "observacoes= '".$observacoes."' ," .
   "dt_lancamento= '".$dLancamento."' " .",".
   "dt_autorizacao_empresa='".$autadju."'".
