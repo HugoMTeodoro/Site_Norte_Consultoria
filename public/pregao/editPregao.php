@@ -233,6 +233,13 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da sessao</span>
+                </div>
+                <input type="date" name="datesessao" class="form-control" id="datesessao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["dt_sessao"] ?>">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da autorização para a abertura do processo</span>
                 </div>
                 <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["dt_autorizacao"]?>">
@@ -280,6 +287,13 @@ include("../../data/connection.php");
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de publicação do edital</span>
                 </div>
                 <input type="date" name="datePub" class="form-control" id="datePub" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["dt_publicacao"]?>">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da emissão</span>
+                </div>
+                <input type="date" name="dateEmi" class="form-control" id="dateEmi" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["dt_emissao"]?>">
             </div>
 
             <div class="input-group mb-3">

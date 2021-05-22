@@ -15,6 +15,7 @@ $dt_edital  = $_POST["dateEdital"];
 $dt_abertura  = $_POST["dateAbertura"];
 $dt_nomeacao  = $_POST["dateNomeacao"];
 $dt_solicitacao  = $_POST["dates"];
+$dt_emissao  = $_POST["dateEmi"];
 $dt_orcamento  = $_POST["datepe"];
 $dt_autorizacao  = $_POST["datea"];
 $dt_autuacao  = $_POST["dateau"];
@@ -40,6 +41,7 @@ $observacoes = $_POST["txtObservacoes"];
 $dLancamento = $_POST["dateLancamento"];
 $tipo = "pregao";
 $action = $_POST["action"];
+$sessao=$_POST["datesessao"];
 
 
 $sql = "UPDATE pregao
@@ -62,6 +64,7 @@ $sql = "UPDATE pregao
 "dt_aprovacao = '".$dt_aprovacao."',".
 "minuta = '".$minuta."',".
 "dt_publicacao = '".$dt_publicacao."',".
+"dt_emissao = '".$dt_emissao."',".
 "especificacao = '".$especificacao."',".
 "dt_credenciamento = '".$dt_credenciamento."',".
 "proposta_precos = '".$proposta_precos."',".
@@ -76,7 +79,8 @@ $sql = "UPDATE pregao
 "dt_publicacao_ata = '".$dt_publicacao_ata."',".
 "copia_notas= '".$txtCopias."' ," .
 "observacoes= '".$observacoes."' ," .
-"dt_lancamento= '".$dLancamento."' " .
+"dt_lancamento= '".$dLancamento."' , " .
+"dt_sessao= '".$sessao."' " .
 "WHERE id_pregao = " . $id;
 $resultado = $connection -> query($sql);
 
