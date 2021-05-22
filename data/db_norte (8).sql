@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2021 at 11:02 PM
+-- Generation Time: May 22, 2021 at 04:10 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -71,6 +71,14 @@ CREATE TABLE `adesao` (
   `dt_homologacao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `adesao`
+--
+
+INSERT INTO `adesao` (`id_adesao`, `exercicio`, `num_adesao`, `num_inexigibilidade`, `objeto`, `categoria`, `dt_inicio`, `dt_ratificacao`, `dt_portaria`, `dt_solicitacao`, `dt_orcamento`, `dt_solicitacaoo`, `dt_autorizacao`, `dt_solicitacao_empresa`, `verificacao`, `documento`, `dt_confirmacao`, `dt_ata`, `dt_autorizacao_abertura`, `dt_autuacao`, `dt_ata_inexigibilidade`, `dt_parecer`, `dt_publicacao`, `dt_contrato_firmado`, `dt_publicacao_contrato`, `copia_notas`, `valor`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAutuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_abertura`, `dt_autorizacao_empresa`, `dt_homologacao`) VALUES
+(1, '', 0, 0, '', 'Manutenção', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '2000-09-22', '0000-00-00', '2000-09-21', '0000-00-00', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'adesPMOB___', '', '', '', '', '', '', NULL, NULL, NULL, '0000-00-00'),
+(2, '2020', 0, 0, '', '-1', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'adesPMOB___2020', '', '', '', '', '', '', NULL, NULL, NULL, '0000-00-00');
+
 -- --------------------------------------------------------
 
 --
@@ -103,7 +111,8 @@ INSERT INTO `aditivo` (`id_aditivo`, `numero_aditivo`, `prazo_aditivo`, `data_ad
 (20, 1, '0000-00-00', '0000-00-00', 1, 'Prazo', 'Industrial', 'dispP.M. SAO JOAO NEPOMUCENO_1_1_2020', 0, NULL),
 (22, 0, '0000-00-00', '2000-09-21', 1, 'Prazo', '', 'dispP.M. SAO JOAO NEPOMUCENO___', 0, NULL),
 (23, 0, '0000-00-00', '0000-00-00', 0, 'Prazo', '', 'dispP.M. SAO JOAO NEPOMUCENO___', 0, NULL),
-(24, 2323, '2021-12-31', '2021-12-31', 2.78, 'Valor', 'Vinicera', 'dispP.M. SAO JOAO NEPOMUCENO___2020', 0, NULL);
+(24, 2323, '2021-12-31', '2021-12-31', 2.78, 'Valor', 'Vinicera', 'dispP.M. SAO JOAO NEPOMUCENO___2020', 0, NULL),
+(25, 1, '0000-00-00', '0000-00-00', 1, 'Prazo', 'Industrial', 'dispPMOB_1_1_2020', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -188,19 +197,19 @@ CREATE TABLE `dispensa` (
   `dt_pesquisa` date DEFAULT NULL,
   `dt_abertura` date DEFAULT NULL,
   `emergencia` varchar(3) DEFAULT NULL,
-  `pesquisa` text DEFAULT NULL
+  `pesquisa` text DEFAULT NULL,
+  `dt_sessao` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `dispensa`
 --
 
-INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_abertura`, `emergencia`, `pesquisa`) VALUES
-(83, 2020, 0, 1, 'bila3', 'A licitação tem por objeto aquilo sobre o que se deseja contratar. Uma licitação pode ter por objetos: serviços, obras, compras, alimentações, concessões, permissões e locações. A definição precisa de um objeto de um processo licitatório é indispensável para a prestação de serviço da forma que o cliente espera.', 'Manutenção', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 0, '', '0000-00-00 00:00:00', 'PMOB', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa/1/2020'),
-(88, 2020, 0, 2, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB__2_2020', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa/2/2020'),
-(89, 2020, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB___2020', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2020'),
-(92, 2, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB___2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2'),
-(93, 2, 2, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_2__2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2');
+INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_abertura`, `emergencia`, `pesquisa`, `dt_sessao`) VALUES
+(92, 2, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB___2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2', NULL),
+(93, 2, 2, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_2__2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2', NULL),
+(94, 0, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB___', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//', NULL),
+(95, 2020, 1, 1, 'bila3', 'aaa', 'Manutenção', '2021-02-21', '2021-09-23', '2021-09-21', '2020-09-21', '2021-09-20', '2021-09-22', '2021-09-21', '', '', '', '2021-09-21', '', '2021-09-21', '2021-09-22', '2021-09-21', '2021-09-24', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_1_1_2020', '', NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-22', NULL, 'Dispensa/1/2020', '2000-09-21');
 
 -- --------------------------------------------------------
 
@@ -513,7 +522,8 @@ INSERT INTO `vencedor` (`id_vencedor`, `nome_empresa`, `valor`, `id_processo`, `
 (58, '', 0, 0, 'dispP.M. SAO JOAO NEPOMUCENO___'),
 (59, '', 0, 0, 'dispP.M. SAO JOAO NEPOMUCENO___'),
 (60, 'Vinicera', 1200000, 0, 'dispP.M. SAO JOAO NEPOMUCENO___2020'),
-(61, '', 0, 0, '');
+(61, '', 0, 0, ''),
+(62, 'Industrial', 1, 0, 'dispPMOB_1_1_2020');
 
 --
 -- Indexes for dumped tables
@@ -624,13 +634,13 @@ ALTER TABLE `vencedor`
 -- AUTO_INCREMENT for table `adesao`
 --
 ALTER TABLE `adesao`
-  MODIFY `id_adesao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_adesao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `aditivo`
 --
 ALTER TABLE `aditivo`
-  MODIFY `id_aditivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_aditivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `analista`
@@ -648,7 +658,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `dispensa`
 --
 ALTER TABLE `dispensa`
-  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `inexigibilidade`
@@ -702,7 +712,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `vencedor`
 --
 ALTER TABLE `vencedor`
-  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id_vencedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
