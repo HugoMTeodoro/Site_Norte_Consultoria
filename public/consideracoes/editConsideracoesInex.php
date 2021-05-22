@@ -38,7 +38,6 @@ DATEDIFF(data_ata, data_solicitacao_compras_servicos) as difata,
 DATEDIFF(data_parecer_juridico, data_solicitacao_compras_servicos) as difparecer,
 DATEDIFF(data_contrato_firmado, data_solicitacao_compras_servicos) as difcont,
 DATEDIFF(data_publicacao, data_solicitacao_compras_servicos) as difpub,
-
 DATEDIFF(data_autorizacao_abertura, data_preco_estimativo) as difdiag2,
 DATEDIFF(data_autorizacao_abertura, data_solicitacao_compras_servicos) as difdiag3,
 DATEDIFF(data_autuacao, data_autorizacao_abertura) as difdiag4,

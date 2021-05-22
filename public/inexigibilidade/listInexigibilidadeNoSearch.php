@@ -59,7 +59,6 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
                                 <br>
                                 <input type="hidden" name="tipo" value="inexigibilidade">
                                 <input type="hidden" name="id" value="<?php echo $exibir["id_inexigibilidade"] ?>">
-                                
                                 <input type="submit" class="btn btn-success btn-sm" value="Editar">
                             </form>
                             </td>
