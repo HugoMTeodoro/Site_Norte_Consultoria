@@ -177,11 +177,26 @@ $dispensa = $resultado->fetch_assoc();
         </div>
 
         <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da sessao</span>
+                </div>
+                <input type="date" name="datesessao" class="form-control" id="datesessao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["dt_sessao"] ?>">
+            </div>
+
+        <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Data da autorização para a abertura do processo</span>
             </div>
             <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["data_autorizacao_abertura"] ?>">
         </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Data da abertura do processo</span>
+            </div>
+            <input type="date" name="dateabertura" class="form-control" id="dateabertura" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["dt_abertura"] ?>">
+        </div>
+
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -302,7 +317,7 @@ $dispensa = $resultado->fetch_assoc();
 </div>
 
 <section id="vencedores"></section>
-    
-    <?php
-    include("../vencedor/createVencedor.php");  
-    ?>
+
+<?php
+include("../vencedor/createVencedor.php");
+?>

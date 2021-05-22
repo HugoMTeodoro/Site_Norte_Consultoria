@@ -16,7 +16,6 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
     $sql = "SELECT * FROM dispensa WHERE exercicio = $exer and orgao ='$orgaoa' and (pesquisa LIKE '%$usuarios%' or objeto LIKE '%$usuarios%') order by num_dispensa ";
 
     $dadosDispensa = $connection -> query($sql);
-    
 
    
 

@@ -16,7 +16,6 @@ if ($dados->num_rows > 0) {
         $mediadisp=$exibir["mediadispensa"]/$exibir["quantdisp"];
         }
     }
-
 }
 echo $mediadisp;
 

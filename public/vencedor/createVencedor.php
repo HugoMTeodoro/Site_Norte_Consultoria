@@ -1,9 +1,9 @@
-<?php 
+<?php
 include("../template/header.php");
 include_once("../../data/connection.php");
-$codigo=$_POST["codigo"];
-$tipo=$_POST["tipo"];
-$action=$_POST["action"];
+$codigo = $_POST["codigo"];
+$tipo = $_POST["tipo"];
+$action = $_POST["action"];
 
 ?>
 
@@ -29,7 +29,7 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Codigo do Processo</span>
                 </div>
-                <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $codigo ?>" readonly>
+                <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $codigo ?>" readonly>
             </div>
 
 
@@ -54,21 +54,20 @@ $action=$_POST["action"];
                 <input type="hidden" name="action" value="<?php echo $action ?>">
                 <input type="submit" class="btn btn-success" value="Cadastrar">
                 <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
-                
+
             </div>
 
 
         </form>
-        
+
     </div>
     <?php
-    
-   
-       
-    ?> 
+
+
+
+    ?>
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
 
 
 
@@ -79,28 +78,42 @@ $action=$_POST["action"];
 
 
 
-    
-    
+
+
+
 </body>
 
 </html>
 
 <HR WIDTH=85%>
 <section id="lvencedores"></section>
-    <?php
-    include("../vencedor/listVencedor.php");  
-    ?>
-    <section id="aditivo"></section>
-    <?php
-    include("../aditivo/createAditivo.php");
-    ?>
+<?php
+include("../vencedor/listVencedor.php");
+?>
+<section id="aditivo"></section>
+<?php
+include("../aditivo/createAditivo.php");
+?>
+<HR WIDTH=85%>
+<section id="laditivo"></section>
+<?php
+include("../aditivo/listAditivo.php");
+?>
+<?php if ($tipo == "dispensa") {
+?>
     <HR WIDTH=85%>
-    <section id="laditivo"></section>
-    <?php
-    include("../aditivo/listAditivo.php")  ;
-    ?>
-    <HR WIDTH=85%>
-    <section id="consideracoes">    </section>
-    <?php
+    <section id="consideracoes"> </section>
+<?php
     include("../consideracoes/editConsideracoesDisp.php");
-    ?>
+}
+
+
+?>
+<?php if ($tipo == "adesao") {
+?>
+    <HR WIDTH=85%>
+    <section id="consideracoes"> </section>
+<?php
+    include("../consideracoes/editConsideracoesAdesao.php");
+}
+?>

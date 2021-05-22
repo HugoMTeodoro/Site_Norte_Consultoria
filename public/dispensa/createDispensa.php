@@ -1,8 +1,7 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
 include("../Login/valida.php");
-$action=$_POST["action"];
-;?>
+$action = $_POST["action"];; ?>
 
 <html lang="en">
 
@@ -151,9 +150,23 @@ $action=$_POST["action"];
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da sessao</span>
+                </div>
+                <input type="date" name="datesessao" class="form-control" id="datesessao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da autorização para a abertura do processo</span>
                 </div>
                 <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da abertura do processo</span>
+                </div>
+                <input type="date" name="dateabertura" class="form-control" id="dateabertura" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
@@ -265,47 +278,42 @@ $action=$_POST["action"];
                 </div>
                 <input type="text" name="txtAnalista" class="form-control" id="txtAnalista" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $nome ?>" readonly>
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Órgão</span>
                 </div>
                 <select class="form-select" name="txtOrgao" id="txtOrgao">
-                
+
                     <?php
 
-                        $sqlQuery = "SELECT * FROM orgao";
+                    $sqlQuery = "SELECT * FROM orgao";
 
-                        $orgaos = $connection -> query($sqlQuery);
+                    $orgaos = $connection->query($sqlQuery);
 
-                        if($orgaos -> num_rows > 0)
-                        {
+                    if ($orgaos->num_rows > 0) {
 
-                            while($row = $orgaos -> fetch_assoc())
-                            {
-                                if($orgaocrud == $row["nome_orgao"])
-                                {
+                        while ($row = $orgaos->fetch_assoc()) {
+                            if ($orgaocrud == $row["nome_orgao"]) {
                     ?>
-                                    <option value="<?php echo $row["nome_orgao"]?>" selected>
-                                        <?php echo $row["nome_orgao"] ?>
-                                    </option>
+                                <option value="<?php echo $row["nome_orgao"] ?>" selected>
+                                    <?php echo $row["nome_orgao"] ?>
+                                </option>
+                            <?php
+                            } else {
+                            ?>
+                                <option value="<?php echo $row["nome_orgao"] ?>">
+                                    <?php echo $row["nome_orgao"] ?>
+                                </option>
+
                     <?php
-                                }
-                                else
-                                {
-                    ?>                    
-                                    <option value="<?php echo $row["nome_orgao"]?>">
-                                        <?php echo $row["nome_orgao"]?>
-                                    </option>
-                    
-                    <?php
-                                }
                             }
                         }
+                    }
                     ?>
                 </select>
             </div>
-        
+
 
             <?php
             date_default_timezone_set('America/Sao_Paulo');
@@ -324,11 +332,11 @@ $action=$_POST["action"];
 
             <br>
             <div class="buttons">
-            <input type="hidden" name="tipo" id="tipo" value="dispensa" >
-            <input type="hidden" name="action" id="action" value="<?php echo $action ?>" >
-            
-        
-                <input type="submit" class="btn btn-success" value="Proximo" >
+                <input type="hidden" name="tipo" id="tipo" value="dispensa">
+                <input type="hidden" name="action" id="action" value="<?php echo $action ?>">
+
+
+                <input type="submit" class="btn btn-success" value="Proximo">
                 <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
 
             </div>

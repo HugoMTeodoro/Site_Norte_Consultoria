@@ -5,7 +5,7 @@ include("../Login/valida.php");
 ?>
 <script>
 	function redirectPage(v) {
-		document.location.href = '../orgao/exercicioAtual.php?param='+v+"-../dispensa/listDispensa.php";  
+		document.location.href = '../orgao/exercicioAtual.php?param='+v;  
 		
 	}
 </script>

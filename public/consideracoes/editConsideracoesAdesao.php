@@ -35,10 +35,6 @@ $booldiag13 = false;
 
 $sql = "SELECT *,
 DATE_FORMAT(dt_orcamento,'%d/%m/%Y') as dataorc,
-DATE_FORMAT(dt_solicitacaoo,'%d/%m/%Y') as datasol,
-DATE_FORMAT(dt_autorizacao,'%d/%m/%Y') as dataaut,
-
-
 DATEDIFF(dt_solicitacaoo, dt_orcamento) as difdiag2,
 DATEDIFF(dt_solicitacaoo, dt_solicitacao) as difdiag3,
 DATEDIFF(dt_autorizacao, dt_solicitacaoo) as difdiag4,
@@ -57,7 +53,7 @@ $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
        
-        if ($exibir["difdiag2"] > 0) {
+        if ($exibir["difdiag2"] < 0) {
             $diag2 = $diag2 . "Excedeu a data de solicitacao ao orgao realizador em " . $exibir["difdiag2"] . " dias";
             $booldiag2 = true;
         }
@@ -146,7 +142,7 @@ if ($dados->num_rows > 0) {
 
                             <div class="input-group-prepend">
 
-                                <span class="input-group-text" id="inputGroup-sizing-default">Data do preco estimado <br> <?php echo $exibir["datapreco"] ?></span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Data do preco estimado <br> <?php echo $exibir["dataorc"] ?></span>
                             </div>
                             <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPreco" class="form-control" id="conPreco" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPreco"] ?></textarea>
 
