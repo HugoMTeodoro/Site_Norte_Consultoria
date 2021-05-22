@@ -138,6 +138,13 @@ $action=$_POST["action"];
                 <input type="date" name="dateSolicitacaoAdjudicataria" class="form-control" id="dateSolicitacaoAdjudicataria" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Autorização da empresa Adjudicatária</span>
+                </div>
+                <input type="date" name="dateautAdjudicataria" class="form-control" id="dateautAdjudicataria" aria-label="Default" inputGroup-sizing-default">
+            </div>
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

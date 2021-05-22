@@ -34,12 +34,13 @@ include_once("../../data/connection.php");
  $orgao1 = $_POST["txtOrgao"];
  $codigo = "ades" . $orgao1 . "_" . $num_adesao . "_" . $num_inexigibilidade . "_" . $exercicio;
  $tipo = "adesao";
+ $autadju=$_POST["dateautAdjudicataria"];
  $action = $_POST["action"];
 
 
  $sql = "INSERT INTO 
-    adesao (exercicio, num_adesao, num_inexigibilidade, objeto, categoria, dt_inicio, dt_ratificacao, dt_portaria, dt_solicitacao, dt_orcamento, dt_solicitacaoo, dt_autorizacao, dt_solicitacao_empresa, verificacao, documento, dt_confirmacao, dt_ata, dt_autorizacao_abertura, dt_autuacao, dt_ata_inexigibilidade, dt_parecer, dt_publicacao, dt_contrato_firmado, dt_publicacao_contrato, copia_notas, observacoes, dt_lancamento, orgao, codigo_processo)
-    values ('$exercicio', '$num_adesao', '$num_inexigibilidade', '$objeto', '$categoria', '$dt_inicio', '$dt_ratificacao', '$portaria', '$dt_solicitacao', '$dt_orcamento', '$dt_solicitacaoo', '$dt_autorizacao', '$dt_solicitacao_empresa', '$verificacao', '$documento', '$dt_confirmacao', '$dt_ata', '$dt_autorizacao_abertura', '$dt_autuacao', '$dt_ata_inexigibilidade', '$dt_parecer', '$dt_publicacao', '$dt_contrato_firmado', '$dt_publicacao_contrato', '$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo')";
+    adesao (exercicio, num_adesao, num_inexigibilidade, objeto, categoria, dt_inicio, dt_ratificacao, dt_portaria, dt_solicitacao, dt_orcamento, dt_solicitacaoo, dt_autorizacao, dt_solicitacao_empresa, verificacao, documento, dt_confirmacao, dt_ata, dt_autorizacao_abertura, dt_autuacao, dt_ata_inexigibilidade, dt_parecer, dt_publicacao, dt_contrato_firmado, dt_publicacao_contrato, copia_notas, observacoes, dt_lancamento, orgao, codigo_processo, dt_autorizacao_empresa)
+    values ('$exercicio', '$num_adesao', '$num_inexigibilidade', '$objeto', '$categoria', '$dt_inicio', '$dt_ratificacao', '$portaria', '$dt_solicitacao', '$dt_orcamento', '$dt_solicitacaoo', '$dt_autorizacao', '$dt_solicitacao_empresa', '$verificacao', '$documento', '$dt_confirmacao', '$dt_ata', '$dt_autorizacao_abertura', '$dt_autuacao', '$dt_ata_inexigibilidade', '$dt_parecer', '$dt_publicacao', '$dt_contrato_firmado', '$dt_publicacao_contrato', '$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo','$autadju')";
 
  $resultado = $connection -> query($sql);
 

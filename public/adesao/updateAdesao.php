@@ -32,6 +32,7 @@ if (isset($_POST)) {
     $observacoes = $_POST["txtObservacoes"];
     $dLancamento = $_POST["dateLancamento"];
     $tipo = "inexigibilidade";
+    $autadju=$_POST["dateautAdjudicataria"];
     $action = $_POST["action"];
 
 $sql = "UPDATE adesao
@@ -45,7 +46,7 @@ $sql = "UPDATE adesao
   "dt_portaria = '".$portaria."',".
   "dt_solicitacao = '".$dt_solicitacao."',".
   "dt_orcamento = '".$dt_orcamento."',".
-  "dt_solicitacaoo = '".$dt_solicitacao."',".
+  "dt_solicitacaoo = '".$dt_solicitacaoo."',".
   "dt_autorizacao = '".$dt_autorizacao."',".
   "dt_solicitacao_empresa = '".$dt_solicitacao_empresa."',".
   "verificacao = '".$verificacao."',".
@@ -61,7 +62,8 @@ $sql = "UPDATE adesao
   "dt_publicacao_contrato = '".$dt_contrato_firmado."',".
   "copia_notas= '".$txtCopias."' ," .
   "observacoes= '".$observacoes."' ," .
-  "dt_lancamento= '".$dLancamento."' " .
+  "dt_lancamento= '".$dLancamento."' " .",".
+  "dt_autorizacao_empresa='".$autadju."'".
 "WHERE id_adesao = " . $id;
 
 

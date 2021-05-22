@@ -182,6 +182,13 @@ $adesao = $resultado->fetch_assoc();
                 <input type="date" name="dateSolicitacaoAdjudicataria" class="form-control" id="dateSolicitacaoAdjudicataria" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["dt_solicitacao_empresa"] ?>">
             </div>
 
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Autorização da empresa Adjudicatária</span>
+                </div>
+                <input type="date" name="dateautAdjudicataria" class="form-control" id="dateautAdjudicataria" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["dt_autorizacao_empresa"] ?>">
+            </div>
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
