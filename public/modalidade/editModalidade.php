@@ -293,6 +293,8 @@ include("../../data/connection.php");
                 <input type="text" name="txtEspecificacaoObjeto" class="form-control" id="txtEspecificacaoObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["especificacao"]?>" >
             </div>
             
+
+            
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data recibo de entrega do convite</span>
