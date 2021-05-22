@@ -18,7 +18,7 @@ $action=$_POST["action"];
 $codigo_proc=$_POST["codigo"];
 
 $sql = "UPDATE  
-    $tipo set conSolic='$conSolic', conPreco='$conPreco', conSolicO='$conSolicO', conAtori
+    $tipo set conSolic='$conSolic', conPreco='$conPreco', conSolicO='$conSolicO', conAtori='$conAtori', conSolE='$conSolE',conAut
 
 
     where codigo_processo='$codigo_proc'";
