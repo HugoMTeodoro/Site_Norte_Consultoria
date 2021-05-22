@@ -21,36 +21,41 @@ $booldiag5 = false;
 $booldiag6 = false;
 $booldiag7 = false;
 $sql = "SELECT *,
-DATE_FORMAT(data_solicitacao_compras_servicos,'%d/%m/%Y') as datasol,
-DATE_FORMAT(data_preco_estimativo,'%d/%m/%Y') as datapreco,
-DATE_FORMAT(data_autorizacao_abertura,'%d/%m/%Y') as dataaut,
-DATE_FORMAT(data_autuacao,'%d/%m/%Y') as dataautuacao,
-DATE_FORMAT(data_ratificacao,'%d/%m/%Y') as datarat,
-DATE_FORMAT(data_publicacao,'%d/%m/%Y') as datapub,
-DATE_FORMAT(data_parecer_juridico,'%d/%m/%Y') as datapar,
-DATEDIFF(data_inicio, data_solicitacao_compras_servicos) as difinicio,
-DATEDIFF(data_ratificacao, data_solicitacao_compras_servicos) as difrat,
-DATEDIFF(data_preco_estimativo, data_solicitacao_compras_servicos) as difestim,
-DATEDIFF(data_autorizacao_abertura, data_solicitacao_compras_servicos) as difabert,
-DATEDIFF(data_autuacao, data_solicitacao_compras_servicos) as difaut,
-DATEDIFF(data_proposta_favorecido, data_solicitacao_compras_servicos) as difprop,
-DATEDIFF(data_ata, data_solicitacao_compras_servicos) as difata,
-DATEDIFF(data_parecer_juridico, data_solicitacao_compras_servicos) as difparecer,
-DATEDIFF(data_contrato_firmado, data_solicitacao_compras_servicos) as difcont,
-DATEDIFF(data_publicacao, data_solicitacao_compras_servicos) as difpub,
-DATEDIFF(data_autorizacao_abertura, data_preco_estimativo) as difdiag2,
-DATEDIFF(data_autorizacao_abertura, data_solicitacao_compras_servicos) as difdiag3,
-DATEDIFF(data_autuacao, data_autorizacao_abertura) as difdiag4,
-DATEDIFF(data_parecer_juridico, dt_sessao) as difdiag5,
-DATEDIFF(data_ratificacao, data_parecer_juridico) as difdiag6,
-DATEDIFF(data_publicacao, data_ratificacao) as difdiag7
-from dispensa where codigo_processo='$codigo';";
+DATE_FORMAT(dt_solicitacao,'%d/%m/%Y') as datasol,
+DATE_FORMAT(dt_orcamento,'%d/%m/%Y') as datapreco,
+DATE_FORMAT(dt_autorizacao,'%d/%m/%Y') as dataaut,
+DATE_FORMAT(dt_autuacao,'%d/%m/%Y') as dataautuacao,
+DATE_FORMAT(dt_ratificacao,'%d/%m/%Y') as datarat,
+DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapub,
+DATE_FORMAT(dt_parecer_juridico,'%d/%m/%Y') as datapar,
+DATEDIFF(dt_inicio, dt_solicitacao) as difinicio,
+DATEDIFF(dt_sessao, dt_solicitacao) as difsess,
+DATEDIFF(dt_ratificacao, dt_solicitacao) as difrat,
+DATEDIFF(dt_orcamento, dt_solicitacao) as difestim,
+DATEDIFF(dt_autorizacao, dt_solicitacao) as difabert,
+DATEDIFF(dt_autuacao, dt_solicitacao) as difaut,
+DATEDIFF(dt_proposta, dt_solicitacao) as difprop,
+DATEDIFF(dt_ata, dt_solicitacao) as difata,
+DATEDIFF(dt_parecer_juridico, dt_solicitacao) as difparecer,
+DATEDIFF(dt_contrato_firmado, dt_solicitacao) as difcont,
+DATEDIFF(dt_publicacao, dt_solicitacao) as difpub,
+DATEDIFF(dt_autorizacao, dt_orcamento) as difdiag2,
+DATEDIFF(dt_autorizacao, dt_solicitacao) as difdiag3,
+DATEDIFF(dt_autuacao, dt_autorizacao) as difdiag4,
+DATEDIFF(dt_parecer_juridico, dt_sessao) as difdiag5,
+DATEDIFF(dt_ratificacao, dt_parecer_juridico) as difdiag6,
+DATEDIFF(dt_publicacao, dt_ratificacao) as difdiag7
+from inexigibilidade where codigo_processo='$codigo';";
 
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
         if ($exibir["difinicio"] < 0) {
             $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difinicio"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+        if ($exibir["difsess"] < 0) {
+            $diag1 = $diag1 . " Data de Sessao em " . ($exibir["difsess"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         if ($exibir["difrat"] < 0) {

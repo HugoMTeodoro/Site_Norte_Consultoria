@@ -29,6 +29,7 @@ $datePublicacao = $_POST["datePublicacao"];
 $txtCopias = $_POST["txtCopias"];
 $observacoes = $_POST["txtObservacoes"];
 $dLancamento = $_POST["dateLancamento"];
+$sessao=$_POST["dateSess"];
 $tipo = "inexigibilidade";
 $action = $_POST["action"];
 
@@ -43,8 +44,8 @@ $sql = "UPDATE inexigibilidade
 "portaria_nomeando= '".$txtp."' ,  " .
 "dt_solicitacao= '".$dates."' ,  " .
 "dt_orcamento= '".$datepe."' ,  " .
-"dt_autuacao= '".$datea."' ,  " .
-"dt_autorizacao= '".$dateau."' ,  " .
+"dt_autuacao= '".$dateau."' ,  " .
+"dt_autorizacao= '".$datea."' ,  " .
 "especificacao= '".$txtEspecificacao."' ,  " .
 "enquadramento= '".$txtEnquadramento."' ,  " .
 "minuta= '".$txtMinuta."' ,  " .
@@ -57,7 +58,8 @@ $sql = "UPDATE inexigibilidade
 "dt_publicacao= '".$datePublicacao."' ,  " .
 "copia_notas= '".$txtCopias."' ," .
 "observacoes= '".$observacoes."' ," .
-"dt_lancamento= '".$dLancamento."' " .
+"dt_lancamento= '".$dLancamento."', " .
+"dt_sessao= '".$sessao."' " .
 
 "WHERE id_inexigibilidade = " . $id;
 

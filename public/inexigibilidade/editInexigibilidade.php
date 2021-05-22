@@ -139,6 +139,13 @@ include("../../data/connection.php");
                 </div>
                 <input type="date" name="dateRatificacao" class="form-control" id="dateRatificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["dt_ratificacao"]?>">
             </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da sessao</span>
+                </div>
+                <input type="date" name="dateSess" class="form-control" id="dateSess" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["dt_sessao"]?>">
+            </div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

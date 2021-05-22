@@ -29,6 +29,7 @@ DATE_FORMAT(data_ratificacao,'%d/%m/%Y') as datarat,
 DATE_FORMAT(data_publicacao,'%d/%m/%Y') as datapub,
 DATE_FORMAT(data_parecer_juridico,'%d/%m/%Y') as datapar,
 DATEDIFF(data_inicio, data_solicitacao_compras_servicos) as difinicio,
+DATEDIFF(dt_sessao, data_solicitacao_compras_servicos) as difsessao,
 DATEDIFF(data_ratificacao, data_solicitacao_compras_servicos) as difrat,
 DATEDIFF(data_preco_estimativo, data_solicitacao_compras_servicos) as difestim,
 DATEDIFF(data_autorizacao_abertura, data_solicitacao_compras_servicos) as difabert,
@@ -52,6 +53,10 @@ if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
         if ($exibir["difinicio"] < 0) {
             $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difinicio"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+        if ($exibir["difsessao"] < 0) {
+            $diag1 = $diag1 . " Data da Sessao em " . ($exibir["difsessao"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         if ($exibir["difrat"] < 0) {
