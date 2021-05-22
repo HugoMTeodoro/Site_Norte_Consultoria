@@ -125,7 +125,7 @@ if ($dados->num_rows > 0) {
 
 
             <div class="form">
-                <form action="../consideracoes/insertConsideracoesDisp.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+                <form action="../consideracoes/insertConsideracoesAdesao.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
                     <h3>Considerações</h3>
                     <br>
                     <?php
@@ -168,7 +168,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Solicitação ao Órgão Realizador do RP <br> <?php echo $exibir["datasolo"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conSolicO" class="form-control" id="conSolicO" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAut"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conSolicO" class="form-control" id="conSolicO" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conSolicO"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag3 . "." ?></p>
@@ -183,7 +183,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Autorização do Órgão Realizador do RP <br> <?php echo $exibir["dataaut"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAtori" class="form-control" id="conAtori" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAtuacao"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAtori" class="form-control" id="conAtori" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAtori"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag4 . "." ?></p>
@@ -197,7 +197,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Solicitação à empresa Adjudicatária <br> <?php echo $exibir["datasolem"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conSolE" class="form-control" id="conSolE" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conRat"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conSolE" class="form-control" id="conSolE" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conSolE"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag6 . "." ?></p>
@@ -211,7 +211,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Autorização da empresa Adjudicatária <br> <?php echo $exibir["dataaute"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAut" class="form-control" id="conAut" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAut" class="form-control" id="conAut" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAut"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag7 . "." ?></p>
@@ -225,7 +225,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Autorização Abertura do Proc.: <br> <?php echo $exibir["dataauto"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAuto" class="form-control" id="conAuto" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAuto" class="form-control" id="conAuto" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAuto"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag8 . "." ?></p>
@@ -239,7 +239,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Autuação <br> <?php echo $exibir["dataautua"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAutuacao" class="form-control" id="conAutuacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAutuacao" class="form-control" id="conAutuacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAutuacao"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag9 . "." ?></p>
@@ -253,7 +253,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Parecer jurídico <br> <?php echo $exibir["datapar"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conParec" class="form-control" id="conParec" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conParec" class="form-control" id="conParec" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conParec"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag10 . "." ?></p>
@@ -267,7 +267,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Ratificação <br> <?php echo $exibir["datarat"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conRat" class="form-control" id="conRat" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conRat" class="form-control" id="conRat" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conRat"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag11 . "." ?></p>
@@ -295,7 +295,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Contrato firmado <br> <?php echo $exibir["datacont"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conFir" class="form-control" id="conFir" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conFir" class="form-control" id="conFir" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conFir"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag13 . "." ?></p>
