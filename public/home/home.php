@@ -50,6 +50,8 @@ include("../login/valida.php");
             </div>
         </div>
 
+        <br> 
+        
         <div class="card text-center">
             <div class="card-header">
                 
@@ -78,24 +80,14 @@ include("../login/valida.php");
         </div>
 
         <br>
+        
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+       
+        
         <footer class="py-5 bg-dark">
 
             <div class="container">
-                <p class="m-5 text-center text-white">Copyright &copy; Your Website 2020</p>
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
             </div>
         </footer>
 </body>
