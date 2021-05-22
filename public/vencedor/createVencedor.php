@@ -128,17 +128,17 @@ include("../aditivo/listAditivo.php");
 
 ?>
 
-<?php if ($tipo == "adesao") {
+<?php if ($tipo == "inexigibilidade") {
 ?>
     <HR WIDTH=85%>
     <section id="consideracoes"> </section>
 <?php
-    include("../consideracoes/editConsideracoesAdesao.php");
+    include("../consideracoes/editConsideracoesInex.php");
 }
 ?>
 
 <?php 
-echo $tipo."teste";
+
 if ($tipo == "pregao") {
 ?>
     <HR WIDTH=85%>

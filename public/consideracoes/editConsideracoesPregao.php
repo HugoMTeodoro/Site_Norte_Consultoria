@@ -55,7 +55,7 @@ DATE_FORMAT(dt_pesquisa,'%d/%m/%Y') as datapes,
 DATE_FORMAT(dt_emissao,'%d/%m/%Y') as dataemi,
 DATE_FORMAT(dt_aprov_minuta,'%d/%m/%Y') as dataaprovmin,
 DATE_FORMAT(dt_sessao,'%d/%m/%Y') as datasess,
-DATE_FORMAT(dt_parecer,'%d/%m/%Y') as dataparec
+DATE_FORMAT(dt_parecer,'%d/%m/%Y') as dataparec,
 
 
 
@@ -71,14 +71,14 @@ DATEDIFF(dt_homologacao, dt_parecer) as difdiag10,
 DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag11
 
 
-from adesao where codigo_processo='$codigo';";
+from pregao where codigo_processo='$codigo';";
 
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
        
-        if ($exibir["difdiag2"] < 0) {
-            $diag2 = $diag2 . "Excedeu o dia da abertura em" . $exibir["difdiag2"] . " dias";
+        if ($exibir["difdiag2"] > 0) {
+            $diag2 = $diag2 . "Excedeu o dia da abertura em " . $exibir["difdiag2"] . " dias";
             $booldiag2 = true;
         }
         if ($exibir["difdiag3"] < 0) {
