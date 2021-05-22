@@ -39,7 +39,7 @@ include("../login/valida.php");
 
                     <a href="../modalidade/listModalidade.php" class="btn btn-primary">Lista de modalidade</a>
 
-                    <a href="../pregap/listPregao.php" class="btn btn-primary">Lista de pregão</a>
+                    <a href="../pregao/listPregao.php" class="btn btn-primary">Lista de pregão</a>
 
                     
                 </div>
