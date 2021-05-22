@@ -50,10 +50,52 @@ include("../login/valida.php");
             </div>
         </div>
 
+        <div class="card text-center">
+            <div class="card-header">
+                
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Gerência de ferramentas</h5>
+                <p class="card-text"></p>
+                <div class="buttons">
+                    <a href="../categoria/listCategoria.php" class="btn btn-primary">Lista de categoria</a>
+
+                    <a href="../tipoModalidade/createModalidade.php" class="btn btn-primary">Tipos de modalidade</a>
+
+                    <a href="../tipo_pregao/createTipoPregao.php" class="btn btn-primary">Tipos de pregão</a>
+
+                    <a href="../registro/createRegistro.php" class="btn btn-primary">Lista de registros</a>
+
+                    <a href="../inciso/createInciso.php" class="btn btn-primary">Lista de inciso</a>
+
+                    
+                </div>
+
+            </div>
+            <div class="card-footer text-muted">
+                
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <footer class="py-5 bg-dark">
 
             <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+                <p class="m-5 text-center text-white">Copyright &copy; Your Website 2020</p>
             </div>
         </footer>
 </body>
