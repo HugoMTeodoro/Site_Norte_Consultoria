@@ -92,7 +92,7 @@ if ($dados->num_rows > 0) {
         }
         
         if ($exibir["difdiag2"] < 0) {
-            $diag2 = $diag2 . "Excedeu a data de abertura em " . $exibir["difdiag2"]*-1 . " dias";
+            $diag2 = $diag2 . "Essa data Excedeu a data de abertura em " . $exibir["difdiag2"]*-1 . " dias";
             $booldiag2 = true;
         }
         if ($exibir["difdiag3"] < 0) {
@@ -205,7 +205,7 @@ if ($dados->num_rows > 0) {
     
                                     <span class="input-group-text" id="inputGroup-sizing-default">Parecer <br> <?php echo $exibir["datapar"] ?></span>
                                 </div>
-                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conRat" class="form-control" id="conRat" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conRat"] ?></textarea>
+                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPar" class="form-control" id="conPar" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPar"] ?></textarea>
     
                             </div>
                             <p class="formato"><?php echo $diag5 . "." ?></p>
