@@ -125,7 +125,6 @@ include("../aditivo/listAditivo.php");
 <?php
     include("../consideracoes/editConsideracoesAdesao.php");
 }
-
 ?>
 
 <?php if ($tipo == "inexigibilidade") {

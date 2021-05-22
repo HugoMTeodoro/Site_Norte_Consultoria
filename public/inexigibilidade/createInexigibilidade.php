@@ -2,7 +2,7 @@
 include("../../data/connection.php");
 include("../Login/valida.php");
 $action=$_POST["action"];
-;?>
+?>
 
 <html lang="en">
 <head>
@@ -109,6 +109,13 @@ $action=$_POST["action"];
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de preço estimativo (Orçamento)</span>
                 </div>
                 <input type="date" name="datepe" class="form-control" id="datepe" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da sessao</span>
+                </div>
+                <input type="date" name="dateSess" class="form-control" id="dateSess" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
