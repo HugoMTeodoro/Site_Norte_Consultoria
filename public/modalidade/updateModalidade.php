@@ -44,7 +44,8 @@ if (isset($_POST)) {
     $dLancamento = $_POST["dateLancamento"];
     $tipo = "modalidade";
     $action = $_POST["action"];
-
+    $emissao=$_POST["dateemi"];
+    $sessao=$_POST["datesess"];
 
     $sql = "UPDATE modalidade
     SET exercicio='".$exercicio."' ,  " .
@@ -84,7 +85,9 @@ if (isset($_POST)) {
     "dt_publicacao_contrato='".$dt_publicacao_contrato."' ,  " .
     "copia= '".$txtCopias."' ," .
     "observacoes= '".$observacoes."' ," .
-    "dt_lancamento= '".$dLancamento."' " .
+    "dt_lancamento= '".$dLancamento."' ," .
+    "dt_emissao= '".$emissao."' ," .
+    "dt_sessao= '".$sessao."' " .
     "WHERE id_modalidade = " . $id;
 
 

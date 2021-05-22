@@ -216,6 +216,15 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da sessão</span>
+                </div>
+                <input type="date" name="datesess" class="form-control" id="datesess" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_sessao"]?>">
+            </div>             
+
+
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data portaria nomeando a comissão</span>
                 </div>
                 <input type="date" name="dateNomeacao" class="form-control" id="dateNomeacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_portaria"]?>" >
@@ -277,6 +286,12 @@ include("../../data/connection.php");
                 <input type="date" name="dateAprovMin" class="form-control" id="dateAprovMin" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_aprovacao"]?>" >
             </div>
 
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data de emissão</span>
+                </div>
+                <input type="date" name="dateemi" class="form-control" id="dateemi" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_emissao"]?>">
+            </div>
             
 
             <div class="input-group mb-3">

@@ -171,6 +171,14 @@ $action=$_POST["action"];
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da sessão</span>
+                </div>
+                <input type="date" name="datesess" class="form-control" id="datesess" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>        
+
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data portaria nomeando a comissão</span>
                 </div>
                 <input type="date" name="dateNomeacao" class="form-control" id="dateNomeacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
@@ -232,7 +240,12 @@ $action=$_POST["action"];
                 <input type="date" name="dateAprovMin" class="form-control" id="dateAprovMin" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data de emissão</span>
+                </div>
+                <input type="date" name="dateemi" class="form-control" id="dateemi" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
