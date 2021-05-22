@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 08:39 PM
+-- Generation Time: May 23, 2021 at 12:26 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -61,10 +61,16 @@ CREATE TABLE `adesao` (
   `codigo_processo` varchar(200) DEFAULT NULL,
   `conSolic` text NOT NULL,
   `conPreco` text NOT NULL,
-  `conAut` text NOT NULL,
-  `conAutuacao` text NOT NULL,
-  `conRat` text NOT NULL,
-  `conPub` text NOT NULL,
+  `conSolicO` text DEFAULT NULL,
+  `conAtori` text DEFAULT NULL,
+  `conSolE` text DEFAULT NULL,
+  `conAut` text DEFAULT NULL,
+  `conAuto` text DEFAULT NULL,
+  `conAutuacao` text DEFAULT NULL,
+  `conParec` text DEFAULT NULL,
+  `conRat` text DEFAULT NULL,
+  `conPub` text DEFAULT NULL,
+  `conFir` text DEFAULT NULL,
   `dt_pesquisa` date DEFAULT NULL,
   `dt_abertura` date DEFAULT NULL,
   `dt_autorizacao_empresa` date DEFAULT NULL,
@@ -75,8 +81,8 @@ CREATE TABLE `adesao` (
 -- Dumping data for table `adesao`
 --
 
-INSERT INTO `adesao` (`id_adesao`, `exercicio`, `num_adesao`, `num_inexigibilidade`, `objeto`, `categoria`, `dt_inicio`, `dt_ratificacao`, `dt_portaria`, `dt_solicitacao`, `dt_orcamento`, `dt_solicitacaoo`, `dt_autorizacao`, `dt_solicitacao_empresa`, `verificacao`, `documento`, `dt_confirmacao`, `dt_ata`, `dt_autorizacao_abertura`, `dt_autuacao`, `dt_ata_inexigibilidade`, `dt_parecer`, `dt_publicacao`, `dt_contrato_firmado`, `dt_publicacao_contrato`, `copia_notas`, `valor`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAutuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_abertura`, `dt_autorizacao_empresa`, `dt_homologacao`) VALUES
-(1, '', 0, 0, '', 'Manutenção', '0000-00-00', '2000-09-19', '0000-00-00', '2000-09-22', '2000-09-22', '2000-09-21', '2000-09-19', '2000-09-20', '', '', '0000-00-00', '0000-00-00', '2000-09-18', '2000-09-17', '2000-09-21', '2000-09-20', '2000-09-30', '2000-09-18', '2000-09-18', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'adesPMOB___', '', '', '', '', '', '', NULL, NULL, '2000-09-19', '0000-00-00');
+INSERT INTO `adesao` (`id_adesao`, `exercicio`, `num_adesao`, `num_inexigibilidade`, `objeto`, `categoria`, `dt_inicio`, `dt_ratificacao`, `dt_portaria`, `dt_solicitacao`, `dt_orcamento`, `dt_solicitacaoo`, `dt_autorizacao`, `dt_solicitacao_empresa`, `verificacao`, `documento`, `dt_confirmacao`, `dt_ata`, `dt_autorizacao_abertura`, `dt_autuacao`, `dt_ata_inexigibilidade`, `dt_parecer`, `dt_publicacao`, `dt_contrato_firmado`, `dt_publicacao_contrato`, `copia_notas`, `valor`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conSolicO`, `conAtori`, `conSolE`, `conAut`, `conAuto`, `conAutuacao`, `conParec`, `conRat`, `conPub`, `conFir`, `dt_pesquisa`, `dt_abertura`, `dt_autorizacao_empresa`, `dt_homologacao`) VALUES
+(1, '', 0, 0, '', 'Manutenção', '0000-00-00', '2000-09-19', '0000-00-00', '2000-09-22', '2000-09-22', '2000-09-21', '2000-09-19', '2000-08-20', '', '', '0000-00-00', '0000-00-00', '2000-09-18', '2000-09-17', '2000-09-21', '2000-09-20', '2000-09-30', '2000-09-18', '2000-09-18', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'adesPMOB___', '', 'data errada1', 'data errada2', 'data errada3', 'data errada4', 'data errada5', '', 'data errada6', 'data errada7', 'data errada8', 'data errada9', 'data errada10', NULL, NULL, '2000-08-19', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -208,8 +214,7 @@ CREATE TABLE `dispensa` (
 INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`, `conPar`, `dt_pesquisa`, `dt_abertura`, `emergencia`, `pesquisa`, `dt_sessao`) VALUES
 (92, 2, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB___2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2', NULL),
 (93, 2, 2, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_2__2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2', NULL),
-(94, 2020, 1, 1, 'bila3', 'aaa', 'Manutenção', '2000-09-21', '2000-09-19', '0000-00-00', '2000-09-22', '2000-09-22', '2000-09-21', '2000-09-20', '', '', '', '0000-00-00', '', '0000-00-00', '2000-09-20', '0000-00-00', '2000-10-20', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB___', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2000-09-21', NULL, 'Dispensa/1/2020', '2000-09-21'),
-(95, 2020, 1, 1, 'bila3', 'aaa', 'Manutenção', '2021-02-21', '2021-09-23', '2021-09-21', '2020-09-21', '2021-09-20', '2021-09-22', '2021-09-21', '', '', '', '2021-09-21', '', '2021-09-21', '2021-09-22', '2021-09-21', '2021-09-24', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_1_1_2020', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-22', NULL, 'Dispensa/1/2020', '2000-09-21');
+(95, 2020, 1, 1, 'bila3', 'aaa', 'Manutenção', '2021-02-21', '2021-09-23', '2021-09-21', '2020-09-21', '2021-09-20', '2021-09-22', '2021-09-21', '', '', '', '2021-09-21', '', '2021-09-21', '2021-09-22', '2021-09-21', '2021-09-24', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_1_1_2020', '', '', '', 'xalenger', '', '', '', NULL, '2021-09-22', NULL, 'Dispensa/1/2020', '2000-09-21');
 
 -- --------------------------------------------------------
 
@@ -280,9 +285,7 @@ CREATE TABLE `inexigibilidade` (
 --
 
 INSERT INTO `inexigibilidade` (`id_inexigibilidade`, `exercicio`, `num_processo`, `num_inexigibilidade`, `objeto`, `categoria`, `dt_inicio`, `dt_ratificacao`, `portaria_nomeando`, `dt_solicitacao`, `dt_autorizacao`, `dt_orcamento`, `dt_autuacao`, `especificacao`, `enquadramento`, `minuta`, `dt_aprovacao`, `dt_proposta`, `documentos`, `dt_ata`, `dt_parecer_juridico`, `dt_contrato_firmado`, `dt_publicacao`, `copia_notas`, `valor_total`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAutuacao`, `conRab`, `conPub`, `dt_pesquisa`, `dt_abertura`) VALUES
-(1, '1', 1, 1, '1', '-1', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', 0, '', '0000-00-00 00:00:00', '', NULL, '', '', '', '', '', '', NULL, NULL),
-(2, '1', 1, 1, '1', 'Manutenção', '2021-12-31', '2021-12-31', '1', '2021-12-31', '2021-12-31', '2021-12-31', '2021-12-31', '1', '1', '1', '2021-12-31', '2021-12-31', '1', '2021-12-31', '2021-12-31', '2021-12-31', '2021-12-31', '1', 1, '1', '2021-12-31 23:59:00', '', NULL, '', '', '', '', '', '', NULL, NULL),
-(3, '', 0, 0, '', '-1', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'inexPMOB___', '', '', '', '', '', '', NULL, NULL);
+(4, '2020', 1, 1, '', '-1', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'inexPMOB_1_1_2020', '', '', '', '', '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -389,7 +392,7 @@ CREATE TABLE `orgao_atual` (
 --
 
 INSERT INTO `orgao_atual` (`nome_orgao_atual`, `id_orgao_atual`, `exercicio_atual`) VALUES
-('PMOB', 1, 0);
+('PMOB', 1, 2020);
 
 -- --------------------------------------------------------
 
@@ -676,13 +679,13 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `dispensa`
 --
 ALTER TABLE `dispensa`
-  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id_dispensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `inexigibilidade`
 --
 ALTER TABLE `inexigibilidade`
-  MODIFY `id_inexigibilidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_inexigibilidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `modalidade`
