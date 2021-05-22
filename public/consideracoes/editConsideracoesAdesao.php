@@ -41,6 +41,10 @@ DATE_FORMAT(dt_solicitacao_empresa,'%d/%m/%Y') as datasolem,
 DATE_FORMAT(dt_autorizacao_empresa,'%d/%m/%Y') as dataaute,
 DATE_FORMAT(dt_autorizacao_abertura,'%d/%m/%Y') as dataauto,
 DATE_FORMAT(dt_autuacao,'%d/%m/%Y') as dataautua,
+DATE_FORMAT(dt_parecer,'%d/%m/%Y') as datapar,
+DATE_FORMAT(dt_ratificacao,'%d/%m/%Y') as datarat,
+DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapub,
+DATE_FORMAT(dt_contrato_firmado,'%d/%m/%Y') as datacont,
 DATEDIFF(dt_solicitacaoo, dt_orcamento) as difdiag2,
 DATEDIFF(dt_solicitacaoo, dt_solicitacao) as difdiag3,
 DATEDIFF(dt_autorizacao, dt_solicitacaoo) as difdiag4,
@@ -48,10 +52,10 @@ DATEDIFF(dt_solicitacao_empresa, dt_autorizacao) as difdiag6,
 DATEDIFF(dt_autorizacao_empresa, dt_solicitacao_empresa) as difdiag7,
 DATEDIFF(dt_autorizacao_abertura, dt_autorizacao_empresa) as difdiag8,
 DATEDIFF(dt_autuacao, dt_autorizacao_abertura) as difdiag9,
-DATEDIFF(dt_parecer, dt_ata) as difdiag10,
+DATEDIFF(dt_parecer, dt_ata_inexigibilidade) as difdiag10,
 DATEDIFF(dt_ratificacao, dt_parecer) as difdiag11,
 DATEDIFF(dt_publicacao, dt_ratificacao) as difdiag12,
-DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag13
+DATEDIFF(dt_contrato_firmado, dt_ratificacao) as difdiag13
 
 from adesao where codigo_processo='$codigo';";
 
@@ -89,19 +93,19 @@ if ($dados->num_rows > 0) {
             $booldiag9 = true;
         }
         if ($exibir["difdiag10"] <0) {
-            $diag10 = $diag10 . "Essa data foi anterior a Ata de adesao em " . $exibir["difdiag10"] . " dias";
+            $diag10 = $diag10 . "Essa data foi anterior a Ata de adesao em " . $exibir["difdiag10"]*-1 . " dias";
             $booldiag10 = true;
         }
         if ($exibir["difdiag11"] <0) {
-            $diag11 = $diag11 . "Essa data foi anterior ao parecer juridico em " . $exibir["difdiag11"] . " dias";
+            $diag11 = $diag11 . "Essa data foi anterior ao parecer juridico em " . $exibir["difdiag11"]*-1 . " dias";
             $booldiag11 = true;
         }
         if ($exibir["difdiag12"] >8) {
             $diag12 = $diag12 . "Essa data foi posterior a ratificacao em " . $exibir["difdiag12"] . " dias, quando permitido apenas 8 dias (art. 26, Lei 8.666/93)";
             $booldiag12 = true;
         }
-        if ($exibir["difdiag13"] >=0) {
-            $diag13 = $diag13 . "Essa data foi anterior a Homologação em " . $exibir["difdiag13"] . " dias";
+        if ($exibir["difdiag13"] <0) {
+            $diag13 = $diag13 . "Essa data foi anterior a Ratificacao em " . $exibir["difdiag13"]*-1 . " dias";
             $booldiag13 = true;
         }
 
@@ -241,6 +245,62 @@ if ($dados->num_rows > 0) {
                                 <p class="formato"><?php echo $diag9 . "." ?></p>
                             <?php
                             }
+                            if ($booldiag10) {
+                                ?>
+                                    <div class="input-group mb-3">
+            
+                                        <div class="input-group-prepend">
+            
+                                            <span class="input-group-text" id="inputGroup-sizing-default">Parecer jurídico <br> <?php echo $exibir["datapar"] ?></span>
+                                        </div>
+                                        <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+            
+                                    </div>
+                                    <p class="formato"><?php echo $diag10 . "." ?></p>
+                                <?php
+                                }
+                                if ($booldiag11) {
+                                    ?>
+                                        <div class="input-group mb-3">
+                
+                                            <div class="input-group-prepend">
+                
+                                                <span class="input-group-text" id="inputGroup-sizing-default">Ratificação <br> <?php echo $exibir["datarat"] ?></span>
+                                            </div>
+                                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                
+                                        </div>
+                                        <p class="formato"><?php echo $diag11 . "." ?></p>
+                                    <?php
+                                    }
+                                    if ($booldiag12) {
+                                        ?>
+                                            <div class="input-group mb-3">
+                    
+                                                <div class="input-group-prepend">
+                    
+                                                    <span class="input-group-text" id="inputGroup-sizing-default">Publicação <br> <?php echo $exibir["datapub"] ?></span>
+                                                </div>
+                                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                    
+                                            </div>
+                                            <p class="formato"><?php echo $diag12 . "." ?></p>
+                                        <?php
+                                        }
+                                        if ($booldiag13) {
+                                            ?>
+                                                <div class="input-group mb-3">
+                        
+                                                    <div class="input-group-prepend">
+                        
+                                                        <span class="input-group-text" id="inputGroup-sizing-default">Contrato firmado <br> <?php echo $exibir["datacont"] ?></span>
+                                                    </div>
+                                                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                        
+                                                </div>
+                                                <p class="formato"><?php echo $diag13 . "." ?></p>
+                                            <?php
+                                            }
                     ?>
 
                     <div class="buttons">
