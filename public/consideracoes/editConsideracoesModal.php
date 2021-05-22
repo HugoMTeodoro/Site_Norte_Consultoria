@@ -7,7 +7,7 @@ $diag1 = '';
 $diag2 = '';
 $diag3 = '';
 $diag4 = '';
-
+$diag5 = '';
 $diag6 = '';
 $diag7 = '';
 $diag8 = '';
@@ -18,7 +18,7 @@ $booldiag1 = false;
 $booldiag2 = false;
 $booldiag3 = false;
 $booldiag4 = false;
-
+$booldiag5 = false;
 $booldiag6 = false;
 $booldiag7 = false;
 $booldiag8 = false;
@@ -30,10 +30,12 @@ DATE_FORMAT(dt_orcamento,'%d/%m/%Y') as dataorc,
 DATE_FORMAT(dt_autorizacao,'%d/%m/%Y') as dataaut,
 DATE_FORMAT(dt_autuacao,'%d/%m/%Y') as dataautua,
 DATE_FORMAT(dt_autuacao,'%d/%m/%Y') as dataaprov,
+DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapub,
 
 DATEDIFF(dt_abertura, dt_orcamento) as difdiag2,
 DATEDIFF(dt_autorizacao, dt_solicitacao) as difdiag3,
 DATEDIFF(dt_autuacao, dt_autorizacao) as difdiag4,
+DATEDIFF(dt_publicacao, dt_emissao) as difdiag5,
 DATEDIFF(dt_publicacao, dt_aprovacao) as difdiag6,
 DATEDIFF(dt_ata_julgamento, dt_abertura) as difdiag7,
 DATEDIFF(dt_parecer_juridico, dt_sessao) as difdiag8,
@@ -58,9 +60,15 @@ if ($dados->num_rows > 0) {
             $diag4 = $diag4 . "Essa data foi anterior à  data de solicitacao ao orgao em " . ($exibir["difdiag4"] * -1) . " dias";
             $booldiag4 = true;
         }
+        
         if ($exibir["difdiag6"] < 0) {
             $diag6 = $diag6 . "Essa data foi anterior ao autorizacao do orgao realizador em " . ($exibir["difdiag6"] * -1) . " dias";
             $booldiag6 = true;
+        }
+
+        if ($exibir["difdiag5"] < 0) {
+            $diag4 = $diag4 . "Essa data foi anterior à  data de emissao " . ($exibir["difdiag5"] * -1) . " dias";
+            $booldiag5 = true;
         }
 
         if ($exibir["difdiag7"] <0) {
@@ -187,6 +195,20 @@ if ($dados->num_rows > 0) {
                 <p class="formato"><?php echo $diag6 . "." ?></p>
             <?php
             }
+            if ($booldiag5) {
+                ?>
+                    <div class="input-group mb-3">
+    
+                        <div class="input-group-prepend">
+    
+                            <span class="input-group-text" id="inputGroup-sizing-default">Publicação do Edital <br> <?php echo $exibir["datapub"] ?></span>
+                        </div>
+                        <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conRat" class="form-control" id="conRat" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conRat"] ?></textarea>
+    
+                    </div>
+                    <p class="formato"><?php echo $diag5 . "." ?></p>
+                <?php
+                }
             if ($booldiag7) {
             ?>
                 <div class="input-group mb-3">

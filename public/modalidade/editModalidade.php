@@ -439,6 +439,6 @@ include("../../data/connection.php");
 
 <section id="vencedores"></section>
     <?php
-    include("../vencedor/listVencedor.php");  
+    include("../vencedor/createVencedor.php");  
     ?>
     
