@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2021 at 12:26 AM
+-- Generation Time: May 23, 2021 at 02:28 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -82,7 +82,7 @@ CREATE TABLE `adesao` (
 --
 
 INSERT INTO `adesao` (`id_adesao`, `exercicio`, `num_adesao`, `num_inexigibilidade`, `objeto`, `categoria`, `dt_inicio`, `dt_ratificacao`, `dt_portaria`, `dt_solicitacao`, `dt_orcamento`, `dt_solicitacaoo`, `dt_autorizacao`, `dt_solicitacao_empresa`, `verificacao`, `documento`, `dt_confirmacao`, `dt_ata`, `dt_autorizacao_abertura`, `dt_autuacao`, `dt_ata_inexigibilidade`, `dt_parecer`, `dt_publicacao`, `dt_contrato_firmado`, `dt_publicacao_contrato`, `copia_notas`, `valor`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conSolicO`, `conAtori`, `conSolE`, `conAut`, `conAuto`, `conAutuacao`, `conParec`, `conRat`, `conPub`, `conFir`, `dt_pesquisa`, `dt_abertura`, `dt_autorizacao_empresa`, `dt_homologacao`) VALUES
-(1, '', 0, 0, '', 'Manutenção', '0000-00-00', '2000-09-19', '0000-00-00', '2000-09-22', '2000-09-22', '2000-09-21', '2000-09-19', '2000-08-20', '', '', '0000-00-00', '0000-00-00', '2000-09-18', '2000-09-17', '2000-09-21', '2000-09-20', '2000-09-30', '2000-09-18', '2000-09-18', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'adesPMOB___', '', 'data errada1', 'data errada2', 'data errada3', 'data errada4', 'data errada5', '', 'data errada6', 'data errada7', 'data errada8', 'data errada9', 'data errada10', NULL, NULL, '2000-08-19', '0000-00-00');
+(1, '', 0, 0, '', 'Manutenção', '0000-00-00', '2000-09-19', '0000-00-00', '2000-09-22', '2000-09-22', '2000-09-21', '2000-09-19', '2000-08-20', '', '', '0000-00-00', '0000-00-00', '2000-09-18', '2000-09-17', '2000-09-21', '2000-09-20', '2000-09-30', '2000-09-18', '2000-09-18', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'adesPMOB___', 'o porra', 'data errada1', 'data errada2', 'data errada3', 'data errada4', 'data errada5', '', 'data errada6', 'data errada7', 'data errada8', 'data errada9', 'data errada10', NULL, NULL, '2000-08-19', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -214,7 +214,7 @@ CREATE TABLE `dispensa` (
 INSERT INTO `dispensa` (`id_dispensa`, `exercicio`, `num_processo`, `num_dispensa`, `inciso`, `objeto`, `categoria`, `data_inicio`, `data_ratificacao`, `data_portaria_comissao`, `data_solicitacao_compras_servicos`, `data_preco_estimativo`, `data_autorizacao_abertura`, `data_autuacao`, `especificacao_objeto`, `enquadramento`, `minuta_contrato`, `data_proposta_favorecido`, `documento_habilitacao`, `data_ata`, `data_parecer_juridico`, `data_contrato_firmado`, `data_publicacao`, `copia_empenho_compras_legais`, `valor_total`, `observacoes`, `data_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`, `conPar`, `dt_pesquisa`, `dt_abertura`, `emergencia`, `pesquisa`, `dt_sessao`) VALUES
 (92, 2, 0, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB___2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2', NULL),
 (93, 2, 2, 0, 'bila3', '', 'Manutenção ', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_2__2', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Dispensa//2', NULL),
-(95, 2020, 1, 1, 'bila3', 'aaa', 'Manutenção', '2021-02-21', '2021-09-23', '2021-09-21', '2020-09-21', '2021-09-20', '2021-09-22', '2021-09-21', '', '', '', '2021-09-21', '', '2021-09-21', '2021-09-22', '2021-09-21', '2021-09-24', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_1_1_2020', '', '', '', 'xalenger', '', '', '', NULL, '2021-09-22', NULL, 'Dispensa/1/2020', '2000-09-21');
+(95, 2020, 1, 1, 'bila3', 'aaa', 'Manutenção', '2021-02-21', '2021-09-23', '2021-09-21', '2020-09-21', '2020-09-23', '2021-09-22', '2021-09-21', '', '', '', '2021-09-21', '', '2021-09-21', '2021-09-22', '2021-09-21', '2021-09-24', '', 0, '', '0000-00-00 00:00:00', 'PMOB', 'dispPMOB_1_1_2020', '', '', '', 'xalenger 23', '', '', '', NULL, '2020-09-22', NULL, 'Dispensa/1/2020', '2021-09-21');
 
 -- --------------------------------------------------------
 
@@ -273,19 +273,20 @@ CREATE TABLE `inexigibilidade` (
   `conSolic` text NOT NULL,
   `conPreco` text NOT NULL,
   `conAut` text NOT NULL,
-  `conAutuacao` text NOT NULL,
-  `conRab` text NOT NULL,
+  `conAtuacao` text NOT NULL,
+  `conRat` text NOT NULL,
   `conPub` text NOT NULL,
   `dt_pesquisa` date DEFAULT NULL,
-  `dt_abertura` date DEFAULT NULL
+  `dt_abertura` date DEFAULT NULL,
+  `dt_sessao` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `inexigibilidade`
 --
 
-INSERT INTO `inexigibilidade` (`id_inexigibilidade`, `exercicio`, `num_processo`, `num_inexigibilidade`, `objeto`, `categoria`, `dt_inicio`, `dt_ratificacao`, `portaria_nomeando`, `dt_solicitacao`, `dt_autorizacao`, `dt_orcamento`, `dt_autuacao`, `especificacao`, `enquadramento`, `minuta`, `dt_aprovacao`, `dt_proposta`, `documentos`, `dt_ata`, `dt_parecer_juridico`, `dt_contrato_firmado`, `dt_publicacao`, `copia_notas`, `valor_total`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAutuacao`, `conRab`, `conPub`, `dt_pesquisa`, `dt_abertura`) VALUES
-(4, '2020', 1, 1, '', '-1', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '', '0000-00-00', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'inexPMOB_1_1_2020', '', '', '', '', '', '', NULL, NULL);
+INSERT INTO `inexigibilidade` (`id_inexigibilidade`, `exercicio`, `num_processo`, `num_inexigibilidade`, `objeto`, `categoria`, `dt_inicio`, `dt_ratificacao`, `portaria_nomeando`, `dt_solicitacao`, `dt_autorizacao`, `dt_orcamento`, `dt_autuacao`, `especificacao`, `enquadramento`, `minuta`, `dt_aprovacao`, `dt_proposta`, `documentos`, `dt_ata`, `dt_parecer_juridico`, `dt_contrato_firmado`, `dt_publicacao`, `copia_notas`, `valor_total`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_abertura`, `dt_sessao`) VALUES
+(4, '2020', 1, 1, '', '-1', '2000-09-20', '2000-09-20', '', '2000-10-21', '2000-09-15', '2000-09-15', '2000-09-14', '', '', '', '2000-09-20', '2000-09-20', '', '2000-09-20', '2000-09-20', '2000-09-20', '2000-09-20', '', NULL, '', '0000-00-00 00:00:00', 'PMOB', 'inexPMOB_1_1_2020', 'aaaa', '', '', '', '', '', NULL, '2000-09-17', '2000-09-20');
 
 -- --------------------------------------------------------
 
@@ -333,27 +334,30 @@ CREATE TABLE `modalidade` (
   `dt_lancamento` datetime DEFAULT NULL,
   `orgao` varchar(200) NOT NULL,
   `codigo_processo` varchar(200) DEFAULT NULL,
-  `conSolic` text DEFAULT NULL,
-  `conPreco` text DEFAULT NULL,
-  `conAut` text DEFAULT NULL,
-  `conAutuacao` text DEFAULT NULL,
-  `conRat` text DEFAULT NULL,
-  `conPub` text DEFAULT NULL,
   `dt_pesquisa` date NOT NULL,
   `dt_emissao` date DEFAULT NULL,
   `dt_ata_julgamento` date DEFAULT NULL,
   `dt_sessao` date NOT NULL,
   `classificados` text DEFAULT NULL,
   `dt_pub_res` date DEFAULT NULL,
-  `prazo2` date DEFAULT NULL
+  `prazo2` date DEFAULT NULL,
+  `conSolic` text DEFAULT NULL,
+  `conPreco` text DEFAULT NULL,
+  `conAut` text DEFAULT NULL,
+  `conAtuacao` text DEFAULT NULL,
+  `conAprov` text DEFAULT NULL,
+  `conPub` text DEFAULT NULL,
+  `conAta` text DEFAULT NULL,
+  `conPar` text DEFAULT NULL,
+  `conFirm` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `modalidade`
 --
 
-INSERT INTO `modalidade` (`id_modalidade`, `exercicio`, `num_processo`, `modalidade`, `numero`, `objeto`, `registro`, `categoria`, `dt_edital`, `dt_entrega`, `dt_abertura`, `dt_portaria`, `dt_solicitacao`, `dt_orcamento`, `dt_autorizacao`, `dt_autuacao`, `enquadramento`, `dt_anexos`, `dt_aprovacao`, `minuta`, `dt_publicacao`, `especificacao`, `dt_recibo`, `documentos`, `dt_ata`, `dt_confirmacao`, `prazo`, `dt_parecer_juridico`, `dt_adjudicacao`, `dt_homologacao`, `dt_contrato_firmado`, `dt_publicacao_contrato`, `copia`, `codigo`, `valor_total`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAutuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_emissao`, `dt_ata_julgamento`, `dt_sessao`, `classificados`, `dt_pub_res`, `prazo2`) VALUES
-(1, '', -1, '-1', 0, '', -1, 'Manutenção', '0000-00-00', '0000-00-00', '2000-09-21', '0000-00-00', '2000-09-22', '2000-09-20', '2000-09-21', '2000-09-20', '', '0000-00-00', '2000-09-22', '', '2000-09-21', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '2000-09-21', '2000-09-24', '2000-09-24', '2000-09-22', '0000-00-00', '', NULL, NULL, '', '0000-00-00 00:00:00', 'PMOB', 'modPMOB___', NULL, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '2000-09-22', '2000-09-20', '2000-09-20', '', '0000-00-00', '0000-00-00');
+INSERT INTO `modalidade` (`id_modalidade`, `exercicio`, `num_processo`, `modalidade`, `numero`, `objeto`, `registro`, `categoria`, `dt_edital`, `dt_entrega`, `dt_abertura`, `dt_portaria`, `dt_solicitacao`, `dt_orcamento`, `dt_autorizacao`, `dt_autuacao`, `enquadramento`, `dt_anexos`, `dt_aprovacao`, `minuta`, `dt_publicacao`, `especificacao`, `dt_recibo`, `documentos`, `dt_ata`, `dt_confirmacao`, `prazo`, `dt_parecer_juridico`, `dt_adjudicacao`, `dt_homologacao`, `dt_contrato_firmado`, `dt_publicacao_contrato`, `copia`, `codigo`, `valor_total`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `dt_pesquisa`, `dt_emissao`, `dt_ata_julgamento`, `dt_sessao`, `classificados`, `dt_pub_res`, `prazo2`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conAprov`, `conPub`, `conAta`, `conPar`, `conFirm`) VALUES
+(1, '', -1, '-1', 0, '', -1, 'Manutenção', '0000-00-00', '0000-00-00', '2000-09-21', '0000-00-00', '2000-09-22', '2000-09-20', '2000-09-21', '2000-09-20', '', '0000-00-00', '2000-09-22', '', '2000-09-21', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '2000-09-21', '2000-09-24', '2000-09-24', '2000-09-22', '0000-00-00', '', NULL, NULL, '', '0000-00-00 00:00:00', 'PMOB', 'modPMOB___', '0000-00-00', '2000-09-22', '2000-09-20', '2000-09-20', '', '0000-00-00', '0000-00-00', 'data errada', '', 'data errada2', 'data errada3', 'data errada4', 'data errada5 vinicius gay', 'data errada oiii', 'data errada6 tchau', 'data errada7');
 
 -- --------------------------------------------------------
 
@@ -439,25 +443,30 @@ CREATE TABLE `pregao` (
   `dt_lancamento` datetime DEFAULT NULL,
   `orgao` varchar(200) NOT NULL,
   `codigo_processo` varchar(200) DEFAULT NULL,
-  `conSolic` text NOT NULL,
-  `conPreco` text NOT NULL,
-  `conAut` text NOT NULL,
-  `conAutuacao` text NOT NULL,
-  `conRat` text NOT NULL,
-  `conPub` text NOT NULL,
   `dt_pesquisa` date DEFAULT NULL,
   `dt_emissao` date DEFAULT NULL,
   `dt_aprov_minuta` date DEFAULT NULL,
   `dt_sessao` date DEFAULT NULL,
-  `dt_parecer` date DEFAULT NULL
+  `dt_parecer` date DEFAULT NULL,
+  `conSolic` text DEFAULT NULL,
+  `conPreco` text DEFAULT NULL,
+  `conAut` text DEFAULT NULL,
+  `conAtuacao` text DEFAULT NULL,
+  `conAprov` text DEFAULT NULL,
+  `conPub` text DEFAULT NULL,
+  `conCred` text DEFAULT NULL,
+  `conAta` text DEFAULT NULL,
+  `conPar` text DEFAULT NULL,
+  `conHomo` text DEFAULT NULL,
+  `conFirm` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pregao`
 --
 
-INSERT INTO `pregao` (`id_pregao`, `exercicio`, `num_processo`, `tipo`, `numero`, `objeto`, `registro`, `categoria`, `dt_edital`, `dt_abertura`, `dt_nomeacao`, `dt_solicitacao`, `dt_orcamento`, `dt_autorizacao`, `dt_autuacao`, `enquadramento`, `edital`, `dt_aprovacao`, `minuta`, `dt_publicacao`, `especificacao`, `dt_credenciamento`, `proposta_precos`, `dt_ata_abertura`, `documento`, `dt_confirmacao`, `prazo`, `dt_adjudicacao`, `dt_homologacao`, `dt_contrato_firmado`, `dt_publicacao_ata`, `copia_notas`, `codigo`, `valor_total`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `conSolic`, `conPreco`, `conAut`, `conAutuacao`, `conRat`, `conPub`, `dt_pesquisa`, `dt_emissao`, `dt_aprov_minuta`, `dt_sessao`, `dt_parecer`) VALUES
-(1, '', 0, 'pregao', 0, '', -1, '-1', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, NULL, '', '0000-00-00 00:00:00', 'PMOB', 'prPMOB___', '', '', '', '', '', '', NULL, NULL, NULL, NULL, '0000-00-00');
+INSERT INTO `pregao` (`id_pregao`, `exercicio`, `num_processo`, `tipo`, `numero`, `objeto`, `registro`, `categoria`, `dt_edital`, `dt_abertura`, `dt_nomeacao`, `dt_solicitacao`, `dt_orcamento`, `dt_autorizacao`, `dt_autuacao`, `enquadramento`, `edital`, `dt_aprovacao`, `minuta`, `dt_publicacao`, `especificacao`, `dt_credenciamento`, `proposta_precos`, `dt_ata_abertura`, `documento`, `dt_confirmacao`, `prazo`, `dt_adjudicacao`, `dt_homologacao`, `dt_contrato_firmado`, `dt_publicacao_ata`, `copia_notas`, `codigo`, `valor_total`, `observacoes`, `dt_lancamento`, `orgao`, `codigo_processo`, `dt_pesquisa`, `dt_emissao`, `dt_aprov_minuta`, `dt_sessao`, `dt_parecer`, `conSolic`, `conPreco`, `conAut`, `conAtuacao`, `conAprov`, `conPub`, `conCred`, `conAta`, `conPar`, `conHomo`, `conFirm`) VALUES
+(1, '', 0, 'pregao', 0, '', -1, '-1', '0000-00-00', '2000-05-21', '0000-00-00', '2021-09-21', '2000-09-22', '2000-09-20', '0000-00-00', '', '', '0000-00-00', '', '0000-00-00', '', '0000-00-00', '', '2000-09-20', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '0000-00-00', '0000-00-00', '', NULL, NULL, '', '0000-00-00 00:00:00', 'PMOB', 'prPMOB___', NULL, '0000-00-00', NULL, '1999-09-21', '0000-00-00', 'conFirm', 'conFirmconFirm ', 'data', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
