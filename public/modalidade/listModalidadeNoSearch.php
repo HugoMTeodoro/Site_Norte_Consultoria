@@ -11,17 +11,14 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM modalidade";
-
-
-   
-
-
+    $sql = "SELECT * FROM modalidade where orgao='$orgaoa' and exercicio ='$exer' order by num_processo";
     $dadosModalidade = $connection -> query($sql);
 
     if($dadosModalidade -> num_rows > 0)
     {
     ?>
+
+    
     <div class="form">
 
     

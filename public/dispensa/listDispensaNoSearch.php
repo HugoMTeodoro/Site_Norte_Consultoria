@@ -18,6 +18,8 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
     if($dadosDispensa -> num_rows > 0)
     {
     ?>
+
+    
     <div class="form">
 
     
