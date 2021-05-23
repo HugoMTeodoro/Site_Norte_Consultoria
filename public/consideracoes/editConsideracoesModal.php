@@ -37,8 +37,33 @@ DATE_FORMAT(dt_contrato_firmado,'%d/%m/%Y') as datacont,
 DATE_FORMAT(dt_homologacao,'%d/%m/%Y') as datahomol,
 DATE_FORMAT(dt_adjudicacao,'%d/%m/%Y') as dataadj,
 
+DATEDIFF(dt_edital, dt_solicitacao) as difed,
+DATEDIFF(dt_entrega, dt_solicitacao) as difent,
+DATEDIFF(dt_abertura, dt_solicitacao) as difab,
+DATEDIFF(dt_portaria, dt_solicitacao) as difpor,
+DATEDIFF(dt_solicitacao, dt_solicitacao) as difsol,
+DATEDIFF(dt_orcamento, dt_solicitacao) as diforc,
+DATEDIFF(dt_autorizacao, dt_solicitacao) as difauto,
+DATEDIFF(dt_autuacao, dt_solicitacao) as difautu,
+DATEDIFF(dt_anexos, dt_solicitacao) as difane,
+DATEDIFF(dt_aprovacao, dt_solicitacao) as difapro,
+DATEDIFF(dt_publicacao, dt_solicitacao) as difpub,
+DATEDIFF(dt_recibo, dt_solicitacao) as difrec,
+DATEDIFF(dt_ata, dt_solicitacao) as difata,
+DATEDIFF(dt_confirmacao, dt_solicitacao) as difconf,
+DATEDIFF(prazo, dt_solicitacao) as difprazo,
+DATEDIFF(dt_parecer_juridico, dt_solicitacao) as difpj,
+DATEDIFF(dt_adjudicacao, dt_solicitacao) as difadj,
+DATEDIFF(dt_homologacao, dt_solicitacao) as difhomo,
+DATEDIFF(dt_contrato_firmado, dt_solicitacao) as difcf,
+DATEDIFF(dt_publicacao_contrato, dt_solicitacao) as difpc,
+DATEDIFF(dt_pesquisa, dt_solicitacao) as difpes,
+DATEDIFF(dt_emissao, dt_solicitacao) as difemi,
+DATEDIFF(dt_ata_julgamento, dt_solicitacao) as difataju,
+DATEDIFF(dt_sessao, dt_solicitacao) as difses,
+DATEDIFF(dt_pub_res, dt_solicitacao) as difpubres,
+DATEDIFF(prazo2, dt_solicitacao) as difprazo2,
 
-SS
 DATEDIFF(dt_abertura, dt_orcamento) as difdiag2,
 DATEDIFF(dt_autorizacao, dt_solicitacao) as difdiag3,
 DATEDIFF(dt_autuacao, dt_autorizacao) as difdiag4,
@@ -55,6 +80,138 @@ $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
        
+        if ($exibir["difed"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difed"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        if ($exibir["difent"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difent"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difab"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difab"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difpor"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpor"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difsol"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difsol"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["diforc"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["diforc"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difauto"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difauto"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difautu"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difautu"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difane"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difane"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difapro"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difapro"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difpub"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpub"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difrec"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difrec"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difata"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difata"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difconf"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difconf"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difprazo"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difprazo"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difpj"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpj"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difadj"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difadj"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difhomo"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difhomo"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difcf"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difcf"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difpes"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpes"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difemi"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difemi"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difab"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difab"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difataju"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difataju"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difses"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difses"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difpubres"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpubres"] * -1) . " dias, ";
+            $booldiag1 = true;
+        } 
+        
+        if ($exibir["difprazo2"] < 0) {
+            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difprazo2"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+        
+
         if ($exibir["difdiag2"] < 0) {
             $diag2 = $diag2 . "Excedeu a data de abertura em " . $exibir["difdiag2"]*-1 . " dias";
             $booldiag2 = true;
