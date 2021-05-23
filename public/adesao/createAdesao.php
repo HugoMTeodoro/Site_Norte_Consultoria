@@ -86,14 +86,14 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de início inexigibilidade</span>
                 </div>
-                <input type="datetime-local" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data ratificação</span>
                 </div>
-                <input type="datetime-local" name="dateRatificacao" class="form-control" id="dateRetificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateRatificacao" class="form-control" id="dateRetificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             
             <div class="input-group mb-3">
@@ -107,28 +107,28 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da solicitação de compras/serviços</span>
                 </div>
-                <input type="datetime-local" name="dates" class="form-control" id="dates" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dates" class="form-control" id="dates" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de preço estimativo (Orçamento)</span>
                 </div>
-                <input type="datetime-local" name="datepe" class="form-control" id="datepe" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="datepe" class="form-control" id="datepe" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data solicitação ao órgão realizador do RP</span>
                 </div>
-                <input type="datetime-local" name="dateSolicitacaoRP" class="form-control" id="dateSolicitacaoRP" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateSolicitacaoRP" class="form-control" id="dateSolicitacaoRP" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autorização do órgão realizador do RP</span>
                 </div>
-                <input type="datetime-local" name="dateAutorizacaoRP" class="form-control" id="dateAutorizacaoRP" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateAutorizacaoRP" class="form-control" id="dateAutorizacaoRP" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
@@ -140,7 +140,7 @@ $action=$_POST["action"];
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Autorização da empresa Adjudicatária</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Autorização da empresa adjudicatária</span>
                 </div>
                 <input type="date" name="dateautAdjudicataria" class="form-control" id="dateautAdjudicataria" aria-label="Default" inputGroup-sizing-default">
             </div>
@@ -185,7 +185,7 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autuação</span>
                 </div>
-                <input type="datetime-local" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
 
@@ -193,14 +193,14 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data ata de inexigibilidade de licitação</span>
                 </div>
-                <input type="datetime-local" name="dateAtaInexigibilidade" class="form-control" id="dateAtaInexigibilidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateAtaInexigibilidade" class="form-control" id="dateAtaInexigibilidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data parecer jurídico</span>
                 </div>
-                <input type="datetime-local" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             
@@ -209,21 +209,35 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data publicação da inexigibilidade licitação</span>
                 </div>
-                <input type="datetime-local" name="datePublicacaoInexigibilidade" class="form-control" id="datePublicacaoInexigibilidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="datePublicacaoInexigibilidade" class="form-control" id="datePublicacaoInexigibilidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data contrato firmado</span>
                 </div>
-                <input type="datetime-local" name="dateCF" class="form-control" id="dateCF" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="dateCF" class="form-control" id="dateCF" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data publicação do contrato/span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data publicação do contrato </span>
                 </div>
-                <input type="datetime-local" name="datePublicacaoContrato" class="form-control" id="datePublicacaoContrato" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <input type="date" name="datePublicacaoContrato" class="form-control" id="datePublicacaoContrato" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data de última pesquisa de preço</span>
+                </div>
+                <input type="date" name="datePesquisa" class="form-control" id="datePesquisa" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
+                </div>
+                <textarea name="txtApostilamento" id="txtApostilamento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -232,6 +246,10 @@ $action=$_POST["action"];
                 </div>
                 <textarea name="txtCopias" id="txtCopias" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
+
+            
+
+            
 
 
 
