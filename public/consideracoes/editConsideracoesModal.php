@@ -63,7 +63,8 @@ DATEDIFF(dt_emissao, dt_solicitacao) as difemi,
 DATEDIFF(dt_ata_julgamento, dt_solicitacao) as difataju,
 DATEDIFF(dt_sessao, dt_solicitacao) as difses,
 DATEDIFF(dt_pub_res, dt_solicitacao) as difpubres,
-DATEDIFF(prazo2, dt_solicitacao) as difprazo2,
+
+
 
 DATEDIFF(dt_abertura, dt_orcamento) as difdiag2,
 DATEDIFF(dt_autorizacao, dt_solicitacao) as difdiag3,

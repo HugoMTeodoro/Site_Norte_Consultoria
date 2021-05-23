@@ -80,7 +80,7 @@ DATEDIFF(dt_emissao, dt_solicitacao) as difemi,
 DATEDIFF(dt_aprov_minuta, dt_solicitacao) as difaprov,
 DATEDIFF(dt_sessao, dt_solicitacao) as difses,
 DATEDIFF(dt_parecer, dt_solicitacao) as difpar,
-
+DATEDIFF(dt_pesquisa, dt_solicitacao) as difpesq,
 
 
 
@@ -93,8 +93,9 @@ DATEDIFF(dt_credenciamento, dt_abertura) as difdiag8,
 DATEDIFF(dt_ata_abertura, dt_publicacao) as difdiag9,
 DATEDIFF(dt_sessao, dt_parecer) as difdiag10,
 DATEDIFF(dt_parecer, dt_homologacao) as difdiag11,
-DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag12
-
+DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag12,
+DATEDIFF(dt_adjudicacao, dt_sessao) as difdiag13,
+DATEDIFF(dt_abertura, dt_autorizacao) as difdiag14
 
 from pregao where codigo_processo='$codigo';";
 
@@ -201,6 +202,11 @@ if ($dados->num_rows > 0) {
             $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpar"] * -1) . " dias, ";
             $booldiag1 = true;
         }
+
+        if ($exibir["difpesq"] < 0) {
+            $diag1 = $diag1 . " Data da ultima pesquisa de preco em " . ($exibir["difpesq"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
         
        
         if ($exibir["difdiag2"] > 0) {
@@ -241,10 +247,15 @@ if ($dados->num_rows > 0) {
             $diag12 = $diag12 . "Essa data foi anterior a homologação em " . $exibir["difdiag12"] . " dias";
             $booldiag12 = true;
         }
-        if ($exibir["difdiag13"] >=0) {
-            $diag13 = $diag13 . "Essa data foi anterior a Homologação em " . $exibir["difdiag13"] . " dias";
+        if ($exibir["difdiag13"] < 0) {
+            $diag13 = $diag13 . "Essa data foi anterior a sessao em " . $exibir["difdiag13"]*-1 . " dias";
             $booldiag13 = true;
         }
+        if ($exibir["difdiag14"] < 0) {
+            $diag14 = $diag14 . "Essa data foi anterior a autorizacao para abertura em " . $exibir["difdiag14"]*-1 . " dias";
+            $booldiag14 = true;
+        }
+        
 
 ?>
 
@@ -438,6 +449,34 @@ if ($dados->num_rows > 0) {
                         <p class="formato"><?php echo $diag12 . "." ?></p>
                     <?php
                     }
+                    if ($booldiag13) {
+                        ?>
+                            <div class="input-group mb-3">
+    
+                                <div class="input-group-prepend">
+    
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Data adjudicacao <br> <?php echo $exibir["dataadju"] ?></span>
+                                </div>
+                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAdj" class="form-control" id="conAdj" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAdj"] ?></textarea>
+    
+                            </div>
+                            <p class="formato"><?php echo $diag13 . "." ?></p>
+                        <?php
+                        }
+                        if ($booldiag14) {
+                            ?>
+                                <div class="input-group mb-3">
+        
+                                    <div class="input-group-prepend">
+        
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Abertura <br> <?php echo $exibir["dataabe"] ?></span>
+                                    </div>
+                                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAb" class="form-control" id="conAb" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAb"] ?></textarea>
+        
+                                </div>
+                                <p class="formato"><?php echo $diag14 . "." ?></p>
+                            <?php
+                            }
                     ?>
                     
 
