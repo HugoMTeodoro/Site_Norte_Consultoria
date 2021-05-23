@@ -81,82 +81,82 @@ if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
        
         if ($exibir["difed"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difed"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data do edital " . ($exibir["difed"] * -1) . " dias, ";
             $booldiag1 = true;
         }
 
         if ($exibir["difent"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difent"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de entrega" . ($exibir["difent"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difab"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difab"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de abertura" . ($exibir["difab"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difpor"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpor"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data da portaria nomeando a comissão " . ($exibir["difpor"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difsol"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difsol"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de solicitação" . ($exibir["difsol"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["diforc"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["diforc"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data do orçamento" . ($exibir["diforc"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difauto"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difauto"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de autorização" . ($exibir["difauto"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difautu"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difautu"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de autuação " . ($exibir["difautu"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difane"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difane"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data edital e seus anexos " . ($exibir["difane"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difapro"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difapro"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de aprovação da minuta" . ($exibir["difapro"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difpub"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpub"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de publicação " . ($exibir["difpub"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difrec"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difrec"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data do recibo " . ($exibir["difrec"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difata"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difata"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de ata de abertura" . ($exibir["difata"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difconf"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difconf"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de confirmação de autenticidade" . ($exibir["difconf"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difprazo"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difprazo"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Prazo recursal da habilitação" . ($exibir["difprazo"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difpj"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpj"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de parecer jurídico " . ($exibir["difpj"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
@@ -265,7 +265,7 @@ if ($dados->num_rows > 0) {
     <br>
 
     <div class="form">
-        <form action="../consideracoes/insertConsideracoesModal.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <form action="../consideracoes/insertConsideracoesDisp.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Considerações</h3>
             <br>
             <?php
@@ -337,7 +337,7 @@ if ($dados->num_rows > 0) {
 
                         <span class="input-group-text" id="inputGroup-sizing-default">Aprovação da minuta do Edital e Anexos <br> <?php echo $exibir["dataaprov"] ?></span>
                     </div>
-                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAprov" class="form-control" id="conAprov" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAprov"] ?></textarea>
+                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conRat" class="form-control" id="conRat" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conRat"] ?></textarea>
 
                 </div>
                 <p class="formato"><?php echo $diag6 . "." ?></p>
@@ -351,7 +351,7 @@ if ($dados->num_rows > 0) {
     
                             <span class="input-group-text" id="inputGroup-sizing-default">Publicação do Edital <br> <?php echo $exibir["datapub"] ?></span>
                         </div>
-                        <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
+                        <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conRat" class="form-control" id="conRat" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conRat"] ?></textarea>
     
                     </div>
                     <p class="formato"><?php echo $diag5 . "." ?></p>
@@ -365,7 +365,7 @@ if ($dados->num_rows > 0) {
 
                         <span class="input-group-text" id="inputGroup-sizing-default">Ata de Julgamento <br> <?php echo $exibir["dataata"] ?></span>
                     </div>
-                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAta" class="form-control" id="conAta" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAta"] ?></textarea>
+                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
 
                 </div>
                 <p class="formato"><?php echo $diag7 . "." ?></p>
@@ -380,7 +380,7 @@ if ($dados->num_rows > 0) {
 
                             <span class="input-group-text" id="inputGroup-sizing-default">Parecer jurídico <br> <?php echo $exibir["datapar"] ?></span>
                         </div>
-                        <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPar" class="form-control" id="conPar" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPar"] ?></textarea>
+                        <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
 
                     </div>
                     <p class="formato"><?php echo $diag8 . "." ?></p>
@@ -394,7 +394,7 @@ if ($dados->num_rows > 0) {
 
                                 <span class="input-group-text" id="inputGroup-sizing-default">Contrato firmado <br> <?php echo $exibir["datacont"] ?></span>
                             </div>
-                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conFirm" class="form-control" id="conFirm" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conFirm"] ?></textarea>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPub" class="form-control" id="conPub" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPub"] ?></textarea>
 
                         </div>
                         <p class="formato"><?php echo $diag9 . "." ?></p>
