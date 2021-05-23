@@ -25,7 +25,7 @@ include("../login/valida.php");
 
         <div class="card text-center">
             <div class="card-header">
-                
+
             </div>
             <div class="card-body">
                 <h5 class="card-title">Processos licitatórios</h5>
@@ -41,20 +41,20 @@ include("../login/valida.php");
 
                     <a href="../pregao/listPregao.php" class="btn btn-primary">Lista de pregão</a>
 
-                    
+
                 </div>
 
             </div>
             <div class="card-footer text-muted">
-                
+
             </div>
         </div>
 
-        <br> 
-        
+        <br>
+
         <div class="card text-center">
             <div class="card-header">
-                
+
             </div>
             <div class="card-body">
                 <h5 class="card-title">Gerência de ferramentas</h5>
@@ -68,30 +68,39 @@ include("../login/valida.php");
 
                     <a href="../registro/createRegistro.php" class="btn btn-primary">Lista de registros</a>
 
-                    <a href="../inciso/createInciso.php" class="btn btn-primary">Lista de inciso</a>
+                    <a hef="../inciso/createInciso.php" class="btn btn-primary">Lista de inciso</a>
 
                     
+                        
+                        
+                        <a href="../testetxt/txtDispensa.php" class="btn btn-primary" >Click Me!</a>
+                    
+                    
+
+
+
+
                 </div>
 
             </div>
             <div class="card-footer text-muted">
-                
+
             </div>
         </div>
 
         <br>
-        
+
         <br>
-       
-        
-        
+
+
+
 </body>
 
 </html>
 
 <footer class="py-5 bg-dark">
 
-            <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-            </div>
-        </footer>
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+    </div>
+</footer>
