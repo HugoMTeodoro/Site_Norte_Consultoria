@@ -1,21 +1,34 @@
 <?php
 include_once("../vendor/autoload.php");
+
+$num_processo=$_POST["num_processo"];
+$num_dispensa=$_POST["num_dispensa"];
+$exercicio=$_POST["exercicio"];
+$orgao=$_POST["orgao"];
+$objeto=$_POST["objeto"];
+$observacoes=$_POST["observacoes"];
+
+
+
 $autuacao=$_POST["autuacao"];
 $ratificacao=$_POST["rat"];
 $empresas=$_POST["empr"];
-$conSolic=$_POST["conSolic"];
-$conPreco=$_POST["conPreco"];
-$conAut=$_POST["conAut"];
-$conAtuacao=$_POST["conAtuacao"];
-$conRat=$_POST["conRat"];
-$conPub=$_POST["conPub"];
-$conPar=$_POST["conPar"];
+$conSolic = $_POST["conSolic"];
+$conPreco = $_POST["conPreco"];
+$conAut = $_POST["conAut"];
+$conAtuacao = $_POST["conAtuacao"];
+$conRat = $_POST["conRat"];
+$conPub = $_POST["conPub"];
 $conAb=$_POST["conAb"];
+$conPar=$_POST["conPar"];
 $empresas=substr($empresas,0,-2);
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 $section = $phpWord->addSection();
 $section->addText(
-    ""
+    "$orgao"
+);
+$section->addText(
+    "$orgao"
 );
 $section->addText(
     "O processo foi autuado no dia $autuacao, tendo sido ratificado em $ratificacao cuja(s) adjudicatária(s) foi/foram a(s) empresa(s), $empresas. 
