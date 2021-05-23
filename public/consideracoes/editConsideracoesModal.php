@@ -12,7 +12,7 @@ $diag6 = '';
 $diag7 = '';
 $diag8 = '';
 $diag9 = '';
-
+$diag10='';
 
 $booldiag1 = false;
 $booldiag2 = false;
@@ -23,19 +23,20 @@ $booldiag6 = false;
 $booldiag7 = false;
 $booldiag8 = false;
 $booldiag9 = false;
-
+$booldiag10 = false;
 
 $sql = "SELECT *,
 DATE_FORMAT(dt_orcamento,'%d/%m/%Y') as dataorc,
 DATE_FORMAT(dt_autorizacao,'%d/%m/%Y') as dataaut,
 DATE_FORMAT(dt_autuacao,'%d/%m/%Y') as dataautua,
-DATE_FORMAT(dt_autuacao,'%d/%m/%Y') as dataaprov,
+DATE_FORMAT(dt_aprovacao,'%d/%m/%Y') as dataaprov,
 DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapub,
-DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as dataata,
-DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapar,
+DATE_FORMAT(dt_ata,'%d/%m/%Y') as dataata,
+DATE_FORMAT(dt_parecer_juridico,'%d/%m/%Y') as datapar,
 DATE_FORMAT(dt_contrato_firmado,'%d/%m/%Y') as datacont,
 DATE_FORMAT(dt_homologacao,'%d/%m/%Y') as datahomol,
 DATE_FORMAT(dt_adjudicacao,'%d/%m/%Y') as dataadj,
+DATE_FORMAT(dt_abertura,'%d/%m/%Y') as dataab,
 
 DATEDIFF(dt_edital, dt_solicitacao) as difed,
 DATEDIFF(dt_entrega, dt_solicitacao) as difent,
@@ -71,7 +72,8 @@ DATEDIFF(dt_publicacao, dt_emissao) as difdiag5,
 DATEDIFF(dt_publicacao, dt_aprovacao) as difdiag6,
 DATEDIFF(dt_ata_julgamento, dt_abertura) as difdiag7,
 DATEDIFF(dt_parecer_juridico, dt_sessao) as difdiag8,
-DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag9
+DATEDIFF(dt_contrato_firmado, dt_homologacao) as difdiag9,
+DATEDIFF(dt_abertura, dt_autorizacao) as difdiag10
 
 
 from modalidade where codigo_processo='$codigo';";
@@ -247,6 +249,10 @@ if ($dados->num_rows > 0) {
             $diag9 = $diag9 . "Essa data foi anterior a homolagacao em " . $exibir["difdiag9"]*-1 . " dias";
             $booldiag9 = true;
         }
+        if ($exibir["difdiag10"] <0) {
+            $diag10 = $diag10 . "Essa data foi anterior a homolagacao em " . $exibir["difdiag10"]*-1 . " dias";
+            $booldiag10 = true;
+        }
         
  
  
@@ -265,7 +271,7 @@ if ($dados->num_rows > 0) {
     <br>
 
     <div class="form">
-        <form action="../consideracoes/insertConsideracoesDisp.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
+        <form action="../consideracoes/insertConsideracoesModal.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Considerações</h3>
             <br>
             <?php
@@ -399,7 +405,21 @@ if ($dados->num_rows > 0) {
                         </div>
                         <p class="formato"><?php echo $diag9 . "." ?></p>
                     <?php
-                    }                        
+                    }  
+                    if ($booldiag10) {
+                        ?>
+                            <div class="input-group mb-3">
+    
+                                <div class="input-group-prepend">
+    
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Abertura <br> <?php echo $exibir["dataab"] ?></span>
+                                </div>
+                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAb" class="form-control" id="conAb" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAb"] ?></textarea>
+    
+                            </div>
+                            <p class="formato"><?php echo $diag10 . "." ?></p>
+                        <?php
+                        }                      
             ?>
 
             <div class="buttons">
