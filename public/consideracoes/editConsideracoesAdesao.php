@@ -92,107 +92,107 @@ if ($dados->num_rows > 0) {
         }
         
         if ($exibir["difrat"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difrat"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de ratificação em " . ($exibir["difrat"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difport"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difport"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data da portaria nomeando a comissão " . ($exibir["difport"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difsol"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difsol"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de solicitação de compras/serviços " . ($exibir["difsol"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["diforc"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["diforc"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data do orçamento " . ($exibir["diforc"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difsoli"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difsoli"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de solicitação ao órgão realizador " . ($exibir["difsoli"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difauto"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difauto"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de autorização da empresa adjudicatária " . ($exibir["difauto"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difsole"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difsole"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de solicitação à empresa adjudicatária " . ($exibir["difsole"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difconf"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difconf"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de confirmação de autenticidade  " . ($exibir["difconf"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difata"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difata"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de ata de resolução da carona " . ($exibir["difata"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difauto"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difauto"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de autorização de abertura do processo " . ($exibir["difauto"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difautu"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difautu"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de autuação " . ($exibir["difautu"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difatain"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difatain"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data ata de inexigibilidade " . ($exibir["difatain"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difpar"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpar"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data do parecer jurídico " . ($exibir["difpar"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difpub"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpub"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de publicação da inexibilidade " . ($exibir["difpub"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difcf"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difcf"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data contrato firmado " . ($exibir["difcf"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difpubc"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpubc"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de publicação do contrato" . ($exibir["difpubc"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["diflanc"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["diflanc"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de lançamento " . ($exibir["diflanc"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difpes"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpes"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de pesquisa " . ($exibir["difpes"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difab"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difab"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de abertura " . ($exibir["difab"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difautoem"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difautoem"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data da autorização da empresa" . ($exibir["difautoem"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
         if ($exibir["difhomo"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difhomo"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de homologação" . ($exibir["difhomo"] * -1) . " dias, ";
             $booldiag1 = true;
         }
         
