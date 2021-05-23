@@ -71,7 +71,37 @@ $action = $_POST["action"];; ?>
                 </select>
             </div>
 
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Dispensa por uma ordem de emergência?</span>
+                </div>
+                <select class="form-select" name="tipoEmergencia" id="tipoEmergencia">
+                
+                            <option value="Nao">
+                                <?php echo "Não"  ?>
+                            </option>
+                            <option value="Sim">
+                                <?php echo "Sim"  ?>
+                            </option>
 
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Dispensa para atender uma ordem judicial?</span>
+                </div>
+                <select class="form-select" name="tipoJudicial" id="tipoJudicial">
+                
+                            <option value="Nao">
+                                <?php echo "Não"  ?>
+                            </option>
+                            <option value="Sim">
+                                <?php echo "Sim"  ?>
+                            </option>
+
+                </select>
+            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -262,37 +292,7 @@ $action = $_POST["action"];; ?>
             </div>
 
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Dispensa por uma ordem de emergência?</span>
-                </div>
-                <select class="form-select" name="tipoEmergencia" id="tipoEmergencia">
-                
-                            <option value="Nao">
-                                <?php echo "Não"  ?>
-                            </option>
-                            <option value="Sim">
-                                <?php echo "Sim"  ?>
-                            </option>
-
-                </select>
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Dispensa para atender uma ordem judicial?</span>
-                </div>
-                <select class="form-select" name="tipoJudicial" id="tipoJudicial">
-                
-                            <option value="Nao">
-                                <?php echo "Não"  ?>
-                            </option>
-                            <option value="Sim">
-                                <?php echo "Sim"  ?>
-                            </option>
-
-                </select>
-            </div>
+            
 
             
 
