@@ -11,8 +11,9 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM adesao WHERE num_adesao LIKE '%$usuarios%' ";
+    
 
+    $sql = "SELECT * FROM adesao WHERE exercicio = $exer and orgao ='$orgaoa' and (pesquisa LIKE '%$usuarios%' or objeto LIKE '%$usuarios%') order by num_adesao ";
 
    
 
