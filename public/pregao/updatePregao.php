@@ -44,6 +44,8 @@ if (isset($_POST)) {
     $sessao = $_POST["datesessao"];
     $apostilamento = $_POST["txtApostilamento"];
     $dt_pesquisa = $_POST["datePesquisa"];
+    $apostilamento = $_POST["txtApostilamento"];
+    $dt_pesquisa = $_POST["datePesquisa"];
 
 
     $sql = "UPDATE pregao
