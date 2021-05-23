@@ -413,6 +413,20 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
             <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Data de última pesquisa de preço</span>
+            </div>
+            <input type="date" name="datePesquisa" class="form-control" id="datePesquisa" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_pesquisa"] ?>">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
+            </div>
+            <input type="text" name="txtApostilamento" class="form-control" id="txtApostilamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["apostilamento"] ?>">
+        </div>
+
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
             </div>
             <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["copia"] ?>">

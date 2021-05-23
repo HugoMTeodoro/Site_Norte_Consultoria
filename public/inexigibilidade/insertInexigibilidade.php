@@ -34,9 +34,11 @@ $dataabert=$_POST["dateabertura"];
 $codigo = "inex" . $orgao1 . "_" . $numProcesso . "_" . $numInexigibilidade . "_" . $exercicio;
 $tipo = "inexigibilidade";
 $action = $_POST["action"];
+$apostilamento=$_POST["txtApostilamento"];
+$dt_pesquisa=$_POST["datePesquisa"];
 
-$sql = "INSERT INTO inexigibilidade  (exercicio ,  num_processo ,  num_inexigibilidade ,  objeto ,  categoria ,  dt_inicio ,  dt_ratificacao ,  portaria_nomeando ,  dt_solicitacao ,  dt_orcamento , dt_autorizacao,  dt_autuacao ,  especificacao ,  enquadramento ,  minuta ,  dt_aprovacao ,  dt_proposta ,  documentos ,  dt_ata ,  dt_parecer_juridico ,  dt_contrato_firmado ,  dt_publicacao ,  copia_notas , observacoes, dt_lancamento, orgao,codigo_processo, dt_sessao, dt_abertura)
-    VALUES('$exercicio','$numProcesso','$numInexigibilidade','$txtObjeto','$txtCategoria','$datei','$dateRatificacao','$txtp','$dates','$datepe','$datea','$dateau','$txtEspecificacao','$txtEnquadramento','$txtMinuta','$dateAprov','$dateProp','$txtHabilitacao','$dateAta','$dateParecer','$dateCF','$datePublicacao','$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo','$sessao','$dataabert')";
+$sql = "INSERT INTO inexigibilidade  (exercicio ,  num_processo ,  num_inexigibilidade ,  objeto ,  categoria ,  dt_inicio ,  dt_ratificacao ,  portaria_nomeando ,  dt_solicitacao ,  dt_orcamento , dt_autorizacao,  dt_autuacao ,  especificacao ,  enquadramento ,  minuta ,  dt_aprovacao ,  dt_proposta ,  documentos ,  dt_ata ,  dt_parecer_juridico ,  dt_contrato_firmado ,  dt_publicacao ,  copia_notas , observacoes, dt_lancamento, orgao,codigo_processo, dt_sessao, dt_abertura,apostilamento,dt_pesquisa)
+    VALUES('$exercicio','$numProcesso','$numInexigibilidade','$txtObjeto','$txtCategoria','$datei','$dateRatificacao','$txtp','$dates','$datepe','$datea','$dateau','$txtEspecificacao','$txtEnquadramento','$txtMinuta','$dateAprov','$dateProp','$txtHabilitacao','$dateAta','$dateParecer','$dateCF','$datePublicacao','$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo','$sessao','$dataabert','$apostilamento','$dt_pesquisa')";
 
 
 $resultado = $connection -> query($sql);

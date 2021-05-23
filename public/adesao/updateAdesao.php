@@ -70,6 +70,8 @@ $sql = "UPDATE adesao
   "dt_lancamento= '".$dLancamento."' " .",".
   "dt_autorizacao_empresa='".$autadju."',".
   "dt_abertura='".$dtabertura."'".
+  "dt_pesquisa='$dt_pesquisa'" . "," .
+  "apostilamento='$apostilamento'" . "," .
 "WHERE id_adesao = " . $id;
 
 

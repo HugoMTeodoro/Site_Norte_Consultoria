@@ -277,7 +277,19 @@ $adesao = $resultado->fetch_assoc();
                 <input type="date" name="datePublicacaoContrato" class="form-control" id="datePublicacaoContrato" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["dt_publicacao_contrato"] ?>">
             </div>
 
-            
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Data de última pesquisa de preço</span>
+            </div>
+            <input type="date" name="datePesquisa" class="form-control" id="datePesquisa" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["dt_pesquisa"] ?>">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
+            </div>
+            <input type="text" name="txtApostilamento" class="form-control" id="txtApostilamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["apostilamento"] ?>">
+        </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

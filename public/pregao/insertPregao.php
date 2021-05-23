@@ -43,11 +43,13 @@
     $tipo = "pregao";
     $action = $_POST["action"];
     $sessao=$_POST["datesessao"];
+    $apostilamento=$_POST["txtApostilamento"];
+$dt_pesquisa=$_POST["datePesquisa"];
 
 
     $sql = "INSERT INTO 
-    pregao (exercicio, num_processo, tipo, numero, objeto, registro, categoria, dt_edital, dt_abertura, dt_nomeacao, dt_solicitacao, dt_orcamento, dt_autorizacao, dt_autuacao, enquadramento, edital, dt_aprovacao, minuta, dt_publicacao, especificacao, dt_credenciamento, proposta_precos, dt_ata_abertura, documento, dt_confirmacao, prazo, dt_adjudicacao, dt_parecer, dt_homologacao, dt_contrato_firmado, dt_publicacao_ata, copia_notas, observacoes, dt_lancamento, orgao, codigo_processo, dt_sessao)
-    values ('$exercicio', '$num_processo', '$tipo', '$numero', '$objeto', '$registro', '$categoria', '$dt_edital', '$dt_abertura', '$dt_nomeacao', '$dt_solicitacao', '$dt_orcamento', '$dt_autorizacao', '$dt_autuacao', '$enquadramento', '$edital', '$dt_aprovacao', '$minuta', '$dt_publicacao', '$especificacao', '$dt_credenciamento', '$proposta_precos', '$dt_ata_abertura', '$documento', '$dt_confirmacao', '$prazo', '$dt_adjudicacao', '$dt_parecer', '$dt_homologacao', '$dt_contrato_firmado', '$dt_publicacao_ata', '$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo',$sessao)";
+    pregao (exercicio, num_processo, tipo, numero, objeto, registro, categoria, dt_edital, dt_abertura, dt_nomeacao, dt_solicitacao, dt_orcamento, dt_autorizacao, dt_autuacao, enquadramento, edital, dt_aprovacao, minuta, dt_publicacao, especificacao, dt_credenciamento, proposta_precos, dt_ata_abertura, documento, dt_confirmacao, prazo, dt_adjudicacao, dt_parecer, dt_homologacao, dt_contrato_firmado, dt_publicacao_ata, copia_notas, observacoes, dt_lancamento, orgao, codigo_processo, dt_sessao,apostilamento,dt_pesquisa)
+    values ('$exercicio', '$num_processo', '$tipo', '$numero', '$objeto', '$registro', '$categoria', '$dt_edital', '$dt_abertura', '$dt_nomeacao', '$dt_solicitacao', '$dt_orcamento', '$dt_autorizacao', '$dt_autuacao', '$enquadramento', '$edital', '$dt_aprovacao', '$minuta', '$dt_publicacao', '$especificacao', '$dt_credenciamento', '$proposta_precos', '$dt_ata_abertura', '$documento', '$dt_confirmacao', '$prazo', '$dt_adjudicacao', '$dt_parecer', '$dt_homologacao', '$dt_contrato_firmado', '$dt_publicacao_ata', '$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo',$sessao,'$apostilamento','$dt_pesquisa')";
 
 
 
