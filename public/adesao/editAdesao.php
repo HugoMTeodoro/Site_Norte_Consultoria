@@ -220,9 +220,16 @@ $adesao = $resultado->fetch_assoc();
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data autorização</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da autorização de abertura</span>
                 </div>
                 <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["dt_autorizacao_abertura"] ?>">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data de abertura</span>
+                </div>
+                <input type="date" name="dateab" class="form-control" id="dateab" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["dt_abertura"] ?>">
             </div>
 
             <div class="input-group mb-3">

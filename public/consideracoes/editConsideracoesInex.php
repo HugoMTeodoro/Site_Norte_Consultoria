@@ -12,6 +12,7 @@ $diag4 = '';
 $diag5 = '';
 $diag6 = '';
 $diag7 = '';
+$diag8 = '';
 
 $booldiag1 = false;
 $booldiag2 = false;
@@ -20,6 +21,8 @@ $booldiag4 = false;
 $booldiag5 = false;
 $booldiag6 = false;
 $booldiag7 = false;
+$booldiag8 = false;
+
 $sql = "SELECT *,
 DATE_FORMAT(dt_solicitacao,'%d/%m/%Y') as datasol,
 DATE_FORMAT(dt_orcamento,'%d/%m/%Y') as datapreco,
@@ -28,6 +31,8 @@ DATE_FORMAT(dt_autuacao,'%d/%m/%Y') as dataautuacao,
 DATE_FORMAT(dt_ratificacao,'%d/%m/%Y') as datarat,
 DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapub,
 DATE_FORMAT(dt_parecer_juridico,'%d/%m/%Y') as datapar,
+DATE_FORMAT(dt_abertura,'%d/%m/%Y') as dataab,
+
 DATEDIFF(dt_inicio, dt_solicitacao) as difinicio,
 DATEDIFF(dt_sessao, dt_solicitacao) as difsess,
 DATEDIFF(dt_ratificacao, dt_solicitacao) as difrat,
@@ -39,12 +44,19 @@ DATEDIFF(dt_ata, dt_solicitacao) as difata,
 DATEDIFF(dt_parecer_juridico, dt_solicitacao) as difparecer,
 DATEDIFF(dt_contrato_firmado, dt_solicitacao) as difcont,
 DATEDIFF(dt_publicacao, dt_solicitacao) as difpub,
+DATEDIFF(dt_aprovacao, dt_solicitacao) as difapro,
+DATEDIFF(dt_pesquisa, dt_solicitacao) as difpes,
+DATEDIFF(dt_abertura, dt_solicitacao) as difab,
+
+
 DATEDIFF(dt_abertura, dt_orcamento) as difdiag2,
 DATEDIFF(dt_autorizacao, dt_solicitacao) as difdiag3,
 DATEDIFF(dt_autuacao, dt_autorizacao) as difdiag4,
 DATEDIFF(dt_parecer_juridico, dt_sessao) as difdiag5,
 DATEDIFF(dt_ratificacao, dt_parecer_juridico) as difdiag6,
-DATEDIFF(dt_publicacao, dt_ratificacao) as difdiag7
+DATEDIFF(dt_publicacao, dt_ratificacao) as difdiag7,
+DATEDIFF(dt_abertura, dt_autorizacao) as difdiag8
+
 from inexigibilidade where codigo_processo='$codigo';";
 
 $dados = $connection->query($sql);
@@ -95,6 +107,26 @@ if ($dados->num_rows > 0) {
             $booldiag1 = true;
         }
 
+
+
+
+        if ($exibir["difpub"] < 0) {
+            $diag1 = $diag1 . "Data da Aprovacao em " . ($exibir["difapro"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+        if ($exibir["difpes"] < 0) {
+            $diag1 = $diag1 . "Data da ultima pesquisa de preco em " . ($exibir["difpes"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+        if ($exibir["difab"] < 0) {
+            $diag1 = $diag1 . "Data da abertura em " . ($exibir["difab"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }
+
+
+
+
+
         if ($exibir["difdiag2"] < 0) {
             $diag2 = $diag2 . "Essa data Excedeu a data de abertura em " . $exibir["difdiag2"] * -1 . " dias";
             $booldiag2 = true;
@@ -120,6 +152,11 @@ if ($dados->num_rows > 0) {
             $diag7 = $diag7 . "Essa data entrou em desacordo com a ratificacao em " . $exibir["difdiag7"] . " dias, quando permitido apenas 8 dias apos a ratificacao (art. 26, Lei 8.666/93)";
             $booldiag7 = true;
         }
+        if ($exibir["difdiag8"] < 0) {
+            $diag8 = $diag8 . "Essa data foi anterior a autorizacao para abertura em " . ($exibir["difdiag8"] * -1) . " dias";
+            $booldiag8 = true;
+        }
+        
 
 ?>
 
@@ -243,6 +280,20 @@ if ($dados->num_rows > 0) {
                         <p class="formato"><?php echo $diag7 . "." ?></p>
                     <?php
                     }
+                    if ($booldiag8) {
+                        ?>
+                            <div class="input-group mb-3">
+    
+                                <div class="input-group-prepend">
+    
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Abertura <br> <?php echo $exibir["dataab"] ?></span>
+                                </div>
+                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAb" class="form-control" id="conAb" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAb"] ?></textarea>
+    
+                            </div>
+                            <p class="formato"><?php echo $diag8 . "." ?></p>
+                        <?php
+                        }
                     ?>
 
                     <div class="buttons">

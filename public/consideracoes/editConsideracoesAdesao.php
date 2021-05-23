@@ -18,6 +18,7 @@ $diag10 = '';
 $diag11 = '';
 $diag12 = '';
 $diag13 = '';
+$diag14 = '';
 
 $booldiag1 = false;
 $booldiag2 = false;
@@ -32,6 +33,7 @@ $booldiag10 = false;
 $booldiag11 = false;
 $booldiag12 = false;
 $booldiag13 = false;
+$booldiag14 = false;
 
 $sql = "SELECT *,
 DATE_FORMAT(dt_orcamento,'%d/%m/%Y') as dataorc,
@@ -45,6 +47,7 @@ DATE_FORMAT(dt_parecer,'%d/%m/%Y') as datapar,
 DATE_FORMAT(dt_ratificacao,'%d/%m/%Y') as datarat,
 DATE_FORMAT(dt_publicacao,'%d/%m/%Y') as datapub,
 DATE_FORMAT(dt_contrato_firmado,'%d/%m/%Y') as datacont,
+DATE_FORMAT(dt_abertura,'%d/%m/%Y') as dataa,
 
 DATEDIFF(dt_inicio, dt_solicitacao) as difini,
 DATEDIFF(dt_ratificacao, dt_solicitacao) as difrat,
@@ -69,6 +72,7 @@ DATEDIFF(dt_abertura, dt_solicitacao) as difab,
 DATEDIFF(dt_autorizacao_empresa, dt_solicitacao) as difautoem,
 DATEDIFF(dt_homologacao, dt_solicitacao) as difhomo,
 
+
 DATEDIFF(dt_solicitacaoo, dt_orcamento) as difdiag2,
 DATEDIFF(dt_solicitacaoo, dt_solicitacao) as difdiag3,
 DATEDIFF(dt_autorizacao, dt_solicitacaoo) as difdiag4,
@@ -79,7 +83,8 @@ DATEDIFF(dt_autuacao, dt_autorizacao_abertura) as difdiag9,
 DATEDIFF(dt_parecer, dt_ata_inexigibilidade) as difdiag10,
 DATEDIFF(dt_ratificacao, dt_parecer) as difdiag11,
 DATEDIFF(dt_publicacao, dt_ratificacao) as difdiag12,
-DATEDIFF(dt_contrato_firmado, dt_ratificacao) as difdiag13
+DATEDIFF(dt_contrato_firmado, dt_ratificacao) as difdiag13,
+DATEDIFF(dt_abertura, dt_autorizacao_abertura) as difdiag14
 
 from adesao where codigo_processo='$codigo';";
 
@@ -171,10 +176,7 @@ if ($dados->num_rows > 0) {
             $booldiag1 = true;
         }
         
-        if ($exibir["diflanc"] < 0) {
-            $diag1 = $diag1 . " Data de lançamento " . ($exibir["diflanc"] * -1) . " dias, ";
-            $booldiag1 = true;
-        }
+        
         
         if ($exibir["difpes"] < 0) {
             $diag1 = $diag1 . " Data de pesquisa " . ($exibir["difpes"] * -1) . " dias, ";
@@ -242,6 +244,11 @@ if ($dados->num_rows > 0) {
             $diag13 = $diag13 . "Essa data foi anterior a Ratificacao em " . $exibir["difdiag13"] * -1 . " dias";
             $booldiag13 = true;
         }
+        if ($exibir["difdiag14"] < 0) {
+            $diag14 = $diag14 . "Essa data foi anterior a autorizacao para abertura em " . $exibir["difdiag14"] * -1 . " dias";
+            $booldiag14 = true;
+        }
+
 
 ?>
 
@@ -435,6 +442,20 @@ if ($dados->num_rows > 0) {
                         <p class="formato"><?php echo $diag13 . "." ?></p>
                     <?php
                     }
+                    if ($booldiag14) {
+                        ?>
+                            <div class="input-group mb-3">
+    
+                                <div class="input-group-prepend">
+    
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Abertura do processo <br> <?php echo $exibir["dataa"] ?></span>
+                                </div>
+                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAb" class="form-control" id="conAb" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAb"] ?></textarea>
+    
+                            </div>
+                            <p class="formato"><?php echo $diag14 . "." ?></p>
+                        <?php
+                        }
                     ?>
 
                     <div class="buttons">

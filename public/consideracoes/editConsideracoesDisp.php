@@ -12,6 +12,7 @@ $diag4 = '';
 $diag5='';
 $diag6 = '';
 $diag7 = '';
+$diag8 = '';
 
 $booldiag1 = false;
 $booldiag2 = false;
@@ -20,7 +21,10 @@ $booldiag4 = false;
 $booldiag5 = false;
 $booldiag6 = false;
 $booldiag7 = false;
+$booldiag8 = false;
+
 $sql = "SELECT *,
+
 DATE_FORMAT(data_solicitacao_compras_servicos,'%d/%m/%Y') as datasol,
 DATE_FORMAT(data_preco_estimativo,'%d/%m/%Y') as datapreco,
 DATE_FORMAT(data_autorizacao_abertura,'%d/%m/%Y') as dataaut,
@@ -28,6 +32,8 @@ DATE_FORMAT(data_autuacao,'%d/%m/%Y') as dataautuacao,
 DATE_FORMAT(data_ratificacao,'%d/%m/%Y') as datarat,
 DATE_FORMAT(data_publicacao,'%d/%m/%Y') as datapub,
 DATE_FORMAT(data_parecer_juridico,'%d/%m/%Y') as datapar,
+DATE_FORMAT(data_parecer_juridico,'%d/%m/%Y') as dataab,
+
 DATEDIFF(data_inicio, data_solicitacao_compras_servicos) as difinicio,
 DATEDIFF(dt_sessao, data_solicitacao_compras_servicos) as difsessao,
 DATEDIFF(data_ratificacao, data_solicitacao_compras_servicos) as difrat,
@@ -39,13 +45,19 @@ DATEDIFF(data_ata, data_solicitacao_compras_servicos) as difata,
 DATEDIFF(data_parecer_juridico, data_solicitacao_compras_servicos) as difparecer,
 DATEDIFF(data_contrato_firmado, data_solicitacao_compras_servicos) as difcont,
 DATEDIFF(data_publicacao, data_solicitacao_compras_servicos) as difpub,
+DATEDIFF(dt_pesquisa, data_solicitacao_compras_servicos) as difpesq,
+DATEDIFF(data_portaria_comissao, data_solicitacao_compras_servicos) as difport,
+DATEDIFF(data_autorizacao_abertura, data_solicitacao_compras_servicos) as difautor,
+
 
 DATEDIFF(dt_abertura, data_preco_estimativo) as difdiag2,
 DATEDIFF(data_autorizacao_abertura, data_solicitacao_compras_servicos) as difdiag3,
 DATEDIFF(data_autuacao, data_autorizacao_abertura) as difdiag4,
 DATEDIFF(data_parecer_juridico, dt_sessao) as difdiag5,
 DATEDIFF(data_ratificacao, data_parecer_juridico) as difdiag6,
-DATEDIFF(data_publicacao, data_ratificacao) as difdiag7
+DATEDIFF(data_publicacao, data_ratificacao) as difdiag7,
+DATEDIFF(dt_abertura, data_autorizacao_abertura) as difdiag8
+
 from dispensa where codigo_processo='$codigo';";
 
 $dados = $connection->query($sql);
@@ -96,6 +108,17 @@ if ($dados->num_rows > 0) {
             $booldiag1 = true;
         }
         
+        if ($exibir["difpesq"] < 0) {
+            $diag1 = $diag1 . "Data da ultima pesquisa de preco em " . ($exibir["difpesq"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }if ($exibir["difport"] < 0) {
+            $diag1 = $diag1 . "Data da portaria da comissao em " . ($exibir["difport"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }if ($exibir["difautor"] < 0) {
+            $diag1 = $diag1 . "Data da autorizacao de abertura em " . ($exibir["difautor"] * -1) . " dias, ";
+            $booldiag1 = true;
+        }    
+
         if ($exibir["difdiag2"] < 0) {
             $diag2 = $diag2 . "Essa data Excedeu a data de abertura em " . $exibir["difdiag2"]*-1 . " dias";
             $booldiag2 = true;
@@ -120,6 +143,10 @@ if ($dados->num_rows > 0) {
         if ($exibir["difdiag7"] > 8 or $exibir["difdiag7"] < 0) {
             $diag7 = $diag7 . "Essa data entrou em desacordo com a ratificacao em " . $exibir["difdiag7"]. " dias, quando permitido apenas 8 dias apos a ratificacao (art. 26, Lei 8.666/93)";
             $booldiag7 = true;
+        }
+        if ($exibir["difdiag8"] < 0) {
+            $diag8 = $diag8 . "Essa data foi anterior ao autorizacao para abertura em " . $exibir["difdiag8"]*-1 . " dias";
+            $booldiag8 = true;
         }
 
 ?>
@@ -244,6 +271,20 @@ if ($dados->num_rows > 0) {
                         <p class="formato"><?php echo $diag7 . "." ?></p>
                     <?php
                     }
+                    if ($booldiag8) {
+                        ?>
+                            <div class="input-group mb-3">
+    
+                                <div class="input-group-prepend">
+    
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Abertura <br> <?php echo $exibir["dataab"] ?></span>
+                                </div>
+                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAb" class="form-control" id="conAb" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAb"] ?></textarea>
+    
+                            </div>
+                            <p class="formato"><?php echo $diag8 . "." ?></p>
+                        <?php
+                        }
                     ?>
 
                     <div class="buttons">

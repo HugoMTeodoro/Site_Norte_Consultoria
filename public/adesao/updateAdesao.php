@@ -34,6 +34,7 @@ if (isset($_POST)) {
     $dLancamento = $_POST["dateLancamento"];
     $tipo = "inexigibilidade";
     $autadju=$_POST["dateautAdjudicataria"];
+    $dtabertura=$_POST["dateab"];
     $action = $_POST["action"];
 
 $sql = "UPDATE adesao
@@ -65,7 +66,8 @@ $sql = "UPDATE adesao
   "valor= '" . $valorTotal . "', " .
   "observacoes= '".$observacoes."' ," .
   "dt_lancamento= '".$dLancamento."' " .",".
-  "dt_autorizacao_empresa='".$autadju."'".
+  "dt_autorizacao_empresa='".$autadju."',".
+  "dt_abertura='".$dtabertura."'".
 "WHERE id_adesao = " . $id;
 
 

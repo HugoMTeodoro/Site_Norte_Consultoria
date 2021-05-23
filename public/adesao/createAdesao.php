@@ -176,9 +176,16 @@ $action=$_POST["action"];
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data autorização</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data autorização de abertura</span>
                 </div>
                 <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data de abertura</span>
+                </div>
+                <input type="date" name="dateab" class="form-control" id="dateab" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
