@@ -36,6 +36,8 @@ if (isset($_POST)) {
     $autadju=$_POST["dateautAdjudicataria"];
     $dtabertura=$_POST["dateab"];
     $action = $_POST["action"];
+    $apostilamento = $_POST["txtApostilamento"];
+    $dt_pesquisa = $_POST["datePesquisa"];
 
 $sql = "UPDATE adesao
  SET exercicio = '".$exercicio."',".
@@ -71,23 +73,21 @@ $sql = "UPDATE adesao
 "WHERE id_adesao = " . $id;
 
 
-$resultado = $connection -> query($sql);
+    $resultado = $connection->query($sql);
 
-if ($resultado){ ?>
-    <script>
-        alert("adesao editada com sucesso");
-        window.location = 'listAdesao.php';
-    </script>
+    if ($resultado) { ?>
+        <script>
+            alert("adesao editada com sucesso");
+            window.location = 'listAdesao.php';
+        </script>
+    <?php
+    } else {
+        echo $sql; ?>
+        <script>
+            alert("Ocorreu um erro ao cadastrar a adesão");
+        </script>
+
 <?php
-} else { 
-    echo $sql;?>
-    <script>
-        alert("Ocorreu um erro ao cadastrar a adesão");
-       
-       
-    </script>
-    
-<?php
-}
+    }
 }
 ?>

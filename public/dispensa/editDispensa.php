@@ -91,7 +91,76 @@ $dispensa = $resultado->fetch_assoc();
             </select>
         </div>
 
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Dispensa por uma ordem de emergência?</span>
+            </div>
+            <select class="form-select" name="tipoEmergencia" id="tipoEmergencia">
+            <?php
+                if ($dispensa["emergencia"] == "Não") {
+                ?>
+                    <option value="Nao" selected>
+                        <?php echo "Não"  ?>
+                    </option>
+                    <?php
+                } else {
+                ?>
+                    <option value="Nao">
+                        <?php echo "Não"  ?>
+                    </option>
+                <?php
+                } if ($dispensa["emergencia"] == "Sim"){
+                ?>
+                    <option value="Sim" selected>
+                        <?php echo "Sim"  ?>
+                    </option>
+                    <?php
+                } else {
+                ?>
+                    <option value="Sim">
+                        <?php echo "Sim"  ?>
+                    </option>
+                <?php
+                }
+                ?>
+            </select>
+        </div>
 
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Dispensa para atender uma ordem judicial?</span>
+            </div>
+            <select class="form-select" name="tipoJudicial" id="tipoJudicial">
+                <?php
+                if ($dispensa["judicial"] == "Não") {
+                ?>
+                    <option value="Nao" selected>
+                        <?php echo "Não"  ?>
+                    </option>
+                    <?php
+                } else {
+                ?>
+                    <option value="Nao">
+                        <?php echo "Não"  ?>
+                    </option>
+                <?php
+                } if ($dispensa["judicial"] == "Sim"){
+                ?>
+                    <option value="Sim" selected>
+                        <?php echo "Sim"  ?>
+                    </option>
+                    <?php
+                } else {
+                ?>
+                    <option value="Sim">
+                        <?php echo "Sim"  ?>
+                    </option>
+                <?php
+                }
+                ?>
+
+            </select>
+        </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -177,11 +246,11 @@ $dispensa = $resultado->fetch_assoc();
         </div>
 
         <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data da sessao</span>
-                </div>
-                <input type="date" name="datesessao" class="form-control" id="datesessao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["dt_sessao"] ?>">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Data da sessao</span>
             </div>
+            <input type="date" name="datesessao" class="form-control" id="datesessao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["dt_sessao"] ?>">
+        </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -268,6 +337,22 @@ $dispensa = $resultado->fetch_assoc();
             </div>
             <input type="date" name="datePublicacao" class="form-control" id="datePublicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["data_publicacao"] ?>">
         </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Data de última pesquisa de preço</span>
+            </div>
+            <input type="date" name="datePesquisa" class="form-control" id="datePesquisa" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["dt_pesquisa"] ?>">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
+            </div>
+            <input type="text" name="txtApostilamento" class="form-control" id="txtApostilamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["apostilamento"] ?>">
+        </div>
+
+
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">

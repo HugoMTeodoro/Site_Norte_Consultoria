@@ -8,7 +8,7 @@ $sql = "UPDATE
 <script>
 url = new URL(window.location.href);
 url.searchParams.delete("param");
-window.location.href=('Object', 'Title', '/norte/Site_Norte_Consultoria/public/inexigibilidade/listInexigibilidade.php');
+window.location.href=('Object', 'Title', '/projetos/Site_Norte_Consultoria/public/inexigibilidade/listInexigibilidade.php');
 
 
 </script>

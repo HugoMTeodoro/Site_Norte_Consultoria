@@ -1,12 +1,12 @@
 <?php
 
 include_once("../../data/connection.php");
-    
+
 if (isset($_POST)) {
     $id = $_POST["modalidadeId"];
     $exercicio = $_POST["txtExercicio"];
     $num_processo = $_POST["numProcesso"];
-    $modalidade = $_POST["modalidade"]; 
+    $modalidade = $_POST["modalidade"];
     $numero = $_POST["numero"];
     $objeto = $_POST["txtObjeto"];
     $registro = $_POST["registro"];
@@ -30,7 +30,7 @@ if (isset($_POST)) {
     $dt_ata = $_POST["dateAtaAbertura"];
     $dt_confirmacao = $_POST["dateAutenticidade"];
     $prazo = $_POST["datePrazoProposta"];
-    $date_ata_julgamento= $_POST["dateAtaJulgamento"];
+    $date_ata_julgamento = $_POST["dateAtaJulgamento"];
     $classificados = $_POST["txtClassificados"];
     $dt_pub_resultado = $_POST["dateResultadoJulgamento"];
     $prazo2 = $_POST["datePrazoHabilitacao"];
@@ -44,73 +44,74 @@ if (isset($_POST)) {
     $dLancamento = $_POST["dateLancamento"];
     $tipo = "modalidade";
     $action = $_POST["action"];
-    $emissao=$_POST["dateemi"];
-    $sessao=$_POST["datesess"];
+    $emissao = $_POST["dateemi"];
+    $sessao = $_POST["datesess"];
+    $apostilamento = $_POST["txtApostilamento"];
+    $dt_pesquisa = $_POST["datePesquisa"];
 
     $sql = "UPDATE modalidade
-    SET exercicio='".$exercicio."' ,  " .
-    "num_processo='".$num_processo."' ,  " .
-    "modalidade='".$modalidade."' ,  " .
-    "numero='".$numero."' ,  " .
-    "objeto='".$objeto."' ,  " .
-    "registro='".$registro."' ,  " .
-    "categoria='".$categoria."' ,  " .
-    "dt_edital='".$dt_edital."' ,  " .
-    "dt_entrega='".$dt_entrega."' ,  " .
-    "dt_abertura='".$dt_abertura."' ,  " .
-    "dt_portaria='".$dt_portaria."' ,  " .
-    "dt_solicitacao='".$dt_solicitacao."' ,  " .
-    "dt_orcamento='".$dt_orcamento."' ,  " .
-    "dt_autorizacao='".$dt_autorizacao."' ,  " .
-    "dt_autuacao='".$dt_autuacao."' ,  " .
-    "enquadramento='".$enquadramento."' ,  " .
-    "dt_anexos='".$dt_anexos."' ,  " .
-    "minuta='".$minuta."' ,  " .
-    "dt_aprovacao='".$dt_aprovacao."' ,  " .
-    "dt_publicacao='".$dt_publicacao."' ,  " .
-    "especificacao='".$especificacao."' ,  " .
-    "dt_recibo='".$dt_recibo."' ,  " .
-    "documentos='".$documentos."' ,  " .
-    "dt_ata='".$dt_ata."' ,  " .
-    "dt_confirmacao='".$dt_confirmacao."' ,  " .
-    "prazo='".$prazo."' ,  " .
-    "dt_ata_julgamento='".$date_ata_julgamento."' ,  " .
-    "classificados='".$classificados."' ,  " .
-    "dt_pub_res='".$dt_pub_resultado."' ,  " .
-    "prazo2='".$prazo2."' ,  " .
-    "dt_parecer_juridico='".$dt_parecer_juridico."' ,  " .
-    "dt_adjudicacao='".$dt_adjudicacao."' ,  " .
-    "dt_homologacao='".$dt_homologacao."' ,  " .
-    "dt_contrato_firmado='".$dt_contrato_firmado."' ,  " .
-    "dt_publicacao_contrato='".$dt_publicacao_contrato."' ,  " .
-    "copia= '".$txtCopias."' ," .
-    "observacoes= '".$observacoes."' ," .
-    "dt_lancamento= '".$dLancamento."' ," .
-    "dt_emissao= '".$emissao."' ," .
-    "dt_sessao= '".$sessao."' " .
-    "WHERE id_modalidade = " . $id;
+    SET exercicio='" . $exercicio . "' ,  " .
+        "num_processo='" . $num_processo . "' ,  " .
+        "modalidade='" . $modalidade . "' ,  " .
+        "numero='" . $numero . "' ,  " .
+        "objeto='" . $objeto . "' ,  " .
+        "registro='" . $registro . "' ,  " .
+        "categoria='" . $categoria . "' ,  " .
+        "dt_edital='" . $dt_edital . "' ,  " .
+        "dt_entrega='" . $dt_entrega . "' ,  " .
+        "dt_abertura='" . $dt_abertura . "' ,  " .
+        "dt_portaria='" . $dt_portaria . "' ,  " .
+        "dt_solicitacao='" . $dt_solicitacao . "' ,  " .
+        "dt_orcamento='" . $dt_orcamento . "' ,  " .
+        "dt_autorizacao='" . $dt_autorizacao . "' ,  " .
+        "dt_autuacao='" . $dt_autuacao . "' ,  " .
+        "enquadramento='" . $enquadramento . "' ,  " .
+        "dt_anexos='" . $dt_anexos . "' ,  " .
+        "minuta='" . $minuta . "' ,  " .
+        "dt_aprovacao='" . $dt_aprovacao . "' ,  " .
+        "dt_publicacao='" . $dt_publicacao . "' ,  " .
+        "especificacao='" . $especificacao . "' ,  " .
+        "dt_recibo='" . $dt_recibo . "' ,  " .
+        "documentos='" . $documentos . "' ,  " .
+        "dt_ata='" . $dt_ata . "' ,  " .
+        "dt_confirmacao='" . $dt_confirmacao . "' ,  " .
+        "prazo='" . $prazo . "' ,  " .
+        "dt_ata_julgamento='" . $date_ata_julgamento . "' ,  " .
+        "classificados='" . $classificados . "' ,  " .
+        "dt_pub_res='" . $dt_pub_resultado . "' ,  " .
+        "prazo2='" . $prazo2 . "' ,  " .
+        "dt_parecer_juridico='" . $dt_parecer_juridico . "' ,  " .
+        "dt_adjudicacao='" . $dt_adjudicacao . "' ,  " .
+        "dt_homologacao='" . $dt_homologacao . "' ,  " .
+        "dt_contrato_firmado='" . $dt_contrato_firmado . "' ,  " .
+        "dt_publicacao_contrato='" . $dt_publicacao_contrato . "' ,  " .
+        "copia= '" . $txtCopias . "' ," .
+        "observacoes= '" . $observacoes . "' ," .
+        "dt_lancamento= '" . $dLancamento . "' ," .
+        "dt_emissao= '" . $emissao . "' ," .
+        "dt_pesquisa='$dt_pesquisa'" . "," .
+        "apostilamento='$apostilamento'" . "," .
+        "dt_sessao= '" . $sessao . "' " .
+        "WHERE id_modalidade = " . $id;
 
 
-$resultado = $connection -> query($sql);
+    $resultado = $connection->query($sql);
 
-if ($resultado){ 
-    ?>
-    <script>
-        alert("Modalidade editada com sucesso");
-        window.location = 'listModalidade.php';
-    </script>
+    if ($resultado) {
+?>
+        <script>
+            alert("Modalidade editada com sucesso");
+            window.location = 'listModalidade.php';
+        </script>
+    <?php
+    } else {
+        echo $sql; ?>
+        <script>
+            alert("Ocorreu um erro ao editar a modalidade");
+        </script>
+
 <?php
-} else { 
-    echo $sql;?>
-    <script>
-        alert("Ocorreu um erro ao editar a modalidade");
-       
-       
-    </script>
-    
-<?php
-}
-
+    }
 }
 
 ?>
