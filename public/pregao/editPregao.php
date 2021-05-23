@@ -319,7 +319,7 @@ include("../../data/connection.php");
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data de abertura/julgamento</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da ata de abertura/julgamento</span>
                 </div>
                 <input type="date" name="dateAberturaata" class="form-control" id="dateAberturaata" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $pregao["dt_ata_abertura"]?>">
             </div>
