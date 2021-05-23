@@ -32,10 +32,20 @@
         $dLancamento = $_POST["dateLancamento"];
         $tipo = "dispensa";
         $action = $_POST["action"];
-        $codigo_disp=$_POST["codigo"];
-        $dataabert=$_POST["dateabertura"];
-        $pesquisa ="Dispensa"."/".$nDispensa."/"."$exercicio";
-        $dtsessao=$_POST["datesessao"];
+        $codigo_disp = $_POST["codigo"];
+        $dataabert = $_POST["dateabertura"];
+        $pesquisa = "Dispensa" . "/" . $nDispensa . "/" . "$exercicio";
+        $dtsessao = $_POST["datesessao"];
+        $apostilamento = $_POST["txtApostilamento"];
+        $dt_pesquisa = $_POST["datePesquisa"];
+        $emergencia = $_POST["tipoEmergencia"];
+        $judicial = $_POST["tipoJudicial"];
+
+
+
+
+
+
         $sql = "UPDATE dispensa
         SET exercicio = '" . $exercicio . "', " .
             "num_processo= '" . $nProcesso . "', " .
@@ -62,10 +72,14 @@
             "copia_empenho_compras_legais= '" . $copiaNotas . "', " .
             "valor_total= '" . $valorTotal . "', " .
             "observacoes= '" . $observacoes . "' ,  " .
-            "data_lancamento= '" . $dLancamento . "'" .",".
-            "pesquisa='$pesquisa'".",".
-            "dt_abertura='$dataabert'".",".
-            "dt_sessao='$dtsessao'".
+            "data_lancamento= '" . $dLancamento . "'" . "," .
+            "pesquisa='$pesquisa'" . "," .
+            "dt_abertura='$dataabert'" . "," .
+            "dt_pesquisa='$dt_pesquisa'" . "," .
+            "apostilamento='$apostilamento'" . "," .
+            "emergencia='$emergencia'" . "," .
+            "judicial='$judicial'" . "," .
+            "dt_sessao='$dtsessao'" .
             "WHERE id_dispensa = " . $id;
 
 
