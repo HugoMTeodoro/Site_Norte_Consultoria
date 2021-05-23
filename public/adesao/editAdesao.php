@@ -270,6 +270,8 @@ $adesao = $resultado->fetch_assoc();
                 <input type="date" name="datePublicacaoContrato" class="form-control" id="datePublicacaoContrato" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["dt_publicacao_contrato"] ?>">
             </div>
 
+            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>

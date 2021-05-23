@@ -33,59 +33,59 @@ if (isset($_POST)) {
     $observacoes = $_POST["txtObservacoes"];
     $dLancamento = $_POST["dateLancamento"];
     $tipo = "inexigibilidade";
-    $autadju=$_POST["dateautAdjudicataria"];
+    $autadju = $_POST["dateautAdjudicataria"];
     $action = $_POST["action"];
+    $apostilamento = $_POST["txtApostilamento"];
+    $dt_pesquisa = $_POST["datePesquisa"];
 
-$sql = "UPDATE adesao
- SET exercicio = '".$exercicio."',".
-  "num_adesao = '".$num_adesao."',".
-  "num_inexigibilidade = '".$num_inexigibilidade."',".
-  "objeto = '".$objeto."',".
-  "categoria = '".$categoria."',".
-  "dt_inicio = '".$dt_inicio."',".
-  "dt_ratificacao = '".$dt_ratificacao."',".
-  "dt_portaria = '".$portaria."',".
-  "dt_solicitacao = '".$dt_solicitacao."',".
-  "dt_orcamento = '".$dt_orcamento."',".
-  "dt_solicitacaoo = '".$dt_solicitacaoo."',".
-  "dt_autorizacao = '".$dt_autorizacao."',".
-  "dt_solicitacao_empresa = '".$dt_solicitacao_empresa."',".
-  "verificacao = '".$verificacao."',".
-  "documento = '".$documento."',".
-  "dt_confirmacao = '".$dt_confirmacao."',".
-  "dt_ata = '".$dt_ata."',".
-  "dt_autorizacao_abertura = '".$dt_autorizacao_abertura."',".
-  "dt_autuacao = '".$dt_autuacao."',".
-  "dt_ata_inexigibilidade = '".$dt_ata_inexigibilidade."',".
-  "dt_parecer = '".$dt_parecer."',".
-  "dt_publicacao = '".$dt_publicacao."',".
-  "dt_contrato_firmado = '".$dt_contrato_firmado."',".
-  "dt_publicacao_contrato = '".$dt_contrato_firmado."',".
-  "copia_notas= '".$txtCopias."' ," .
-  "valor= '" . $valorTotal . "', " .
-  "observacoes= '".$observacoes."' ," .
-  "dt_lancamento= '".$dLancamento."' " .",".
-  "dt_autorizacao_empresa='".$autadju."'".
-"WHERE id_adesao = " . $id;
+    $sql = "UPDATE adesao
+ SET exercicio = '" . $exercicio . "'," .
+        "num_adesao = '" . $num_adesao . "'," .
+        "num_inexigibilidade = '" . $num_inexigibilidade . "'," .
+        "objeto = '" . $objeto . "'," .
+        "categoria = '" . $categoria . "'," .
+        "dt_inicio = '" . $dt_inicio . "'," .
+        "dt_ratificacao = '" . $dt_ratificacao . "'," .
+        "dt_portaria = '" . $portaria . "'," .
+        "dt_solicitacao = '" . $dt_solicitacao . "'," .
+        "dt_orcamento = '" . $dt_orcamento . "'," .
+        "dt_solicitacaoo = '" . $dt_solicitacaoo . "'," .
+        "dt_autorizacao = '" . $dt_autorizacao . "'," .
+        "dt_solicitacao_empresa = '" . $dt_solicitacao_empresa . "'," .
+        "verificacao = '" . $verificacao . "'," .
+        "documento = '" . $documento . "'," .
+        "dt_confirmacao = '" . $dt_confirmacao . "'," .
+        "dt_ata = '" . $dt_ata . "'," .
+        "dt_autorizacao_abertura = '" . $dt_autorizacao_abertura . "'," .
+        "dt_autuacao = '" . $dt_autuacao . "'," .
+        "dt_ata_inexigibilidade = '" . $dt_ata_inexigibilidade . "'," .
+        "dt_parecer = '" . $dt_parecer . "'," .
+        "dt_publicacao = '" . $dt_publicacao . "'," .
+        "dt_contrato_firmado = '" . $dt_contrato_firmado . "'," .
+        "dt_publicacao_contrato = '" . $dt_contrato_firmado . "'," .
+        "copia_notas= '" . $txtCopias . "' ," .
+        "valor= '" . $valorTotal . "', " .
+        "observacoes= '" . $observacoes . "' ," .
+        "dt_lancamento= '" . $dLancamento . "' " . "," .
+        "dt_autorizacao_empresa='" . $autadju . "'" .
+        "WHERE id_adesao = " . $id;
 
 
-$resultado = $connection -> query($sql);
+    $resultado = $connection->query($sql);
 
-if ($resultado){ ?>
-    <script>
-        alert("adesao editada com sucesso");
-        window.location = 'listAdesao.php';
-    </script>
+    if ($resultado) { ?>
+        <script>
+            alert("adesao editada com sucesso");
+            window.location = 'listAdesao.php';
+        </script>
+    <?php
+    } else {
+        echo $sql; ?>
+        <script>
+            alert("Ocorreu um erro ao cadastrar a adesão");
+        </script>
+
 <?php
-} else { 
-    echo $sql;?>
-    <script>
-        alert("Ocorreu um erro ao cadastrar a adesão");
-       
-       
-    </script>
-    
-<?php
-}
+    }
 }
 ?>
