@@ -124,6 +124,13 @@ $action=$_POST["action"];
                 </div>
                 <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da abertura do processo</span>
+                </div>
+                <input type="date" name="dateabertura" class="form-control" id="dateabertura" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

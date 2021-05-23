@@ -177,6 +177,13 @@ include("../../data/connection.php");
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data da abertura do processo</span>
+                </div>
+                <input type="date" name="dateabertura" class="form-control" id="dateabertura" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["dt_abertura"]?>">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autuação</span>
                 </div>
                 <input type="date" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["dt_autuacao"]?>">
