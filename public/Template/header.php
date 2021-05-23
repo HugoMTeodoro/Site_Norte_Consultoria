@@ -78,13 +78,7 @@ if (isset($_SESSION['logado'])) {
           <?php
           if (isset($_SESSION['logado'])) {
           ?>
-            <li class="nav-item">
-              <a class="nav-link" href="../analista/createAnalista.php">Analistas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../home/orgao.php">Órgãos</a>
-
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="../login/sair.php">Sair</a>
             </li>

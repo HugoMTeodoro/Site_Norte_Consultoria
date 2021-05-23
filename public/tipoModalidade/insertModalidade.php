@@ -14,8 +14,8 @@ $resultado = $connection -> query($sql);
 if ($resultado){
     echo $sql; ?>
     <script>
-        //alert("Modalidade cadastrada com sucesso");
-        //window.location = 'createModalidade.php';
+        alert("Modalidade cadastrada com sucesso");
+        window.location = 'listTipoModalidade.php';
         
     </script>
 <?php

@@ -11,8 +11,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
     include("../../data/connection.php");
 
-    $sql = "SELECT * FROM pregao";
-
+    $sql = "SELECT * FROM pregao where orgao='$orgaoa' and exercicio ='$exer' order by num_processo";
 
    
 

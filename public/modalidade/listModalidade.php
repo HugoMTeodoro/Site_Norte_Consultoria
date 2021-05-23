@@ -6,6 +6,12 @@
 <br>
 <br>
 <br>
+<script>
+	function redirectPage(v) {
+		document.location.href = '../orgao/exercicioAtualm.php?param='+v;  
+		
+	}
+</script>
 
 <body>
     
@@ -13,6 +19,38 @@
         <h2>Modalidade</h2>
 
         <br>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
+			</div>
+			<select class="form-select" name="txtOrgao" id="txtOrgao" onChange="redirectPage(this.value)">
+				<option value="<?php echo "Selecione" ?>" selected>
+					<?php echo "Selecione" ?>
+				</option>
+				<?php
+
+				$sqlQuery = "SELECT DISTINCT exercicio FROM modalidade order by exercicio";
+
+				$orgaos = $connection->query($sqlQuery);
+
+				if ($orgaos->num_rows > 0) {
+
+					while ($row = $orgaos->fetch_assoc()) { {
+				?>
+
+							<option value="<?php echo $row["exercicio"] ?>">
+								<?php echo $row["exercicio"] ?>
+							</option>
+
+				<?php
+						}
+					}
+				}
+
+				?>
+			</select>
+		</div>
         
 		<form action="createModalidade.php" method="POST">
 		

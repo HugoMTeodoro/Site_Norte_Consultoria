@@ -7,10 +7,48 @@
 <br>
 <br>
 
+	<script>
+	function redirectPage(v) {
+		document.location.href = '../orgao/exercicioAtuala.php?param='+v;  
+		
+	}
+</script>
 <body>
     
     <div style="margin-left: 100px; margin-right: 100px;">
         <h2>Adesao </h2>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
+			</div>
+			<select class="form-select" name="txtOrgao" id="txtOrgao" onChange="redirectPage(this.value)">
+				<option value="<?php echo "Selecione" ?>" selected>
+					<?php echo "Selecione" ?>
+				</option>
+				<?php
+
+				$sqlQuery = "SELECT DISTINCT exercicio FROM adesao order by exercicio";
+
+				$orgaos = $connection->query($sqlQuery);
+
+				if ($orgaos->num_rows > 0) {
+
+					while ($row = $orgaos->fetch_assoc()) { {
+				?>
+
+							<option value="<?php echo $row["exercicio"] ?>">
+								<?php echo $row["exercicio"] ?>
+							</option>
+
+				<?php
+						}
+					}
+				}
+
+				?>
+			</select>
+		</div>
 		<br>
 
 		<div class="buttons">

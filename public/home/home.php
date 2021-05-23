@@ -60,22 +60,17 @@ include("../login/valida.php");
                 <h5 class="card-title">Gerência de ferramentas</h5>
                 <p class="card-text"></p>
                 <div class="buttons">
+
+
                     <a href="../categoria/listCategoria.php" class="btn btn-primary">Lista de categoria</a>
 
-                    <a href="../tipoModalidade/createModalidade.php" class="btn btn-primary">Tipos de modalidade</a>
+                    <a href="../tipoModalidade/listTipoModalidade.php" class="btn btn-primary">Tipos de modalidade</a>
 
-                    <a href="../tipo_pregao/createTipoPregao.php" class="btn btn-primary">Tipos de pregão</a>
+                    <a href="../inciso/listInciso.php" class="btn btn-primary">Lista de inciso</a>
 
-                    <a href="../registro/createRegistro.php" class="btn btn-primary">Lista de registros</a>
+                    <a href="../analista/listAnalista.php" class="btn btn-primary">Lista de Analistas</a>
 
-                    <a hef="../inciso/createInciso.php" class="btn btn-primary">Lista de inciso</a>
-
-                    
-                        
-                        
-                        <a href="../testetxt/txtDispensa.php" class="btn btn-primary" >Click Me!</a>
-                    
-                    
+                    <a href="../home/orgao.php" class="btn btn-primary">Escolher órgão</a>
 
 
 
@@ -97,10 +92,3 @@ include("../login/valida.php");
 </body>
 
 </html>
-
-<footer class="py-5 bg-dark">
-
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-    </div>
-</footer>
