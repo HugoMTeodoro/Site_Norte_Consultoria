@@ -42,7 +42,7 @@ if ($dadosDispensa->num_rows > 0) {
 
                         <td>
                             <button type="button" class="btn btn-primary btn-sm">
-                                <a href="../geracaoDeDocx/txtDispensa.php?id=<?php echo $exibir["codigo_processo"] ?>" style="text-decoration: none; color: white" target="blank">Relatorio</a>
+                                <a href="../geracaoDeDocx/coletaDisp.php?id=<?php echo $exibir["codigo_processo"] ?>" style="text-decoration: none; color: white" target="blank">Relatorio</a>
                             </button>
                             <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                                 <a href="deleteDispensa.php?id=<?php echo $exibir["id_dispensa"] ?>" style="text-decoration: none; color: white"> Excluir </a>
