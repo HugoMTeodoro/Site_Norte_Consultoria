@@ -207,7 +207,7 @@ if ($dados->num_rows > 0) {
         } 
         
         if ($exibir["difpr2"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difprazo2"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Prazo recursal da proposta " . ($exibir["difprazo2"] * -1) . " dias, ";
             $booldiag1 = true;
         }
 
