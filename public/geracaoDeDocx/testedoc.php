@@ -1,4 +1,7 @@
 <?php
+
+use PhpOffice\PhpWord\SimpleType\TextAlignment;
+
 include_once("../vendor/autoload.php");
 
 $num_processo=$_POST["num_processo"];
@@ -24,56 +27,87 @@ $conPar=$_POST["conPar"];
 $empresas=substr($empresas,0,-2);
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 $section = $phpWord->addSection();
+
+
+$paragraphStyleName = 'pStyle';
+$phpWord->addParagraphStyle($paragraphStyleName, array('alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER, 'spaceAfter' => 100));
+
+
+
+
 $section->addText(
-    "$orgao"
+    "$orgao",
+    array('alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER,'name' => 'Arial', 'size' => 25, 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER, 'spaceAfter' => 100), 
+    $paragraphStyleName
+
 );
 $section->addText(
-    "$orgao"
+    "Dispensa Nº$num_processo/$exercicio - Processo: $num_processo/$exercicio",
+    array('bold' => true, 'size' => 12,'name' => 'Arial')
 );
 $section->addText(
-    "O processo foi autuado no dia $autuacao, tendo sido ratificado em $ratificacao cuja(s) adjudicatária(s) foi/foram a(s) empresa(s), $empresas. 
-     Dos apontamentos levantados na análise do processo licitatório temos as seguintes considerações:
-     
-     "
+    "       Objeto: $objeto",
+    array('size' => 12,'name' => 'Arial')
 );
+$section->addText(
+    "       O processo foi autuado no dia $autuacao, tendo sido ratificado em $ratificacao cuja(s) adjudicatária(s) foi/foram a(s) empresa(s), $empresas.",
+     array('size' => 12,'name' => 'Arial')
+);
+$section->addText(
+    "       Dos apontamentos levantados na análise do processo licitatório temos as seguintes considerações:",
+    array('size' => 12,'name' => 'Arial')
+);
+$section->addText(
+    "$observacoes",
+    array('size' => 12,'name' => 'Arial')
+);
+
 if($conSolic!=""){
 $section->addText(
-    "$conSolic"
+    "$conSolic",
+    array('size' => 12,'name' => 'Arial')
 );
 }
 if($conPreco!=""){
 $section->addText(
-    "$conPreco"
+    "$conPreco",
+    array('size' => 12,'name' => 'Arial')
 );
 }
 if($conAut!=""){
 $section->addText(
-    "$conAut"
+    "$conAut",
+    array('size' => 12,'name' => 'Arial')
 );
 }
 if($conAtuacao!=""){
 $section->addText(
-    "$conAtuacao"
+    "$conAtuacao",
+    array('size' => 12,'name' => 'Arial')
 );
 }
 if($conRat!=""){
 $section->addText(
-    "$conRat"
+    "$conRat",
+    array('size' => 12,'name' => 'Arial')
 );
 }
 if($conPub!=""){
 $section->addText(
-    "$conPub"
+    "$conPub",
+    array('size' => 12,'name' => 'Arial')
 );
 }
 if($conPar!=""){
 $section->addText(
-    "$conPar"
+    "$conPar",
+    array('size' => 12,'name' => 'Arial')
 );
 }
 if($conAb!=""){
 $section->addText(
-    "$conAb"
+    "$conAb",
+    array('size' => 12,'name' => 'Arial')
 );
 }
 

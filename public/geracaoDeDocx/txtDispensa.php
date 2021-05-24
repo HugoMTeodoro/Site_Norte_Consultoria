@@ -31,10 +31,9 @@ if ($dispensa->num_rows > 0) {
         <input type="hidden" name="num_processo" value="<?php echo $row["num_processo"] ?>">
         <input type="hidden" name="num_dispensa" value="<?php echo $row["num_dispensa"] ?>">
         <input type="hidden" name="exercicio" value="<?php echo $row["exercicio"] ?>">
-        <input type="hidden" name="num_processo" value="<?php echo $row["num_processo"] ?>">
-        <input type="hidden" name="num_processo" value="<?php echo $row["num_processo"] ?>">
-        <input type="hidden" name="num_processo" value="<?php echo $row["num_processo"] ?>">
-        <input type="hidden" name="num_processo" value="<?php echo $row["num_processo"] ?>">
+        <input type="hidden" name="orgao" value="<?php echo $row["orgao"] ?>">
+        <input type="hidden" name="objeto" value="<?php echo $row["objeto"] ?>">
+        <input type="hidden" name="observacoes" value="<?php echo $row["observacoes"] ?>">
 
             <input type="hidden" name="autuacao" value="<?php echo $row["dataautuacao"] ?>">
             <input type="hidden" name="rat" value="<?php echo $row["datarat"] ?>">
