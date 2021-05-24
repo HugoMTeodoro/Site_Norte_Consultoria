@@ -18,18 +18,19 @@ if ($empresa->num_rows > 0) {
 
 $sqlQuery = "SELECT *,
 
-DATE_FORMAT(data_autuacao,'%d/%m/%Y') as dataautuacao,
-DATE_FORMAT(data_ratificacao,'%d/%m/%Y') as datarat
+DATE_FORMAT(dt_autuacao,'%d/%m/%Y') as dataautuacao,
+DATE_FORMAT(dt_ratificacao,'%d/%m/%Y') as datarat
 
 
- FROM dispensa where codigo_processo='$codigo_proc'";
-$dispensa = $connection->query($sqlQuery);
-if ($dispensa->num_rows > 0) {
-    while ($row = $dispensa->fetch_assoc()) {
+ FROM inexigibilidade where codigo_processo='$codigo_proc'";
+$inex = $connection->query($sqlQuery);
+if ($inex->num_rows > 0) {
+    while ($row = $inex->fetch_assoc()) {
 ?>
-        <form name="myform" action="../geracaoDeDocx/testedoc.php" method="POST">
+        <form name="myform" action="../geracaoDeDocx/geraInex.php" method="POST">
+
         <input type="hidden" name="num_processo" value="<?php echo $row["num_processo"] ?>">
-        <input type="hidden" name="num_dispensa" value="<?php echo $row["num_dispensa"] ?>">
+        <input type="hidden" name="num_dispensa" value="<?php echo $row["num_inexigibilidade"] ?>">
         <input type="hidden" name="exercicio" value="<?php echo $row["exercicio"] ?>">
         <input type="hidden" name="orgao" value="<?php echo $row["orgao"] ?>">
         <input type="hidden" name="objeto" value="<?php echo $row["objeto"] ?>">

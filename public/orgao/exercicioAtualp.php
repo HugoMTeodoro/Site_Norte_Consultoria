@@ -6,5 +6,5 @@ $sql = "UPDATE
     $resultado = $connection -> query($sql);
 ?>
 <script>
-window.location.href=('Object', 'Title', '/projetos/Site_Norte_Consultoria/public/pregao/listPregao.php');
+window.location.href=('Object', 'Title', '/norte/Site_Norte_Consultoria/public/pregao/listPregao.php');
 </script>
