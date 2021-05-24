@@ -47,6 +47,9 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
                         <td><?php echo $exibir["num_processo"] ?></td>
                         <td><?php echo $exibir["numero"] ?></td>
                             <td>
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <a href="../geracaoDeDocx/coletaPregao.php?id=<?php echo $exibir["codigo_processo"] ?>" style="text-decoration: none; color: white" target="blank">Relatorio</a>
+                            </button>
                             <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                                     <a href="deletePregao.php?id=<?php echo $exibir ["id_pregao"] ?>" style="text-decoration: none; color: white"> Excluir </a> 
                                 </button>

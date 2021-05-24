@@ -70,10 +70,10 @@ $sql = "UPDATE adesao
   "observacoes= '".$observacoes."' ," .
   "dt_lancamento= '".$dLancamento."' " .",".
   "dt_autorizacao_empresa='".$autadju."',".
-  "dt_abertura='".$dtabertura."'".
+  "dt_abertura='".$dtabertura."',".
   "dt_pesquisa='$dt_pesquisa'" . "," .
   "pesquisa='$pesquisa'" . "," .
-  "apostilamento='$apostilamento'" . "," .
+  "apostilamento='$apostilamento'" . "" .
 "WHERE id_adesao = " . $id;
 
 

@@ -41,7 +41,7 @@ include("../login/valida.php");
 
                     <a href="../pregao/listPregao.php" class="btn btn-primary">Lista de pregão</a>
 
-
+                    
                 </div>
 
             </div>
@@ -71,6 +71,8 @@ include("../login/valida.php");
                     <a href="../analista/listAnalista.php" class="btn btn-primary">Lista de Analistas</a>
 
                     <a href="../home/orgao.php" class="btn btn-primary">Escolher órgão</a>
+
+                    <a href="../diagnosticos/listDiagnosticos.php" class="btn btn-primary">Diagnosticos</a>
 
 
 
