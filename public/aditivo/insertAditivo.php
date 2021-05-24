@@ -1,7 +1,7 @@
 <?php
 
 include_once("../../data/connection.php");
-
+include("../Login/valida.php");
 $numAditivo = $_POST["numAditivo"];
 $prazo_aditivo = $_POST["datePrazo"];
 $data_aditivo = $_POST["dateAditivo"];

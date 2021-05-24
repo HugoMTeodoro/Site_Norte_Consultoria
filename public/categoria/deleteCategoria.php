@@ -1,6 +1,7 @@
 
 <?php 
         include_once("../../data/connection.php");
+        include("../Login/valida.php");
         if (isset ($_GET["id"])) {
             $sql = "DELETE FROM categoria WHERE id_categoria = " . $_GET["id"];
 

@@ -1,5 +1,6 @@
 <?php
 include_once("../../data/connection.php");
+include("../Login/valida.php");
     $action = $_POST["action"];
     $tipo=$_POST["tipo"];
     $sql = "select codigo_processo FROM aditivo WHERE id_aditivo = " . $_POST["id"];

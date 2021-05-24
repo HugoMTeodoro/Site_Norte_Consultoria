@@ -1,6 +1,7 @@
 <?php 
     include("../template/header.php");
     include_once("../../data/connection.php");
+    include("../Login/valida.php");
     ?>
 
 <html lang="en">

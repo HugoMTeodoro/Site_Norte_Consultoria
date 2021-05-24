@@ -1,6 +1,7 @@
 
 <?php 
         include_once("../../data/connection.php");
+        include("../Login/valida.php");
         if (isset ($_GET["id"])) {
             $sql = "DELETE FROM analista WHERE id_analista = " . $_GET["id"];
 

@@ -1,7 +1,7 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
 include("../Template/css.html");
-
+include("../Login/valida.php");
 //comentar
 //$codigo = 'dispP.M. SAO JOAO NEPOMUCENO___';
 //$tipo = 'dispensa';

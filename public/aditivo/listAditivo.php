@@ -1,4 +1,5 @@
 <?php include("../Template/header.php") ;
+include("../Login/valida.php");
 //$codigo=$_POST["codigo"]; 
 ?>
 
