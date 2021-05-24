@@ -48,6 +48,7 @@ if (isset($_POST)) {
     $sessao = $_POST["datesess"];
     $apostilamento = $_POST["txtApostilamento"];
     $dt_pesquisa = $_POST["datePesquisa"];
+    $pesquisa ="Modalidade"."/".$num_processo."/"."$exercicio";
 
     $sql = "UPDATE modalidade
     SET exercicio='" . $exercicio . "' ,  " .
@@ -91,6 +92,7 @@ if (isset($_POST)) {
         "dt_emissao= '" . $emissao . "' ," .
         "dt_pesquisa='$dt_pesquisa'" . "," .
         "apostilamento='$apostilamento'" . "," .
+        "pesquisa='$pesquisa'" . "," .
         "dt_sessao= '" . $sessao . "' " .
         "WHERE id_modalidade = " . $id;
 

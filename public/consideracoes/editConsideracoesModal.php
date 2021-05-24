@@ -63,6 +63,7 @@ DATEDIFF(dt_emissao, dt_solicitacao) as difemi,
 DATEDIFF(dt_ata_julgamento, dt_solicitacao) as difataju,
 DATEDIFF(dt_sessao, dt_solicitacao) as difses,
 DATEDIFF(dt_pub_res, dt_solicitacao) as difpubres,
+DATEDIFF(prazo2, dt_solicitacao) as difpr2,
 
 
 
@@ -164,51 +165,48 @@ if ($dados->num_rows > 0) {
         } 
         
         if ($exibir["difadj"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difadj"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de adjudicação " . ($exibir["difadj"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difhomo"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difhomo"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de homologação " . ($exibir["difhomo"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difcf"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difcf"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de contrato firmado " . ($exibir["difcf"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difpes"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpes"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de publicação de contrato " . ($exibir["difpes"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difemi"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difemi"] * -1) . " dias, ";
-            $booldiag1 = true;
-        } 
-        
-        if ($exibir["difab"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difab"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de emissão " . ($exibir["difemi"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difataju"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difataju"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de ata de julgamento " . ($exibir["difab"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
+        
+        
         if ($exibir["difses"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difses"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de sessão " . ($exibir["difses"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
         if ($exibir["difpubres"] < 0) {
-            $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difpubres"] * -1) . " dias, ";
+            $diag1 = $diag1 . " Data de publicação de resultado " . ($exibir["difpubres"] * -1) . " dias, ";
             $booldiag1 = true;
         } 
         
-        if ($exibir["difprazo2"] < 0) {
+        if ($exibir["difpr2"] < 0) {
             $diag1 = $diag1 . " Data de Inicio em " . ($exibir["difprazo2"] * -1) . " dias, ";
             $booldiag1 = true;
         }

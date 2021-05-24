@@ -46,6 +46,7 @@ if (isset($_POST)) {
     $dt_pesquisa = $_POST["datePesquisa"];
     $apostilamento = $_POST["txtApostilamento"];
     $dt_pesquisa = $_POST["datePesquisa"];
+    $pesquisa ="Pregão"."/".$num_processo."/"."$exercicio";
 
 
     $sql = "UPDATE pregao
@@ -86,6 +87,7 @@ if (isset($_POST)) {
         "dt_lancamento= '" . $dLancamento . "' , " .
         "dt_pesquisa='$dt_pesquisa'" . "," .
         "apostilamento='$apostilamento'" . "," .
+        "pesquisa='$pesquisa'" . "," .
         "dt_sessao= '" . $sessao . "' " .
         "WHERE id_pregao = " . $id;
     $resultado = $connection->query($sql);
