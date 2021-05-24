@@ -10,11 +10,9 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
 
 
     include("../../data/connection.php");
+
     $sql = "SELECT * FROM pregao WHERE exercicio = $exer and orgao ='$orgaoa' and (pesquisa LIKE '%$usuarios%' or objeto LIKE '%$usuarios%') order by num_processo ";
-
- 
-
-
+   
     $dadosPregao = $connection -> query($sql);
 
     if($dadosPregao -> num_rows > 0)

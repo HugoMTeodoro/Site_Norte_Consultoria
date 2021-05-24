@@ -8,6 +8,7 @@
 <br>
 <script>
 	function redirectPage(v) {
+		
 		document.location.href = '../orgao/exercicioAtualp.php?param='+v;  
 		
 	}

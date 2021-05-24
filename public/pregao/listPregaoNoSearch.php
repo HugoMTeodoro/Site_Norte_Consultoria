@@ -14,7 +14,7 @@ $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
     $sql = "SELECT * FROM pregao where orgao='$orgaoa' and exercicio ='$exer' order by num_processo";
 
    
-
+    echo $sql;
 
     $dadosPregao = $connection -> query($sql);
 

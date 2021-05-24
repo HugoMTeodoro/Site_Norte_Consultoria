@@ -49,10 +49,11 @@ include_once("../../data/connection.php");
     $emissao=$_POST["dateemi"];
     $sessao=$_POST["datesess"];
     $apostilamento=$_POST["txtApostilamento"];
-$dt_pesquisa=$_POST["datePesquisa"];
+    $dt_pesquisa=$_POST["datePesquisa"];
+    $pesquisa ="Modalidade"."/".$num_processo."/"."$exercicio";
 
-    $sql = "INSERT INTO modalidade (exercicio, num_processo, modalidade, numero, objeto, registro, categoria, dt_edital, dt_entrega, dt_abertura, dt_portaria, dt_solicitacao, dt_orcamento, dt_autorizacao, dt_autuacao, enquadramento, dt_anexos, dt_aprovacao, minuta, dt_publicacao, especificacao, dt_recibo, documentos, dt_ata, dt_confirmacao, prazo, dt_ata_julgamento, classificados, dt_pub_res, prazo2, dt_parecer_juridico, dt_adjudicacao, dt_homologacao, dt_contrato_firmado, dt_publicacao_contrato, copia, observacoes, dt_lancamento, orgao, codigo_processo, dt_emissao, dt_sessao,apostilamento,dt_pesquisa)
-    VALUES('$exercicio','$num_processo','$modalidade','$numero','$objeto','$registro','$categoria','$dt_edital','$dt_entrega','$dt_abertura','$dt_portaria','$dt_solicitacao','$dt_orcamento','$dt_autorizacao','$dt_autuacao','$enquadramento','$dt_anexos','$dt_aprovacao','$minuta','$dt_publicacao','$especificacao','$dt_recibo','$documentos','$dt_ata','$dt_confirmacao','$prazo','$date_ata_julgamento','$classificados','$dt_pub_resultado', '$prazo2','$dt_parecer_juridico','$dt_adjudicacao','$dt_homologacao','$dt_contrato_firmado','$dt_publicacao_contrato','$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo','$emissao','$sessao','$apostilamento','$dt_pesquisa')";
+    $sql = "INSERT INTO modalidade (exercicio, num_processo, modalidade, numero, objeto, registro, categoria, dt_edital, dt_entrega, dt_abertura, dt_portaria, dt_solicitacao, dt_orcamento, dt_autorizacao, dt_autuacao, enquadramento, dt_anexos, dt_aprovacao, minuta, dt_publicacao, especificacao, dt_recibo, documentos, dt_ata, dt_confirmacao, prazo, dt_ata_julgamento, classificados, dt_pub_res, prazo2, dt_parecer_juridico, dt_adjudicacao, dt_homologacao, dt_contrato_firmado, dt_publicacao_contrato, copia, observacoes, dt_lancamento, orgao, codigo_processo, dt_emissao, dt_sessao,apostilamento,dt_pesquisa,pesquisa)
+    VALUES('$exercicio','$num_processo','$modalidade','$numero','$objeto','$registro','$categoria','$dt_edital','$dt_entrega','$dt_abertura','$dt_portaria','$dt_solicitacao','$dt_orcamento','$dt_autorizacao','$dt_autuacao','$enquadramento','$dt_anexos','$dt_aprovacao','$minuta','$dt_publicacao','$especificacao','$dt_recibo','$documentos','$dt_ata','$dt_confirmacao','$prazo','$date_ata_julgamento','$classificados','$dt_pub_resultado', '$prazo2','$dt_parecer_juridico','$dt_adjudicacao','$dt_homologacao','$dt_contrato_firmado','$dt_publicacao_contrato','$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo','$emissao','$sessao','$apostilamento','$dt_pesquisa',$pesquisa)";
 
 
 $resultado = $connection -> query($sql);

@@ -35,6 +35,7 @@ $tipo = "inexigibilidade";
 $action = $_POST["action"];
 $apostilamento = $_POST["txtApostilamento"];
 $dt_pesquisa = $_POST["datePesquisa"];
+$pesquisa ="Inexigibilidade"."/".$num_inexigibilidade."/"."$exercicio";
 
 $sql = "UPDATE inexigibilidade
  SET exercicio = '".$exercicio."' ,  " .
@@ -65,6 +66,7 @@ $sql = "UPDATE inexigibilidade
 "dt_sessao= '".$sessao."', " .
 "dt_pesquisa='$dt_pesquisa'" . "," .
 "apostilamento='$apostilamento'" . "," .
+"pesquisa='$pesquisa'" . "," .
 "dt_abertura= '".$dataabert."' " .
 
 "WHERE id_inexigibilidade = " . $id;
