@@ -25,6 +25,7 @@ $conPub = $_POST["conPub"];
 $conAb=$_POST["conAb"];
 $conPar=$_POST["conPar"];
 $empresas=substr($empresas,0,-2);
+
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 $section = $phpWord->addSection();
 
@@ -42,7 +43,7 @@ $section->addText(
 
 );
 $section->addText(
-    "Dispensa Nº$num_processo/$exercicio - Processo: $num_processo/$exercicio",
+    "Dispensa Nº$num_dispensa/$exercicio - Processo: $num_processo/$exercicio",
     array('bold' => true, 'size' => 12,'name' => 'Arial')
 );
 $section->addText(

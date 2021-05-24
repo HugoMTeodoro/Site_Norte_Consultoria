@@ -42,7 +42,7 @@ $section->addText(
 
 );
 $section->addText(
-    "Dispensa Nº$num_processo/$exercicio - Processo: $num_processo/$exercicio",
+    "Dispensa Nº$num_dispensa/$exercicio - Processo: $num_processo/$exercicio",
     array('bold' => true, 'size' => 12,'name' => 'Arial')
 );
 $section->addText(
