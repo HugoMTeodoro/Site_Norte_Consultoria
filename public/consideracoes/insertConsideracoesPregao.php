@@ -16,6 +16,7 @@ $conHomo = $_POST["conHomo"];
 $conFirm = $_POST["conFirm"];
 $conAdj = $_POST["conAdj"];
 $conAb = $_POST["conAb"];
+$conAd = $_POST["conAd"];
 
 
 $codigo_proc = $_POST["codigo"];
@@ -23,7 +24,7 @@ $action=$_POST["action"];
 
 $sql = "UPDATE  
     $tipo set conSolic='$conSolic', conPreco='$conPreco', conAut='$conAut',conAtuacao='$conAtuacao',conAprov='$conAprov',conPub='$conPub',conCred='$conCred',
-    conAta='$conAta', conPar='$conPar', conHomo='$conHomo', conFirm='$conFirm', conAdj='$conAdj', conAb='$conAb'
+    conAta='$conAta', conPar='$conPar', conHomo='$conHomo', conFirm='$conFirm', conAdj='$conAdj', conAb='$conAb',conAd = '$conAd'
     where codigo_processo='$codigo_proc'";
 
 

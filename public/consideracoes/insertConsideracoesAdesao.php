@@ -17,12 +17,13 @@ $conRat = $_POST["conRat"];
 $conPub = $_POST["conPub"];
 $conFir = $_POST["conFir"];
 $conAb=$_POST["conAb"];
+$conAd = $_POST["conAd"];
 $action=$_POST["action"];
 $codigo_proc=$_POST["codigo"];
 
 $sql = "UPDATE  
     $tipo set conSolic='$conSolic', conPreco='$conPreco', conSolicO='$conSolicO', conAtori='$conAtori', conSolE='$conSolE',conAut='$conAut', conAuto='$conAuto', conAutuacao=
-    '$conAutuacao', conParec='$conParec', conRat='$conRat', conPub='$conPub', conFir='$conFir',conAb='$conAb'
+    '$conAutuacao', conParec='$conParec', conRat='$conRat', conPub='$conPub', conFir='$conFir',conAb='$conAb',conAd = '$conAd'
     where codigo_processo='$codigo_proc'";
     
 

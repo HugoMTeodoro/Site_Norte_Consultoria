@@ -11,10 +11,11 @@ $conPub = $_POST["conPub"];
 $conAb=$_POST["conAb"];
 $conPar=$_POST["conPar"];
 $codigo_proc = $_POST["codigo"];
+$conAd = $_POST["conAd"];
 $action=$_POST["action"];
 
 $sql = "UPDATE  
-    $tipo set conSolic='$conSolic', conPreco='$conPreco', conAut='$conAut',conAtuacao='$conAtuacao',conRat='$conRat',conPub='$conPub',conAb='$conAb',conPar='$conPar'
+    $tipo set conSolic='$conSolic', conPreco='$conPreco', conAut='$conAut',conAtuacao='$conAtuacao',conRat='$conRat',conPub='$conPub',conAb='$conAb',conPar='$conPar',conAd = '$conAd'
     where codigo_processo='$codigo_proc'";
     
 

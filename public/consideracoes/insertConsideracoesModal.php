@@ -12,13 +12,14 @@ $conAta = $_POST["conAta"];
 $conPar = $_POST["conPar"];
 $conFirm = $_POST["conFirm"];
 $conAb= $_POST["conAb"];
+$conAd = $_POST["conAd"];
 
 $codigo_proc = $_POST["codigo"];
 $action=$_POST["action"];
 
 $sql = "UPDATE  
     $tipo set conSolic='$conSolic', conPreco='$conPreco', conAut='$conAut',conAtuacao='$conAtuacao',conAprov='$conAprov',conPub='$conPub', conAta='$conAta', conPar='$conPar',
-    conFirm='$conFirm', conAb='$conAb'
+    conFirm='$conFirm', conAb='$conAb',conAd = '$conAd'
     where codigo_processo='$codigo_proc'";
     echo $sql;
 
