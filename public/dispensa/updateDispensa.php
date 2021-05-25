@@ -40,6 +40,7 @@
         $dt_pesquisa = $_POST["datePesquisa"];
         $emergencia = $_POST["tipoEmergencia"];
         $judicial = $_POST["tipoJudicial"];
+        $porcentagem = "numPorcent";
 
 
 
@@ -79,6 +80,7 @@
             "apostilamento='$apostilamento'" . "," .
             "emergencia='$emergencia'" . "," .
             "judicial='$judicial'" . "," .
+            "porcentagem='$porcentagem'" . "," .
             "dt_sessao='$dtsessao'" .
             "WHERE id_dispensa = " . $id;
 
