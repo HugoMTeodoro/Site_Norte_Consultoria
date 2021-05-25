@@ -157,7 +157,11 @@ if ($dados->num_rows > 0) {
             $diag8 = $diag8 . "Essa data foi anterior a autorizacao para abertura em " . ($exibir["difdiag8"] * -1) . " dias";
             $booldiag8 = true;
         }
-        
+        if($exibir["valor_total"]*($exibir["porcentagem"]/100)<$exibir["valor_aditivo"]){
+            $val=$exibir["valor_total"]*($exibir["porcentagem"]/100)-($exibir["valor_aditivo"]);
+            $booldiag15=true;
+        }
+
 
 ?>
 
@@ -295,6 +299,20 @@ if ($dados->num_rows > 0) {
                             <p class="formato"><?php echo $diag8 . "." ?></p>
                         <?php
                         }
+                        if ($booldiag15) {
+                            ?>
+                                <div class="input-group mb-3">
+        
+                                    <div class="input-group-prepend">
+        
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Valor aditivado <br> <?php echo $exibir["valor_aditivo"] ?></span>
+                                    </div>
+                                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAd" class="form-control" id="conAd" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAd"] ?></textarea>
+        
+                                </div>
+                                <p class="formato">O valor limite de aditivos foi ultrapassado em <?php echo $val*-1?></p>
+                            <?php
+                            }
                     ?>
 
                     <div class="buttons">
