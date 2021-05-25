@@ -1,6 +1,7 @@
 <?php
 
 include_once("../../data/connection.php");
+include("../Login/valida.php");
 
 $exercicio = $_POST["txtExercicio"];
 $numProcesso = $_POST["numProcesso"];

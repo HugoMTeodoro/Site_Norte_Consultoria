@@ -1,7 +1,7 @@
     <?php
 
     include_once("../../data/connection.php");
-
+    include("../Login/valida.php");
     if (isset($_POST)) {
         $id = $_POST["dispensaId"];
         $exercicio = $_POST["txtExercicio"];

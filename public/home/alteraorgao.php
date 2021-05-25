@@ -1,5 +1,6 @@
 <?php 
 include("../../data/connection.php");
+include("../Login/valida.php");
 $orgao = $_POST["orgao"]; 
 $sqlQuery = "UPDATE orgao_atual
 SET nome_orgao_atual = '$orgao'

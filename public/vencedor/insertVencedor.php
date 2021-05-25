@@ -1,6 +1,7 @@
 <?php
 
 include_once("../../data/connection.php");
+include("../Login/valida.php");
 $tipo=$_POST["tipo"];
 $empresa = $_POST["txtEmpresa"];
 $valor = $_POST["txtValor"];

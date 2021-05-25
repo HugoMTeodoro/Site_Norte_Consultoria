@@ -1,5 +1,6 @@
 
 <?php 
+include("../Login/valida.php");
         include_once("../../data/connection.php");
         if (isset ($_GET["id"])) {
             $sql = "DELETE FROM tipo_modalidade WHERE id_modalidade = " . $_GET["id"];

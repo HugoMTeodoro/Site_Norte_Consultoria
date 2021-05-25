@@ -1,6 +1,7 @@
 <?php
 include("../../data/connection.php");
 include("../Template/header.php");
+include("../Login/valida.php");
 $sql = "SELECT * FROM categoria";
 
 $dadosOrgao = $connection->query($sql);

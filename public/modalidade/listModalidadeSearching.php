@@ -2,6 +2,7 @@
 
 <?php
 $usuarios = filter_input(INPUT_POST, 'palavra', FILTER_SANITIZE_STRING);
+include("../Login/valida.php");
 ?>
  
 

@@ -1,6 +1,10 @@
 <?php
 include("../../data/connection.php");
+<<<<<<< HEAD
 include("../Template/header.php");
+=======
+include("../Login/valida.php");
+>>>>>>> 175808b2dc8a4f54a41104b98cfbbed0cadc494b
 $quant=0;
 $quant2=0;
 $sql= "select count(*) as quantdisp from aditivo where categoria='Obras e serviços de engenharia' and orgao='$orgaoa' and exercicio ='$exer' ";

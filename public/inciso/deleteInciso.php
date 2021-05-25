@@ -1,4 +1,4 @@
-
+include("../Login/valida.php");
 <?php 
         include_once("../../data/connection.php");
         if (isset ($_GET["id"])) {

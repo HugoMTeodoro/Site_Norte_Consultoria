@@ -1,5 +1,5 @@
 <?php
-
+include("../Login/valida.php");
 include_once("../../data/connection.php");
 $tipo=$_POST["tipo"];
 $conSolic = $_POST["conSolic"];

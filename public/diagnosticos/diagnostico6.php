@@ -1,6 +1,10 @@
 <?php
 include("../../data/connection.php");
+<<<<<<< HEAD
 include("../Template/header.php");
+=======
+include("../Login/valida.php");
+>>>>>>> 175808b2dc8a4f54a41104b98cfbbed0cadc494b
 $quantdisp = 0;
 $quantdisp2=0;
 
