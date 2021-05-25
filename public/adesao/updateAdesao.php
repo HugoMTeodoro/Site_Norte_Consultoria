@@ -67,7 +67,7 @@ $sql = "UPDATE adesao
   "dt_contrato_firmado = '".$dt_contrato_firmado."',".
   "dt_publicacao_contrato = '".$dt_contrato_firmado."',".
   "copia_notas= '".$txtCopias."' ," .
-  "valor= '" . $valorTotal . "', " .
+  "valor_total= '" . $valorTotal . "', " .
   "observacoes= '".$observacoes."' ," .
   "dt_lancamento= '".$dLancamento."' " .",".
   "dt_autorizacao_empresa='".$autadju."',".
@@ -91,6 +91,7 @@ $sql = "UPDATE adesao
         echo $sql; ?>
         <script>
             alert("Ocorreu um erro ao cadastrar a adesão");
+
         </script>
 
 <?php
