@@ -3,7 +3,25 @@ include("../template/header.php");
 include_once("../../data/connection.php");
 include("../Login/valida.php");
 $tipo = $_POST["tipo"];
+$sqlQuery = "SELECT valor_aditivo FROM $tipo where codigo_processo = '$codigo'";
+
+            $proc = $connection->query($sqlQuery);
+
+            if ($proc->num_rows > 0) {
+
+                while ($row = $proc->fetch_assoc()) {
+                    $valor_aditivo = $row["valor_aditivo"];
+                   
+            ?>
+
+
+
+            <?php
+                }
+            }
+
 ?>
+
 
 <html lang="en">
 
@@ -27,6 +45,13 @@ $tipo = $_POST["tipo"];
                     <span class="input-group-text" id="inputGroup-sizing-default">Codigo do Processo</span>
                 </div>
                 <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $codigo ?>" readonly>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Número aditivo</span>
+                </div>
+                <input type="number" name="numValorAditivo" class="form-control" id="numValorAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $valor_aditivo ?>" readonly>
             </div>
 
             <div class="input-group mb-3">
