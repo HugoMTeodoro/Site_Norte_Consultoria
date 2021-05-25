@@ -24,6 +24,8 @@ $conRat = $_POST["conRat"];
 $conPub = $_POST["conPub"];
 $conAb=$_POST["conAb"];
 $conPar=$_POST["conPar"];
+$conAd = $_POST["conAd"];
+
 $empresas=substr($empresas,0,-2);
 
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
@@ -111,7 +113,12 @@ $section->addText(
     array('size' => 12,'name' => 'Arial')
 );
 }
-
+if ($conAd != "") {
+    $section->addText(
+        "$conAd",
+        array('size' => 12, 'name' => 'Arial')
+    );
+}
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007', $download = true);
 header("Content-Disposition: attachment; filename='The Truth.docx'");
 $objWriter->save("php://output");

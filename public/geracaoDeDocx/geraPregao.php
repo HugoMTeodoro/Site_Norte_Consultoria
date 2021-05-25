@@ -29,6 +29,7 @@ $conPar = $_POST["conPar"];
 $conFirm = $_POST["conFirm"];
 $conAb = $_POST["conAb"];
 $conHomo = $_POST["conHomo"];
+$conAd = $_POST["conAd"];
 
 $empresas = substr($empresas, 0, -2);
 
@@ -138,6 +139,12 @@ if ($conAb != "") {
 if ($conHomo != "") {
     $section->addText(
         "$conHomo",
+        array('size' => 12, 'name' => 'Arial')
+    );
+}
+if ($conAd != "") {
+    $section->addText(
+        "$conAd",
         array('size' => 12, 'name' => 'Arial')
     );
 }

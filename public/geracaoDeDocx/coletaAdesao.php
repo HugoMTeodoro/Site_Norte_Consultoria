@@ -54,6 +54,7 @@ if ($inex->num_rows > 0) {
             <input type="hidden" name="conPub" value="<?php echo $row["conPub"] ?>">
             <input type="hidden" name="conFir" value="<?php echo $row["conFir"] ?>">
             <input type="hidden" name="conAb" value="<?php echo $row["conAb"] ?>">
+            <input type="hidden" name="conAd" value="<?php echo $row["conAd"] ?>">
         </form>
 <?php
     }
