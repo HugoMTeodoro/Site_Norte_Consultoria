@@ -1,10 +1,11 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
 include("../Login/valida.php");
-$action=$_POST["action"];
+$action = $_POST["action"];
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,7 @@ $action=$_POST["action"];
     <br>
     <br>
 
-    
+
     <div class="form">
         <form action="insertInexigibilidade.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Inexigibilidade</h3>
@@ -42,7 +43,7 @@ $action=$_POST["action"];
                 <input type="number" name="numInexigibilidade" class="form-control" id="numInexigibilidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
@@ -79,9 +80,9 @@ $action=$_POST["action"];
             </div>
 
 
-            
-            
-           
+
+
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -89,13 +90,14 @@ $action=$_POST["action"];
                 </div>
                 <input type="date" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Portaria nomeando a comissão</span>
                 </div>
-                <textarea name="txtp" id="txtp" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>            </div>
-            
+                <textarea name="txtp" id="txtp" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+            </div>
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da solicitação de compras/serviços</span>
@@ -130,14 +132,14 @@ $action=$_POST["action"];
                 </div>
                 <input type="date" name="dateabertura" class="form-control" id="dateabertura" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autuação</span>
                 </div>
                 <input type="date" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Especificação do projeto</span>
@@ -156,7 +158,8 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato</span>
                 </div>
-                <textarea name="txtMinuta" id="txtMinuta" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>            </div>
+                <textarea name="txtMinuta" id="txtMinuta" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -164,7 +167,7 @@ $action=$_POST["action"];
                 </div>
                 <input type="date" name="dateAprov" class="form-control" id="dateAprov" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data proposta do favorecido</span>
@@ -176,7 +179,8 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
                 </div>
-                <textarea name="txtHabilitacao" id="txtHabilidade" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>            </div>
+                <textarea name="txtHabilitacao" id="txtHabilidade" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -265,47 +269,42 @@ $action=$_POST["action"];
                 </div>
                 <input type="text" name="txtAnalista" class="form-control" id="txtAnalista" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $nome ?>" readonly>
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Órgão</span>
                 </div>
                 <select class="form-select" name="txtOrgao" id="txtOrgao">
-                
+
                     <?php
 
-                        $sqlQuery = "SELECT * FROM orgao";
+                    $sqlQuery = "SELECT * FROM orgao";
 
-                        $orgaos = $connection -> query($sqlQuery);
+                    $orgaos = $connection->query($sqlQuery);
 
-                        if($orgaos -> num_rows > 0)
-                        {
+                    if ($orgaos->num_rows > 0) {
 
-                            while($row = $orgaos -> fetch_assoc())
-                            {
-                                if($orgaocrud == $row["nome_orgao"])
-                                {
+                        while ($row = $orgaos->fetch_assoc()) {
+                            if ($orgaocrud == $row["nome_orgao"]) {
                     ?>
-                                    <option value="<?php echo $row["nome_orgao"]?>" selected>
-                                        <?php echo $row["nome_orgao"] ?>
-                                    </option>
+                                <option value="<?php echo $row["nome_orgao"] ?>" selected>
+                                    <?php echo $row["nome_orgao"] ?>
+                                </option>
+                            <?php
+                            } else {
+                            ?>
+                                <option value="<?php echo $row["nome_orgao"] ?>">
+                                    <?php echo $row["nome_orgao"] ?>
+                                </option>
+
                     <?php
-                                }
-                                else
-                                {
-                    ?>                    
-                                    <option value="<?php echo $row["nome_orgao"]?>">
-                                        <?php echo $row["nome_orgao"]?>
-                                    </option>
-                    
-                    <?php
-                                }
                             }
                         }
+                    }
                     ?>
                 </select>
             </div>
-        
+
 
             <?php
             date_default_timezone_set('America/Sao_Paulo');
@@ -329,29 +328,30 @@ $action=$_POST["action"];
                 <input oninput="v_ = this.value; if(v_.length > 5){ this.value = v_.slice(0, 5); }" onblur="v_ = this.value; if(!~v_.indexOf('.')){ vl_ = v_.length; z_ = vl_ == 1 ? '0.00' : ( vl_ == 3 ? '0' : (vl_ == 2 ? '00' : ''));this.value = v_.length < 5 && v_ != '100' ? (((v_[0] ? v_[0] : '')+(v_[1] ? v_[1]+'.' : '')+(v_[2] ? v_[2] : '')+(v_[3] ? v_[3] : '')+(v_[4] ? v_[4] : '')+z_)):('100.00')};" type="number" id="numPorcent" step=".01" min=".01" max="100">
             </div>
 
-            <br>    
-            
+            <br>
+
 
             <div class="buttons">
-            <input type="hidden" name="tipo" id="tipo" value="inexigibilidade" >
-            <input type="hidden" name="action" id="action" value="<?php echo $action ?>" >
-            
-        
-                <input type="submit" class="btn btn-success" value="Proximo" >
+                <input type="hidden" name="tipo" id="tipo" value="inexigibilidade">
+                <input type="hidden" name="action" id="action" value="<?php echo $action ?>">
+
+
+                <input type="submit" class="btn btn-success" value="Proximo">
                 <input type="reset" class="btn btn-danger" onclick="window.location.href='../inexigibilidade/listInexigibilidade.php'" value="Cancelar">
 
             </div>
-            </div>
-
-            
-
-            
+    </div>
 
 
-            
-        </form>
+
+
+
+
+
+    </form>
     </div>
 
 
 </body>
+
 </html>
