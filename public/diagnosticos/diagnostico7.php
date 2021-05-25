@@ -3,18 +3,19 @@ include("../../data/connection.php");
 
 include("../Template/header.php");
 
-$quant=0;
-$quant2=0;
-$sql= "select count(*) as quantdisp from aditivo where categoria='Obras e serviços de engenharia' and orgao='$orgaoa' and exercicio ='$exer' ";
+$quant = 0;
+$quant2 = 0;
+$sql = "select count(*) as quantdisp from aditivo where categoria='Obras e serviços de engenharia' and orgao='$orgaoa' and exercicio ='$exer' ";
 
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
     while ($exibir = $dados->fetch_assoc()) {
-        if($exibir["quantdisp"]>0){
-        $quant=$exibir["quantdisp"];
+        if ($exibir["quantdisp"] > 0) {
+            $quant = $exibir["quantdisp"];
         }
     }
 }
+
 
 
 ?>
@@ -35,11 +36,12 @@ if ($dados->num_rows > 0) {
 
 
             var data = google.visualization.arrayToDataTable([
-                ['Processo de obras', 'Quantidade aditivados'],
-                ['Aditivados', <?php echo $quant ?>],
-                ['Nao Aditivados', <?php echo $quant2 ?>],
-                
-      ]);
+                ['', 'Quantidade', {role: 'style'}],
+                ['Aditivados:', 0, '#b87333'], // RGB value
+                ['Processos de obras', <?php echo $quant ?>, '#b87333'],
+               
+
+            ]);
 
             var options = {
                 chart: {

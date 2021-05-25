@@ -9,6 +9,27 @@ $valor = $_POST["txtValor"];
 $codigo_proc = $_POST["txtCodigo"];
 $action=$_POST["action"];
 
+$sql = "select valor_total from $tipo where codigo_processo = '$codigo_proc'";
+$resultado = $connection -> query($sql);
+if ($dados->num_rows > 0) {
+    while ($exibir = $dados->fetch_assoc()) {
+        $valor_total=$exibir["valor_total"];
+    }
+}
+
+$valor_total = floatval($valor_total);
+$valor = floatval($valor);
+
+$valor_total=$valor_total + $valor;
+
+
+$sql = "update $tipo set valor_total=$valor_total where codigo_processo='$codigo_proc'";
+
+
+$resultado = $connection -> query($sql);
+
+
+
 $sql = "INSERT INTO 
     vencedor (nome_empresa, valor, codigo_processo)
     VALUES('$empresa', '$valor', '$codigo_proc')";
@@ -42,3 +63,6 @@ if ($resultado){
 }
 
 ?>
+<script>
+
+</script>
