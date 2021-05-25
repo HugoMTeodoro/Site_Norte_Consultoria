@@ -38,7 +38,7 @@ $apostilamento=$_POST["txtApostilamento"];
 $dt_pesquisa=$_POST["datePesquisa"];
 $emergencia=$_POST["tipoEmergencia"];
 $judicial=$_POST["tipoJudicial"];
-$porcentagem = "numPorcent";
+$porcentagem=$_POST["numPorcent"];
 
 
 $sql = "INSERT INTO 
@@ -65,10 +65,12 @@ if ($resultado) {
     </script>
     
 <?php
-} else { ?>
+} else {
+    echo $sql; ?>
+
     <script>
         alert("Dispensa já existente");
-        window.location = 'createDispensa.php';
+        //window.location = 'listDispensa.php';
     </script>
 
 <?php
