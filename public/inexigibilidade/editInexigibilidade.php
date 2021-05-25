@@ -87,7 +87,7 @@ $inexigibilidade = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
                 </div>
-                <input type="text" name="txtObjeto" class="form-control" id="txtObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["objeto"] ?>">
+                <textarea name="txtObjeto" id="txtObjeto" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $inexigibilidade["Objeto"]?> 
             </div>
 
             <div class="input-group mb-3">
@@ -157,7 +157,7 @@ $inexigibilidade = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Portaria nomeando a comissão</span>
                 </div>
-                <input type="text" name="txtp" class="form-control" id="txtp" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["portaria_nomeando"] ?>">
+                <textarea name="txtp" id="txtp" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $inexigibilidade["portaria_nomeando"]?> 
             </div>
 
             <div class="input-group mb-3">
@@ -199,21 +199,21 @@ $inexigibilidade = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Especificação do projeto</span>
                 </div>
-                <input type="text" name="txtEspecificacao" class="form-control" id="txtEspecificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["especificacao"] ?>">
+                <textarea name="txtEspecificacao" id="txtEspecificacao" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $inexigibilidade["especificacao"]?> 
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Enquadramento na modalidade pertinente</span>
                 </div>
-                <input type="text" name="txtEnquadramento" class="form-control" id="txtEnquadramento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["enquadramento"] ?>">
+                <textarea name="txtEnquadramento" id="txtEnquadramento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $inexigibilidade["enquadramento"]?> 
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato</span>
                 </div>
-                <input type="text" name="txtMinuta" class="form-control" id="txtMinuta" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["minuta"] ?>">
+                <textarea name="txtMinuta" id="txtMinuta" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $inexigibilidade["minuta"]?> 
             </div>
 
             <div class="input-group mb-3">
@@ -234,7 +234,7 @@ $inexigibilidade = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
                 </div>
-                <input type="text" name="txtHabilitacao" class="form-control" id="txtHabilitacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["documentos"] ?>">
+                <textarea name="txtHabilitacao" id="txtHabilidade" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $inexigibilidade["documentos"]?> 
             </div>
 
             <div class="input-group mb-3">
@@ -277,14 +277,14 @@ $inexigibilidade = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
                 </div>
-                <input type="text" name="txtApostilamento" class="form-control" id="txtApostilamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["apostilamento"] ?>">
+                <textarea name="txtApostilamento" id="txtApostilamento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $inexigibilidade["apostilamento"]?> 
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
                 </div>
-                <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["copia_notas"] ?>">
+                <textarea name="txtCopias" id="txtCopias" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $inexigibilidade["copia_notas"]?> 
             </div>
 
 
@@ -293,7 +293,7 @@ $inexigibilidade = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
                 </div>
-                <input type="text" name="txtObservacoes" class="form-control" id="txtObservacoes" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $inexigibilidade["observacoes"] ?>">
+                <textarea name="txtObservacoes" id="txtObservacoes" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $inexigibilidade["observacoes"]?> 
             </div>
 
             <div class="input-group mb-3">
