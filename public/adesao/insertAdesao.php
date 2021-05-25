@@ -30,7 +30,6 @@ $dt_publicacao_contrato = $_POST["datePublicacaoContrato"];
 $txtCopias = $_POST["txtCopias"];
 $observacoes = $_POST["txtObservacoes"];
 $analistaResponsavel = $_POST["txtAnalista"];
-$dLancamento = $_POST["dateLancamento"];
 $orgao1 = $_POST["txtOrgao"];
 $dtabertura = $_POST["datea"];
 $codigo = "ades" . $orgao1 . "_" . $num_adesao . "_" . $num_inexigibilidade . "_" . $exercicio;
@@ -41,6 +40,14 @@ $apostilamento = $_POST["txtApostilamento"];
 $dt_pesquisa = $_POST["datePesquisa"];
 $pesquisa = "Adesão" . "/" . $num_adesao . "/" . "$exercicio";
 $porcentagem=$_POST["numPorcent"];
+
+$sql = "select now()";
+$resultado = $connection -> query($sql);
+if ($resultado->num_rows > 0) {
+    while ($exibir = $resultado->fetch_assoc()) {
+        $dLancamento=$exibir["now()"];
+    }
+}
 
 
 $sql = "INSERT INTO 
