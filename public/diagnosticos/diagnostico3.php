@@ -1,5 +1,6 @@
 <?php
 include("../../data/connection.php");
+<<<<<<< HEAD
 include("../Template/header.php");
 $mediadisp = 0;
 $mediaadesao = 0;
@@ -9,6 +10,16 @@ $quantgeral = 0;
 $mediapregao = 0;
 
 $sql = "select SUM(datediff(data_parecer_juridico, data_autorizacao_abertura)) as mediadispensa, count(*) as quantdisp from dispensa where orgao='$orgaoa' and exercicio ='$exer'";
+=======
+include("../Login/valida.php");
+$mediadisp=0;
+$mediaadesao=0;
+$mediainex=0;
+$mediamodal=0;
+$mediapregao=0;
+
+$sql="select SUM(datediff(data_parecer_juridico, data_autorizacao_abertura)) as mediadispensa, count(*) as quantdisp from dispensa";
+>>>>>>> 175808b2dc8a4f54a41104b98cfbbed0cadc494b
 $dados = $connection->query($sql);
 if ($dados->num_rows > 0) {
 
