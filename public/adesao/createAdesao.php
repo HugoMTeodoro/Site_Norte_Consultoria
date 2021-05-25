@@ -46,7 +46,7 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
                 </div>
-                <input type="text" name="txtObjeto" class="form-control" id="txtObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtObjeto" id="txtObjeto" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -150,14 +150,14 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Verificação montante adjudicado</span>
                 </div>
-                <input type="text" name="txtVerificacao" class="form-control" id="txtVerificacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtVerificacao" id="txtVerificacao" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="S-sizing-default">Documento habilitação da adjudicatária</span>
                 </div>
-                <input type="text" name="txtDocAdjudicataria" class="form-control" id="txtDocAdjudicataria" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtDocAdjudicataria" id="txtDocAdjudicataria" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
