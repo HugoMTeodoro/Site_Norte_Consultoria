@@ -15,14 +15,15 @@ $resultado = $connection -> query($sql);
 if ($resultado->num_rows > 0) {
     while ($exibir = $resultado->fetch_assoc()) {
         $valor_total=$exibir["valor_total"];
+        $valor_aditivo=$exibir["valor_aditivo"];
     }
 }
 
 
 $valor_total=$valor_total + $valor;
+$valor_aditivo=$valor_aditivo+$valor;
 
-
-$sql = "update $tipo set valor_total=$valor_total, valor_aditivo=$valor_total
+$sql = "update $tipo set valor_total=$valor_total
 where codigo_processo='$codigo_proc'";
 echo $sql;
 

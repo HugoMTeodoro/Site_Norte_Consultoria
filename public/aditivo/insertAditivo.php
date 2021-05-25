@@ -18,18 +18,18 @@ $action = $_POST["action"];
 $categoria = $_POST["categoria"];
 $exercicio = $_POST["exercicio"];
 
-$sql = "select valor_total from $tipo where codigo_processo = '$codigo_proc'";
+$sql = "select valor_aditivo,valor_total from $tipo where codigo_processo = '$codigo_proc'";
 $resultado = $connection -> query($sql);
 if ($resultado->num_rows > 0) {
     while ($exibir = $resultado->fetch_assoc()) {
-        $valor_total=$exibir["valor_total"];
+        $val=$exibir["valor_aditivo"];
     }
 }
 
-$valor_total=$valor_total + $valor_aditivo;
-echo $valor_total;
+$val=$valor_aditivo+$val;
 
-$sql = "update $tipo set valor_aditivo=$valor_total where codigo_processo='$codigo_proc'";
+
+$sql = "update $tipo set valor_aditivo=$val where codigo_processo='$codigo_proc'";
 
 
 $resultado = $connection -> query($sql);

@@ -1,41 +1,74 @@
 <?php
 include_once("../../data/connection.php");
 include("../Login/valida.php");
-$tipo=$_POST["tipo"];
-$action=$_POST["action"];
-    
-    $sql = "select codigo_processo FROM vencedor WHERE id_vencedor = " . $_POST["id"];
-    $resultado = $connection->query($sql);
-    while ($percorrer = $resultado->fetch_assoc()) {
+$tipo = $_POST["tipo"];
+$action = $_POST["action"];
 
-        $codigo = $percorrer['codigo_processo'];
+$sql = "select codigo_processo,valor FROM vencedor WHERE id_vencedor = " . $_POST["id"];
+echo $sql;
+$resultado = $connection->query($sql);
+while ($percorrer = $resultado->fetch_assoc()) {
+    $valor=$percorrer['valor'];
+    $codigo = $percorrer['codigo_processo'];
+}
+
+
+
+$sql = "select valor_total from $tipo where codigo_processo = '$codigo'";
+
+$resultado = $connection->query($sql);
+if ($resultado->num_rows > 0) {
+    while ($exibir = $resultado->fetch_assoc()) {
+        $valor_total = $exibir["valor_total"];
+        $valor_aditivo=$exibir["valor_aditivo"];
     }
-    $sql = "DELETE FROM vencedor WHERE id_vencedor = " . $_POST["id"];
+}
 
-    if ($connection->query($sql) === TRUE) {
+echo $valor;
+$valor_total = $valor_total - $valor;
+$valor_aditivo=$valor_aditivo-$valor;
+
+$sql = "update $tipo set valor_total=$valor_total, valor_aditivo=$valor_aditivo
+where codigo_processo='$codigo'";
+echo $sql;
+
+
+$resultado = $connection->query($sql);
+
+
+
+
+
+
+
+
+$sql = "DELETE FROM vencedor WHERE id_vencedor = " . $_POST["id"];
+$resultado = $connection->query($sql);
+
+if ($connection->query($sql) === TRUE) {
 ?>
-        <form name="myform" action="<?php echo $action ?>" method="POST">
-            <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
-            <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
-            <input type="hidden" name="action" value="<?php echo $action ?>">
-        </form>
+    <form name="myform" action="<?php echo $action ?>" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+        <input type="hidden" name="action" value="<?php echo $action ?>">
+    </form>
 
-        <script type="text/javascript">
-            alert("Vencedor deletado com sucesso");
-            document.myform.submit();
-        </script>
-    <?php
-
-
-    } else {
-    ?>
-        <script>
-            alert("Erro ao excluir o vencedor");
-            window.location = "createVencedor.php";
-        </script>
+    <script type="text/javascript">
+        alert("Vencedor deletado com sucesso");
+       // document.myform.submit();
+    </script>
 <?php
 
-    }
+
+} else {
+?>
+    <script>
+        alert("Erro ao excluir o vencedor");
+       // window.location = "createVencedor.php";
+    </script>
+<?php
+
+}
 
 
 ?>

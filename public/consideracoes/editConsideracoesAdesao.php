@@ -34,6 +34,7 @@ $booldiag11 = false;
 $booldiag12 = false;
 $booldiag13 = false;
 $booldiag14 = false;
+$booldiag15 = false;
 
 $sql = "SELECT *,
 DATE_FORMAT(dt_orcamento,'%d/%m/%Y') as dataorc,
@@ -248,6 +249,10 @@ if ($dados->num_rows > 0) {
             $diag14 = $diag14 . "Essa data foi anterior a autorizacao para abertura em " . $exibir["difdiag14"] * -1 . " dias";
             $booldiag14 = true;
         }
+        if($exibir["valor_total"]*($exibir["porcentagem"]/100)>$exibir["valor_aditivo"]){
+            $val=$exibir["valor_total"]*($exibir["porcentagem"]/100)-($exibir["valor_aditivo"]);
+            $booldiag15=true;
+        }
 
 
 ?>
@@ -456,6 +461,20 @@ if ($dados->num_rows > 0) {
                             <p class="formato"><?php echo $diag14 . "." ?></p>
                         <?php
                         }
+                        if ($booldiag15) {
+                            ?>
+                                <div class="input-group mb-3">
+        
+                                    <div class="input-group-prepend">
+        
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Valor aditivado <br> <?php echo $exibir["valor_aditivo"] ?></span>
+                                    </div>
+                                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAb" class="form-control" id="conAb" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAb"] ?></textarea>
+        
+                                </div>
+                                <p class="formato">O valor limite de aditivos foi ultrapassado em <?php echo $val?></p>
+                            <?php
+                            }
                     ?>
 
                     <div class="buttons">
