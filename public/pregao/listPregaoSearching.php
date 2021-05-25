@@ -49,7 +49,7 @@ if ($dadosPregao->num_rows > 0) {
                         <a href="../geracaoDeDocx/coletaPregao.php?id=<?php echo $exibir["codigo_processo"] ?>" style="text-decoration: none; color: white" target="blank">Relatório</a>
                     </button>
                     <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
-                        <a href="deletePregao.php?id=<?php echo $exibir["id_pregao"] ?>" style="text-decoration: none; color: white"> Excluir </a>
+                        <a href="deletePregao.php?id=<?php echo $exibir["id_pregao"] ?>" style="text-decoration: none; color: white" onclick="return confirm('Deseja mesmo apagar o processo?');"> Excluir </a>
                     </button>
                     <form name="editbutton" action="editPregao.php" method="POST">
                         <input type="hidden" name="codigo" value="<?php echo $exibir["codigo_processo"] ?>">
