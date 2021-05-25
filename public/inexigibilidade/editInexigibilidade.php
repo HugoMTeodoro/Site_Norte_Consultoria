@@ -320,7 +320,7 @@ $inexigibilidade = $resultado->fetch_assoc();
                 <input type="hidden" name="action" value="<?php echo $action ?>">
 
                 <input type="submit" class="btn btn-success" value="Atualizar">
-                <input type="reset" class="btn btn-danger" value="Cancelar">
+                <input type="reset" class="btn btn-danger" onclick="window.location.href='../inexigibilidade/listInexigibilidade.php'" value="Cancelar">
 
             </div>
 

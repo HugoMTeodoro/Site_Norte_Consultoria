@@ -35,7 +35,7 @@ $dispensa = $resultado->fetch_assoc();
             </p>
       
             </div>
-            
+
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Id da dispensa</span>
@@ -415,7 +415,7 @@ $dispensa = $resultado->fetch_assoc();
             <input type="hidden" name="action" value="<?php echo $action ?>">
 
             <input type="submit" class="btn btn-success" value="Atualizar">
-            <input type="reset" class="btn btn-danger" value="Cancelar">
+            <input type="reset" class="btn btn-danger" onclick="window.location.href='../dispensa/listDispensa.php'" value="Cancelar">
 
         </div>
 

@@ -501,7 +501,7 @@ $action=$_POST["action"];
             
         
                 <input type="submit" class="btn btn-success" value="Proximo" >
-                <input type="reset" class="btn btn-danger" onclick="window.location.href='../inexigibilidade/listInexigibilidade.php'" value="Cancelar">
+                <input type="reset" class="btn btn-danger" onclick="window.location.href='../modalidade/listModalidade.php'" value="Cancelar">
 
             </div>
             </div>

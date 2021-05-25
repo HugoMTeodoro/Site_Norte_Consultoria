@@ -395,7 +395,7 @@ $action = $_POST["action"];; ?>
 
 
                 <input type="submit" class="btn btn-success" value="Proximo">
-                <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
+                <input type="reset" class="btn btn-danger" onclick="window.location.href='../dispensa/listDispensa.php'" value="Cancelar">
 
             </div>
 
