@@ -1,16 +1,9 @@
 <?php
 include("../../data/connection.php");
-<<<<<<< HEAD
+
 include("../Template/header.php");
 
-=======
-include("../Login/valida.php");
-$quantdisp=0;
-$quantadesao=0;
-$quantinex=0;
-$quantmodal=0;
-$quantpregao=0;
->>>>>>> 175808b2dc8a4f54a41104b98cfbbed0cadc494b
+
 
 $mediadisp = 0;
 $mediaadesao = 0;
