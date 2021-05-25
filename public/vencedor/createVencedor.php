@@ -6,6 +6,23 @@ $codigo = $_POST["codigo"];
 $tipo = $_POST["tipo"];
 $action = $_POST["action"];
 
+$sqlQuery = "SELECT valor_total FROM $tipo where codigo_processo = '$codigo'";
+
+            $proc = $connection->query($sqlQuery);
+
+            if ($proc->num_rows > 0) {
+
+                while ($row = $proc->fetch_assoc()) {
+                    $valor_total = $row["valor_total"];
+                   
+            ?>
+
+
+
+            <?php
+                }
+            }
+
 ?>
 
 <html lang="en">
@@ -33,6 +50,13 @@ $action = $_POST["action"];
                 <input type="text" name="txtCodigo" class="form-control" id="txtCodigo" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $codigo ?>" readonly>
             </div>
 
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
+                </div>
+                <input type="number" step=0.01 name="numValor" class="form-control" id="numValor" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $valor_total ?>" readonly>
+            </div>
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -54,7 +78,7 @@ $action = $_POST["action"];
                 <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
                 <input type="hidden" name="action" value="<?php echo $action ?>">
                 <input type="submit" class="btn btn-success" value="Cadastrar">
-                <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
+                
 
             </div>
 

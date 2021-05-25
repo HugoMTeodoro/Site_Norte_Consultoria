@@ -427,8 +427,7 @@ if ($dados->num_rows > 0) {
                 <input type="hidden" name="action" value="<?php echo $action ?>">
                 <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
                 <input type="submit" class="btn btn-success" value="Cadastrar">
-                <input type="reset" class="btn btn-danger" onclick="window.location.href='../home/home.php'" value="Cancelar">
-
+                
             </div>
 
 
