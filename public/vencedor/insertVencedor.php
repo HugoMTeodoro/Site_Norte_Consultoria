@@ -10,15 +10,14 @@ $codigo_proc = $_POST["txtCodigo"];
 $action=$_POST["action"];
 
 $sql = "select valor_total from $tipo where codigo_processo = '$codigo_proc'";
+echo $sql;
 $resultado = $connection -> query($sql);
-if ($dados->num_rows > 0) {
-    while ($exibir = $dados->fetch_assoc()) {
+if ($resultado->num_rows > 0) {
+    while ($exibir = $resultado->fetch_assoc()) {
         $valor_total=$exibir["valor_total"];
     }
 }
 
-$valor_total = floatval($valor_total);
-$valor = floatval($valor);
 
 $valor_total=$valor_total + $valor;
 
