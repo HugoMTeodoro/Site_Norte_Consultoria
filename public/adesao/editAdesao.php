@@ -316,7 +316,7 @@ $adesao = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>
                 </div>
-                <input type="datetime" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["dt_lancamento"] ?>">
+                <input type="datetime" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $adesao["dt_lancamento"] ?>"readonly>
             </div>
 
             <div class="input-group mb-3">
