@@ -13,10 +13,10 @@ if (isset($_GET["id"])) {
         }
     }
 
-    $sql = "DELETE FROM vencedores  WHERE id_inexigibilidade ='$codigo' ";
+    $sql = "DELETE FROM vencedor  WHERE codigo_processo ='$codigo' ";
     $resultado = $connection->query($sql);
 
-    $sql = "DELETE FROM aditivo  WHERE id_inexigibilidade = '$codigo'";
+    $sql = "DELETE FROM aditivo  WHERE codigo_processo = '$codigo'";
     $resultado = $connection->query($sql);
 
 

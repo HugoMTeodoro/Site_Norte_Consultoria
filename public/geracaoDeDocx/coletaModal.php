@@ -52,6 +52,8 @@ if ($inex->num_rows > 0) {
             <input type="hidden" name="conFirm" value="<?php echo $row["conFirm"] ?>">
             <input type="hidden" name="conAb" value="<?php echo $row["conAb"] ?>">
             <input type="hidden" name="conAd" value="<?php echo $row["conAd"] ?>">
+            <input type="hidden" name="modalidade" value="<?php echo $row["modalidade"] ?>">
+
         </form>
 <?php
     }

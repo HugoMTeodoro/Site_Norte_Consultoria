@@ -50,7 +50,7 @@ $section->addText(
 
 );
 $section->addText(
-    "Dispensa Nº$num_dispensa/$exercicio - Processo: $num_processo/$exercicio",
+    "Adesão Nº$num_dispensa/$exercicio - Processo: $num_processo/$exercicio",
     array('bold' => true, 'size' => 12, 'name' => 'Arial')
 );
 $section->addText(

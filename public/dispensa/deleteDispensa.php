@@ -13,19 +13,11 @@ if (isset($_GET["id"])) {
         }
     }
 
-    $sql = "DELETE FROM vencedores  WHERE id_dispensa ='$codigo' ";
+    $sql = "DELETE FROM vencedor  WHERE codigo_processo ='$codigo' ";
     $resultado = $connection->query($sql);
 
-    $sql = "DELETE FROM aditivo  WHERE id_dispensa = '$codigo'";
+    $sql = "DELETE FROM aditivo  WHERE codigo_processo = '$codigo'";
     $resultado = $connection->query($sql);
-
-
-
-
-
-
-
-
 
 
 

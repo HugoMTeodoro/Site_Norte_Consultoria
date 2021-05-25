@@ -45,8 +45,8 @@ if ($dados->num_rows > 0) {
 
             var options = {
                 chart: {
-                    title: 'Média de tempo gasto para a realização de um procedimento licitatório:',
-                    subtitle: 'Diagnosticados em dias desde a Solicitação até a homologação.',
+                    title: 'Processos de obras aditivados:',
+                    subtitle: '',
 
                 }
             };

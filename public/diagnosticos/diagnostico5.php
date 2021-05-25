@@ -101,8 +101,8 @@ $max = sizeof($arraycat);
 
             var options = {
                 chart: {
-                    title: 'Média de tempo gasto para a realização de um procedimento licitatório:',
-                    subtitle: 'Diagnosticados em dias desde a Solicitação até a homologação.',
+                    title: 'Número de processos realizados para determinadas categorias de item:',
+                    subtitle: '',
 
                 }
             };

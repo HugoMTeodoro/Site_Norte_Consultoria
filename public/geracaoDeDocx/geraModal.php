@@ -10,7 +10,7 @@ $exercicio = $_POST["exercicio"];
 $orgao = $_POST["orgao"];
 $objeto = $_POST["objeto"];
 $observacoes = $_POST["observacoes"];
-
+$modalidade = $_POST["modalidade"];
 
 
 $autuacao = $_POST["autuacao"];
@@ -50,7 +50,7 @@ $section->addText(
 
 );
 $section->addText(
-    "Dispensa Nº$num_dispensa/$exercicio - Processo: $num_processo/$exercicio",
+    "$modalidade Nº$num_dispensa/$exercicio - Processo: $num_processo/$exercicio",
     array('bold' => true, 'size' => 12, 'name' => 'Arial')
 );
 $section->addText(
