@@ -47,7 +47,7 @@
     $apostilamento=$_POST["txtApostilamento"];
     $dt_pesquisa=$_POST["datePesquisa"];
     $pesquisa ="Pregão"."/".$num_processo."/"."$exercicio";
-    $porcentagem = "numPorcent";
+    $porcentagem=$_POST["numPorcent"];
 
 
     $sql = "INSERT INTO 

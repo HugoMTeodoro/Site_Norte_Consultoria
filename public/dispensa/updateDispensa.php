@@ -40,7 +40,7 @@
         $dt_pesquisa = $_POST["datePesquisa"];
         $emergencia = $_POST["tipoEmergencia"];
         $judicial = $_POST["tipoJudicial"];
-        $porcentagem = "numPorcent";
+        $porcentagem=$_POST["numPorcent"];
 
 
 

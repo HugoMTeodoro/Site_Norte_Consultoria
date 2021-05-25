@@ -47,7 +47,7 @@ if (isset($_POST)) {
     $apostilamento = $_POST["txtApostilamento"];
     $dt_pesquisa = $_POST["datePesquisa"];
     $pesquisa ="Pregão"."/".$num_processo."/"."$exercicio";
-    $porcentagem = "numPorcent";
+    $porcentagem=$_POST["numPorcent"];
 
 
     $sql = "UPDATE pregao

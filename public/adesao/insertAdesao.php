@@ -40,7 +40,7 @@ $action = $_POST["action"];
 $apostilamento = $_POST["txtApostilamento"];
 $dt_pesquisa = $_POST["datePesquisa"];
 $pesquisa = "Adesão" . "/" . $num_adesao . "/" . "$exercicio";
-$porcentagem = "numPorcent";
+$porcentagem=$_POST["numPorcent"];
 
 
 $sql = "INSERT INTO 
