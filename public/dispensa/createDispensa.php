@@ -77,7 +77,7 @@ $action = $_POST["action"];; ?>
                 </div>
                 <select class="form-select" name="tipoEmergencia" id="tipoEmergencia">
                 
-                            <option value="Nao">
+                            <option value="Não">
                                 <?php echo "Não"  ?>
                             </option>
                             <option value="Sim">
@@ -93,7 +93,7 @@ $action = $_POST["action"];; ?>
                 </div>
                 <select class="form-select" name="tipoJudicial" id="tipoJudicial">
                 
-                            <option value="Nao">
+                            <option value="Não">
                                 <?php echo "Não"  ?>
                             </option>
                             <option value="Sim">

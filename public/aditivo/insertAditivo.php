@@ -2,6 +2,9 @@
 
 include_once("../../data/connection.php");
 include("../Login/valida.php");
+include("../Template/header.php");
+
+
 $numAditivo = $_POST["numAditivo"];
 $prazo_aditivo = $_POST["datePrazo"];
 $data_aditivo = $_POST["dateAditivo"];
@@ -12,10 +15,12 @@ $id_proc = $_POST["txtID"];
 $codigo_proc = $_POST["txtCodigo"];
 $tipo = $_POST["tipo"];
 $action = $_POST["action"];
+$categoria = $_POST["categoria"];
+$exercicio = $_POST["exercicio"];
 
 $sql = "INSERT INTO 
-    aditivo (numero_aditivo, prazo_aditivo, data_aditivo, valor_aditivo, tipo_aditivo, nome_empresa, codigo_processo, id_processo)
-    VALUES('$numAditivo', '$prazo_aditivo', '$data_aditivo', '$valor_aditivo','$tipo_aditivo','$empresa','$codigo_proc','$id_proc')";
+    aditivo (numero_aditivo, prazo_aditivo, data_aditivo, valor_aditivo, tipo_aditivo, nome_empresa, codigo_processo, id_processo,categoria,orgao,exercicio)
+    VALUES('$numAditivo', '$prazo_aditivo', '$data_aditivo', '$valor_aditivo','$tipo_aditivo','$empresa','$codigo_proc','$id_proc','$categoria','$orgaoa','$exercicio')";
 
 
 $resultado = $connection->query($sql);

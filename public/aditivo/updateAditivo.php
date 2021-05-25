@@ -13,8 +13,11 @@ $tipo = $_POST["tipo"];
 $idaditivo = $_POST["id"];
 $codigo_proc = $_POST["codigo"];
 $action = $_POST["action"];
+$categoria= $_POST["categoria"];
+$exercicio = $_POST["exercicio"];
 
-$sql = "UPDATE aditivo SET numero_aditivo='$numero_aditivo', data_aditivo='$data_aditivo', valor_aditivo='$numValorAditivo', tipo_aditivo='$tipoAditivo', nome_empresa='$Empresa' where id_aditivo='$idaditivo'";
+$sql = "UPDATE aditivo SET numero_aditivo='$numero_aditivo', data_aditivo='$data_aditivo', valor_aditivo='$numValorAditivo', 
+tipo_aditivo='$tipoAditivo', nome_empresa='$Empresa', categoria='$categoria', orgao='$orgaoa',exercicio='$exercicio' where id_aditivo='$idaditivo'";
 
 
 

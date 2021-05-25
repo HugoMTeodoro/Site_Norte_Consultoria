@@ -160,9 +160,26 @@ $action =$_POST["action"];
                 </div>
                  <input type="number" name="numValorAditivo" step="0.01" class="form-control" id="numValorAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default"value="<?php echo $aditivos["valor_aditivo"] ?>">
             </div>
-            
-            
+            <?php
+            $sqlQuery = "SELECT categoria,exercicio FROM $tipo where codigo_processo = '$codigo'";
 
+            $empresas = $connection->query($sqlQuery);
+
+            if ($empresas->num_rows > 0) {
+
+                while ($row = $empresas->fetch_assoc()) {
+                    $categoria = $row["categoria"];
+                    $exercicio = $row["exercicio"];
+            ?>
+
+
+
+            <?php
+                }
+            }
+            ?>
+            <input type="hidden" name="categoria" value="<?php echo $categoria ?>">
+            <input type="hidden" name="exercicio" value="<?php echo $exercicio ?>">
             <br>
             <div class="buttons">
 

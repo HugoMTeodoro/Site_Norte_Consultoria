@@ -99,13 +99,13 @@ $dispensa = $resultado->fetch_assoc();
             <?php
                 if ($dispensa["emergencia"] == "Não") {
                 ?>
-                    <option value="Nao" selected>
+                    <option value="Não" selected>
                         <?php echo "Não"  ?>
                     </option>
                     <?php
                 } else {
                 ?>
-                    <option value="Nao">
+                    <option value="Não">
                         <?php echo "Não"  ?>
                     </option>
                 <?php
@@ -134,13 +134,13 @@ $dispensa = $resultado->fetch_assoc();
                 <?php
                 if ($dispensa["judicial"] == "Não") {
                 ?>
-                    <option value="Nao" selected>
+                    <option value="Não" selected>
                         <?php echo "Não"  ?>
                     </option>
                     <?php
                 } else {
                 ?>
-                    <option value="Nao">
+                    <option value="Não">
                         <?php echo "Não"  ?>
                     </option>
                 <?php
