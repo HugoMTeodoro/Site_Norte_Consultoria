@@ -47,6 +47,7 @@ if ($dispensa->num_rows > 0) {
             <input type="hidden" name="conPub" value="<?php echo $row["conPub"] ?>">
             <input type="hidden" name="conPar" value="<?php echo $row["conPar"] ?>">
             <input type="hidden" name="conAb" value="<?php echo $row["conAb"] ?>">
+            <input type="hidden" name="conAd" value="<?php echo $row["conAd"] ?>">
         </form>
 <?php
     }
