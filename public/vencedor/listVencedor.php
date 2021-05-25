@@ -56,6 +56,9 @@ if ($dadosVencedor->num_rows > 0) {
             </table>
         </div>
     </div>
+    <br>
+    <br>
+    <HR WIDTH=85%>
 <?php
 } else {
     ?>
