@@ -47,6 +47,7 @@ if (isset($_POST)) {
     $apostilamento = $_POST["txtApostilamento"];
     $dt_pesquisa = $_POST["datePesquisa"];
     $pesquisa ="Pregão"."/".$num_processo."/"."$exercicio";
+    $porcentagem = "numPorcent";
 
 
     $sql = "UPDATE pregao
@@ -88,6 +89,7 @@ if (isset($_POST)) {
         "dt_pesquisa='$dt_pesquisa'" . "," .
         "apostilamento='$apostilamento'" . "," .
         "pesquisa='$pesquisa'" . "," .
+        "porcentagem='$porcentagem'" . "," .
         "dt_sessao= '" . $sessao . "' " .
         "WHERE id_pregao = " . $id;
     $resultado = $connection->query($sql);
