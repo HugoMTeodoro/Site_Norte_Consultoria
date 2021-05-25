@@ -142,7 +142,6 @@ $tipo = $_POST["tipo"];
                 <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
                 <input type="hidden" name="action" value="<?php echo $action ?>">
                 <input type="submit" class="btn btn-success" value="Cadastrar">
-                <input type="reset" class="btn btn-danger" onclick="window.location.href='../aditivo/insertAditivo.php'" value="Cancelar">
             </div>
 
 

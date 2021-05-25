@@ -188,7 +188,7 @@ $action =$_POST["action"];
             <input type="hidden" name="codigo" value="<?php echo $cod ?>">
             <input type="hidden" name="action" value="<?php echo $action ?>">
                 <input type="submit" class="btn btn-success" value="Atualizar">
-                <input type="reset" class="btn btn-danger" value="Cancelar">
+                
 
             </div>
 
