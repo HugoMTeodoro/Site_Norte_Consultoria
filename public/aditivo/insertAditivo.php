@@ -18,6 +18,26 @@ $action = $_POST["action"];
 $categoria = $_POST["categoria"];
 $exercicio = $_POST["exercicio"];
 
+$sql = "select valor_total from $tipo where codigo_processo = '$codigo_proc'";
+$resultado = $connection -> query($sql);
+if ($resultado->num_rows > 0) {
+    while ($exibir = $resultado->fetch_assoc()) {
+        $valor_total=$exibir["valor_total"];
+    }
+}
+
+$valor_total=$valor_total + $valor_aditivo;
+echo $valor_total;
+
+$sql = "update $tipo set valor_aditivo=$valor_total where codigo_processo='$codigo_proc'";
+
+
+$resultado = $connection -> query($sql);
+
+
+
+
+
 $sql = "INSERT INTO 
     aditivo (numero_aditivo, prazo_aditivo, data_aditivo, valor_aditivo, tipo_aditivo, nome_empresa, codigo_processo, id_processo,categoria,orgao,exercicio)
     VALUES('$numAditivo', '$prazo_aditivo', '$data_aditivo', '$valor_aditivo','$tipo_aditivo','$empresa','$codigo_proc','$id_proc','$categoria','$orgaoa','$exercicio')";

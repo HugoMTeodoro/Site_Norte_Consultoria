@@ -16,6 +16,11 @@ $action = $_POST["action"];
 $categoria= $_POST["categoria"];
 $exercicio = $_POST["exercicio"];
 
+
+
+
+
+
 $sql = "UPDATE aditivo SET numero_aditivo='$numero_aditivo', data_aditivo='$data_aditivo', valor_aditivo='$numValorAditivo', 
 tipo_aditivo='$tipoAditivo', nome_empresa='$Empresa', categoria='$categoria', orgao='$orgaoa',exercicio='$exercicio' where id_aditivo='$idaditivo'";
 
@@ -34,7 +39,7 @@ if ($resultado) { ?>
 
     <script type="text/javascript">
         alert("Aditivo editado com sucesso");
-        document.myform.submit();
+        //document.myform.submit();
     </script>
 <?php
 } else {
@@ -42,7 +47,7 @@ if ($resultado) { ?>
 
     <script>
         alert("Ocorreu um erro ao editar o aditivo");
-        window.location = '../vencedor/createVencedor.php';
+        //window.location = '../vencedor/createVencedor.php';
     </script>
 <?php
 }

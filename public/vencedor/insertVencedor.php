@@ -10,7 +10,7 @@ $codigo_proc = $_POST["txtCodigo"];
 $action=$_POST["action"];
 
 $sql = "select valor_total from $tipo where codigo_processo = '$codigo_proc'";
-echo $sql;
+
 $resultado = $connection -> query($sql);
 if ($resultado->num_rows > 0) {
     while ($exibir = $resultado->fetch_assoc()) {
@@ -22,7 +22,9 @@ if ($resultado->num_rows > 0) {
 $valor_total=$valor_total + $valor;
 
 
-$sql = "update $tipo set valor_total=$valor_total where codigo_processo='$codigo_proc'";
+$sql = "update $tipo set valor_total=$valor_total, valor_aditivo=$valor_total
+where codigo_processo='$codigo_proc'";
+echo $sql;
 
 
 $resultado = $connection -> query($sql);
