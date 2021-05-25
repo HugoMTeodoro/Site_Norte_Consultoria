@@ -376,13 +376,7 @@ $dispensa = $resultado->fetch_assoc();
             <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["copia_empenho_compras_legais"] ?>">
         </div>
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
-            </div>
-            <input type="number" name="numTotal" class="form-control" id="numTotal" aria-label="Default" step="0.01" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["valor_total"] ?>">
-        </div>
-
+      
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">

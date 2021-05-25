@@ -94,8 +94,7 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Portaria nomeando a comissão</span>
                 </div>
-                <input type="text" name="txtp" class="form-control" id="txtp" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
+                <textarea name="txtp" id="txtp" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>            </div>
             
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -157,8 +156,7 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato</span>
                 </div>
-                <input type="text" name="txtMinuta" class="form-control" id="txtMinuta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
+                <textarea name="txtMinuta" id="txtMinuta" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -178,8 +176,7 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
                 </div>
-                <input type="text" name="txtHabilitacao" class="form-control" id="txtHabilitacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
+                <textarea name="txtHabilitacao" id="txtHabilidade" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

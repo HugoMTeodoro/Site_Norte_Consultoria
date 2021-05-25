@@ -1,10 +1,10 @@
 <?php include("../Template/header.php");
 include("../../data/connection.php");
 include("../Login/valida.php");
-$action=$_POST["action"];
-;?>
+$action = $_POST["action"];; ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,11 @@ $action=$_POST["action"];
     <br>
     <br>
 
-    
+
     <div class="form">
         <form action="insertModalidade.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Modalidade</h3>
-            
+
 
 
             <div class="input-group mb-3">
@@ -64,7 +64,7 @@ $action=$_POST["action"];
                 </select>
             </div>
 
-            
+
 
 
             <div class="input-group mb-3">
@@ -74,7 +74,7 @@ $action=$_POST["action"];
                 <input type="number" name="numero" class="form-control" id="numero" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
@@ -146,9 +146,9 @@ $action=$_POST["action"];
             </div>
 
 
-            
-            
-           
+
+
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -163,7 +163,7 @@ $action=$_POST["action"];
                 </div>
                 <input type="date" name="dateEntrega" class="form-control" id="dateEntrega" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data abertura</span>
@@ -176,7 +176,7 @@ $action=$_POST["action"];
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da sessão</span>
                 </div>
                 <input type="date" name="datesess" class="form-control" id="datesess" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>        
+            </div>
 
 
             <div class="input-group mb-3">
@@ -185,7 +185,7 @@ $action=$_POST["action"];
                 </div>
                 <input type="date" name="dateNomeacao" class="form-control" id="dateNomeacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da solicitação de compras/serviços</span>
@@ -206,7 +206,7 @@ $action=$_POST["action"];
                 </div>
                 <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autuação</span>
@@ -232,7 +232,7 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato/ata reg. preços</span>
                 </div>
-                <input type="text" name="txtMinuta" class="form-control" id="txtMinuta" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtMinuta" id="txtMinuta" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -262,7 +262,7 @@ $action=$_POST["action"];
                 </div>
                 <textarea name="txtEspecificacao" id="txtEspecificacao" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data recibo de entrega do convite</span>
@@ -274,7 +274,7 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
                 </div>
-                <input type="text" name="txtHabilitacao" class="form-control" id="txtHabilitacao" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <textarea name="txtHabilitacao" id="txtHabilitacao" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -309,8 +309,7 @@ $action=$_POST["action"];
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Classificados das propostas</span>
                 </div>
-                <input type="text" name="txtClassificados" class="form-control" id="txtClassificados" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
+                <textarea name="txtClassificados" id="txtClassificados" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -318,7 +317,7 @@ $action=$_POST["action"];
                 </div>
                 <input type="date" name="dateResultadoJulgamento" class="form-control" id="dateResultadoJulgamento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Prazo recursal da habilitação</span>
@@ -333,7 +332,7 @@ $action=$_POST["action"];
                 <input type="date" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -428,47 +427,42 @@ $action=$_POST["action"];
                 </div>
                 <input type="text" name="txtAnalista" class="form-control" id="txtAnalista" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $nome ?>" readonly>
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Órgão</span>
                 </div>
                 <select class="form-select" name="txtOrgao" id="txtOrgao">
-                
+
                     <?php
 
-                        $sqlQuery = "SELECT * FROM orgao";
+                    $sqlQuery = "SELECT * FROM orgao";
 
-                        $orgaos = $connection -> query($sqlQuery);
+                    $orgaos = $connection->query($sqlQuery);
 
-                        if($orgaos -> num_rows > 0)
-                        {
+                    if ($orgaos->num_rows > 0) {
 
-                            while($row = $orgaos -> fetch_assoc())
-                            {
-                                if($orgaocrud == $row["nome_orgao"])
-                                {
+                        while ($row = $orgaos->fetch_assoc()) {
+                            if ($orgaocrud == $row["nome_orgao"]) {
                     ?>
-                                    <option value="<?php echo $row["nome_orgao"]?>" selected>
-                                        <?php echo $row["nome_orgao"] ?>
-                                    </option>
+                                <option value="<?php echo $row["nome_orgao"] ?>" selected>
+                                    <?php echo $row["nome_orgao"] ?>
+                                </option>
+                            <?php
+                            } else {
+                            ?>
+                                <option value="<?php echo $row["nome_orgao"] ?>">
+                                    <?php echo $row["nome_orgao"] ?>
+                                </option>
+
                     <?php
-                                }
-                                else
-                                {
-                    ?>                    
-                                    <option value="<?php echo $row["nome_orgao"]?>">
-                                        <?php echo $row["nome_orgao"]?>
-                                    </option>
-                    
-                    <?php
-                                }
                             }
                         }
+                    }
                     ?>
                 </select>
             </div>
-        
+
 
             <?php
             date_default_timezone_set('America/Sao_Paulo');
@@ -492,29 +486,30 @@ $action=$_POST["action"];
                 <input oninput="v_ = this.value; if(v_.length > 5){ this.value = v_.slice(0, 5); }" onblur="v_ = this.value; if(!~v_.indexOf('.')){ vl_ = v_.length; z_ = vl_ == 1 ? '0.00' : ( vl_ == 3 ? '0' : (vl_ == 2 ? '00' : ''));this.value = v_.length < 5 && v_ != '100' ? (((v_[0] ? v_[0] : '')+(v_[1] ? v_[1]+'.' : '')+(v_[2] ? v_[2] : '')+(v_[3] ? v_[3] : '')+(v_[4] ? v_[4] : '')+z_)):('100.00')};" type="number" id="numPorcent" step=".01" min=".01" max="100">
             </div>
 
-            <br>    
-            
+            <br>
+
 
             <div class="buttons">
-            <input type="hidden" name="tipo" id="tipo" value="inexigibilidade" >
-            <input type="hidden" name="action" id="action" value="<?php echo $action ?>" >
-            
-        
-                <input type="submit" class="btn btn-success" value="Proximo" >
+                <input type="hidden" name="tipo" id="tipo" value="inexigibilidade">
+                <input type="hidden" name="action" id="action" value="<?php echo $action ?>">
+
+
+                <input type="submit" class="btn btn-success" value="Proximo">
                 <input type="reset" class="btn btn-danger" onclick="window.location.href='../modalidade/listModalidade.php'" value="Cancelar">
 
             </div>
-            </div>
-
-            
-
-            
+    </div>
 
 
-            
-        </form>
+
+
+
+
+
+    </form>
     </div>
 
 
 </body>
+
 </html>
