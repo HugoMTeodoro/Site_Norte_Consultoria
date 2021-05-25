@@ -108,7 +108,7 @@ include("../login/valida.php");
                 <p class="card-text"> tempo médio gasto na realização dos orçamentos</p>
                 <div class="buttons">
 
-                    <a href="../diagnosticos/listDiagnosticos.php" class="btn btn-primary">Diagnosticar</a>
+                    <a href="../diagnosticos/diagnostico2.php" class="btn btn-primary">Diagnosticar</a>
 
 
 
@@ -119,7 +119,7 @@ include("../login/valida.php");
                 <p class="card-text"> tempo médio gasto na aprovação das minutas de edital e contrato</p>
                 <div class="buttons">
 
-                    <a href="../diagnosticos/listDiagnosticos.php" class="btn btn-primary">Diagnosticar</a>
+                    <a href="../diagnosticos/diagnostico3.php" class="btn btn-primary">Diagnosticar</a>
 
 
 
@@ -130,7 +130,7 @@ include("../login/valida.php");
                 <p class="card-text"> tempo médio de publicação dos editais</p>
                 <div class="buttons">
 
-                    <a href="../diagnosticos/listDiagnosticos.php" class="btn btn-primary">Diagnosticar</a>
+                    <a href="../diagnosticos/diagnostico4.php" class="btn btn-primary">Diagnosticar</a>
 
 
 
@@ -141,7 +141,7 @@ include("../login/valida.php");
                 <p class="card-text"> número de processos realizados para determinados tipos de itens</p>
                 <div class="buttons">
 
-                    <a href="../diagnosticos/listDiagnosticos.php" class="btn btn-primary">Diagnosticar</a>
+                    <a href="../diagnosticos/diagnostico5.php" class="btn btn-primary">Diagnosticar</a>
 
 
 
@@ -152,7 +152,7 @@ include("../login/valida.php");
                 <p class="card-text"> número de dispensas realizadas para atender a emergências</p>
                 <div class="buttons">
 
-                    <a href="../diagnosticos/listDiagnosticos.php" class="btn btn-primary">Diagnosticar</a>
+                    <a href="../diagnosticos/diagnostico6.php" class="btn btn-primary">Diagnosticar</a>
 
 
 
@@ -163,11 +163,7 @@ include("../login/valida.php");
                 <p class="card-text"> Média de tempo gasto para a realização de um procedimento licitatório desde a Solicitação até a homologação</p>
                 <div class="buttons">
 
-                    <a href="../diagnosticos/listDiagnosticos.php" class="btn btn-primary">Diagnosticar</a>
-
-
-
-
+                    <a href="../diagnosticos/diagnostico7.php" class="btn btn-primary">Diagnosticar</a>
                 </div>
             </div>
             <br>

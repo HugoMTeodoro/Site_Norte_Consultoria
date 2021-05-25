@@ -92,7 +92,7 @@ if ($dados->num_rows > 0) {
 ?>
 
 <html>
-<a id="download_link" href="/" download="">download</a>
+
 <head>
     <br>
 
@@ -129,10 +129,7 @@ if ($dados->num_rows > 0) {
 
             var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
-            google.visualization.events.addListener(chart, 'ready', function() {
-            columnchart_material.innerHTML = '<img id="chart" src=' + chart.get() + '>';
-            document.getElementById("download_link").setAttribute("href", chart.getImageURI())
-        });
+            
 
             chart.draw(data, google.charts.Bar.convertOptions(options));
         }
