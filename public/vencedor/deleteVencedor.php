@@ -1,5 +1,6 @@
 <?php
 include_once("../../data/connection.php");
+include("../Login/valida.php");
 $tipo=$_POST["tipo"];
 $action=$_POST["action"];
     

@@ -1,6 +1,6 @@
 <?php
 include("../../data/connection.php");
-
+include("../Login/valida.php");
 $mediadisp=0;
 $mediaadesao=0;
 $mediainex=0;

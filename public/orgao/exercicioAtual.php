@@ -1,4 +1,5 @@
 <?php
+include("../Login/valida.php");
 include_once("../../data/connection.php");
 $exercicio = $_GET["param"];
 $sql = "UPDATE  

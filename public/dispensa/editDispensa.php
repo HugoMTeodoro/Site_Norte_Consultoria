@@ -1,7 +1,7 @@
 <?php
 include("../Template/header.php");
 include_once("../../data/connection.php");
-
+include("../Login/valida.php");
 
 
 //$id = $_POST["id"];

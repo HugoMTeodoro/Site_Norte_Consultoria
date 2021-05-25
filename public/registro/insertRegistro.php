@@ -1,7 +1,7 @@
 <?php
 
 include_once("../../data/connection.php");
-
+include("../Login/valida.php");
 $registro = $_POST["txtRegistro"];
 
 $sql = "INSERT INTO 

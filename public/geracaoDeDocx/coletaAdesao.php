@@ -1,4 +1,5 @@
 <?php
+include("../Login/valida.php");
 include_once("../../data/connection.php");
 $codigo_proc = $_GET["id"];
 $empresas = '';

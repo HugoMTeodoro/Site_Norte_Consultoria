@@ -1,6 +1,6 @@
 <?php
 include("../../data/connection.php");
-
+include("../Login/valida.php");
 $quantdisp=0;
 $quantadesao=0;
 $quantinex=0;

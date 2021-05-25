@@ -1,6 +1,7 @@
 <?php
 include("../template/header.php");
 include_once("../../data/connection.php");
+include("../Login/valida.php");
 $codigo = $_POST["codigo"];
 $tipo = $_POST["tipo"];
 $action = $_POST["action"];

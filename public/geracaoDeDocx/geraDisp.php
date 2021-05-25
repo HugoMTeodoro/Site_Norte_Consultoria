@@ -1,5 +1,5 @@
 <?php
-
+include("../Login/valida.php");
 use PhpOffice\PhpWord\SimpleType\TextAlignment;
 
 include_once("../vendor/autoload.php");

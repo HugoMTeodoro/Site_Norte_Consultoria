@@ -1,5 +1,5 @@
 <?php
-
+include("../Login/valida.php");
 include_once("../../data/connection.php");
 
 if (isset($_POST)) {

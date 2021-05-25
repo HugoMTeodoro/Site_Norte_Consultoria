@@ -1,6 +1,6 @@
 <?php
 include("../../data/connection.php");
-
+include("../Login/valida.php");
 $quant=0;
 
 $sql= "select count(*) as quantdisp from aditivo where categoria='Obras e serviços de engenharia'";

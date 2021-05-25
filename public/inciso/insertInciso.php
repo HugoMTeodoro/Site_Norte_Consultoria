@@ -1,5 +1,5 @@
 <?php
-
+include("../Login/valida.php");
 include_once("../../data/connection.php");
 
 $inciso = $_POST["txtInciso"];

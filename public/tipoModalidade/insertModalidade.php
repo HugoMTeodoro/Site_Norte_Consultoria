@@ -1,6 +1,7 @@
 <?php
 
 include_once("../../data/connection.php");
+include("../Login/valida.php");
 
 $modalidade = $_POST["txtModalidade"];
 
