@@ -45,7 +45,7 @@ if ($dadosDispensa->num_rows > 0) {
                                 <a href="../geracaoDeDocx/coletaDisp.php?id=<?php echo $exibir["codigo_processo"] ?>" style="text-decoration: none; color: white" target="blank">Relatorio</a>
                             </button>
                             <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
-                                <a href="deleteDispensa.php?id=<?php echo $exibir["id_dispensa"] ?>" style="text-decoration: none; color: white"> Excluir </a>
+                                <a href="deleteDispensa.php?id=<?php echo $exibir["id_dispensa"] ?>" style="text-decoration: none; color: white" onclick="return confirm('Deseja mesmo apagar o processo?');"> Excluir </a>
                             </button>
                             <form name="editbutton" action="editDispensa.php" method="POST">
                                 <input type="hidden" name="codigo" value="<?php echo $exibir["codigo_processo"] ?>">
