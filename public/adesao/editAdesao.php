@@ -86,7 +86,7 @@ $adesao = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
                 </div>
-                <textarea name="txtObjeto" id="txtObjeto" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $adesao["Objeto"]?> 
+                <textarea name="txtObjeto" id="txtObjeto" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $adesao["Objeto"]?> </textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -199,14 +199,14 @@ $adesao = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Verificação montante adjudicado</span>
                 </div>
-                <textarea name="txtVerificacao" id="txtVerificacao" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $adesao["verificacao"]?>
+                <textarea name="txtVerificacao" id="txtVerificacao" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $adesao["verificacao"]?></textarea>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="S-sizing-default">Documento habilitação da adjudicatária</span>
                 </div>
-                <textarea name="txtDocAdjudicataria" id="txtDocAdjudicataria" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $adesao["documento"]?>
+                <textarea name="txtDocAdjudicataria" id="txtDocAdjudicataria" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $adesao["documento"]?></textarea>
             </div>
 
             <div class="input-group mb-3">
@@ -293,14 +293,14 @@ $adesao = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
                 </div>
-                <textarea name="txtApostilamento" id="txtApostilamento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $adesao["apostilamento"]?>
+                <textarea name="txtApostilamento" id="txtApostilamento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $adesao["apostilamento"]?></textarea>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
                 </div>
-                <textarea name="txtCopias" id="txtCopias" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $adesao["copia_notas"]?>
+                <textarea name="txtCopias" id="txtCopias" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $adesao["copia_notas"]?></textarea>
             </div>
 
 
@@ -308,7 +308,7 @@ $adesao = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
                 </div>
-                <textarea name="txtObservacoes" id="txtObservacoes" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $adesao["observacoes"]?>
+                <textarea name="txtObservacoes" id="txtObservacoes" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $adesao["observacoes"]?></textarea>
             </div>
 
 
