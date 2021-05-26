@@ -24,7 +24,7 @@ $sqlQuery = "SELECT valor_total FROM $tipo where codigo_processo = '$codigo'";
             }
 
 ?>
-<HR WIDTH=85%>
+<HR style="height:2px;border-width:0;color:gray;background-color:gray" WIDTH=85%>
 <html lang="en">
 
 <head>
