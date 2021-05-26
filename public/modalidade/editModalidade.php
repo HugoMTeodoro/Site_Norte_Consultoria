@@ -2,22 +2,23 @@
 include("../../data/connection.php");
 include("../Login/valida.php");
 
-   
 
-    $codigo = $_POST["codigo"];
-    $tipo = $_POST["tipo"];
-    $action = $_POST["action"];
-  
-    $sql = "SELECT * FROM modalidade WHERE codigo_processo = '". $codigo . "'";
-    $resultado = $connection->query($sql);
-    $modalidade = $resultado->fetch_assoc();
 
-    
+$codigo = $_POST["codigo"];
+$tipo = $_POST["tipo"];
+$action = $_POST["action"];
+
+$sql = "SELECT * FROM modalidade WHERE codigo_processo = '" . $codigo . "'";
+$resultado = $connection->query($sql);
+$modalidade = $resultado->fetch_assoc();
+
+
 
 ?>
 
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,45 +29,45 @@ include("../Login/valida.php");
     <br>
     <br>
 
-    
+
     <div class="form">
         <form action="updateModalidade.php" method="POST" style="margin-left: 100px; margin-right: 100px;">
             <h3>Modalidade</h3>
 
             <div class="buttons">
-            
-            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-            <p align="right">
-  
-            <a href="#vencedores" class="btn btn-primary">Vencedores </a>
-            <a href="#aditivo" class="btn btn-primary" >Aditivo</a>
-            
-            <a href="#consideracoes" class="btn btn-primary">Considerações</a>
 
-            </p>
-      
+                <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                <p align="right">
+
+                    <a href="#vencedores" class="btn btn-primary">Vencedores </a>
+                    <a href="#aditivo" class="btn btn-primary">Aditivo</a>
+
+                    <a href="#consideracoes" class="btn btn-primary">Considerações</a>
+
+                </p>
+
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Id da modalidade</span>
                 </div>
 
-                <input type="number" name="modalidadeId" class="form-control input-sm" id="modalidadeId" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["id_modalidade"]?>" readonly>
+                <input type="number" name="modalidadeId" class="form-control input-sm" id="modalidadeId" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["id_modalidade"] ?>" readonly>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
                 </div>
-                <input type="text" name="txtExercicio" class="form-control" id="txtExercicio" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["exercicio"]?>" >
+                <input type="text" name="txtExercicio" class="form-control" id="txtExercicio" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["exercicio"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nº Processo</span>
                 </div>
-                <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["num_processo"]?>" >
+                <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["num_processo"] ?>">
             </div>
 
             <div class="input-group mb-3">
@@ -84,49 +85,49 @@ include("../Login/valida.php");
                     if ($modalidadet->num_rows > 0) {
 
                         while ($row = $modalidadet->fetch_assoc()) {
-                            if($modalidade["modalidade"] === $row["modalidade"]) {
-                            
-                                ?>
+                            if ($modalidade["modalidade"] === $row["modalidade"]) {
+
+                    ?>
                                 <option value="<?php echo $row["modalidade"] ?>" selected>
                                     <?php echo $row["modalidade"]  ?>
                                 </option>
-                                <?php
-                                }else {
-                                    ?>
-                                    <option value="<?php echo $row["modalidade"] ?>">
-                                    
+                            <?php
+                            } else {
+                            ?>
+                                <option value="<?php echo $row["modalidade"] ?>">
+
                                     <?php echo $row["modalidade"]  ?>
                                 </option>
-                                <?php
-                                }
+                    <?php
+                            }
+                        }
                     }
-                }
                     ?>
                 </select>
             </div>
-           
 
-      
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default"> Número </span>
                 </div>
-                <input type="number" name="numero" class="form-control" id="numero" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["numero"]?>" >
+                <input type="number" name="numero" class="form-control" id="numero" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["numero"] ?>">
             </div>
 
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
                 </div>
-                <input type="text" name="txtObjeto" class="form-control" id="txtObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["objeto"]?>" >
+                <textarea name="txtObjeto" id="txtObjeto" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $modalidade["objeto"]?> </textarea>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nº Processo</span>
                 </div>
-                <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["registro"]?>" >
+                <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["registro"] ?>">
             </div>
 
             <div class="input-group mb-3">
@@ -134,7 +135,7 @@ include("../Login/valida.php");
                     <span class="input-group-text" id="inputGroup-sizing-default">Registro de preço?</span>
                 </div>
                 <select class="form-select" name="registro" id="registro">
-                    <option value="-1" selected ></option>
+                    <option value="-1" selected></option>
                     <?php
 
                     $sqlQuery = "SELECT * FROM registro ORDER BY registro";
@@ -144,23 +145,23 @@ include("../Login/valida.php");
                     if ($registro->num_rows > 0) {
 
                         while ($row = $registro->fetch_assoc()) {
-                            if($modalidade["registro"] === $row["registro"]) {
-                            
-                                ?>
+                            if ($modalidade["registro"] === $row["registro"]) {
+
+                    ?>
                                 <option value="<?php echo $row["registro"] ?>" selected>
                                     <?php echo $row["registro"]  ?>
                                 </option>
-                                <?php
-                                }else {
-                                    ?>
-                                    <option value="<?php echo $row["registro"] ?>">
-                                    
+                            <?php
+                            } else {
+                            ?>
+                                <option value="<?php echo $row["registro"] ?>">
+
                                     <?php echo $row["registro"]  ?>
                                 </option>
-                                <?php
-                                }
+                    <?php
+                            }
+                        }
                     }
-                }
                     ?>
                 </select>
             </div>
@@ -169,8 +170,8 @@ include("../Login/valida.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
                 </div>
-                <select class="form-select" name="txtCategoria" id="txtCategoria" >
-                
+                <select class="form-select" name="txtCategoria" id="txtCategoria">
+
                     <?php
 
                     $sqlQuery = "SELECT * FROM categoria ORDER BY categoria";
@@ -180,61 +181,60 @@ include("../Login/valida.php");
                     if ($categoria->num_rows > 0) {
 
                         while ($row = $categoria->fetch_assoc()) {
-                            if($modalidade["categoria"] === $row["categoria"]) {
-                            
+                            if ($modalidade["categoria"] === $row["categoria"]) {
+
+                    ?>
+                                <option value="<?php echo $row["categoria"] ?>" selected>
+                                    <?php echo $row["categoria"]  ?>
+                                </option>
+                            <?php
+                            } else {
                             ?>
-                            <option value="<?php echo $row["categoria"] ?>" selected>
-                                <?php echo $row["categoria"]  ?>
-                            </option>
-                            <?php
-                            }else {
-                                ?>
                                 <option value="<?php echo $row["categoria"] ?>">
-                                
-                                <?php echo $row["categoria"]  ?>
-                            </option>
-                            <?php
+
+                                    <?php echo $row["categoria"]  ?>
+                                </option>
+                    <?php
                             }
                         }
-                    
-                        }
-                    
+                    }
+
                     ?>
                 </select>
             </div>
 
 
-            
-            
-           
+
+
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data edital</span>
                 </div>
-                <input type="date" name="dateEdital" class="form-control" id="dateEdital" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_edital"]?>" >
+                <input type="date" name="dateEdital" class="form-control" id="dateEdital" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_edital"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data entrega</span>
                 </div>
-                <input type="date" name="dateEntrega" class="form-control" id="dateEntrega" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_entrega"]?>" >
+                <input type="date" name="dateEntrega" class="form-control" id="dateEntrega" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_entrega"] ?>">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data abertura</span>
                 </div>
-                <input type="date" name="dateAbertura" class="form-control" id="dateAbertura" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_abertura"]?>" >
+                <input type="date" name="dateAbertura" class="form-control" id="dateAbertura" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_abertura"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da sessão</span>
                 </div>
-                <input type="date" name="datesess" class="form-control" id="datesess" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_sessao"]?>">
-            </div>             
+                <input type="date" name="datesess" class="form-control" id="datesess" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_sessao"] ?>">
+            </div>
 
 
 
@@ -242,229 +242,229 @@ include("../Login/valida.php");
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data portaria nomeando a comissão</span>
                 </div>
-                <input type="date" name="dateNomeacao" class="form-control" id="dateNomeacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_portaria"]?>" >
+                <input type="date" name="dateNomeacao" class="form-control" id="dateNomeacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_portaria"] ?>">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da solicitação de compras/serviços</span>
                 </div>
-                <input type="date" name="dates" class="form-control" id="dates" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_solicitacao"]?>" >
+                <input type="date" name="dates" class="form-control" id="dates" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_solicitacao"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de preço estimativo (Orçamento)</span>
                 </div>
-                <input type="date" name="datepe" class="form-control" id="datepe" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_orcamento"]?>" >
+                <input type="date" name="datepe" class="form-control" id="datepe" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_orcamento"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data da autorização para a abertura do processo</span>
                 </div>
-                <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_autorizacao"]?>" >
+                <input type="date" name="datea" class="form-control" id="datea" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_autorizacao"] ?>">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data autuação</span>
                 </div>
-                <input type="date" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_autuacao"]?>" >
+                <input type="date" name="dateau" class="form-control" id="dateau" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_autuacao"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Enquadramento na modalidade pertinente</span>
                 </div>
-                <input type="text" name="txtEnquadramento" class="form-control" id="txtEnquadramento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["enquadramento"]?>" >
+                <textarea name="txtEnquadramento" id="txtEnquadramento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $modalidade["enquadramento"]?> 
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data edital e seus anexos</span>
                 </div>
-                <input type="date" name="dateEditalEAnexos" class="form-control" id="dateEditalEAnexos" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_anexos"]?>" >
+                <input type="date" name="dateEditalEAnexos" class="form-control" id="dateEditalEAnexos" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_anexos"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato/ata reg. preços</span>
                 </div>
-                <input type="text" name="txtMinuta" class="form-control" id="txtMinuta" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["minuta"]?>" >
+                <textarea name="txtMinuta" id="txtMinuta" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $modalidade["minuta"]?> 
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data aprovação da minutas e seus anexos</span>
                 </div>
-                <input type="date" name="dateAprovMin" class="form-control" id="dateAprovMin" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_aprovacao"]?>" >
+                <input type="date" name="dateAprovMin" class="form-control" id="dateAprovMin" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_aprovacao"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data de emissão</span>
                 </div>
-                <input type="date" name="dateemi" class="form-control" id="dateemi" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_emissao"]?>">
+                <input type="date" name="dateemi" class="form-control" id="dateemi" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_emissao"] ?>">
             </div>
-            
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data publicação do edital</span>
                 </div>
-                <input type="date" name="datePubEd" class="form-control" id="datePubEd" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_publicacao"]?>" >
+                <input type="date" name="datePubEd" class="form-control" id="datePubEd" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_publicacao"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Especificação correta do objeto</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Especificação do projeto</span>
                 </div>
-                <input type="text" name="txtEspecificacaoObjeto" class="form-control" id="txtEspecificacaoObjeto" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["especificacao"]?>" >
+                <textarea name="txtEspecificacao" id="txtEspecificacao" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $modalidade["especificacao"]?> 
             </div>
-            
 
-            
+
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data recibo de entrega do convite</span>
                 </div>
-                <input type="date" name="dateRecibo" class="form-control" id="dateRecibo" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_recibo"]?>" >
+                <input type="date" name="dateRecibo" class="form-control" id="dateRecibo" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_recibo"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
                 </div>
-                <input type="text" name="txtHabilitacao" class="form-control" id="txtHabilitacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["documentos"]?>" >
+                <textarea name="txtHabilitacao" id="txtHabilitacao" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $modalidade["documentos"]?> 
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data ata de abertura</span>
                 </div>
-                <input type="date" name="dateAtaAbertura" class="form-control" id="dateAtaAbertura" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_ata"]?>" >
+                <input type="date" name="dateAtaAbertura" class="form-control" id="dateAtaAbertura" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_ata"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data confirmação de autenticidade</span>
                 </div>
-                <input type="date" name="dateAutenticidade" class="form-control" id="dateAutenticidade" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_confirmacao"]?>" >
+                <input type="date" name="dateAutenticidade" class="form-control" id="dateAutenticidade" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_confirmacao"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Prazo recursal da proposta</span>
                 </div>
-                <input type="date" name="datePrazoProposta" class="form-control" id="datePrazoProposta" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["prazo"]?>" >
+                <input type="date" name="datePrazoProposta" class="form-control" id="datePrazoProposta" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["prazo"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data ata de julgamento</span>
                 </div>
-                <input type="date" name="dateAtaJulgamento" class="form-control" id="dateAtaJulgamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_ata_julgamento"]?>" >
+                <input type="date" name="dateAtaJulgamento" class="form-control" id="dateAtaJulgamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_ata_julgamento"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Classificados das propostas</span>
                 </div>
-                <input type="text" name="txtClassificados" class="form-control" id="txtClassificados" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["classificados"]?>" >
+                <textarea name="txtClassificados" id="txtClassificados" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $modalidade["classificados"]?> 
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data publicação do resultado do julgamento</span>
                 </div>
-                <input type="date" name="dateResultadoJulgamento" class="form-control" id="dateResultadoJulgamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_pub_res"]?>" >
+                <input type="date" name="dateResultadoJulgamento" class="form-control" id="dateResultadoJulgamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_pub_res"] ?>">
             </div>
-            
+
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Prazo recursal da habilitação</span>
                 </div>
-                <input type="date" name="datePrazoHabilitacao" class="form-control" id="datePrazoHabilitacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["prazo2"]?>" >
+                <input type="date" name="datePrazoHabilitacao" class="form-control" id="datePrazoHabilitacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["prazo2"] ?>">
             </div>
-            
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data parecer jurídico</span>
                 </div>
-                <input type="date" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_parecer_juridico"]?>" >
+                <input type="date" name="dateParecer" class="form-control" id="dateParecer" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_parecer_juridico"] ?>">
             </div>
 
-            
+
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data adjudicação</span>
                 </div>
-                <input type="date" name="dateAdjudicacao" class="form-control" id="dateAdjudicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_adjudicacao"]?>" >
+                <input type="date" name="dateAdjudicacao" class="form-control" id="dateAdjudicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_adjudicacao"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data homologação</span>
                 </div>
-                <input type="date" name="dateHomologacao" class="form-control" id="dateHomologacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_homologacao"]?>" >
+                <input type="date" name="dateHomologacao" class="form-control" id="dateHomologacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_homologacao"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data contrato firmado</span>
                 </div>
-                <input type="date" name="dateCF" class="form-control" id="dateCF" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_contrato_firmado"]?>" >
+                <input type="date" name="dateCF" class="form-control" id="dateCF" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_contrato_firmado"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Data publicação do contrato</span>
                 </div>
-                <input type="date" name="datePublicacao" class="form-control" id="datePublicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_publicacao_contrato"]?>" >
+                <input type="date" name="datePublicacao" class="form-control" id="datePublicacao" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_publicacao_contrato"] ?>">
             </div>
 
             <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Data de última pesquisa de preço</span>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data de última pesquisa de preço</span>
+                </div>
+                <input type="date" name="datePesquisa" class="form-control" id="datePesquisa" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_pesquisa"] ?>">
             </div>
-            <input type="date" name="datePesquisa" class="form-control" id="datePesquisa" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_pesquisa"] ?>">
-        </div>
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
-            </div>
-            <input type="text" name="txtApostilamento" class="form-control" id="txtApostilamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["apostilamento"] ?>">
-        </div>
 
             <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
+                </div>
+                <textarea name="txtApostilamento" id="txtApostilamento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $modalidade["apostilamento"]?> 
             </div>
-            <input type="text" name="txtCopias" class="form-control" id="txtCopias" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["copia"] ?>">
-        </div>
 
-
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
+                </div>
+                <textarea name="txtCopias" id="txtCopias" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $modalidade["copia"]?> 
             </div>
-            <input type="text" name="txtObservacoes" class="form-control" id="txtObservacoes" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["observacoes"] ?>">
-        </div>
 
 
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
+                </div>
+                <textarea name="txtObservacoes" id="txtObservacoes" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea> <?php echo $modalidade["observacoes"]?> 
             </div>
-            <input type="datetime" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_lancamento"] ?>">
-        </div>
 
-        <div class="input-group mb-3">
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>
+                </div>
+                <input type="datetime" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $modalidade["dt_lancamento"] ?>">
+            </div>
+
+            <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Porcentagem de aditivo permitida</span>
                 </div>
@@ -473,23 +473,22 @@ include("../Login/valida.php");
 
 
 
-        <br>
-        <div class="buttons">
-            <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
-            <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
-            <input type="hidden" name="action" value="<?php echo $action ?>">
+            <br>
+            <div class="buttons">
+                <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+                <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+                <input type="hidden" name="action" value="<?php echo $action ?>">
 
-            <input type="submit" class="btn btn-success" value="Atualizar">
-            <input type="reset" class="btn btn-danger" onclick="window.location.href='../modalidade/listModalidade.php'" value="Cancelar">
+                <input type="submit" class="btn btn-success" value="Atualizar">
+                <input type="reset" class="btn btn-danger" onclick="window.location.href='../modalidade/listModalidade.php'" value="Cancelar">
 
-        </div>
+            </div>
 
-    </form>
+        </form>
 
-</div>
+    </div>
 
-<section id="vencedores"></section>
+    <section id="vencedores"></section>
     <?php
-    include("../vencedor/createVencedor.php");  
+    include("../vencedor/createVencedor.php");
     ?>
-    
