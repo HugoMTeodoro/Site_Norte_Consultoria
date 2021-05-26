@@ -20,8 +20,8 @@ include("../Login/valida.php"); ?>
         <h2>Pregão</h2>
 
         <br>
-        
-		<br>
+        <br>
+		
         <div class="input-group mb-3">
 			<div class="input-group-prepend">
 				<span class="input-group-text" id="inputGroup-sizing-default">Exercício</span>
@@ -53,7 +53,7 @@ include("../Login/valida.php"); ?>
 				?>
 			</select>
 		</div>
-
+				<br>
 		<form action="createPregao.php" method="POST">
 		
 		<input type="hidden" name="tipo" id="tipo" value="pregao" > 
