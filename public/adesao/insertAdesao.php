@@ -55,17 +55,24 @@ $sql = "INSERT INTO
     values ('$exercicio', '$num_adesao', '$num_inexigibilidade', '$objeto', '$categoria', '$dt_inicio', '$dt_ratificacao', '$portaria', '$dt_solicitacao', '$dt_orcamento', '$dt_solicitacaoo', '$dt_autorizacao', '$dt_solicitacao_empresa', '$verificacao', '$documento', '$dt_confirmacao', '$dt_ata', '$dt_autorizacao_abertura', '$dt_autuacao', '$dt_ata_inexigibilidade', '$dt_parecer', '$dt_publicacao', '$dt_contrato_firmado', '$dt_publicacao_contrato', '$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo','$autadju','$dtabertura','$apostilamento','$dt_pesquisa','$pesquisa','$porcentagem')";
 
 $resultado = $connection->query($sql);
-
+?>
+<form name="myform" action="<?php echo $action ?>" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+        <input type="hidden" name="action" value="<?php echo $action ?>">
+    </form>
+    <?php
 if ($resultado) { ?>
     <script>
         alert("Adesão cadastrada com sucesso");
-        window.location = 'listAdesao.php';
+        document.myform.submit();
     </script>
 <?php
 } else {
-    echo $sql; ?>
+?>
     <script>
-        alert("Ocorreu um erro ao cadastrar a adesão");
+    window.location = 'listAdesao.php'
+        alert("Ocorreu um erro ao cadastrar a adesão - Processo pode ja existir");
     </script>
 
 <?php

@@ -2,7 +2,14 @@
 include("../Template/header.php");
 include_once("../../data/connection.php");
 include("../Login/valida.php");
-
+if (isset($_POST["action"])) {
+} else {
+?>
+    <script>
+        window.location = "../dispensa/listDispensa.php";
+    </script>
+<?php
+}
 
 //$id = $_POST["id"];
 $codigo = $_POST["codigo"];
@@ -23,18 +30,19 @@ $dispensa = $resultado->fetch_assoc();
         <h3>Editar</h3>
 
         <div class="buttons">
-            
+
             <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
             <p align="right">
-  
-            <a href="#vencedores" class="btn btn-primary">Vencedores </a>
-            <a href="#aditivo" class="btn btn-primary" >Aditivo</a>
-            
-            <a href="#consideracoes" class="btn btn-primary">Considerações</a>
+
+                <a href="../dispensa/listDispensa.php" class="btn btn-primary">Voltar </a>
+                <a href="#vencedores" class="btn btn-primary">Vencedores </a>
+                <a href="#aditivo" class="btn btn-primary">Aditivo</a>
+
+                <a href="#consideracoes" class="btn btn-primary">Considerações</a>
 
             </p>
-      
-            </div>
+
+        </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -111,25 +119,26 @@ $dispensa = $resultado->fetch_assoc();
                 <span class="input-group-text" id="inputGroup-sizing-default">Dispensa por uma ordem de emergência?</span>
             </div>
             <select class="form-select" name="tipoEmergencia" id="tipoEmergencia">
-            <?php
+                <?php
                 if ($dispensa["emergencia"] == "Não") {
                 ?>
                     <option value="Não" selected>
                         <?php echo "Não"  ?>
                     </option>
-                    <?php
+                <?php
                 } else {
                 ?>
                     <option value="Não">
                         <?php echo "Não"  ?>
                     </option>
                 <?php
-                } if ($dispensa["emergencia"] == "Sim"){
+                }
+                if ($dispensa["emergencia"] == "Sim") {
                 ?>
                     <option value="Sim" selected>
                         <?php echo "Sim"  ?>
                     </option>
-                    <?php
+                <?php
                 } else {
                 ?>
                     <option value="Sim">
@@ -152,19 +161,20 @@ $dispensa = $resultado->fetch_assoc();
                     <option value="Não" selected>
                         <?php echo "Não"  ?>
                     </option>
-                    <?php
+                <?php
                 } else {
                 ?>
                     <option value="Não">
                         <?php echo "Não"  ?>
                     </option>
                 <?php
-                } if ($dispensa["judicial"] == "Sim"){
+                }
+                if ($dispensa["judicial"] == "Sim") {
                 ?>
                     <option value="Sim" selected>
                         <?php echo "Sim"  ?>
                     </option>
-                    <?php
+                <?php
                 } else {
                 ?>
                     <option value="Sim">
@@ -178,11 +188,11 @@ $dispensa = $resultado->fetch_assoc();
         </div>
 
         <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
-                </div>
-                <textarea name="txtObjeto" id="txtObjeto" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["objeto"]?> </textarea>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Objeto</span>
             </div>
+            <textarea name="txtObjeto" id="txtObjeto" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["objeto"] ?> </textarea>
+        </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -289,25 +299,25 @@ $dispensa = $resultado->fetch_assoc();
         </div>
 
         <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Especificação do projeto</span>
-                </div>
-                <textarea name="txtEspecificacao" id="txtEspecificacao" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["especificacao_objeto"]?></textarea> 
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Especificação do projeto</span>
             </div>
+            <textarea name="txtEspecificacao" id="txtEspecificacao" cols="200" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["especificacao_objeto"] ?></textarea>
+        </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Enquadramento na modalidade pertinente</span>
-                </div>
-                <textarea name="txtEnquadramento" id="txtEnquadramento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["enquadramento"]?></textarea> 
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Enquadramento na modalidade pertinente</span>
             </div>
+            <textarea name="txtEnquadramento" id="txtEnquadramento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["enquadramento"] ?></textarea>
+        </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato</span>
-                </div>
-                <textarea name="txtMinuta" id="txtMinuta" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["minuta_contrato"]?></textarea> 
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Minuta do contrato</span>
             </div>
+            <textarea name="txtMinuta" id="txtMinuta" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["minuta_contrato"] ?></textarea>
+        </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -317,11 +327,11 @@ $dispensa = $resultado->fetch_assoc();
         </div>
 
         <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
-                </div>
-                <textarea name="txtHabilitacao" id="txtHabilitacao" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["documento_habilitacao"]?> </textarea>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Documentos de habilitação</span>
             </div>
+            <textarea name="txtHabilitacao" id="txtHabilitacao" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["documento_habilitacao"] ?> </textarea>
+        </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -360,44 +370,51 @@ $dispensa = $resultado->fetch_assoc();
         </div>
 
         <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
-                </div>
-                <textarea name="txtApostilamento" id="txtApostilamento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["apostilamento"]?> </textarea>
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
             </div>
+            <textarea name="txtApostilamento" id="txtApostilamento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["apostilamento"] ?> </textarea>
+        </div>
 
 
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
-                </div>
-                <textarea name="txtCopias" id="txtCopias" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["copia_empenho_compras_legais"]?> </textarea>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Cópia notas de empenho e compr. legais</span>
             </div>
+            <textarea name="txtCopias" id="txtCopias" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["copia_empenho_compras_legais"] ?> </textarea>
+        </div>
 
-      
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
-                </div>
-                <textarea name="txtObservacoes" id="txtObservacoes" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["observacoes"]?> </textarea>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Observações</span>
             </div>
+            <textarea name="txtObservacoes" id="txtObservacoes" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'> <?php echo $dispensa["observacoes"] ?> </textarea>
+        </div>
 
+        <?php
+        $dc = trim($dispensa["data_lancamento"]);
+        $data = date("Y-m-d", strtotime($dc));
+        $hora = date("H:i", strtotime($dc));
+        $datac = $data . "T" . $hora;
+        ?>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>
             </div>
-            <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $dispensa["data_lancamento"] ?>">
+            <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $datac ?>" readonly>
         </div>
 
+
         <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Porcentagem de aditivo permitida</span>
-                </div>
-                <input oninput="v_ = this.value; if(v_.length > 5){ this.value = v_.slice(0, 5); }" onblur="v_ = this.value; if(!~v_.indexOf('.')){ vl_ = v_.length; z_ = vl_ == 1 ? '0.00' : ( vl_ == 3 ? '0' : (vl_ == 2 ? '00' : ''));this.value = v_.length < 5 && v_ != '100' ? (((v_[0] ? v_[0] : '')+(v_[1] ? v_[1]+'.' : '')+(v_[2] ? v_[2] : '')+(v_[3] ? v_[3] : '')+(v_[4] ? v_[4] : '')+z_)):('100.00')};" type="number" id="numPorcent" name="numPorcent" step=".01" min=".01" max="100" value="<?php echo $dispensa["porcentagem"] ?>">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Porcentagem de aditivo permitida</span>
             </div>
+            <input oninput="v_ = this.value; if(v_.length > 5){ this.value = v_.slice(0, 5); }" onblur="v_ = this.value; if(!~v_.indexOf('.')){ vl_ = v_.length; z_ = vl_ == 1 ? '0.00' : ( vl_ == 3 ? '0' : (vl_ == 2 ? '00' : ''));this.value = v_.length < 5 && v_ != '100' ? (((v_[0] ? v_[0] : '')+(v_[1] ? v_[1]+'.' : '')+(v_[2] ? v_[2] : '')+(v_[3] ? v_[3] : '')+(v_[4] ? v_[4] : '')+z_)):('100.00')};" type="number" id="numPorcent" name="numPorcent" step=".01" max="100" value="<?php echo $dispensa["porcentagem"] ?>">
+        </div>
 
 
 

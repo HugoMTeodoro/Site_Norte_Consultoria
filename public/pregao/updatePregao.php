@@ -46,8 +46,9 @@ if (isset($_POST)) {
     $dt_pesquisa = $_POST["datePesquisa"];
     $apostilamento = $_POST["txtApostilamento"];
     $dt_pesquisa = $_POST["datePesquisa"];
-    $pesquisa ="Pregão"."/".$num_processo."/"."$exercicio";
-    $porcentagem=$_POST["numPorcent"];
+    $pesquisa = "Pregão" . "/" . $num_processo . "/" . "$exercicio";
+    $porcentagem = $_POST["numPorcent"];
+    $codigo=$_POST["codigo"];
 
 
     $sql = "UPDATE pregao
@@ -93,11 +94,17 @@ if (isset($_POST)) {
         "dt_sessao= '" . $sessao . "' " .
         "WHERE id_pregao = " . $id;
     $resultado = $connection->query($sql);
-
+?>
+    <form name="myform" action="<?php echo $action ?>" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+        <input type="hidden" name="action" value="<?php echo $action ?>">
+    </form>
+    <?php
     if ($resultado) { ?>
         <script>
             alert("Pregão editado com sucesso");
-            window.location = 'listPregao.php';
+            document.myform.submit();
         </script>
     <?php
     } else {

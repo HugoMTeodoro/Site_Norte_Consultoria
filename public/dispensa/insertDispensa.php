@@ -77,7 +77,7 @@ if ($resultado) {
 
     <script>
         alert("Dispensa já existente");
-        //window.location = 'listDispensa.php';
+        window.location = 'listDispensa.php';
     </script>
 
 <?php

@@ -1,7 +1,14 @@
 <?php
 include("../Template/header.php");
 include_once("../../data/connection.php");
-
+if (isset($_POST["action"])) {
+} else {
+?>
+    <script>
+        window.location = "../dispensa/listDispensa.php";
+    </script>
+<?php
+}
 
 
 //$id = $_POST["id"];
@@ -41,7 +48,7 @@ $adesao = $resultado->fetch_assoc();
             
             <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
             <p align="right">
-  
+            <a href="../adesao/listadesao.php" class="btn btn-primary">Voltar </a>
             <a href="#vencedores" class="btn btn-primary">Vencedores </a>
             <a href="#aditivo" class="btn btn-primary" >Aditivo</a>
             
@@ -69,14 +76,14 @@ $adesao = $resultado->fetch_assoc();
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nº Processo da adesão</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nº da adesão</span>
                 </div>
                 <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["num_adesao"] ?>">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nº processo de inexigibilidade</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nº processo </span>
                 </div>
                 <input type="number" name="numInexigibilidade" class="form-control" id="numInexigibilidade" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["num_inexigibilidade"] ?>">
             </div>
@@ -133,7 +140,7 @@ $adesao = $resultado->fetch_assoc();
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data de início inexigibilidade</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data de início</span>
                 </div>
                 <input type="date" name="datei" class="form-control" id="datei" aria-label="Default" inputGroup-sizing-default" value="<?php echo $adesao["dt_inicio"] ?>">
             </div>
@@ -323,7 +330,7 @@ $adesao = $resultado->fetch_assoc();
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Porcentagem de aditivo permitida</span>
                 </div>
-                <input oninput="v_ = this.value; if(v_.length > 5){ this.value = v_.slice(0, 5); }" onblur="v_ = this.value; if(!~v_.indexOf('.')){ vl_ = v_.length; z_ = vl_ == 1 ? '0.00' : ( vl_ == 3 ? '0' : (vl_ == 2 ? '00' : ''));this.value = v_.length < 5 && v_ != '100' ? (((v_[0] ? v_[0] : '')+(v_[1] ? v_[1]+'.' : '')+(v_[2] ? v_[2] : '')+(v_[3] ? v_[3] : '')+(v_[4] ? v_[4] : '')+z_)):('100.00')};" type="number" id="numPorcent" name="numPorcent" step=".01" min=".01" max="100" value="<?php echo $adesao["porcentagem"] ?>">
+                <input oninput="v_ = this.value; if(v_.length > 5){ this.value = v_.slice(0, 5); }" onblur="v_ = this.value; if(!~v_.indexOf('.')){ vl_ = v_.length; z_ = vl_ == 1 ? '0.00' : ( vl_ == 3 ? '0' : (vl_ == 2 ? '00' : ''));this.value = v_.length < 5 && v_ != '100' ? (((v_[0] ? v_[0] : '')+(v_[1] ? v_[1]+'.' : '')+(v_[2] ? v_[2] : '')+(v_[3] ? v_[3] : '')+(v_[4] ? v_[4] : '')+z_)):('100.00')};" type="number" id="numPorcent" name="numPorcent" step=".01"  max="100" value="<?php echo $adesao["porcentagem"] ?>">
             </div>
 
 

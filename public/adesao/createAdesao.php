@@ -29,14 +29,14 @@ $action=$_POST["action"];
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nº Processo da adesão</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nº da adesão</span>
                 </div>
                 <input type="number" name="numProcesso" class="form-control" id="numProcesso" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Nº processo de inexigibilidade</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nº processo</span>
                 </div>
                 <input type="number" name="numInexigibilidade" class="form-control" id="numInexigibilidade" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
@@ -84,7 +84,7 @@ $action=$_POST["action"];
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data de início inexigibilidade</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data de início</span>
                 </div>
                 <input type="date" name="datei" class="form-control" id="datei" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>

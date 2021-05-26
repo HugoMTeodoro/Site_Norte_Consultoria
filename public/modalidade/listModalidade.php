@@ -52,7 +52,7 @@ include("../Login/valida.php"); ?>
 				?>
 			</select>
 		</div>
-        
+        <br>
 		<form action="createModalidade.php" method="POST">
 		
 		<input type="hidden" name="tipo" id="tipo" value="modalidade" > 

@@ -49,8 +49,9 @@ if (isset($_POST)) {
     $sessao = $_POST["datesess"];
     $apostilamento = $_POST["txtApostilamento"];
     $dt_pesquisa = $_POST["datePesquisa"];
-    $pesquisa ="Modalidade"."/".$num_processo."/"."$exercicio";
+    $pesquisa =$modalidade."/".$numero."/"."$exercicio";
     $porcentagem=$_POST["numPorcent"];
+    $codigo=$_POST["codigo"];
 
     $sql = "UPDATE modalidade
     SET exercicio='" . $exercicio . "' ,  " .
@@ -101,17 +102,24 @@ if (isset($_POST)) {
 
 
     $resultado = $connection->query($sql);
-
+    ?>
+    <form name="myform" action="<?php echo $action ?>" method="POST">
+    <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+    <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+    <input type="hidden" name="action" value="<?php echo $action ?>">
+</form>
+<?php
     if ($resultado) {
 ?>
         <script>
             alert("Modalidade editada com sucesso");
-            window.location = 'listModalidade.php';
+            document.myform.submit();
         </script>
     <?php
     } else {
-        echo $sql; ?>
+        ?>
         <script>
+        window.location = 'listModalidade.php';
             alert("Ocorreu um erro ao editar a modalidade");
         </script>
 

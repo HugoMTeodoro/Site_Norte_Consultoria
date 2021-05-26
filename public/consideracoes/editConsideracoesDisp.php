@@ -10,7 +10,7 @@ $diag1 = '';
 $diag2 = '';
 $diag3 = '';
 $diag4 = '';
-$diag5='';
+$diag5 = '';
 $diag6 = '';
 $diag7 = '';
 $diag8 = '';
@@ -108,20 +108,22 @@ if ($dados->num_rows > 0) {
             $diag1 = $diag1 . "Data da publicacao em " . ($exibir["difpub"] * -1) . " dias, ";
             $booldiag1 = true;
         }
-        
+
         if ($exibir["difpesq"] < 0) {
             $diag1 = $diag1 . "Data da ultima pesquisa de preco em " . ($exibir["difpesq"] * -1) . " dias, ";
             $booldiag1 = true;
-        }if ($exibir["difport"] < 0) {
+        }
+        if ($exibir["difport"] < 0) {
             $diag1 = $diag1 . "Data da portaria da comissao em " . ($exibir["difport"] * -1) . " dias, ";
             $booldiag1 = true;
-        }if ($exibir["difautor"] < 0) {
+        }
+        if ($exibir["difautor"] < 0) {
             $diag1 = $diag1 . "Data da autorizacao de abertura em " . ($exibir["difautor"] * -1) . " dias, ";
             $booldiag1 = true;
-        }    
+        }
 
         if ($exibir["difdiag2"] < 0) {
-            $diag2 = $diag2 . "Essa data Excedeu a data de abertura em " . $exibir["difdiag2"]*-1 . " dias";
+            $diag2 = $diag2 . "Essa data Excedeu a data de abertura em " . $exibir["difdiag2"] * -1 . " dias";
             $booldiag2 = true;
         }
         if ($exibir["difdiag3"] < 0) {
@@ -142,16 +144,16 @@ if ($dados->num_rows > 0) {
         }
 
         if ($exibir["difdiag7"] > 8 or $exibir["difdiag7"] < 0) {
-            $diag7 = $diag7 . "Essa data entrou em desacordo com a ratificacao em " . $exibir["difdiag7"]. " dias, quando permitido apenas 8 dias apos a ratificacao (art. 26, Lei 8.666/93)";
+            $diag7 = $diag7 . "Essa data entrou em desacordo com a ratificacao em " . $exibir["difdiag7"] . " dias, quando permitido apenas 8 dias apos a ratificacao (art. 26, Lei 8.666/93)";
             $booldiag7 = true;
         }
         if ($exibir["difdiag8"] < 0) {
-            $diag8 = $diag8 . "Essa data foi anterior ao autorizacao para abertura em " . $exibir["difdiag8"]*-1 . " dias";
+            $diag8 = $diag8 . "Essa data foi anterior ao autorizacao para abertura em " . $exibir["difdiag8"] * -1 . " dias";
             $booldiag8 = true;
         }
-        if($exibir["valor_total"]*($exibir["porcentagem"]/100)<$exibir["valor_aditivo"]){
-            $val=$exibir["valor_total"]*($exibir["porcentagem"]/100)-($exibir["valor_aditivo"]);
-            $booldiag15=true;
+        if ($exibir["valor_total"] * ($exibir["porcentagem"] / 100) < $exibir["valor_aditivo"]) {
+            $val = $exibir["valor_total"] * ($exibir["porcentagem"] / 100) - ($exibir["valor_aditivo"]);
+            $booldiag15 = true;
         }
 
 ?>
@@ -186,7 +188,7 @@ if ($dados->num_rows > 0) {
 
                         </div>
                         <p class="formato">Essa deveria ser a primeira data. Houve desacordo nos seguintes campos:<?php echo $diag1 . "." ?></p>
-                        
+
 
                     <?php
 
@@ -235,19 +237,19 @@ if ($dados->num_rows > 0) {
                     <?php
                     }
                     if ($booldiag5) {
-                        ?>
-                            <div class="input-group mb-3">
-    
-                                <div class="input-group-prepend">
-    
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Parecer <br> <?php echo $exibir["datapar"] ?></span>
-                                </div>
-                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPar" class="form-control" id="conPar" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPar"] ?></textarea>
-    
+                    ?>
+                        <div class="input-group mb-3">
+
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text" id="inputGroup-sizing-default">Parecer <br> <?php echo $exibir["datapar"] ?></span>
                             </div>
-                            <p class="formato"><?php echo $diag5 . "." ?></p>
-                        <?php
-                        }
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conPar" class="form-control" id="conPar" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conPar"] ?></textarea>
+
+                        </div>
+                        <p class="formato"><?php echo $diag5 . "." ?></p>
+                    <?php
+                    }
                     if ($booldiag6) {
                     ?>
                         <div class="input-group mb-3">
@@ -277,33 +279,33 @@ if ($dados->num_rows > 0) {
                     <?php
                     }
                     if ($booldiag8) {
-                        ?>
-                            <div class="input-group mb-3">
-    
-                                <div class="input-group-prepend">
-    
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Abertura <br> <?php echo $exibir["dataab"] ?></span>
-                                </div>
-                                <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAb" class="form-control" id="conAb" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAb"] ?></textarea>
-    
+                    ?>
+                        <div class="input-group mb-3">
+
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text" id="inputGroup-sizing-default">Abertura <br> <?php echo $exibir["dataab"] ?></span>
                             </div>
-                            <p class="formato"><?php echo $diag8 . "." ?></p>
-                        <?php
-                        }
-                        if ($booldiag15) {
-                            ?>
-                                <div class="input-group mb-3">
-        
-                                    <div class="input-group-prepend">
-        
-                                        <span class="input-group-text" id="inputGroup-sizing-default">Valor aditivado <br> <?php echo $exibir["valor_aditivo"] ?></span>
-                                    </div>
-                                    <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAd" class="form-control" id="conAd" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAd"] ?></textarea>
-        
-                                </div>
-                                <p class="formato">O valor limite de aditivos foi ultrapassado em <?php echo $val*-1?></p>
-                            <?php
-                            }
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAb" class="form-control" id="conAb" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAb"] ?></textarea>
+
+                        </div>
+                        <p class="formato"><?php echo $diag8 . "." ?></p>
+                    <?php
+                    }
+                    if ($booldiag15) {
+                    ?>
+                        <div class="input-group mb-3">
+
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text" id="inputGroup-sizing-default">Valor aditivado <br> <?php echo $exibir["valor_aditivo"] ?></span>
+                            </div>
+                            <textarea oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1' type="text" name="conAd" class="form-control" id="conAd" aria-label="Default" aria-describedby="inputGroup-sizing-default" rows="2"><?php echo $exibir["conAd"] ?></textarea>
+
+                        </div>
+                        <p class="formato">O valor limite de aditivos foi ultrapassado em <?php echo $val * -1 ?></p>
+                    <?php
+                    }
                     ?>
 
                     <div class="buttons">
@@ -311,20 +313,26 @@ if ($dados->num_rows > 0) {
                         <input type="hidden" name="action" value="<?php echo $action ?>">
                         <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
                         <input type="submit" class="btn btn-success" value="Cadastrar">
-                        
+
                     </div>
 
 
 
 
                 </form>
+
             </div>
     <?php
     }
 }
     ?>
+    <br>
+    <br>
+    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="../dispensa/listDispensa.php" class="btn btn-primary">Finalizar </a>
         </body>
 
         </html>
+        
         <br>
         <br>

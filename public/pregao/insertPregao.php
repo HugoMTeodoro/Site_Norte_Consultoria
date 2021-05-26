@@ -38,7 +38,7 @@
     $txtCopias = $_POST["txtCopias"];
     $observacoes = $_POST["txtObservacoes"];
     $analistaResponsavel = $_POST["txtAnalista"];
-    $dLancamento = $_POST["dateLancamento"];
+
     $orgao1 = $_POST["txtOrgao"];
     $codigo = "pr" . $orgao1 . "_" . $num_processo . "_" . $numero . "_" . $exercicio;
     $tipo = "pregao";
@@ -46,8 +46,17 @@
     $sessao=$_POST["datesessao"];
     $apostilamento=$_POST["txtApostilamento"];
     $dt_pesquisa=$_POST["datePesquisa"];
-    $pesquisa ="Pregão"."/".$num_processo."/"."$exercicio";
+    $pesquisa ="Pregão"."/".$numero."/"."$exercicio";
     $porcentagem=$_POST["numPorcent"];
+
+    $sql = "select now()";
+    $resultado = $connection -> query($sql);
+    if ($resultado->num_rows > 0) {
+        while ($exibir = $resultado->fetch_assoc()) {
+            $dLancamento=$exibir["now()"];
+        }
+    }
+
 
 
     $sql = "INSERT INTO 
@@ -57,19 +66,25 @@
 
 
     $resultado = $connection -> query($sql);
-
+    ?>
+    <form name="myform" action="<?php echo $action?>" method="POST">
+            <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+            <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+            <input type="hidden" name="action" value="<?php echo $action ?>">
+        </form>
+        <?php
     if ($resultado){
          ?>
         <script>
             alert("Pregão cadastrada com sucesso");
-            window.location = 'listPregao.php';
+            document.myform.submit();
         </script>
     <?php
     } else {
         echo $sql; ?>
         <script>
             alert("Ocorreu um erro ao cadastrar a pregão");
-            //window.location = 'listPregao.php';
+            window.location = 'listPregao.php';
         
         </script>
         

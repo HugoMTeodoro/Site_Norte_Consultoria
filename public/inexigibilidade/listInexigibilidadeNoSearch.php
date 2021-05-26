@@ -49,6 +49,8 @@ if ($dadosInexigibilidade->num_rows > 0) {
                     <button type="button" class="btn btn-primary btn-sm">
                         <a href="../geracaoDeDocx/coletaInex.php?id=<?php echo $exibir["codigo_processo"] ?>" style="text-decoration: none; color: white" target="blank">Relatório</a>
                     </button>
+                    <br>
+                    <br>
                     <button type="submit" class="btn btn-danger btn-sm" formmethod="post">
                         <a href="deleteInexigibilidade.php?id=<?php echo $exibir["id_inexigibilidade"] ?>" style="text-decoration: none; color: white" onclick="return confirm('Deseja mesmo apagar o processo?');"> Excluir </a>
                     </button>

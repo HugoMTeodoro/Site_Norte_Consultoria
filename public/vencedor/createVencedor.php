@@ -52,7 +52,7 @@ $sqlQuery = "SELECT valor_total FROM $tipo where codigo_processo = '$codigo'";
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Valor total do processo</span>
                 </div>
                 <input type="number" step=0.01 name="numValor" class="form-control" id="numValor" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $valor_total ?>" readonly>
             </div>

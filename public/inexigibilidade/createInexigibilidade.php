@@ -306,20 +306,8 @@ $action = $_POST["action"];
             </div>
 
 
-            <?php
-            date_default_timezone_set('America/Sao_Paulo');
-            $agora = date('d/m/Y H:i');
-            $dc = trim($agora);
-            $data = date("Y-d-m", strtotime($dc));
-            $hora = date("H:i", strtotime($dc));
-            $datac = $data . "T" . $hora;
-            ?>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Data e hora de lançamento</span>
-                </div>
-                <input type="datetime-local" name="dateLancamento" class="form-control" id="dateLancamento" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $datac ?>">
-            </div>
+            
+            
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

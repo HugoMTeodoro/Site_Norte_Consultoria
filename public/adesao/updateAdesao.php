@@ -40,6 +40,7 @@ if (isset($_POST)) {
     $dt_pesquisa = $_POST["datePesquisa"];
     $pesquisa ="Adesão"."/".$num_adesao."/"."$exercicio";
     $porcentagem=$_POST["numPorcent"];
+    $codigo=$_POST["codigo"];
 
 $sql = "UPDATE adesao
  SET exercicio = '".$exercicio."',".
@@ -80,18 +81,24 @@ $sql = "UPDATE adesao
 
 
     $resultado = $connection->query($sql);
-
+?>
+<form name="myform" action="<?php echo $action ?>" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+        <input type="hidden" name="action" value="<?php echo $action ?>">
+    </form>
+    <?php
     if ($resultado) { ?>
         <script>
             alert("adesao editada com sucesso");
-            window.location = 'listAdesao.php';
+            document.myform.submit();
         </script>
     <?php
     } else {
         echo $sql; ?>
         <script>
             alert("Ocorreu um erro ao cadastrar a adesão");
-
+            window.location = 'listAdesao.php';
         </script>
 
 <?php

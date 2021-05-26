@@ -49,7 +49,7 @@ $sqlQuery = "SELECT valor_aditivo FROM $tipo where codigo_processo = '$codigo'";
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Número aditivo</span>
+                    <span class="input-group-text" id="inputGroup-sizing-default">Valor total Aditivado</span>
                 </div>
                 <input type="number" name="numValorAditivo" class="form-control" id="numValorAditivo" aria-label="Default" aria-describedby="inputGroup-sizing-default" value="<?php echo $valor_aditivo ?>" readonly>
             </div>

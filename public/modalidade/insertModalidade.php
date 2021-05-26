@@ -41,7 +41,6 @@ include("../Login/valida.php");
     $txtCopias = $_POST["txtCopias"];
     $observacoes = $_POST["txtObservacoes"];
     $analistaResponsavel = $_POST["txtAnalista"];
-    $dLancamento = $_POST["dateLancamento"];
     $orgao1 = $_POST["txtOrgao"];
     $codigo = "mod" . $orgao1 . "_" . $num_processo . "_" . $numero . "_" . $exercicio;
     $tipo = "modalidade";
@@ -50,20 +49,37 @@ include("../Login/valida.php");
     $sessao=$_POST["datesess"];
     $apostilamento=$_POST["txtApostilamento"];
     $dt_pesquisa=$_POST["datePesquisa"];
-    $pesquisa ="Modalidade"."/".$num_processo."/"."$exercicio";
+    $pesquisa =$modalidade."/".$numero."/"."$exercicio";
     $porcentagem=$_POST["numPorcent"];
+
+    $sql = "select now()";
+    $resultado = $connection -> query($sql);
+    if ($resultado->num_rows > 0) {
+        while ($exibir = $resultado->fetch_assoc()) {
+            $dLancamento=$exibir["now()"];
+        }
+    }
+    
+
+
 
     $sql = "INSERT INTO modalidade (exercicio, num_processo, modalidade, numero, objeto, registro, categoria, dt_edital, dt_entrega, dt_abertura, dt_portaria, dt_solicitacao, dt_orcamento, dt_autorizacao, dt_autuacao, enquadramento, dt_anexos, dt_aprovacao, minuta, dt_publicacao, especificacao, dt_recibo, documentos, dt_ata, dt_confirmacao, prazo, dt_ata_julgamento, classificados, dt_pub_res, prazo2, dt_parecer_juridico, dt_adjudicacao, dt_homologacao, dt_contrato_firmado, dt_publicacao_contrato, copia, observacoes, dt_lancamento, orgao, codigo_processo, dt_emissao, dt_sessao,apostilamento,dt_pesquisa,pesquisa,porcentagem)
     VALUES('$exercicio','$num_processo','$modalidade','$numero','$objeto','$registro','$categoria','$dt_edital','$dt_entrega','$dt_abertura','$dt_portaria','$dt_solicitacao','$dt_orcamento','$dt_autorizacao','$dt_autuacao','$enquadramento','$dt_anexos','$dt_aprovacao','$minuta','$dt_publicacao','$especificacao','$dt_recibo','$documentos','$dt_ata','$dt_confirmacao','$prazo','$date_ata_julgamento','$classificados','$dt_pub_resultado', '$prazo2','$dt_parecer_juridico','$dt_adjudicacao','$dt_homologacao','$dt_contrato_firmado','$dt_publicacao_contrato','$txtCopias', '$observacoes', '$dLancamento','$orgao1','$codigo','$emissao','$sessao','$apostilamento','$dt_pesquisa','$pesquisa','$porcentagem')";
 
 
 $resultado = $connection -> query($sql);
-
+?>
+<form name="myform" action="<?php echo $action?>" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+        <input type="hidden" name="action" value="<?php echo $action ?>">
+    </form>
+    <?php
 if ($resultado){ 
     ?>
     <script>
         alert("Modalidade cadastrada com sucesso");
-        window.location = 'listModalidade.php';
+        document.myform.submit();
     </script>
 <?php
 } else { 

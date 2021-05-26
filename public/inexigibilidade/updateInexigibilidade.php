@@ -37,6 +37,7 @@ $apostilamento = $_POST["txtApostilamento"];
 $dt_pesquisa = $_POST["datePesquisa"];
 $pesquisa ="Inexigibilidade"."/".$num_inexigibilidade."/"."$exercicio";
 $porcentagem=$_POST["numPorcent"];
+$codigo=$_POST["codigo"];
 
 $sql = "UPDATE inexigibilidade
  SET exercicio = '".$exercicio."' ,  " .
@@ -75,18 +76,24 @@ $sql = "UPDATE inexigibilidade
 
 
 $resultado = $connection -> query($sql);
-
+?>
+    <form name="myform" action="<?php echo $action ?>" method="POST">
+        <input type="hidden" name="codigo" value="<?php echo $codigo ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
+        <input type="hidden" name="action" value="<?php echo $action ?>">
+    </form>
+    <?php
 if ($resultado){ ?>
     <script>
         alert("Inexigibilidade editada com sucesso");
-        window.location = 'listInexigibilidade.php';
+        document.myform.submit();
     </script>
 <?php
 } else { 
     echo $sql;?>
     <script>
         alert("Ocorreu um erro ao cadastrar inexigibilidade");
-       
+        window.location = 'listInexigibilidade.php';
        
     </script>
     
