@@ -309,7 +309,8 @@ $action = $_POST["action"];; ?>
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Classificados das propostas</span>
                 </div>
-                <textarea name="txtClassificados" id="txtClassificados" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>            </div>
+                <textarea name="txtClassificados" id="txtClassificados" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
+            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -383,12 +384,6 @@ $action = $_POST["action"];; ?>
                 <input type="date" name="datePesquisa" class="form-control" id="datePesquisa" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Termo de apostilamento</span>
-                </div>
-                <textarea name="txtApostilamento" id="txtApostilamento" cols="190" oninput='if(this.scrollHeight > this.offsetHeight) this.rows += 1'></textarea>
-            </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
