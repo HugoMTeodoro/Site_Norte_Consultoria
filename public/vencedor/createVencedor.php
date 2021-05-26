@@ -110,7 +110,7 @@ $sqlQuery = "SELECT valor_total FROM $tipo where codigo_processo = '$codigo'";
 
 </html>
 
-<HR WIDTH=85%>
+<HR style="height:2px;border-width:0;color:gray;background-color:gray" WIDTH=85%>
 <section id="lvencedores"></section>
 
 
@@ -123,7 +123,7 @@ include("../vencedor/listVencedor.php");
 <?php
 include("../aditivo/createAditivo.php");
 ?>
-<HR WIDTH=85%>
+<HR style="height:2px;border-width:0;color:gray;background-color:gray" WIDTH=85%>
 <section id="laditivo"></section>
 
 
@@ -135,7 +135,7 @@ include("../aditivo/listAditivo.php");
 
 
 
-    <HR WIDTH=85%>
+    <HR  style="height:2px;border-width:0;color:gray;background-color:gray" WIDTH=85%>
     <section id="consideracoes"> </section>
 <?php
     include("../consideracoes/editConsideracoesDisp.php");
@@ -145,7 +145,7 @@ include("../aditivo/listAditivo.php");
 ?>
 <?php if ($tipo == "adesao") {
 ?>
-    <HR WIDTH=85%>
+    <HR style="height:2px;border-width:0;color:gray;background-color:gray" WIDTH=85%>
     <section id="consideracoes"> </section>
 <?php
     include("../consideracoes/editConsideracoesAdesao.php");
@@ -154,7 +154,7 @@ include("../aditivo/listAditivo.php");
 
 <?php if ($tipo == "inexigibilidade") {
 ?>
-    <HR WIDTH=85%>
+    <HR style="height:2px;border-width:0;color:gray;background-color:gray" WIDTH=85%>
     <section id="consideracoes"> </section>
 <?php
     include("../consideracoes/editConsideracoesInex.php");
@@ -165,7 +165,7 @@ include("../aditivo/listAditivo.php");
 
 if ($tipo == "pregao") {
 ?>
-    <HR WIDTH=85%>
+    <HR style="height:2px;border-width:0;color:gray;background-color:gray" WIDTH=85%>
     <section id="consideracoes"> </section>
 <?php
     include("../consideracoes/editConsideracoesPregao.php");
@@ -174,7 +174,7 @@ if ($tipo == "pregao") {
 
 <?php if ($tipo == "modalidade") {
 ?>
-    <HR WIDTH=85%>
+    <HR  style="height:2px;border-width:0;color:gray;background-color:gray" WIDTH=85%>
     <section id="consideracoes"> </section>
 <?php
     include("../consideracoes/editConsideracoesModal.php");
